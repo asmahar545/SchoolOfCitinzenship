@@ -13,23 +13,23 @@
                 <small>Professeurs</small>
             </h1>
             <div class="modal" id="loginModal"tabindex="-1">
-                                    <div class="modal-dialog">
-         <div class="modal-content">
-                                         <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal">x</button>
-                          <h4 class="modal-title">Informations</h4>
-                       </div>
-                                                    <div class="modal-body">
+              <div class="modal-dialog">
+               <div class="modal-content">
+               <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">x</button>
+                  <h4 class="modal-title">Informations</h4>
+                    </div>
+                       <div class="modal-body">
                    Etes-vous sûr de vouloir vous déconnecter?
-                                                        </div>
-                                                        <div class="modal-footer">
+                      </div>
+                        <div class="modal-footer">
         
-                                                         <a href="connexion/"><button class="btn btn-succes" type="button"><i class="icon icon-check icon-lg"></i>Oui</button></a>
-                                             <a href="admin/"><button class="btn btn-primary" type="button"><i class="icon icon-check icon-lg"></i> Retour</button></a>
-                                                     </div>
-                                 </div>
-</div>
-  </div>
+                         <a href="connexion/"><button class="btn btn-succes" type="button"><i class="icon icon-check icon-lg"></i>Oui</button></a>
+                          <a href="admin/"><button class="btn btn-primary" type="button"><i class="icon icon-check icon-lg"></i> Retour</button></a>
+                           </div>
+                           </div>
+                       </div>
+                   </div>
 
         </section>
 

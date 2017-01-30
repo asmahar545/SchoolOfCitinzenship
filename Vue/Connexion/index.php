@@ -1,9 +1,17 @@
+<body class="hold-transition skin-blue sidebar-mini">
 <?php if (isset($msgErreur)) : ?>
     <div class="alert alert-danger alert-dismissable">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
         <strong>Mots de passe incorrect</strong> <?= $this->nettoyer($msgErreur) ?>
     </div>
 <?php endif; ?>
+    <section class="content-header">
+        <div class="row">
+            <div class="col-lg-6">
+                <br>
+                <br>
+                <br>
+                <br>
 <div class="login-box">
     <div class="login-logo">
         <a><b>Connexion</b> Login</a>
@@ -34,6 +42,9 @@
     </div>
     <!-- /.login-box-body -->
 </div>
+</div>
+</div>
+    </section>
 </br>
 </br>
 </br></br></br></br></br></br></br>
@@ -49,3 +60,4 @@ body
     background-image: url("images/ecole.jpg");
 }
 </style>
+</body>

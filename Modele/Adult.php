@@ -48,7 +48,7 @@ class Adult extends Modele
     {
         $sql='INSERT INTO `adult` (`id_adult`, `name`, `firstname`, `adress`, `birthday`, `sexe`, `phone`, `email`, `password`, `id_adultCategory`)  VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?,?)';
 
-        $rep=$this->executerRequete($sql,array($name,$firstname,$adress,$birthday,$sexe,$phone,$email,$password,$id_adultCategory));
+        $this->executerRequete($sql,array($name,$firstname,$adress,$birthday,$sexe,$phone,$email,$password,$id_adultCategory));
     }
 
     //return tableau de catégory 
@@ -59,13 +59,13 @@ class Adult extends Modele
         
     }
     //modifie l'adult
-    public function editAdult($name,$firstname,$adress,$birthday,$sexe,$phone,$email,$password,$id_adultCategory,$id){
+    public function editAdult($name,$firstname,$adress,$birthday,$sexe,$phone,$commentaire,$email,$password,$id_adultCategory,$id){
         $sql="UPDATE `adult` SET `name` = ?, `firstname` = ?, `adress` = ?, 
         `birthday` = ?, `sexe` = ?, `phone` = ?,
-        `email` = ?, `password` = ?,
+        `email` = ?, `commentaire` = ?,`password` = ?,
         `id_adultCategory` = ? WHERE `adult`.`id_adult` = ?";
         
-        $rep=$this->executerRequete($sql,array($name,$firstname,$adress,$birthday,$sexe,$phone,$email,$password,$id_adultCategory,$id));
+        $this->executerRequete($sql,array($name,$firstname,$adress,$birthday,$sexe,$phone,$email,$commentaire,$password,$id_adultCategory,$id));
     }
    
       
