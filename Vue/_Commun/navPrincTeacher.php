@@ -41,7 +41,7 @@
             <li>
                  </li>
             <li class="treeview">
-            <a href="teacher/classes">
+            <a href="teacher/mesclasses">
             <i class="fa fa-edit"></i><span>Mes Classes</span>
             <span class="pull-right-container">
               
@@ -52,6 +52,15 @@
             <li class="treeview">
                 <a href="teacher/grille">
                     <i class="fa fa-table"></i> <span>Grilles</span>
+                    <span class="pull-right-container">
+            
+            </span>
+                </a>
+               
+            </li>
+            <li class="treeview">
+                <a href="teacher/evalue">
+                    <i class="fa fa-table"></i> <span>J'évalue</span>
                     <span class="pull-right-container">
             
             </span>

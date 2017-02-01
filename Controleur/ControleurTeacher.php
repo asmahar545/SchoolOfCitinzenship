@@ -80,5 +80,18 @@ class ControleurTeacher extends ControleurSecurise
                 throw new Exception("Faite attention les champs ne sont pas tous définis");
             }
     }
+    public function mesclasses(){
+        $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+        $class= $this->classe->getTeacherUniqueClass($idU);
+       
+        $adult=$this->adult->getadult($idU);
+        $this->genererVue(array('adult'=>$adult,'class'=>$class));
+    }
+    public function evalue(){
+        $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+        $class= $this->classe->getTeacherUniqueClass($idU);
+        $adult=$this->adult->getadult($idU);
+        $this->genererVue(array('adult'=>$adult,'class'=>$class));
+    }
     
 }

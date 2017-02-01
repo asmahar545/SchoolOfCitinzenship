@@ -56,6 +56,12 @@ public function getnbClasses(){
         $rep=$this->executerRequete($sql);
         return $rep;
     }
+    
+     public function getTeacherUniqueClass($idT){
+        $sql="select * from teacherclass where id= ?";
+        $rep=$this->executerRequete($sql,array($idT));
+        return $rep;
+    }
     public function addDroit($idc,$ida){
         
        $sql="INSERT INTO `consultclass` (`id_classe`, `id_adult`) VALUES (?, ?);";

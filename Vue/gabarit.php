@@ -9,7 +9,10 @@
 
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-         
+        <!-- tableDataBoodstrap -->
+        <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.bootstrap.min.css">
         <!-- Bootstrap 3.3.6 -->
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
         <!-- Font Awesome -->
@@ -33,6 +36,8 @@
         <link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
         <!-- Date Picker -->
         <link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
+        <link src="dist/css/buttons.dataTables.min.css">
+        <link src="dist/css/jquery.dataTables.min.css">
         
         <!-- Daterange picker -->
         <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
@@ -49,7 +54,7 @@
         <title>Ecole Citoyenne <?= $titre ?></title>
 
     </head>
-    <body class="hold-transition skin-blue sidebar-mini">
+    
 
 
 
@@ -97,9 +102,10 @@
     <script src="dist/js/pages/dashboard.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js"></script>
-   <script src="js/bootstrap.js"></script>
-    
-    
+    <script src="js/bootstrap.js"></script>
+ 
+   
+   
     <footer>
 
         <div class="row">
