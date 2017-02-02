@@ -33,19 +33,18 @@
                             <tr>
                                 <th>N°</th>
                                 <th>Classe</th>
-                                <th>      </th>
+                                <th>#</th>
                             </tr>
                             </thead>
                             <tbody>
                             <?php $var=1?>
-                            <?php foreach ($class as $list): ?>
+                            <?php foreach ($student as $list): ?>
                                 <tr>
                                     
                                     <td><?php echo $var++ ?></td>
-                                    <td><?= $this->nettoyer($list['yearSexion']) ?></td>
-                                    <td>
-                                        <a href="teacher/eleves/<?= $var =$this->nettoyer($list['id']) ?>" class="btn btn-danger btn-xs">Elèves</a>
-                                    </td>
+                                    <td><?= $this->nettoyer($list['name']) ?></td>
+                                    <td><?= $this->nettoyer($list['firstName']) ?></td>
+                                    
                                 </tr>
                             
                             <?php endforeach; ?>
@@ -64,6 +63,3 @@
 </div>
      
 <?= require_once ('Vue/_Commun/navPrincTeacher.php');?>
-    
-
-   

@@ -1,6 +1,7 @@
 
 
-<?= require_once ('Vue/_Commun/headerPrinc.php');?>
+
+<?php require 'Vue/_Commun/headerPrinc.php'; ?>
 
 <?php $this->titre = "Mon Site  - Erreur !"; ?>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -23,3 +24,4 @@
 </div>
 
 </body>
+<?= require_once ('Vue/_Commun/navPrinc.php');?>

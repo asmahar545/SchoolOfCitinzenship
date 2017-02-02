@@ -46,16 +46,15 @@
               
             </span>
           </a>
-            <li>
-                 </li>
+            </li>
             <li class="treeview">
             <a href="admin/educateur">
-            <i class="fa fa-edit"></i><span>Educateur</span>
+            <i class="fa fa-edit"></i><span>Cours</span>
             <span class="pull-right-container">
               
             </span>
           </a>
-            <li>
+            </li>
       
             <li class="treeview">
                 <a href="admin/classe">

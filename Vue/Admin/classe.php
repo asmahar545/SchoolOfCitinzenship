@@ -47,7 +47,7 @@
                                         <a href="admin/addClass " class="btn btn-success btn-xs"><i class="fa fa-folder"></i> Ajouter</a>
                                         <a href ="admin/editClass/<?= $this->nettoyer($list['id']) ?> " class="btn btn-warning btn-xs"><i class="fa fa-folder"></i> Modifier</a>
                                         <button data-toggle="modal"  data-target="#loginModal" class="btn btn-danger btn-xs">Supprimer</button>
-                                        <a href="admin/listStudentClass/<?= $this->nettoyer($list['id']) ?>" class="btn btn-primary btn-xs">Student</button>
+                                        <a href="admin/listStudentClass/<?=  $this->nettoyer($list['id']) ?>" class="btn btn-primary btn-xs">Student</button>
                           
                                     </td>
                                 </tr>

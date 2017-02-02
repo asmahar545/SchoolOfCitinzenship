@@ -50,6 +50,11 @@ class Adult extends Modele
 
         $this->executerRequete($sql,array($name,$firstname,$adress,$birthday,$sexe,$phone,$email,$password,$id_adultCategory));
     }
+    public function addLesson($cours,$nbr){
+        $sql= 'INSERT INTO `cours` (`id_lesson`, `name`, `nbr`) VALUES (NULL, ?, ?)';
+        $this->executerRequete($sql,array($cours,$nbr));
+    
+    }
 
     //return tableau de catégory 
     public function  getCat(){

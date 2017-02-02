@@ -22,7 +22,7 @@
 
         <form action="connexion/connecter" method="post">
             <div class="form-group has-feedback">
-                <input name="login" type="email" class="form-control" placeholder="Login">
+                <input name="login" type="" class="form-control" placeholder="Login">
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">

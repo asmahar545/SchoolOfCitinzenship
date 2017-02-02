@@ -75,9 +75,19 @@
                     <!-- /.box-body -->
                 </div>
                 <!-- /.box -->
+               
+                <a  href="admin/addTeacher" <button  type="button" class="btn btn-block btn-success">Ajout d'un professeur</button></a>
+                 
+                <a  href="admin/addLesson"  <button  type="button" class="btn btn-block btn-primary">Ajout d'un cours</button></a>
+                
+                 
             </div>
+          
             <!-- /.col -->
         </div>
+       
+       
+I
         <!-- /.row -->
     </section>
     <!-- /.content -->

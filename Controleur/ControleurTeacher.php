@@ -93,5 +93,18 @@ class ControleurTeacher extends ControleurSecurise
         $adult=$this->adult->getadult($idU);
         $this->genererVue(array('adult'=>$adult,'class'=>$class));
     }
+    public function eleves(){
+        if ($this->requete->existeParametre("id"))
+             {
+           $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+           $id = $this->requete->getParametre("id");
+           $student= $this->student->getStudentClass($id);
+           $adult=$this->adult->getadult($idU);
+           $this->genererVue(array('adult'=>$adult,'student'=>$student));}
+        else{
+             throw new Exception("Faite attention les champs ne sont pas tous définis");
+        }
+    }
+  
     
 }

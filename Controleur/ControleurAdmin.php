@@ -270,7 +270,30 @@ class ControleurAdmin extends ControleurSecurise
          }
      
      }
+     public function addLesson(){
+           $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+           $adult=$this->adult->getadult($idU);
+      
+            $this->genererVue(array('adult'=>$adult));
+         
+     }
      
+     public function exeAddLesson(){
+         if ($this->requete->existeParametre("cours") && $this->requete->existeParametre("nombre")){
+            
+            $cours = $this->requete->getParametre("cours");
+            $nbr = $this->requete->getParametre("nombre");
+            $this->adult->addLesson($cours, $nbr);
+            
+           $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+           $adult=$this->adult->getadult($idU);
+         $this->genererVue(array('adult'=>$adult));}
+           else
+         {
+             throw new Exception("Faite attention les champs ne sont pas tous définis");
+         }
+         
+     }
      
      
      

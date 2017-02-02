@@ -36,7 +36,7 @@ class ControleurConnexion extends Controleur
             if ($this->utilisateur->connecter($login, $mdp)) {
 
                 //si il est admin
-                if ($login == "admin" && $mdp == "admin") {
+                 if($login == "admin" && $mdp =="admin") {
                     $utilisateur = $this->utilisateur->getUtilisateur($login, $mdp);
 
                     $this->requete->getSession()->setAttribut("idUtilisateur",
