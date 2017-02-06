@@ -5,16 +5,37 @@
     <aside class="main-sidebar">
     <section class="sidebar">
         <!-- Sidebar user panel -->
+        <button data-toggle="modal"  data-target="#loginModal" class="btn btn-danger btn-xs">Deconnexion</button>
+             <div class="modal" id="loginModal"tabindex="-1">
+                                    <div class="modal-dialog">
+         <div class="modal-content">
+                                         <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">x</button>
+                          <h4 class="modal-title">Informations</h4>
+                       </div>
+                                                    <div class="modal-body">
+                   Etes-vous sûr de vouloir vous déconnecter?
+                                                        </div>
+                                                        <div class="modal-footer">
+        
+                                                         <a href="connexion/"><button class="btn btn-succes" type="button"><i class="icon icon-check icon-lg"></i>Oui</button></a>
+                                             <a href="admin/"><button class="btn btn-primary" type="button"><i class="icon icon-check icon-lg"></i> Retour</button></a>
+                                                     </div>
+                                 </div>
+</div>
+  </div>
         <div class="user-panel">
             <div class="pull-left image">
                 <img src="dist/img/admin.jpg" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
                 <p><?= $adult['name']?></p> <strong><?= $adult['firstname']?></strong>
-                <a href=""><i class="fa fa-circle text-success"></i> Online</a>
+                <a href=""><i class="fa fa-circle text-success"></i>en ligne</a>
+                
             </div>
+            
         </div>
-
+        
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>

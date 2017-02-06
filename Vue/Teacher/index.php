@@ -7,7 +7,7 @@
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <button data-toggle="modal"  data-target="#loginModal" class="btn btn-danger btn-xs">Deconnexion</button>
+           
             <h1>
                 Bienvenue,
                 <small>Professeurs</small>

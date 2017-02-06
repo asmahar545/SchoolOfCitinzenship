@@ -27,7 +27,7 @@ $titree= $this->nettoyer($clas['id']) . ' ' . $this->nettoyer($clas['yearSexion'
                         <div class="box-body">
                             <div class="input-group">
                                 <span class="input-group-addon">N°</span>
-                                <input name="classe" type="text" class="form-control" required value="<?= $clas['id'] ?> " >
+                                <input name="classe" type="text" class="form-control" required value="<?= $clas['id'] ?>  <?php echo $idc?>" >
                             </div>
                             <br>
 

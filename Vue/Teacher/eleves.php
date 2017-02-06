@@ -32,7 +32,8 @@
                             <thead>
                             <tr>
                                 <th>N°</th>
-                                <th>Classe</th>
+                                <th>Nom</th>
+                                <th>Prénom</th>
                                 <th>#</th>
                             </tr>
                             </thead>
@@ -44,6 +45,7 @@
                                     <td><?php echo $var++ ?></td>
                                     <td><?= $this->nettoyer($list['name']) ?></td>
                                     <td><?= $this->nettoyer($list['firstName']) ?></td>
+                                    <td><a href="teacher/jevalue/<?= $this->nettoyer($list['id_student']) ?>" class="btn btn-primary btn-xs">J'évalue</a></td>
                                     
                                 </tr>
                             

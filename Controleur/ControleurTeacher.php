@@ -4,6 +4,7 @@ require_once 'ControleurSecurise.php';
 require_once 'Modele/Adult.php';
 require_once 'Modele/Classe.php';
 require_once 'Modele/Student.php';
+require_once 'Modele/Grille.php';
 
 /**
  * Created by PhpStorm.
@@ -16,12 +17,14 @@ class ControleurTeacher extends ControleurSecurise
     private $adult;
     private $classe;
     private $student;
+    private $grille;
 
     public function __construct()
     {
         $this->adult = new Adult();
         $this->classe= new Classe();
         $this->student = new Student();
+        $this->grille =new Grille();
 
     }
     public function index() {
@@ -105,6 +108,14 @@ class ControleurTeacher extends ControleurSecurise
              throw new Exception("Faite attention les champs ne sont pas tous définis");
         }
     }
+    public function jevalue(){
+        
+        $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+        $adult=$this->adult->getadult($idU);
+        $item=$this->grille->getGrille();
+        $this->genererVue(array('adult'=>$adult,'item'=>$item));
+        
+    }
   
-    
+
 }

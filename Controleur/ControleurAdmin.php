@@ -4,18 +4,20 @@ require_once 'ControleurSecurise.php';
 require_once 'Modele/Adult.php';
 require_once 'Modele/Classe.php';
 require_once 'Modele/Student.php';
-
+require_once 'Modele/Grille.php';
 class ControleurAdmin extends ControleurSecurise
 {
     private $adult;
     private $classe;
     private $student;
+    private $grille;
 
     public function __construct()
     {
         $this->adult = new Adult();
         $this->classe= new Classe();
         $this->student = new Student();
+        $this->grille = new Grille();
 
     }
     public function index() {
@@ -101,7 +103,7 @@ class ControleurAdmin extends ControleurSecurise
        $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
        $adult=$this->adult->getadult($idU);
        $clas=$this->classe->getClass($idc);
-       $this->genererVue(array('adult'=>$adult,'clas'=>$clas));}
+       $this->genererVue(array('adult'=>$adult,'clas'=>$clas,'idc'=>$idc));}
        else
            {
            throw new Exception('Erreur du serveur ');
@@ -121,15 +123,21 @@ class ControleurAdmin extends ControleurSecurise
      } 
      //Supréssion de la Classe
         public function exeDeleteClass(){
-            if ($this->requete->existeParametre("id")){
-    
-            $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
-            $adult=$this->adult->getadult($idU);
-            $this->genererVue(array('adult'=>$adult));
-            }
             
+            if ($this->requete->existeParametre("id"))
+             {
+        $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+        $adult=$this->adult->getadult($idU);
+        $id = $this->requete->getParametre("id");
+        $this->classe->deleteClass($id);
+        
+         $this->genererVue(array('adult'=>$adult
+                 ));  }
+          else
+           {
+           throw new Exception('Erreur du serveur ');
         }
-         
+        } 
      
      
      //ajout d'un etudiant
@@ -295,7 +303,13 @@ class ControleurAdmin extends ControleurSecurise
          
      }
      
-     
+          //documentation
+     public function grille(){
+     $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+     $adult=$this->adult->getadult($idU);
+     $grille= $this->grille->getGrille();
+     $this->genererVue(array('adult'=>$adult,'grille'=>$grille));
+     }
      
      
      

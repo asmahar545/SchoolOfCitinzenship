@@ -5,6 +5,25 @@
     <aside class="main-sidebar">
     <section class="sidebar">
         <!-- Sidebar user panel -->
+           <button data-toggle="modal"  data-target="#loginModal" class="btn btn-danger btn-xs">Deconnexion</button>
+             <div class="modal" id="loginModal"tabindex="-1">
+                                    <div class="modal-dialog">
+         <div class="modal-content">
+                                         <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">x</button>
+                          <h4 class="modal-title">Informations</h4>
+                       </div>
+                                                    <div class="modal-body">
+                   Etes-vous sûr de vouloir vous déconnecter?
+                                                        </div>
+                                                        <div class="modal-footer">
+        
+                                                         <a href="connexion/"><button class="btn btn-succes" type="button"><i class="icon icon-check icon-lg"></i>Oui</button></a>
+                                             <a href="admin/"><button class="btn btn-primary" type="button"><i class="icon icon-check icon-lg"></i> Retour</button></a>
+                                                     </div>
+                                 </div>
+</div>
+  </div>
         <div class="user-panel">
             <div class="pull-left image">
                 <img src="dist/img/admin.jpg" class="img-circle" alt="User Image">
@@ -58,6 +77,15 @@
       
             <li class="treeview">
                 <a href="admin/classe">
+                    <i class="fa fa-table"></i> <span> Classe</span>
+                    <span class="pull-right-container">
+            
+            </span>
+                </a>
+               
+            </li>
+             <li class="treeview">
+                <a href="admin/grille">
                     <i class="fa fa-table"></i> <span>Grilles</span>
                     <span class="pull-right-container">
             

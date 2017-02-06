@@ -48,7 +48,7 @@ public function getnbClasses(){
     }  
     }
     public function deleteClass($id){
-        $sql="DELETE FROM `classe` WHERE `classe`.`id_classe` = ?";
+        $sql="DELETE FROM `classe` WHERE `classe`.`id` = ?";
         $rep=$this->executerRequete($sql,array($id));
     }
     public function getTeacherClass(){
@@ -58,7 +58,7 @@ public function getnbClasses(){
     }
     
      public function getTeacherUniqueClass($idT){
-        $sql="select * from teacherclass where id= ?";
+        $sql="select * from teacherclass where idadult= ?";
         $rep=$this->executerRequete($sql,array($idT));
         return $rep;
     }

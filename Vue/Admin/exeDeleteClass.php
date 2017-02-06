@@ -9,7 +9,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <div class="callout callout-info">
-            <h4> La Classe a bien été supprimé.</h4>
+            <h4> La Classe a bien été supprimé. </h4>
           
             <a href="admin/classe">Revenir au Classe</a>
         </div>

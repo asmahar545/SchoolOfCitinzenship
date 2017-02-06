@@ -44,10 +44,10 @@
                                     <td><?php echo $var++ ?></td>
                                     <td><?= $this->nettoyer($list['yearSexion']) ?></td>
                                     <td>
-                                        <a href="admin/addClass " class="btn btn-success btn-xs"><i class="fa fa-folder"></i> Ajouter</a>
-                                        <a href ="admin/editClass/<?= $this->nettoyer($list['id']) ?> " class="btn btn-warning btn-xs"><i class="fa fa-folder"></i> Modifier</a>
-                                        <button data-toggle="modal"  data-target="#loginModal" class="btn btn-danger btn-xs">Supprimer</button>
-                                        <a href="admin/listStudentClass/<?=  $this->nettoyer($list['id']) ?>" class="btn btn-primary btn-xs">Student</button>
+                                        <a href="admin/addClass " class="btn btn-success btn-xs">Ajouter</a>
+                                        <a href="admin/exeDeleteClass/<?=  $this->nettoyer($list['id']) ?>" class="btn btn-danger btn-xs">Supprimer </a>
+                                    
+                                        <a href="admin/listStudentClass/<?=  $this->nettoyer($list['id']) ?>" class="btn btn-warning btn-xs"> Student</a>
                           
                                     </td>
                                 </tr>
@@ -78,7 +78,7 @@
                                                         </div>
                                                         <div class="modal-footer">
         
-                                                         <a href="admin/exeDeleteClass/<?= $this->nettoyer($list['yearSexion']) ?>"><button class="btn btn-succes" type="button"><i class="icon icon-check icon-lg"></i>Oui</button></a>
+                                                         <a href="admin/exeDeleteClass/<?=  $this->nettoyer($list['id']) ?>"><button class="btn btn-succes" type="button"><i class="icon icon-check icon-lg"></i>Oui</button></a>
                                                        <a href="admin/classe"><button class="btn btn-primary" type="button"><i class="icon icon-check icon-lg"></i> Retour</button></a>
                                                      </div>
                                                   </div>
