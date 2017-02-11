@@ -16,7 +16,7 @@
     <!-- Main content -->
     <section class="content">
         <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-10">
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">Grilles d'évaluation</h3>
@@ -59,7 +59,36 @@
             <!-- /.box-body -->
           </div>
         </div>
+            <div class="col-xs-2">
+                 <table class="table table-bordered">
+                <tr>
+                  <th>Ajout d'un(e)</th>
+                  
+                </tr>
+                <!-- Default -->
+                <tr>
+                  <td>
+                    <div class="btn-group-vertical">
+                        <a href= "admin/addGrid"  class="btn btn-primary">Grille</a>
+                      <a href= "admin/addItem" type="button" class="btn btn-warning">Item
+                      </a>
+                      <a href= "admin/addCat" type="button" class="btn btn-success">Catégorie d'Item</a>
+                    </div>
+                  </td>
+                </tr>
+                 </table>
+                
+                
+            </div>
         </div><!-- /.box -->
+        <div class="row">
+            <div class="col-xs-9">
+                
+            </div>
+            <div class="col-xs-3">
+                <a href= "admin/addGrid"><button  type="submit" class="btn btn-warning">J'ajoute une nouvelle Grille</button></a>   
+            </div>
+        </div>
         
     </section>
     <!-- /.content -->

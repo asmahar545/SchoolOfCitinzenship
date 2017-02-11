@@ -116,6 +116,16 @@ class ControleurTeacher extends ControleurSecurise
         $this->genererVue(array('adult'=>$adult,'item'=>$item));
         
     }
+    
+    public function exeEvaluationStudent(){
+         $id = $this->requete->getParametre("1");
+        //tu fait une boucle avec tou tle item de la grille
+        //ensuiote dans la boucle tu ajoute le responcd(ckekbox) en tetant i c'est cocher c'est oui sinon non
+        //on n'a idstudent, on n'a idteacher, p ar default la grille c'et Id, 
+        $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+        $adult=$this->adult->getadult($idU);
+       $this->genererVue(array('adult'=>$adult));
+    }
   
 
 }

@@ -49,7 +49,7 @@
                         <div class="icon">
                             <i class="fa fa-users"></i>
                         </div>
-                        <a href="" class="small-box-footer">plus d'infos<i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="teacher/mesclasses" class="small-box-footer">plus d'infos<i class="fa fa-arrow-circle-right"></i></a>
                     </div>
 
                 </div>
@@ -65,7 +65,7 @@
                             <div class="icon">
                                 <i class="fa fa-user-plus"></i>
                             </div>
-                            <a href="" class="small-box-footer">plus d'infos<i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="teacher/grille" class="small-box-footer">plus d'infos<i class="fa fa-arrow-circle-right"></i></a>
                         </div>
 
                     </div>

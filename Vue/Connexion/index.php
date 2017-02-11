@@ -1,28 +1,39 @@
-<body class="hold-transition skin-blue sidebar-mini">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AdminLTE 2 | Log in</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="plugins/iCheck/square/blue.css">
+
+</head>
+<body class="hold-transition login-page">
 <?php if (isset($msgErreur)) : ?>
     <div class="alert alert-danger alert-dismissable">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
         <strong>Mots de passe incorrect</strong> <?= $this->nettoyer($msgErreur) ?>
     </div>
 <?php endif; ?>
-    <section class="content-header">
-        <div class="row">
-            <div class="col-lg-6">
-                <br>
-                <br>
-                <br>
-                <br>
 <div class="login-box">
-    <div class="login-logo">
-        <a><b>Connexion</b> Login</a>
-    </div>
-    <!-- /.login-logo -->
-    <div class="login-box-body">
-        <p class="login-box-msg">Connectez-vous pour démarrer votre session</p>
-
-        <form action="connexion/connecter" method="post">
+  <div class="login-logo">
+    <a href=""><b>Admin</b>LTE</a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="login-box-body">
+    <p class="login-box-msg">Sign in to start your session</p>
+       <form action="connexion/connecter" method="post">
             <div class="form-group has-feedback">
-                <input name="login" type="" class="form-control" placeholder="Login">
+                <input name="login" type="" class="form-control" placeholder="Email">
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
@@ -39,25 +50,33 @@
             </div>
         </form>
 
-    </div>
-    <!-- /.login-box-body -->
-</div>
-</div>
-</div>
-    </section>
-</br>
-</br>
-</br></br></br></br></br></br></br>
 
+
+  </div>
+  <!-- /.login-box-body -->
+</div>
+<!-- /.login-box -->
+
+<!-- jQuery 2.2.3 -->
+<script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<!-- iCheck -->
+<script src="plugins/iCheck/icheck.min.js"></script>
+<script>
+  $(function () {
+    $('input').iCheck({
+      checkboxClass: 'icheckbox_square-blue',
+      radioClass: 'iradio_square-blue',
+      increaseArea: '20%' // optional
+    });
+  });
+</script>
 <style>
-body
-{
-    background-color: #e7c3c3; /* Le fond de la page sera noir */
-    color: white; /* Le texte de la page sera blanc */
-}
 body
 {
     background-image: url("images/ecole.jpg");
 }
 </style>
 </body>
+

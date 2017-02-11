@@ -303,7 +303,7 @@ class ControleurAdmin extends ControleurSecurise
          
      }
      
-          //documentation
+         
      public function grille(){
      $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
      $adult=$this->adult->getadult($idU);
@@ -311,8 +311,72 @@ class ControleurAdmin extends ControleurSecurise
      $this->genererVue(array('adult'=>$adult,'grille'=>$grille));
      }
      
+     public function addGrid(){
+     $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+     $adult=$this->adult->getadult($idU);
+   
+     $this->genererVue(array('adult'=>$adult));
+     }
      
+    public function exeAddGrid(){
+     if ($this->requete->existeParametre("name") && $this->requete->existeParametre("cat")){  
+        $name= $this->requete->getParametre("name");
+        $cat = $this->requete->getParametre("cat");
+        $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+        $adult=$this->adult->getadult($idU);
+        $this->grille->addGrid($name, $cat);
+        $this->rediriger('admin','grille'); }
+     else
+         {
+             throw new Exception("Faite attention les champs ne sont pas tous définis");
+         }
+    }
+    
+      public function addItem(){
+          $grille = $this->grille->getGrilles();
+          $cat= $this->grille->getCat();             
+          $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+          $adult=$this->adult->getadult($idU);
+          $this->genererVue(array('adult'=>$adult,'cat'=>$cat,'grille'=>$grille));
+     }
      
+         public function exeAddItem(){
+     if ($this->requete->existeParametre("name") && $this->requete->existeParametre("des")
+             && $this->requete->existeParametre("iditemcat")&& $this->requete->existeParametre("idgrid")){  
+         
+             $name= $this->requete->getParametre("name");
+             $des = $this->requete->getParametre("des");
+             $iditemcat= $this->requete->getParametre("iditemcat");
+             $idgrid= $this->requete->getParametre("idgrid");
+             
+             $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+             $adult=$this->adult->getadult($idU);
+             $this->grille->addItem($name, $des, $idgrid, $iditemcat);
+        $this->rediriger('admin','grille'); }
+     else
+         {
+             throw new Exception("Faite attention les champs ne sont pas tous définis");
+         }
+    }
+    public function addCat(){
+                     
+          $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+          $adult=$this->adult->getadult($idU);
+          $this->genererVue(array('adult'=>$adult));
+     }
+     public function exeAddCat(){
+     if ($this->requete->existeParametre("name") && $this->requete->existeParametre("req")){  
+        $name= $this->requete->getParametre("name");
+        $req = $this->requete->getParametre("req");
+        $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+        $adult=$this->adult->getadult($idU);
+        $this->grille->addCat($name, $req);
+        $this->rediriger('admin','grille'); }
+     else
+         {
+             throw new Exception("Faite attention les champs ne sont pas tous définis");
+         }
+    }
      //documentation
 public function documentation(){
      $idU = $this->requete->getSession()->getAttribut("idUtilisateur");

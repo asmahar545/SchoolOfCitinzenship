@@ -52,4 +52,9 @@ public function getnbstudents(){
             throw new Exception("Aucun éleve ne correspond 0 l4identifiqnt fourni");
     }
       }
+      public function addEvaluateStudent($response,$id_student,$id_adult,$id_item,$idGridStudent){
+          $sql="INSERT INTO `evaluatestudent`(`response`, `id_student`, `id_adult`, `id_item`, `idGridStudent`) VALUES (?,?,?,?,?)";
+          $rep=$this->executerRequete($sql,array($response,$id_student,$id_adult,$id_item,$idGridStudent));
+      }
+
 }

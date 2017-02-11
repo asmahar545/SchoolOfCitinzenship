@@ -1,3 +1,7 @@
+
+
+
+
 <?php $this->titre = "Accueil"; ?>
 <?= require_once ('Vue/_Commun/headerPrinc.php');?>
 <body class="hold-transition skin-blue sidebar-mini">
