@@ -109,23 +109,43 @@ class ControleurTeacher extends ControleurSecurise
         }
     }
     public function jevalue(){
-        
+        if ($this->requete->existeParametre("id")){
+        $id = $this->requete->getParametre("id");
         $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
         $adult=$this->adult->getadult($idU);
-        $item=$this->grille->getGrille();
-        $this->genererVue(array('adult'=>$adult,'item'=>$item));
         
+        $item=$this->grille->getEvalueStudent($idU, $id);
+        $this->genererVue(array('adult'=>$adult,'item'=>$item,'id'=>$id));
+        }
     }
     
     public function exeEvaluationStudent(){
-         $id = $this->requete->getParametre("1");
-        //tu fait une boucle avec tou tle item de la grille
-        //ensuiote dans la boucle tu ajoute le responcd(ckekbox) en tetant i c'est cocher c'est oui sinon non
-        //on n'a idstudent, on n'a idteacher, p ar default la grille c'et Id, 
-        $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
-        $adult=$this->adult->getadult($idU);
-       $this->genererVue(array('adult'=>$adult));
-    }
-  
+        if ($this->requete->existeParametre("valider")
+          &&
+            $this->requete->existeParametre("id"))
+            {
+            
+          
+            $idS = $this->requete->getParametre("id");
+            $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+            $adult=$this->adult->getadult($idU);
+        
+            $tab1=$_POST['valider'];
+            //je remet tout à jour 
+            $this->grille->editItemStudentAjour($idS, $idU);
+            foreach ($_POST['valider'] as $item) {
+              
+            $val=1;
+            $this->grille->editItemStudent($idS, $idU,$item,$val);
+            } 
+             
+       
+        
+        $this->genererVue(array('adult'=>$adult,'id'=>$idS));}
+    
+     else {
+             throw new Exception("Faite attention les champs ne sont pas tous définis");
+        }
+     }
 
 }

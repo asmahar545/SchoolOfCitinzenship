@@ -39,7 +39,7 @@
     <section class="content-header">
       <h1>
         Data Tables
-        <small>Elèves</small>
+        <small>Classe</small>
       </h1>
      
     </section>
@@ -53,19 +53,19 @@
               <h3 class="box-title">Eleves</h3>
             </div>
             <!-- /.box-header -->
-            <div class="box-body">
+             <div class="box-body table-responsive no-padding">
               <table id="example1" class="table table-bordered table-hover">
              <thead>
-                                <th>N°</th>
-                                <th>Nom</th>
-                                <th>Prenom</th>
-                                <th>Adresse</th>
-                                <th>Date de naissance</th>
-                                <th>Sexe</th>
-                                <th>Télèphone</th>
+                        <th>N°</th>
+                        <th>Nom</th>
+                        <th>Prenom</th>
+                        <th>Adresse</th>
+                        <th>Date de naissance</th>
+                        <th>Sexe</th>
+                       <th>Télèphone</th>
                        <th>Edit</th>
 
-                         </tr>
+                         
                   </thead>
                 <tbody>
                  <?php $var=1?>
