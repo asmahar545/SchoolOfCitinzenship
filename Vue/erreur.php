@@ -59,7 +59,7 @@
     </section>
     <section class="content-header">
         <div class="callout callout-danger">
-            <h4> Erreur= "<?= $msgErreur ?>"</h4>
+            <h4><?= $msgErreur ?></h4>
             
             <a href="teacher/">Menu principale</a>
         </div>

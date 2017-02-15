@@ -112,24 +112,40 @@ class ControleurTeacher extends ControleurSecurise
         if ($this->requete->existeParametre("id")){
         $id = $this->requete->getParametre("id");
         $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
-        $adult=$this->adult->getadult($idU);
         
+        $adult =$this->adult->getadult($idU);
+        $this->grille->addItemEvalueStudent($id, $idU);
+          //trouver le commentire qui et null et le mettre dan texTArea,ensuite l'éditer   
+         $idG=$this->grille->getIdGridstudent($idU, $id);
+        sort($idG);
+         $idgrid= implode(' ', $idG);
+       
+        //trouver le commentaire qui et null et le mettre dan texTArea,ensuite l'éditer 
+        $commentaire= $this->grille->getCommentaire($idgrid);
+     
+        //dans exeEvaluationStudent
         $item=$this->grille->getEvalueStudent($idU, $id);
-        $this->genererVue(array('adult'=>$adult,'item'=>$item,'id'=>$id));
+        $this->genererVue(array('adult'=>$adult,'item'=>$item,'id'=>$id,'commentaire'=>$commentaire));
         }
     }
     
     public function exeEvaluationStudent(){
         if ($this->requete->existeParametre("valider")
-          &&
+          &&$this->requete->existeParametre("commentaire")&&
             $this->requete->existeParametre("id"))
             {
-            
-          
+             
+           $commentaire= $this->requete->getParametre("commentaire");
             $idS = $this->requete->getParametre("id");
             $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
             $adult=$this->adult->getadult($idU);
+            $idG=$this->grille->getIdGridstudent($idU, $idS);
+            sort($idG);
+            $idgrid= implode(' ', $idG);
+          $rest = substr($idgrid, 0, -1);
         
+             //éditer un commentaire 
+            $this->grille->editCommentaire($rest, $commentaire);
             $tab1=$_POST['valider'];
             //je remet tout à jour 
             $this->grille->editItemStudentAjour($idS, $idU);
@@ -138,13 +154,19 @@ class ControleurTeacher extends ControleurSecurise
             $val=1;
             $this->grille->editItemStudent($idS, $idU,$item,$val);
             } 
-             
-       
+           //chercher la variable gridstudent dans reponse
         
-        $this->genererVue(array('adult'=>$adult,'id'=>$idS));}
+        //trouver le commentire qui et null et le mettre dan texTArea,ensuite l'éditer   
+        $idG=$this->grille->getIdGridstudent($idU, $idS);
+        sort($idG);
+        $idgrid= implode(' ', $idG);
+        //trouver le commentaire qui et null et le mettre dan texTArea,ensuite l'éditer 
+        $commentaire= $this->grille->getCommentaire($idgrid);
+        
+        $this->genererVue(array('adult'=>$adult,'id'=>$idU));}
     
      else {
-             throw new Exception("Faite attention les champs ne sont pas tous définis");
+             throw new Exception("Veuillez évlauer votre élèves");
         }
      }
 

@@ -48,7 +48,7 @@
         <div class="callout callout-info">
             <h4> Vou avez terminez l'évalutation de votre élève </h4>
             Merci
-            <a href="teacher/eleves/<?=  $id ?>">Menu principale</a>
+            <a href="teacher/mesclasses">Mes élèves</a>
         </div>
 
     </section> 

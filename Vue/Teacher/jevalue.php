@@ -53,7 +53,7 @@
 
           <div class="box box-success">
             <div class="box-header">
-              <h3 class="box-title">J'évalue mon évèle</h3>
+              <h3 class="box-title">J'évalue mon élève</h3>
             </div>
             <div class="box-body"></div>
              
@@ -89,7 +89,11 @@
                     </tbody>
                    
                    </table>
-                 <div class="form-group">
+                    <div class="form-group">
+                  <label>Textarea</label>
+                  <textarea class="form-control"  name="commentaire" rows="3" placeholder="Enter ..."> <?=$commentaire['commentaire']?></textarea>
+                     </div>
+                            <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-10">
                                     <button type="submit" class="btn btn-success">Confirmer</button>
                                 </div>
