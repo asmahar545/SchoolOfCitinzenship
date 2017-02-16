@@ -21,6 +21,8 @@
   <link rel="stylesheet" href="plugins/iCheck/flat/blue.css">
   <!-- Morris chart -->
   <link rel="stylesheet" href="plugins/morris/morris.css">
+    <!-- Date Picker -->
+  <link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
   <!-- jvectormap -->
   <link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
   <!-- Date Picker -->
@@ -60,14 +62,14 @@
     <section class="content">
       <!-- Small boxes (Stat box) -->
       <div class="row">
-       <div class="col-md-6">
+       <div class="col-md-12">
 
           <div class="box box-success">
             <div class="box-header">
               <h3 class="box-title">Input masks</h3>
             </div>
             <div class="box-body">
-                    <form action="admin/exeEditStudent"class="form-horizontal form-label-left" method="post">
+                    <form action="admin/exeEditStudent/<?= $student['id_student'] ?>"class="form-horizontal form-label-left" method="post">
                         <div class="box-header with-border">
                             <h3 class="box-title">Ajouter un éleve</A></h3>
                         </div>
@@ -79,39 +81,53 @@
                             <br>
                             <div class="input-group">
                                 <span class="input-group-addon">Prénom</span>
-                                <input name="firstname" type="text" class="form-control" required value="<?= $student['firstname'] ?> "placeholder="">
+                                <input name="firstname" type="text" class="form-control"  value="<?= $student['firstName'] ?> "placeholder="">
                             </div>
                             <br>
                             <div class="input-group">
                                 <span class="input-group-addon">Adresse</span>
-                                <input name="adress" type="text" class="form-control"required value="<?= $student['adress'] ?> ">
+                                <input name="adress" type="text" class="form-control"r value="<?= $student['adress'] ?> ">
                             </div>
                             <br>
                             <div class="input-group">
                                 <span class="input-group-addon">Date de naissance</span>
-                                <input name="birthday" type="text" class="form-control" id="datepicker"required value="<?= $student['birthday'] ?> ">
+                                <input name="birthday"  class="form-control" id="datepicker" value="<?= $student['birthday'] ?> ">
+                            </div>
+                            <br>
+                            <?php if ($student['sexe']== "femme"): ?>
+                            
+                            <div class="input-group">
+                                <span class="input-group-addon">Sexe</span>
+                                  <select name="sexe"  class="form-control" value="<?= $student['sexe'] ?> " placeholder=" ">
+                                      <option >homme </option>
+                                      <option selected="selected">femme</option>
+                                </select> 
+                            </div>
+                            
+                            <br>
+                            <?php else: ?>
+                              <div class="input-group">
+                                <span class="input-group-addon">Sexe</span>
+                                  <select name="sexe"  class="form-control" value="<?= $student['sexe'] ?> " placeholder=" ">
+                                      <option selected="selected">homme </option>
+                                      <option >femme</option>
+                                </select> 
+                            </div>
+                            
+                            <br>
+                            <?php endif; ?>
+                            <div class="input-group">
+                                <span class="input-group-addon">Télèphone</span>
+                                <input name="phone" type="phone" class="form-control" placeholder="" value="<?= $student['phone'] ?> ">
                             </div>
                             <br>
                              <div class="input-group">
-                                <span class="input-group-addon">Sexe</span>
-                                  <select name="sexe" type="text" class="form-control" placeholder=" ">
-                                      <option>homme </option>
-                                      <option>femme</option>
-                                </select> 
-                            </div>
-                            <br>
-                            <div class="input-group">
-                                <span class="input-group-addon">Télèphone</span>
-                                <input name="phone" type="number" class="form-control" placeholder=""required value="<?= $student['phone'] ?> ">
-                            </div>
-                            <br>
-                                <div class="input-group">
                                 <span class="input-group-addon">Classe</span>
-                                <select name="id_classe" type="text" class="form-control" placeholder="">
+                                <select name="idclasse" type="text" class="form-control" placeholder="">
                                     <?php
-                                    foreach ($class as $list):
+                                    foreach ($classe as $list):
 
-                                        echo '<option value="' . $this->nettoyer($list['id_classe']) . '">' . $this->nettoyer($list['yearSexion']) . '</option>';
+                                        echo '<option value="' . $this->nettoyer($list['id']) . '">' . $this->nettoyer($list['yearSexion']) . '</option>';
                                         ?>
                                     <?php endforeach; ?>
 
@@ -122,7 +138,7 @@
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-10 col-md-offset-10">
 
-                                    <button type="submit" class="btn btn-warning">Modifier</button>
+                                    <button type="submit" class="btn btn-success">Modifier</button>
                                 </div>
                             </div>
 
@@ -187,10 +203,9 @@
 <script src="dist/js/demo.js"></script>
 
               
-  <script>
-  $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
-  </script>
+   <script>
+    $('#datepicker').datepicker({
+      autoclose: true
+    });</script>
     </body> 
     

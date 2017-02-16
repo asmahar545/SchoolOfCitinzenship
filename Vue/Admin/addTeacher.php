@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="plugins/morris/morris.css">
   <!-- jvectormap -->
   <link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+  
   <!-- Date Picker -->
   <link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
   <!-- Daterange picker -->
@@ -59,7 +60,7 @@
     <section class="content">
       <!-- Small boxes (Stat box) -->
       <div class="row">
-       <div class="col-md-6">
+       <div class="col-md-12">
 
           <div class="box box-success">
             <div class="box-header">
@@ -197,10 +198,8 @@
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
 
-              
-  <script>
-  $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
-  </script>
+    <script>
+    $('#datepicker').datepicker({
+      autoclose: true
+    });</script>
     </body>

@@ -99,11 +99,11 @@ class ControleurAdmin extends ControleurSecurise
      //Modification Classe
      public function editClass(){
            if ($this->requete->existeParametre("id")) {
-       $idc=$this->requete->existeParametre("id");
+       $idC=$this->requete->existeParametre("id");
        $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
        $adult=$this->adult->getadult($idU);
-       $clas=$this->classe->getClass($idc);
-       $this->genererVue(array('adult'=>$adult,'clas'=>$clas,'idc'=>$idc));}
+       $clas=$this->classe->getClass($idC);
+       $this->genererVue(array('adult'=>$adult,'clas'=>$clas,'idC'=>$idC));}
        else
            {
            throw new Exception('Erreur du serveur ');
@@ -150,10 +150,10 @@ class ControleurAdmin extends ControleurSecurise
 
     }
     public function exeAddStudent(){
-        if ($this->requete->existeParametre("name") && $this->requete->existeParametre("firstname")&&
+        if ($this->requete->existeParametre("name") && $this->requete->existeParametre("idclasse")&&  $this->requete->existeParametre("firstname")&&
             $this->requete->existeParametre("adress") && $this->requete->existeParametre("birthday")&&
-            $this->requete->existeParametre("sexe")&& $this->requete->existeParametre("phone")&&
-            $this->requete->existeParametre("id_classe"))
+            $this->requete->existeParametre("sexe")&& $this->requete->existeParametre("phone")
+            )
         {
 
         $name = $this->requete->getParametre("name");
@@ -163,7 +163,7 @@ class ControleurAdmin extends ControleurSecurise
         $date = date("Y-m-d ", strtotime($birthday));
         $sexe = $this->requete->getParametre("sexe");
         $phone = $this->requete->getParametre("phone");
-        $classe = $this->requete->getParametre("id_classe");
+        $classe = $this->requete->getParametre("idclasse");
         $this->student->addChildren($name,$firstname,$adress,$date,$sexe,$phone,$classe);
         $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
         $adult=$this->adult->getadult($idU);
@@ -176,21 +176,44 @@ class ControleurAdmin extends ControleurSecurise
     }
     //Mofidier un student
      public function editStudent(){
-      
+       if ($this->requete->existeParametre("id"))
+       {
+       $classe= $this->classe->getClasses();
        $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
        $adult=$this->adult->getadult($idU);
-      
-      $this->genererVue(array('adult'=>$adult));
-      
+       $id = $this->requete->getParametre("id");
+       $student=$this->student->getStudent($id);
+       $this->genererVue(array('adult'=>$adult ,'student'=>$student,'classe'=>$classe));
+       }
        
         
      }
      public function exeEditStudent(){
-          $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
-       $adult=$this->adult->getadult($idU);
+        if ( $this->requete->existeParametre("name") && $this->requete->existeParametre("idclasse")&&  $this->requete->existeParametre("firstname")&&
+            $this->requete->existeParametre("adress") && $this->requete->existeParametre("birthday")&&
+            $this->requete->existeParametre("sexe")&& $this->requete->existeParametre("phone") &&
+                $id = $this->requete->getParametre("id"))
+           {
+           $name = $this->requete->getParametre("name");
+        $firstname = $this->requete->getParametre("firstname");
+        $adress = $this->requete->getParametre("adress");
+        $birthday = $this->requete->getParametre("birthday");
+        $date = date("Y-m-d ", strtotime($birthday));
+        $sexe = $this->requete->getParametre("sexe");
+        $phone = $this->requete->getParametre("phone");
+        $classe = $this->requete->getParametre("idclasse");
+        $id = $this->requete->getParametre("id");
+        $this->student->editChildren($name,$firstname,$adress,$date,$sexe,$phone,$classe,$id);
+           
+            $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+            
+            $adult=$this->adult->getadult($idU);
       
       $this->genererVue(array('adult'=>$adult));
-      
+      }
+        else {
+            throw new Exception("Faite attention les paramètres ne sont pas tous définis");
+        }
      }
     
      //Ajout d'un professeur
@@ -237,12 +260,21 @@ class ControleurAdmin extends ControleurSecurise
         }
          //Mofidier un Teacher
      public function editTeacher(){
-      
+      if ($this->requete->existeParametre("id"))
+       {
+          //RENVOI DE  LA CATEGORY 
+       $cat= $this->adult->getCat();
        $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
        $adult=$this->adult->getadult($idU);
+       $id = $this->requete->getParametre("id");
+       $teacher=$this->adult->getadult($id);
       
-      $this->genererVue(array('adult'=>$adult));
-      
+      $this->genererVue(array('adult'=>$adult,'cat'=>$cat,'teacher'=>$teacher));
+      }
+        else {
+            throw new Exception("Faite attention les paramètres ne sont pas tous définis");
+        }
+
        
         
      }

@@ -62,10 +62,7 @@
       <div class="row">
        <div class="col-md-6">
 
-          <div class="box box-success">
-            <div class="box-header">
-              <h3 class="box-title">Input masks</h3>
-            </div>
+            
             <div class="box-body">
                 <div class="box box-warning">
                     <form action="admin/exeEditTeacher"class="form-horizontal form-label-left" method="post">
@@ -75,47 +72,61 @@
                         <div class="box-body">
                             <div class="input-group">
                                 <span class="input-group-addon">Nom</span>
-                                <input name="name" type="text" class="form-control">
+                                <input name="name" type="text" class="form-control" value="<?= $teacher['name'] ?> ">
                             </div>
                             <br>
                             <div class="input-group">
                                 <span class="input-group-addon">Prénom</span>
-                                <input name="firstname" type="text" class="form-control" placeholder="">
+                                <input name="firstname" type="text" class="form-control" placeholder=""value="<?= $teacher['firstname'] ?> ">
                             </div>
                             <br>
                             <div class="input-group">
                                 <span class="input-group-addon">Adresse</span>
-                                <input name="adress" type="text" class="form-control">
+                                <input name="adress" type="text" class="form-control"value="<?= $teacher['adress'] ?> ">
                             </div>
                 
                             <br>
                             <div class="input-group">
                                 <span class="input-group-addon">Date de naissance</span>
-                                <input name="birthday" type="cale" class="form-control"id="datepicker">
+                                <input name="birthday" class="form-control" value="<?= $teacher['birthday'] ?> " id="datepicker">
                             </div>
                             <br>
+                               <?php if ($teacher['sexe']== "femme"): ?>
+                            
                             <div class="input-group">
                                 <span class="input-group-addon">Sexe</span>
-                                  <select name="sexe" type="text" class="form-control" placeholder="">
-                                      <option>homme </option>
-                                      <option>femme</option>
+                                  <select name="sexe"  class="form-control" value="<?= $teacher['sexe'] ?> " placeholder=" ">
+                                      <option >homme </option>
+                                      <option selected="selected">femme</option>
                                 </select> 
                             </div>
+                            
                             <br>
+                            <?php else: ?>
+                              <div class="input-group">
+                                <span class="input-group-addon">Sexe</span>
+                                  <select name="sexe"  class="form-control" value="<?= $teacher['sexe'] ?> " placeholder=" ">
+                                      <option selected="selected">homme </option>
+                                      <option >femme</option>
+                                </select> 
+                            </div>
+                            
+                            <br>
+                            <?php endif; ?>
                             <div class="input-group">
                                 <span class="input-group-addon">Télèphone</span>
-                                <input name="phone" type="number" class="form-control" placeholder="">
+                                <input name="phone" type="phone" class="form-control" placeholder="" value="<?= $teacher['phone'] ?> ">
                             </div>
                             <br>
 
                             <div class="input-group">
                                 <span class="input-group-addon">Email</span>
-                                <input name="email" type= "email" class="form-control" placeholder="">
+                                <input name="email" type= "email" class="form-control" placeholder=""value="<?= $teacher['email'] ?> ">
                             </div>
                             <br>
                             <div class="input-group">
                                 <span class="input-group-addon">Password</span>
-                                <input name="password" type="password" class="form-control" placeholder="">
+                                <input name="password" type="text" class="form-control" placeholder=""value="<?= $teacher['password'] ?> ">
                             </div>
                             <br>
                             
@@ -144,7 +155,7 @@
 </div>
          </div>
        </div>
-      </div>
+      
 
   </section>
     <!-- /.content -->
@@ -200,9 +211,9 @@
 
               
   <script>
-  $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
-  </script>
+    $('#datepicker').datepicker({
+      autoclose: true
+    });</script>
+    </body> 
     </body> 
     

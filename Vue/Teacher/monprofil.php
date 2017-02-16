@@ -35,19 +35,17 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-  
-     
-        <section class="content-header">
+    <section class="content-header">
       <h1>
-        Mon Profil
+        Mon Profil <a href="teacher/editMonProfil/" class="btn btn-warning">Modifier</a>
       </h1>
      
-        </section>  
+     </section>  
        <!-- Main content -->
     <section class="content">
 
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-12">
 
           <!-- Profile Image -->
           <div class="box box-success">
@@ -108,109 +106,7 @@
           <!-- /.box -->
         </div>
         <!-- /.col -->
-        <div class="col-md-9">
-          <div class="nav-tabs-custom">
-            <ul class="nav nav-tabs">
-              <li class="active"><a href="#activity" data-toggle="tab">Mes informations</a></li>
-              
-             
-            </ul>
-            <div class="tab-content">
-              <div class="active tab-pane" id="activity">
-                <!-- Post -->
-                <div class="post">
-                 <form action="Teacher/exeEditTeacher"class="form-horizontal form-label-left" method="post">
-                        <div class="box-header with-border">
-                            <h3 class="box-title">Modification d'un Professeur</A></h3>
-                        </div>
-                        <div class="box-body">
-                            <div class="input-group">
-                                <span class="input-group-addon">Nom</span>
-                                <input name="name" type="text" class="form-control" required="true" value="<?= $adult['name']?>">
-                            </div>
-                            <br>
-                            <div class="input-group">
-                                <span class="input-group-addon">Prénom</span>
-                                <input name="firstname" type="text" class="form-control" required="true"placeholder="" value="<?= $adult['firstname']?>">
-                            </div>
-                            <br>
-                            <div class="input-group">
-                                <span class="input-group-addon">Adresse</span>
-                                <input name="adress" type="text" class="form-control" required="true" value="<?= $adult['adress']?>">
-                            </div>
-                
-                            <br>
-                            <div class="input-group">
-                                <span class="input-group-addon">Date de naissance</span>
-                                <input name="birthday" type="cale" class="form-control"id="datepicker" required="true"value="<?= $adult['birthday']?>">
-                            </div>
-                            <br>
-                            <div class="input-group">
-                                <span class="input-group-addon">Sexe</span>
-                                  <select name="sexe" type="text" class="form-control" placeholder="" required="true" value="<?= $adult['sexe']?>">
-                                      <option>homme </option>
-                                      <option>femme</option>
-                                </select> 
-                            </div>
-                            <br>
-                            <div class="input-group">
-                                <span class="input-group-addon">Télèphone</span>
-                                <input name="phone" type="number" class="form-control" placeholder="" required="true" value="<?= $adult['phone']?>">
-                            </div>
-                            <br>
-
-                            <div class="input-group">
-                                <span class="input-group-addon">Email</span>
-                                <input name="email" type= "email" class="form-control" placeholder="" required="true" value="<?= $adult['email']?>">
-                            </div>
-                            <br>
-                             <div class="input-group">
-                                <span class="input-group-addon">Commentaire</span>
-                                <input name="commentaire"  type= "text" class="form-control" placeholder=""required="true" value="<?= $adult['commentaire']?>">
-                            </div>
-                            <br>
-                            <div class="input-group">
-                                <span class="input-group-addon">Password</span>
-                                <input name="password" type="text" class="form-control" placeholder="" required="true" value="<?= $adult['password']?>">
-                            </div>
-                            <br>
-                            
-                            <div class="input-group">
-                                <span class="input-group-addon">Catégorie</span>
-                                <select name="id_adultCategory" type="text" class="form-control" required="true" placeholder="">
-                                    <?php
-                                    foreach ($cat as $list):
-
-                                        echo '<option value="' . $this->nettoyer($list['id_adultCategory']) . '">' . $this->nettoyer($list['name']) . '</option>';
-                                        ?>
-                                    <?php endforeach; ?>
-
-                                </select> 
-                                
-                            </div>
-                            <br>
-                            <div class="form-group">
-                                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-10">
-
-                                    <button type="submit" class="btn btn-warning">Modifier</button>
-                                </div>
-                            </div>
-
-                    </form>
-                 
-                </div>
-                <!-- /.post -->
-              </div>
-        
-              
-            </div>
-            <!-- /.tab-content -->
-          </div>
-          <!-- /.nav-tabs-custom -->
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
+      
 
     </section>
  <!-- /.content -->

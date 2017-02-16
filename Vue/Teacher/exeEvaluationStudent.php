@@ -53,8 +53,7 @@
 
     </section> 
    
-    
-                       </div>
+     </div>
  </div>
   <!-- /.content-wrapper -->
 <?php require 'Vue/_Commun/Folder.php'; ?>

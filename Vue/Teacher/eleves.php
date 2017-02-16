@@ -38,7 +38,7 @@
     <section class="content-header">
       <h1>
         Data Tables
-        <small>Professeurs</small>
+        <small>J'évalue</small>
       </h1>
      
     </section>

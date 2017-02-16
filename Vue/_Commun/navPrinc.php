@@ -16,7 +16,7 @@
     
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
-        <li class="header">MAIN NAVIGATION</li>
+        <li href= "admin"class="header">MAIN NAVIGATION</li>
       
         <li class="treeview">
           <a href="admin/professeur">
@@ -28,6 +28,19 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="admin/professeur"><i class="fa fa-circle-o"></i>Professeurs</a></li>
+            
+          </ul>
+        </li>
+         <li class="treeview">
+          <a href="admin/professeur">
+            <i class="fa fa-files-o"></i>
+            <span>Eleves</span>
+            <span class="pull-right-container">
+              <span class="label label-primary pull-right">nbrP</span>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="admin/student"><i class="fa fa-circle-o"></i>Eleves</a></li>
             
           </ul>
         </li>
@@ -55,13 +68,13 @@
         <li class="treeview">
           <a href="admin/droit">
             <i class="fa fa-laptop"></i>
-            <span>Droit d'accés</span>
+            <span>Classe d'accées</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="admin/droit"><i class="fa fa-circle-o"></i>Droit</a></li>
+            <li><a href="admin/droit"><i class="fa fa-circle-o"></i>Classe d'accées</a></li>
            
           </ul>
         </li>
@@ -78,15 +91,7 @@
           </ul>
         </li>
       
-        <li>
-          <a href="pages/calendar.html">
-            <i class="fa fa-calendar"></i> <span>Calendar</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-red">3</small>
-              <small class="label pull-right bg-blue">17</small>
-            </span>
-          </a>
-        </li>
+       
       
        
       </ul>

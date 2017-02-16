@@ -73,9 +73,9 @@
                                     <td><?= $this->nettoyer($list['yearSexion']) ?></td>
                                     <td>
                                         <a href="admin/addClass " class="btn btn-success btn-xs">Ajouter</a>
-                                        <a href="admin/exeDeleteClass/<?=  $this->nettoyer($list['id']) ?>" class="btn btn-danger btn-xs">Supprimer </a>
-                                    
-                                        <a href="admin/listStudentClass/<?=  $this->nettoyer($list['id']) ?>" class="btn btn-warning btn-xs"> Student</a>
+                                      
+                                        <a href="admin/editClass/<?=  $this->nettoyer($list['id']) ?>" class="btn btn-warning btn-xs">modifier </a>
+                                        <a href="admin/listStudentClass/<?=  $this->nettoyer($list['id']) ?>" class="btn bg-purple btn-xs"> Student</a>
                           
                                     </td>
                                 </tr>

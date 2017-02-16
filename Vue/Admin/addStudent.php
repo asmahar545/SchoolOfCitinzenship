@@ -19,6 +19,7 @@
   <!-- iCheck -->
   <link rel="stylesheet" href="plugins/iCheck/flat/blue.css">
   <!-- Morris chart -->
+  <link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
   <link rel="stylesheet" href="plugins/morris/morris.css">
   <!-- jvectormap -->
   <link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
@@ -59,11 +60,11 @@
     <section class="content">
       <!-- Small boxes (Stat box) -->
       <div class="row">
-       <div class="col-md-6">
+       <div class="col-md-12">
 
           <div class="box box-success">
             <div class="box-header">
-              <h3 class="box-title">Input masks</h3>
+              <h3 class="box-title">Eleves</h3>
             </div>
             <div class="box-body">
                     <form action="admin/exeAddStudent"class="form-horizontal form-label-left" method="post">
@@ -88,7 +89,7 @@
                             <br>
                             <div class="input-group">
                                 <span class="input-group-addon">Date de naissance</span>
-                                <input name="birthday" type="text" class="form-control" id="datepicker"">
+                                <input name="birthday" type="text" class="form-control" id="datepicker">
                             </div>
                             <br>
                              <div class="input-group">
@@ -106,11 +107,11 @@
                             <br>
                                 <div class="input-group">
                                 <span class="input-group-addon">Classe</span>
-                                <select name="id_classe" type="text" class="form-control" placeholder="">
+                                <select name="idclasse" type="text" class="form-control" placeholder="">
                                     <?php
                                     foreach ($classe as $list):
 
-                                        echo '<option value="' . $this->nettoyer($list['id_classe']) . '">' . $this->nettoyer($list['yearSexion']) . '</option>';
+                                        echo '<option value="' . $this->nettoyer($list['id']) . '">' . $this->nettoyer($list['yearSexion']) . '</option>';
                                         ?>
                                     <?php endforeach; ?>
 
@@ -187,10 +188,9 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
-     
-  <script>
-  $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
-  </script>
+     <script>
+    $('#datepicker').datepicker({
+      autoclose: true
+    });</script>
+ 
     </body>

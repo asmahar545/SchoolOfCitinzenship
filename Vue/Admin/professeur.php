@@ -80,9 +80,9 @@
                                     <td class=" " ><?= $this->nettoyer($list['sexe']) ?></td>
                                     <td class=" " ><?= $this->nettoyer($list['phone']) ?></td>
                                     <td>
-                                        <a href="admin/addStudent " class="btn btn-success btn-xs"><i class="fa fa-folder"></i> Ajouter</a>
-                                        <a href ="admin/editStudent " class="btn btn-warning btn-xs"><i class="fa fa-folder"></i> Modifier</a>
-                                        <a href ="admin/deleteStudent" class="btn  btn-danger btn-xs"><i class="fa fa-folder"></i> Supprimer</a>
+                                        <a href="admin/addTeacher " class="btn btn-success btn-xs"><i class="fa fa-folder"></i> Ajouter</a>
+                                        <a href ="admin/editTeacher/<?= $this->nettoyer($list['id_adult']) ?>" class="btn btn-warning btn-xs"><i class="fa fa-folder"></i> Modifier</a>
+                                      
                                     </td>
 
 

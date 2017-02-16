@@ -49,6 +49,14 @@ class ControleurTeacher extends ControleurSecurise
 
         
     }
+    public function editMonProfil(){
+         $cat= $this->adult->getCat();
+        $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+        $adult=$this->adult->getadult($idU);
+        $this->genererVue(array('adult'=>$adult,'cat'=>$cat));
+
+    }
+    
     public function exeEditTeacher()
             {
         if ($this->requete->existeParametre("name") && $this->requete->existeParametre("firstname")
@@ -103,7 +111,7 @@ class ControleurTeacher extends ControleurSecurise
            $id = $this->requete->getParametre("id");
            $student= $this->student->getStudentClass($id);
            $adult=$this->adult->getadult($idU);
-           $this->genererVue(array('adult'=>$adult,'student'=>$student));}
+           $this->genererVue(array('adult'=>$adult,'student'=>$student,'idC'=>$id));}
         else{
              throw new Exception("Faite attention les champs ne sont pas tous définis");
         }
@@ -115,17 +123,17 @@ class ControleurTeacher extends ControleurSecurise
         
         $adult =$this->adult->getadult($idU);
         $this->grille->addItemEvalueStudent($id, $idU);
-          //trouver le commentire qui et null et le mettre dan texTArea,ensuite l'éditer   
-         $idG=$this->grille->getIdGridstudent($idU, $id);
-        sort($idG);
-         $idgrid= implode(' ', $idG);
+        //trouver le commentire qui et null et le mettre dan texTArea,ensuite l'éditer   
+        $idG=$this->grille->getIdGridstudent($idU, $id);
+         
+        $idgrid= $idG['idGridStudent'];
        
         //trouver le commentaire qui et null et le mettre dan texTArea,ensuite l'éditer 
         $commentaire= $this->grille->getCommentaire($idgrid);
      
         //dans exeEvaluationStudent
         $item=$this->grille->getEvalueStudent($idU, $id);
-        $this->genererVue(array('adult'=>$adult,'item'=>$item,'id'=>$id,'commentaire'=>$commentaire));
+        $this->genererVue(array('adult'=>$adult,'item'=>$item,'id'=>$id,'commentaire'=>$commentaire,'idgrid'=>$idgrid));
         }
     }
     
@@ -140,12 +148,13 @@ class ControleurTeacher extends ControleurSecurise
             $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
             $adult=$this->adult->getadult($idU);
             $idG=$this->grille->getIdGridstudent($idU, $idS);
-            sort($idG);
-            $idgrid= implode(' ', $idG);
-          $rest = substr($idgrid, 0, -1);
+            
+      
+            $idgrid= $idG['idGridStudent'];
+            
         
              //éditer un commentaire 
-            $this->grille->editCommentaire($rest, $commentaire);
+            $this->grille->editCommentaire($idgrid, $commentaire);
             $tab1=$_POST['valider'];
             //je remet tout à jour 
             $this->grille->editItemStudentAjour($idS, $idU);
@@ -155,18 +164,17 @@ class ControleurTeacher extends ControleurSecurise
             $this->grille->editItemStudent($idS, $idU,$item,$val);
             } 
            //chercher la variable gridstudent dans reponse
+          
+           //trouver le commentire qui et null et le mettre dan texTArea,ensuite l'éditer   
+           $idG=$this->grille->getIdGridstudent($idU, $idS);
+           $idgrid= $idG['idGridStudent'];
+           //trouver le commentaire qui et null et le mettre dan texTArea,ensuite l'éditer 
+           $commentaire= $this->grille->getCommentaire($idgrid);
         
-        //trouver le commentire qui et null et le mettre dan texTArea,ensuite l'éditer   
-        $idG=$this->grille->getIdGridstudent($idU, $idS);
-        sort($idG);
-        $idgrid= implode(' ', $idG);
-        //trouver le commentaire qui et null et le mettre dan texTArea,ensuite l'éditer 
-        $commentaire= $this->grille->getCommentaire($idgrid);
-        
-        $this->genererVue(array('adult'=>$adult,'id'=>$idU));}
+           $this->genererVue(array('adult'=>$adult,'id'=>$idU));}
     
      else {
-             throw new Exception("Veuillez évlauer votre élèves");
+             throw new Exception("Veuillez évaluer votre élèves");
         }
      }
 

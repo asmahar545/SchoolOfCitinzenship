@@ -39,7 +39,7 @@ public function getnbClasses(){
     $rep=$this->executerRequete($sql,array($name,$id));
     }
     public function getClass($id){
-        $sql="select id, yearSexion from classe where id= ?";
+        $sql="select * from classe where id= ?";
         $rep=$this->executerRequete($sql,array($id));
         if ($rep->rowCount() == 1){
         return $rep->fetch(); } // Accès à la première ligne de résultat

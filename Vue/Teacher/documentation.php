@@ -47,7 +47,7 @@
                   <div class="box-header with-border">
                     <h4 class="box-title">
                       <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                        Titre 1
+                        De quoi s'agit t-il?
                       </a>
                     </h4>
                   </div>
@@ -61,7 +61,7 @@
                   <div class="box-header with-border">
                     <h4 class="box-title">
                       <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                       Titre 2
+                      Evaluation par chaque professeur
                       </a>
                     </h4>
                   </div>
@@ -75,7 +75,7 @@
                   <div class="box-header with-border">
                     <h4 class="box-title">
                       <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                        Titre 3
+                        Comment utilisées la platform?
                       </a>
                     </h4>
                   </div>

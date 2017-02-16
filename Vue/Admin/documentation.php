@@ -38,7 +38,7 @@
     <section class="content-header">
      
        <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
           <div class="box box-solid">
             <div class="box-header with-border">
               <h3 class="box-title">Documentation</h3>

@@ -37,8 +37,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Data Tables
-        <small>Professeurs</small>
+        Mes Classes
+        <small> </small>
       </h1>
      
     </section>
@@ -49,7 +49,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Professeurs</h3>
+              <h3 class="box-title">Avec la liste des élèves par classe</h3>
             </div>
             <!-- /.box-header -->
            <div class="box-body table-responsive no-padding">
@@ -64,14 +64,15 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <?php $var=1?>
+                            <?php $var=0?>
                             <?php foreach ($class as $list): ?>
                                 <tr>
                                     
-                                    <td><?php echo $var++ ?></td>
+                                    <td><?php echo $var +1?></td>
                                     <td><?= $this->nettoyer($list['yearSexion']) ?></td>
                                     <td>
                                         <a href="teacher/eleves/<?= $var =$this->nettoyer($list['id']) ?>" class="btn btn-danger btn-xs">Elèves</a>
+                                         <a href="ListeEleveItem.php?idclasse=<?= $var =$this->nettoyer($list['id']) ?>&idU=<?= $adult['id_adult']?> " class="btn bg-purple btn-xs"><i class="fa fa-print"></i> Imprimer la liste</a>
                                     </td>
                                 </tr>
                             

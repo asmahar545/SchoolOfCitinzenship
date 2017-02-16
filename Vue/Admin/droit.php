@@ -38,7 +38,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Data Tables
+        Professeurs
         <small>Donner le droit à un professeur</small>
       </h1>
      
@@ -47,10 +47,10 @@
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <div class="col-xs-10">
+        <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Droit</h3>
+              <h3 class="box-title">Accés au classes </h3>
             </div>
             <!-- /.box-header -->
              <div class="box-body table-responsive no-padding">
@@ -58,9 +58,9 @@
 
                             <thead>
                             <th>N°</th>
-                                <th>Nom</th>
-                                <th>Prenom</th>
-                                <th>Classe</th>
+                            <th>Nom</th>
+                            <th>Prenom</th>
+                            <th>Classe</th>
                                
                             </tr>
                             </thead>
@@ -81,9 +81,9 @@
                         </table>
                     </div>
              
-            <button data-toggle="modal"  data-target="#loginModal" class="btn btn btn-success ">Ajouter un droit </button>
+            <button data-toggle="modal"  data-target="#loginModal1" class="btn btn btn-success ">Ajouter un droit </button>
              
-            <div class="modal" id="loginModal"tabindex="-1">
+            <div class="modal" id="loginModal1"tabindex="-1">
             <div class="modal-dialog">
          <div class="modal-content">
             <div class="modal-header">
@@ -97,7 +97,7 @@
                             <h3 class="box-title">Ajouter un  droit:</h3>
                         </div>
                      <div class="input-group">
-                                <span class="input-group-addon">Classe</span>
+                                <span class="input-group-addon">Professeurs</span>
                                 <select name="classe" type="text" class="form-control" placeholder="">
                                     <?php
                                     foreach ($clas as $list):
@@ -109,6 +109,8 @@
                                 </select> 
                        
                         </div>
+                        <br>
+                        <br>
                      <div class="input-group">
                         <span class="input-group-addon">Classe</span>
                              <select name="adult" type="text" class="form-control" placeholder="">

@@ -44,7 +44,7 @@ public function getnbstudents(){
     $rep=$this->executerRequete($sql,array($name,$firstname,$adress,$birthday,$sexe,$phone,$id_classe,$id));
     }
       public function getStudent($id){
-        $sql="select * from classe where id_student= ?";
+        $sql="select * from eleve where id_student= ?";
         $rep=$this->executerRequete($sql,array($id));
         if ($rep->rowCount() == 1){
         return $rep->fetch(); } // Accès à la première ligne de résultat

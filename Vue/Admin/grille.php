@@ -47,7 +47,7 @@
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <div class="col-xs-10">
+        <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">Classe</h3>
@@ -70,12 +70,12 @@
                                     
                                     <td><?php echo $var++ ?></td>
                                     <td><?= $this->nettoyer($list['itemname']) ?></td>
-                                    <?php if ($var %2 ==1) :?>
+                                    
                                     <td> <span class="label label-success"><?= $this->nettoyer($list['nameCat']) ?></span></td>
-                                    <?php else :?>
-                                    <td> <span class="label label-warning"><?= $this->nettoyer($list['nameCat']) ?></span></td>
-                                    <?php endif; ?>
-                                    <td> <span class="label label-danger"><?= $this->nettoyer($list['des']) ?></span></td>
+                                   
+                                    
+                                    
+                                    <td> <span><?= $this->nettoyer($list['des']) ?></span></td>
                                 </tr>
                             
                             <?php endforeach; ?>

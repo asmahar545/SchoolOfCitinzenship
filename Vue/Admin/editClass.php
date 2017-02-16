@@ -64,19 +64,19 @@ $titree= $this->nettoyer($clas['id']) . ' ' . $this->nettoyer($clas['yearSexion'
       <div class="row">
        <div class="col-md-6">
 
-          <div class="box box-success">
+          <div class="box box-warning">
             <div class="box-header">
-              <h3 class="box-title">Input masks</h3>
+              <h3 class="box-title">Input masks <?= $idC ?></h3>
             </div>
             <div class="box-body">
-                    <form action="admin/exeEditClass"class="form-horizontal form-label-left" method="post">
+                    <form action="admin/exeEditClass/<?= $clas['id'] ?>"class="form-horizontal form-label-left" method="post">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Modifier une classe <?php echo $titree ?></h3>
+                            <h3 class="box-title">Modifier une classe </h3>
                         </div>
                         <div class="box-body">
                             <div class="input-group">
                                 <span class="input-group-addon">N°</span>
-                                <input name="classe" type="text" class="form-control" required value="<?= $clas['id'] ?>  <?php echo $idc?>" >
+                                <input name="classe" type="text" class="form-control" required value="<?= $clas['yearSexion'] ?> " >
                             </div>
                             <br>
 

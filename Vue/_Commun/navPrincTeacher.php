@@ -19,28 +19,29 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
-      
-        <li class="treeview">
-          <a href="teacher/grille">
-            <i class="fa fa-files-o"></i>
-            <span>Grilles</span>
+       <li class="treeview">
+          <a href="teacher/monprofil">
+            <i class="fa fa-laptop"></i>
+            <span>Mon Profil</span>
             <span class="pull-right-container">
-              <span class="label label-primary pull-right">nbrP</span>
+              <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="teacher/grille"><i class="fa fa-circle-o"></i>Professeurs</a></li>
-            
+            <li><a href="teacher/monprofil"><i class="fa fa-circle-o"></i>Mon Profil</a></li>
+           
           </ul>
         </li>
-        <li>
+         <li>
           <a href="teacher/mesclasses">
-            <i class="fa fa-th"></i> <span>Classe</span>
+            <i class="fa fa-th"></i> <span>J'évalue mes élèves</span>
             <span class="pull-right-container">
-              <small class="label pull-right bg-green">new</small>
+              <small class="label pull-right bg-green">ici</small>
             </span>
           </a>
         </li>
+ 
+       
         <li class="treeview">
           <a href="teacher/mesclasses">
             <i class="fa fa-pie-chart"></i>
@@ -54,19 +55,7 @@
             
           </ul>
         </li>
-        <li class="treeview">
-          <a href="teacher/monprofil">
-            <i class="fa fa-laptop"></i>
-            <span>Droit d'accés</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="teacher/monprofil"><i class="fa fa-circle-o"></i>Droit</a></li>
-           
-          </ul>
-        </li>
+        
         <li class="treeview">
           <a href="teacher/documentation">
             <i class="fa fa-edit"></i> <span>Documentation</span>
@@ -80,15 +69,7 @@
           </ul>
         </li>
       
-        <li>
-          <a href="pages/calendar.html">
-            <i class="fa fa-calendar"></i> <span>Calendar</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-red">3</small>
-              <small class="label pull-right bg-blue">17</small>
-            </span>
-          </a>
-        </li>
+      
       
        
       </ul>

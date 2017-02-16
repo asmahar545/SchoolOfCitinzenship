@@ -20,6 +20,8 @@
   <link rel="stylesheet" href="plugins/iCheck/flat/blue.css">
   <!-- Morris chart -->
   <link rel="stylesheet" href="plugins/morris/morris.css">
+    <!-- iCheck for checkboxes and radio inputs -->
+  <link rel="stylesheet" href="plugins/iCheck/all.css">
   <!-- jvectormap -->
   <link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
   <!-- Date Picker -->
@@ -78,11 +80,12 @@
                                     <td><span class="input-group-addon"><?= $this->nettoyer($list['item'])?></span></td>
                                     <?php if ( $this->nettoyer($list['response']) ==1) :?>
                                   
-                                    <td><input  name="valider[]" value="<?= $this->nettoyer($list['id_item'])?>" type='checkbox' checked> </td>
+                                    <td><input  name="valider[]" value="<?= $this->nettoyer($list['id_item'])?>"  type='checkbox' class="flat-red" checked> </td>
                                     <?php else :?>
                                    
-                                    <td><input name="valider[]" value="<?= $this->nettoyer($list['id_item'])?>" type='checkbox'> </td>
+                                    <td><input name="valider[]" value="<?= $this->nettoyer($list['id_item'])?>" class="flat-red" type='checkbox'> </td>
                                     <?php endif; ?>
+                                    
                                 </tr>
                             
                             <?php endforeach; ?>
@@ -90,7 +93,7 @@
                    
                    </table>
                     <div class="form-group">
-                  <label>Textarea</label>
+                  <label>Textarea <?=  $idgrid ?></label>
                   <textarea class="form-control"  name="commentaire" rows="3" placeholder="Enter ..."> <?=$commentaire['commentaire']?></textarea>
                      </div>
                             <div class="form-group">
@@ -103,7 +106,10 @@
          </div>
        </div>
       </div>
-
+ 
+      
+    </div>
+<div>
   </section>
     <!-- /.content -->
   </div>
@@ -155,6 +161,13 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+<!-- iCheck 1.0.1 -->
+<script src="plugins/iCheck/icheck.min.js"></script>
+<script>//Flat red color scheme for iCheck
+    $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
+      checkboxClass: 'icheckbox_flat-green',
+      radioClass: 'iradio_flat-green'
+    });</script>
 </body>
           
                     
