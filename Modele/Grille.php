@@ -98,4 +98,14 @@ class Grille extends Modele{
         $sql="UPDATE `gridstudent` SET `commentaire`=? WHERE idGridStudent = ?";
         $this->executerRequete($sql,array($commentaire,$idG));
    }
+   public function deleteEvaluationStudent(){
+       $sql="DELETE FROM evaluatestudent";
+       $this->executerRequete($sql);
+       
+       
+   }
+   public function deleleteGridStudent(){
+       $sql="DELETE FROM gridstudent";
+       $this->executerRequete($sql);
+   }
 } 

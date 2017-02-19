@@ -40,8 +40,7 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
-<?php require 'Vue/_Commun/headerPrinc.php'; ?>
-<?php require 'Vue/_Commun/navPrinc.php'; ?>
+
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">

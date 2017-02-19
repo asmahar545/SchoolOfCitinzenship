@@ -409,8 +409,33 @@ class ControleurAdmin extends ControleurSecurise
              throw new Exception("Faite attention les champs ne sont pas tous définis");
          }
     }
-     //documentation
-public function documentation(){
+    public function exeEnvoiEmail(){
+   
+     $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+     $adult=$this->adult->getadult($idU);
+    
+      $this->genererVue(array('adult'=>$adult));  
+        
+    }
+    public function configuration(){
+     $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+     $adult=$this->adult->getadult($idU);
+     $this->genererVue(array('adult'=>$adult));
+      
+    }
+    
+    public function exeFinAnnee(){
+        $this->grille->deleteEvaluationStudent();
+        $this->grille->deleleteGridStudent();
+     $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+     $adult=$this->adult->getadult($idU);
+     $this->genererVue(array('adult'=>$adult));
+      
+    }
+ 
+
+    //documentation
+    public function documentation(){
      $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
      $adult=$this->adult->getadult($idU);
       

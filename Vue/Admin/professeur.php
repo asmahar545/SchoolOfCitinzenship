@@ -82,6 +82,7 @@
                                     <td>
                                         <a href="admin/addTeacher " class="btn btn-success btn-xs"><i class="fa fa-folder"></i> Ajouter</a>
                                         <a href ="admin/editTeacher/<?= $this->nettoyer($list['id_adult']) ?>" class="btn btn-warning btn-xs"><i class="fa fa-folder"></i> Modifier</a>
+                                        <a href ="admin/exeEnvoiEmail/<?= $this->nettoyer($list['id_adult']) ?>" class="btn bg-purple btn-xs"><i class="fa fa-folder"></i>Envoi email</a>
                                       
                                     </td>
 

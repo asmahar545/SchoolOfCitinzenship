@@ -17,7 +17,17 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li href= "admin"class="header">MAIN NAVIGATION</li>
-      
+        <li class="treeview">
+          <a href="admin/professeur">
+            <i class="fa fa-files-o"></i>
+            <span>Configuration</span>
+           
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="admin/configuration"><i class="fa fa-circle-o"></i>Configuration</a></li>
+            
+          </ul>
+        </li>
         <li class="treeview">
           <a href="admin/professeur">
             <i class="fa fa-files-o"></i>

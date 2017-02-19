@@ -63,16 +63,21 @@ public function getnbClasses(){
         return $rep;
     }
     public function addDroit($idc,$ida){
-        
+       
        $sql="INSERT INTO `consultclass` (`id_classe`, `id_adult`) VALUES (?, ?);";
        $rep=$this->executerRequete($sql,array($idc,$ida));
-         if ($rep->rowCount() < 0) {
-          throw new Exception("Ce professeur a déja ce droit là");
-          
-        }
-        
+      $rs = mysql_query($rep);
+      
+      if (!$rs)
+    {
+  
+       throw new Exception("Aucun classe ne correspond 0 l4identifiqnt fourni");
+       
+    }
+    else{
+        throw new Exception("Aucun classe ne correspond 0 l4identifiqnt fourni");
     }
     
-
+    }
 }
 
