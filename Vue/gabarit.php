@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<base href="/SchoolOfCitizenship/"/>
+<base href="/SchoolOfCitinzenship/"/>
 
 
     
