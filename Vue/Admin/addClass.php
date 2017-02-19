@@ -73,8 +73,9 @@
                         <div class="box-body">
                             <div class="input-group">
                                 <span class="input-group-addon">N°</span>
-                                <input name="classe" type="text" class="form-control" placeholder="Ex: 1C">
+                                <input name="classe" type="text" class="form-control" placeholder="Ex: 1C" required>
                             </div>
+                            
                             <br>
 
                             <div class="form-group">

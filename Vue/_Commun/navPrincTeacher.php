@@ -19,6 +19,16 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
+            <li class="treeview">
+          <a href="teacher">
+            <i class="fa fa-laptop"></i>
+            <span>Menu Principal</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          
+        </li>
        <li class="treeview">
           <a href="teacher/monprofil">
             <i class="fa fa-laptop"></i>

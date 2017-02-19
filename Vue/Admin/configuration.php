@@ -103,9 +103,9 @@
           <div class="col-md-2">
         <div class="span1 offset1">
         <div class="btn-group btn-group-vertical">
-        <a class="btn btn-danger" href="#">Fin des évaluation</a>
-        <a class="btn btn-info" href="#">Fin de la période</a>
-         <button data-toggle="modal"  data-target="#loginModal3"  class="btn btn-warning">Fin année</button>
+        <button data-toggle="modal"  data-target="#loginModal4"  class="btn btn-danger">Envoi un email</button>
+        <a class="btn btn-info" href="admin/configuration">Fin de la période</a>
+        <button data-toggle="modal"  data-target="#loginModal3"  class="btn btn-warning">Fin année</button>
     </div>
 </div>   
           </div>
@@ -144,6 +144,32 @@
                        <div class="modal-footer">
         
                        <a href="admin/exeFinAnnee"><button class="btn btn-danger" type="button"><i class="icon icon-check icon-lg"></i>Oui</button></a>
+                   <a href="admin/configuration"><button class="btn btn-primary" type="button"><i class="icon icon-check icon-lg"></i> Retour</button></a>
+                      </div>
+                 </div>
+          </div>
+  </div>
+<!--fin de la fênetre-->
+<!-- Fenetre  mettre à jour pour  déconnecter-->
+    <div class="modal" id="loginModal4" tabindex="-1">
+                      <div class="modal-dialog">
+                     <div class="modal-content">
+                         <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">x</button>
+                          <h4 class="modal-title">Informations</h4>
+                       </div>
+                        <div class="modal-body">
+                      
+                      
+                       <div class="alert alert-success alert-dismissible">
+                        
+                          <h4><i class="icon fa fa-warning"></i> Attention!</h4>
+                             Vous voulez vraiment envoyer un email à tout le professeurs eet éducateurs
+                         </div>
+                         </div>
+                       <div class="modal-footer">
+        
+                       <a href="admin/exeEnvoiEmail/"><button class="btn btn-danger" type="button"><i class="icon icon-check icon-lg"></i>Oui</button></a>
                    <a href="admin/configuration"><button class="btn btn-primary" type="button"><i class="icon icon-check icon-lg"></i> Retour</button></a>
                       </div>
                  </div>

@@ -74,28 +74,28 @@
                         <div class="box-body">
                             <div class="input-group">
                                 <span class="input-group-addon">Nom</span>
-                                <input name="name" type="text" class="form-control">
+                                <input name="name" type="text" class="form-control"required>
                             </div>
                             <br>
                             <div class="input-group">
                                 <span class="input-group-addon">Prénom</span>
-                                <input name="firstname" type="text" class="form-control" placeholder="">
+                                <input name="firstname" type="text" class="form-control" placeholder=""required>
                             </div>
                             <br>
                             <div class="input-group">
                                 <span class="input-group-addon">Adresse</span>
-                                <input name="adress" type="text" class="form-control">
+                                <input name="adress" type="text" class="form-control"required>
                             </div>
                 
                             <br>
                             <div class="input-group">
                                 <span class="input-group-addon">Date de naissance</span>
-                                <input name="birthday" type="cale" class="form-control"id="datepicker">
+                                <input name="birthday" type="cale" class="form-control"id="datepicker"required>
                             </div>
                             <br>
                             <div class="input-group">
                                 <span class="input-group-addon">Sexe</span>
-                                  <select name="sexe" type="text" class="form-control" placeholder="">
+                                  <select name="sexe" type="text" class="form-control" placeholder=""required>
                                       <option>homme </option>
                                       <option>femme</option>
                                 </select> 
@@ -103,24 +103,24 @@
                             <br>
                             <div class="input-group">
                                 <span class="input-group-addon">Télèphone</span>
-                                <input name="phone" type="number" class="form-control" placeholder="">
+                                <input name="phone" type="number" class="form-control" placeholder=""required>
                             </div>
                             <br>
 
                             <div class="input-group">
                                 <span class="input-group-addon">Email</span>
-                                <input name="email" type= "email" class="form-control" placeholder="">
+                                <input name="email" type= "email" class="form-control" placeholder=""required>
                             </div>
                             <br>
                             <div class="input-group">
                                 <span class="input-group-addon">Password</span>
-                                <input name="password" type="password" class="form-control" placeholder="">
+                                <input name="password" type="password" class="form-control" placeholder=""required>
                             </div>
                             <br>
                             
                             <div class="input-group">
                                 <span class="input-group-addon">Catégorie</span>
-                                <select name="id_adultCategory" type="text" class="form-control" placeholder="">
+                                <select name="id_adultCategory" type="text" class="form-control" placeholder=""required>
                                     <?php
                                     foreach ($cat as $list):
 
