@@ -91,7 +91,7 @@ class ControleurTeacher extends ControleurSecurise
                 throw new Exception("Faite attention les champs ne sont pas tous définis");
             }
     }
-    public function CLASSES(){
+    public function mesclasses(){
         $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
         $class= $this->classe->getTeacherUniqueClass($idU);
        
@@ -130,10 +130,10 @@ class ControleurTeacher extends ControleurSecurise
        
         //trouver le commentaire qui et null et le mettre dan texTArea,ensuite l'éditer 
         $commentaire= $this->grille->getCommentaire($idgrid);
-     
+        $period=$this->grille->selectPeriod();
         //dans exeEvaluationStudent
         $item=$this->grille->getEvalueStudent($idU, $id);
-        $this->genererVue(array('adult'=>$adult,'item'=>$item,'id'=>$id,'commentaire'=>$commentaire,'idgrid'=>$idgrid));
+        $this->genererVue(array('adult'=>$adult,'item'=>$item,'id'=>$id,'commentaire'=>$commentaire,'idgrid'=>$idgrid,'period'=>$period));
         }
     }
     
