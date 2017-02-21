@@ -91,7 +91,7 @@ class ControleurTeacher extends ControleurSecurise
                 throw new Exception("Faite attention les champs ne sont pas tous définis");
             }
     }
-    public function mesclasses(){
+    public function CLASSES(){
         $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
         $class= $this->classe->getTeacherUniqueClass($idU);
        

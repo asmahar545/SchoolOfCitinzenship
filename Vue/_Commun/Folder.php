@@ -1,6 +1,6 @@
  <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      <b>Harmach </b>Asmae
+      <b>Harmach Asmae </b>
     </div>
-    <strong>Copyright &copy; 2017-2018 <a href="">Mouvement de école citoyenne de belgique</a>.</strong> 
+    Copyright &copy; 2017-2018 <strong> <a href="">Mouvement des écoles citoyennes de Belgique</a>.</strong> 
 </footer>

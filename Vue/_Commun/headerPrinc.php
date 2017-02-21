@@ -3,9 +3,9 @@
     <!-- Logo -->
     <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>M</b>EC</span>
+      <span class="logo-mini"><b>é</b>C</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b></b>MIEC</span>
+      <span class="logo-lg">éco<b>Cit</b></span>
       
     </a>
     <!-- Header Navbar: style can be found in header.less -->
@@ -39,7 +39,7 @@
               <li class="user-body">
                 <div class="row">
                   <div class="col-xs-12 text-center ">
-                    <button data-toggle="modal"  data-target="#loginModal" class="btn btn-default ">Deconnexion</button>
+                    <button data-toggle="modal"  data-target="#loginModal" class="btn btn-default ">Déconnexion</button>
                   </div>
                   
                 </div>
@@ -68,10 +68,10 @@
                      <div class="modal-content">
                          <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">x</button>
-                          <h4 class="modal-title">Informations</h4>
+                          <h4 class="modal-title">Déconnexio</h4>
                        </div>
                         <div class="modal-body">
-                       Etes-vous sûr de vouloir vous déconnecter?
+                      Êtes-vous sûr de vouloir vous déconnecter?
                          </div>
                        <div class="modal-footer">
         

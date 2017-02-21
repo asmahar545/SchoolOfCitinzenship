@@ -406,7 +406,7 @@ class ControleurAdmin extends ControleurSecurise
         $this->rediriger('admin','grille'); }
      else
          {
-             throw new Exception("Faite attention les champs ne sont pas tous définis");
+             throw new Exception("Les champs ne sont pas tous définis");
          }
     }
     public function exeEnvoiEmail(){

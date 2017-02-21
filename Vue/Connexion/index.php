@@ -26,18 +26,18 @@
 <?php endif; ?>
 <div class="login-box">
   <div class="login-logo">
-    <a href=""><b>Ecole</b> Citoyenne</a>
+    <a href=""><b>ecoCit</b> </a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Sign in to start your session</p>
+    <p class="login-box-msg">Connectez-vous pour accéder à votre compte </p>
        <form action="connexion/connecter" method="post">
             <div class="form-group has-feedback">
-                <input name="login" type="" class="form-control" placeholder="Email">
+                <input name="login" type="" class="form-control" placeholder="Adresse e-mail">
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input name="mdp"  type="password" class="form-control" placeholder="Password">
+                <input name="mdp"  type="password" class="form-control" placeholder="Mot de passe">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="row">
