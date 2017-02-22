@@ -66,18 +66,20 @@ public function getnbClasses(){
        
        $sql="INSERT INTO `consultclass` (`id_classe`, `id_adult`) VALUES (?, ?);";
        $rep=$this->executerRequete($sql,array($idc,$ida));
-      $rs = mysql_query($rep);
-      
-      if (!$rs)
-    {
-  
-       throw new Exception("Aucun classe ne correspond 0 l4identifiqnt fourni");
-       
+       return $rep;
+     
     }
-    else{
-        throw new Exception("Aucun classe ne correspond 0 l4identifiqnt fourni");
+    public function droitExist($idc,$ida){
+        $sql= "select * from consultclass where id_classe = ? and id_adult=?";
+        $rep=$this->executerRequete($sql,array($idc,$ida));
+        if ($rep->rowCount() == 1){
+        return $rep->fetch(); } // Accès à la première ligne de résultat
+       
+        else{
+                return -1;
+            
+        }
     }
     
-    }
 }
 

@@ -48,6 +48,10 @@
     
      <!-- Main content -->
     <section class="content">
+     <div class="callout callout-success">
+         
+          <p>Actuellement, l'évaluation se portera sur la période de  <?= $period['period']?> </p>
+        </div>
      <h2 class="page-header">Réinitialisation des évaluations</h2>
 
       <div class="row">
@@ -104,8 +108,8 @@
         <div class="span1 offset1">
         <div class="btn-group btn-group-vertical">
         <button data-toggle="modal"  data-target="#loginModal4"  class="btn btn-danger">Envoi un email</button>
-        <a class="btn btn-info" href="admin/configuration">Fin de la période</a>
-        <button data-toggle="modal"  data-target="#loginModal3"  class="btn btn-warning">Fin année</button>
+        <a class="btn btn-info" href="admin/finDePeriode">Changer la période</a>
+        <button data-toggle="modal"  data-target="#loginModal3"  class="btn btn-warning">Fin de la période</button>
     </div>
 </div>   
           </div>

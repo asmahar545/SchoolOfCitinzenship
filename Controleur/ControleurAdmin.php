@@ -234,14 +234,14 @@ class ControleurAdmin extends ControleurSecurise
             if ($this->requete->existeParametre("name") && $this->requete->existeParametre("firstname") &&
                 $this->requete->existeParametre("adress") && $this->requete->existeParametre("birthday") &&
                 $this->requete->existeParametre("sexe") && $this->requete->existeParametre("phone") &&
-                $this->requete->existeParametre("email") && $this->requete->existeParametre("password")
+                $this->requete->existeParametre("email") && $this->requete->existeParametre("commentaire") &&$this->requete->existeParametre("password")
                 && $this->requete->existeParametre("id_adultCategory")
             ) {
                 $name = $this->requete->getParametre("name");
                 $firstname = $this->requete->getParametre("firstname");
                 $adress = $this->requete->getParametre("adress");
                 $birthday = $this->requete->getParametre("birthday");
-                
+                 $commentaire = $this->requete->getParametre("commentaire");
                 $date = date("Y-m-d ", strtotime($birthday));
                 $sexe = $this->requete->getParametre("sexe");
                 $phone = $this->requete->getParametre("phone");
@@ -249,7 +249,7 @@ class ControleurAdmin extends ControleurSecurise
                 $password = $this->requete->getParametre("password");
                 $id_adultCategory = $this->requete->getParametre("id_adultCategory");
 
-                $this->adult->addAdult($name, $firstname, $adress, $date, $sexe, $phone, $email, $password, $id_adultCategory);
+                $this->adult->addAdult($name, $firstname, $adress, $date, $sexe, $phone,$commentaire, $email, $password, $id_adultCategory);
                 $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
                 $adult = $this->adult->getadult($idU);
                 $this->genererVue(array('adult' => $adult));
@@ -277,14 +277,43 @@ class ControleurAdmin extends ControleurSecurise
 
        
         
-     }
-     public function exeEditTeacher(){
-          $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
-       $adult=$this->adult->getadult($idU);
-      
-      $this->genererVue(array('adult'=>$adult));
-      
-     }
+  
+          }
+          public function exeEditTeacher()
+            {
+        if ($this->requete->existeParametre("name") && $this->requete->existeParametre("firstname")
+                 &&
+                $this->requete->existeParametre("adress") && $this->requete->existeParametre("birthday") &&
+                $this->requete->existeParametre("sexe") && $this->requete->existeParametre("phone") && 
+                $this->requete->existeParametre("commentaire") &&
+                $this->requete->existeParametre("email") && $this->requete->existeParametre("password")
+                && $this->requete->existeParametre("id_adultCategory")&& $this->requete->existeParametre("id")
+            ) {
+            
+                 $idT=$this->requete->existeParametre("id");
+                $name = $this->requete->getParametre("name");
+                $firstname = $this->requete->getParametre("firstname");
+                $adress = $this->requete->getParametre("adress");
+                $birthday = $this->requete->getParametre("birthday");
+                $commentaire = $this->requete->getParametre("commentaire");
+                $date = date("Y-m-d ", strtotime($birthday));
+                $sexe = $this->requete->getParametre("sexe");
+                $phone = $this->requete->getParametre("phone");
+                $email = $this->requete->getParametre("email");
+                $password = $this->requete->getParametre("password");
+                $id_adultCategory = $this->requete->getParametre("id_adultCategory");
+                
+                
+                $this->adult->editAdult($name, $firstname, $adress, $birthday, $sexe, $phone, $commentaire, $email, $password, $id_adultCategory, $idT);
+                
+                $idU = $this->requete->getSession()->getAttribut("idUtilisateur"); 
+                $adult=$this->adult->getadult($idU);
+                $this->genererVue(array('adult'=>$adult,'idT'=>$idT));
+             
+            } else {
+                throw new Exception("Faite attention les champs ne sont pas tous définis");
+            }
+    }
      public function droit(){
       $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
       $adult=$this->adult->getadult($idU);
@@ -300,14 +329,19 @@ class ControleurAdmin extends ControleurSecurise
          {
             $ida = $this->requete->getParametre("adult");
             $idc = $this->requete->getParametre("classe");
-            $this->classe->addDroit($idc, $ida);
-            $this->rediriger("admin","droit");
-          
-         }
-         else
+            $rep = $this->classe->droitExist($idc, $ida);
+            if ($rep == -1){
+            
+                $this->classe->addDroit($idc, $ida);
+                $this->rediriger("admin", "droit");
+            
+            }
+           else
          {
-             throw new Exception("Faite attention les champs ne sont pas tous définis");
+             throw new Exception("La classe a déja été octroyé au professeur");
          }
+         }
+         
      
      }
      public function addLesson(){
@@ -418,9 +452,10 @@ class ControleurAdmin extends ControleurSecurise
         
     }
     public function configuration(){
+     $period=$this->grille->selectPeriod();
      $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
      $adult=$this->adult->getadult($idU);
-     $this->genererVue(array('adult'=>$adult));
+     $this->genererVue(array('adult'=>$adult,'period'=>$period));
       
     }
     
@@ -432,7 +467,30 @@ class ControleurAdmin extends ControleurSecurise
      $this->genererVue(array('adult'=>$adult));
       
     }
- 
+  public function exeFinPeriode(){
+       if ($this->requete->existeParametre("periode"))
+               {
+     $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+     $periode = $this->requete->getParametre("periode");
+     $this->grille->editPeriode($periode);
+     $adult=$this->adult->getadult($idU);
+       $this->genererVue(array('adult'=>$adult));}
+       else{
+           
+             throw new Exception("Faite attention les champs ne sont pas tous définis");
+         }
+           
+       
+  }
+    public function finDePeriode(){
+     
+     $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+     $adult=$this->adult->getadult($idU);
+       $this->genererVue(array('adult'=>$adult));
+     
+           
+       
+  }
 
     //documentation
     public function documentation(){
