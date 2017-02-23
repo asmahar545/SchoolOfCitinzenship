@@ -121,4 +121,21 @@ class Grille extends Modele{
        
        
    }
-} 
+   public function selectStudentEvalueParClasse($idC,$idU,$nameItem){
+      $sql="SELECT `response`, `nameE`, firstE, `nameT`, `nameItem` FROM `itemresponstudent` WHERE classe=? and idU=? and nameItem=? ORDER by nameE ASC, nameItem ASC";
+      $student= $this->executerRequete($sql,array($idC,$idU,$nameItem));
+      return $student;
+      //vous n'aveze pas encore évaluez d'élève pour cette classe
+   
+   } 
+   public function selectNomStudentEvalueParClasse($idC,$idU) {
+       $sql="SELECT DISTINCT (nameE) FROM `itemresponstudent` WHERE classe=? and idU=? ORDER by nameE";
+       $nomStudent= $this->executerRequete($sql,array($idC,$idU));
+       return $nomStudent;
+   }
+   public function selectItemStudentEvalueParClasse($idC,$idU) {
+       $sql="SELECT DISTINCT (nameItem) FROM `itemresponstudent` WHERE classe=? and idU=? ORDER by nameItem";
+       $item= $this->executerRequete($sql,array($idC,$idU));
+       return $item;
+   }
+}

@@ -42,7 +42,7 @@ abstract class Controleur
         }
         else {
             $classeControleur = get_class($this);
-            throw new Exception("Action '$action' non définie dans la classe $classeControleur");
+            throw new Exception("Cette page est introuvable");
         }
     }
 

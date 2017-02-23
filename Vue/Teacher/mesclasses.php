@@ -72,7 +72,7 @@
                                     <td><?= $this->nettoyer($list['yearSexion']) ?></td>
                                     <td>
                                         <a href="teacher/eleves/<?= $var =$this->nettoyer($list['id']) ?>" class="btn btn-danger btn-xs">Elèves</a>
-                                         <a href="ListeEleveItem.php?idclasse=<?= $var =$this->nettoyer($list['id']) ?>&idU=<?= $adult['id_adult']?> " class="btn bg-purple btn-xs"><i class="fa fa-print"></i> Imprimer la liste</a>
+                                         <a href="teacher/grilleEleve/<?=  $this->nettoyer($list['id']) ?> " class="btn bg-purple btn-xs"><i class="fa fa-user"></i> Grille d'évaluation</a>
                                     </td>
                                 </tr>
                             

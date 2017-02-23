@@ -177,5 +177,44 @@ class ControleurTeacher extends ControleurSecurise
              throw new Exception("Veuillez évaluer votre élèves");
         }
      }
+     public function grilleEleve(){
+          if ($this->requete->existeParametre("id")){
+              $idC = $this->requete->getParametre("id");
+           $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+           $nameItem1="J'aide mes camarades de classes";
+           $nameItem2="J'obéis à mon professeurs";
+           $nameItem3="Je parle bien avec mes professeurs";
+           $nameItem4="Je suis calme";
+           $nameItem5="Je suis polis";
+           $nameItem6="J’embête pas me camarade de classe";
+           $nameItem7="L'éleve devra être polis";
+           //resultat item 1 " Je sui polis"
+           $Item1= $this->grille->selectStudentEvalueParClasse($idC, $idU, $nameItem1);
+           $Item2= $this->grille->selectStudentEvalueParClasse($idC, $idU, $nameItem2);
+           $Item3=$this->grille->selectStudentEvalueParClasse($idC, $idU, $nameItem3);
+           $Item4= $this->grille->selectStudentEvalueParClasse($idC, $idU, $nameItem4);
+           $Item5= $this->grille->selectStudentEvalueParClasse($idC, $idU, $nameItem5);
+           $Item6= $this->grille->selectStudentEvalueParClasse($idC, $idU, $nameItem6);
+           $Item7= $this->grille->selectStudentEvalueParClasse($idC, $idU, $nameItem7);
+           
+           
+           $adult=$this->adult->getadult($idU);
+           $nomStudent=$this->grille->selectNomStudentEvalueParClasse($idC, $idU);
+           $item = $this->grille->selectItemStudentEvalueParClasse($idC, $idU);
+           $this->genererVue(array('adult'=>$adult,
+               'item1'=>$Item1,
+                'item2'=>$Item2,
+                'item3'=>$Item3,
+                'item4'=>$Item4,
+                'item5'=>$Item5,
+                'item6'=>$Item6,
+                'item7'=>$Item7,
+                
+               'nomStudent'=>$nomStudent,
+               'item'=>$item));
+   
+          }
+         
+     }
 
 }

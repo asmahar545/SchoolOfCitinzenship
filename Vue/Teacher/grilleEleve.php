@@ -37,8 +37,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Data Tables
-        <small>J'évalue</small>
+        Grille de la classe 
+        <small></small>
       </h1>
      
     </section>
@@ -53,32 +53,82 @@
             </div>
             <!-- /.box-header -->
            <div class="box-body table-responsive no-padding">
-                        <table  id="example1" class="table table-bordered table-striped">
+                        <table  id="example1" >
 
-                            <thead>
+                           <thead>
                             <tr >
-                            <th class="rotate"><div><span>Column header 1</span></div></th>
-                                <th class="rotate"><div><span>Nom</span></div></th>
-                                <th class="rotate"><div><span>Prénom</span></div></th>
-                                      <th class="rotate"><div><span>#     </span></div></th>
+                                <th>Item   </th>
+                            <?php foreach ($nomStudent as $list): ?>
+                                 
+                            <th class="rotate"><div><span><?= $this->nettoyer($list['nameE']) ?>    </span></div></th>
+                            <?php endforeach; ?>
                             </tr>
                             </thead>
                             <tbody>
-                            <?php $var=1?>
-                            <?php foreach ($student as $list): ?>
-                                <tr>
+                               
+                                
+                                 <tr><th>J'aide mes camarades de classes</th> <?php foreach ($item1 as $list): ?>
                                     
-                                    <td><?php echo $var++ ?></td>
-                                    <td><?= $this->nettoyer($list['name']) ?></td>
-                                    <td><?= $this->nettoyer($list['firstName']) ?></td>
-                                    <td><a href="teacher/jevalue/<?= $this->nettoyer($list['id_student']) ?>" class="btn btn-primary btn-xs">J'évalue</a></td>
+                                    <td><?= $this->nettoyer($list['response']) ?></td>
                                     
-                                </tr>
+                                    
+                                   
+                                   <?php endforeach; ?>    
+                                    <tr>
+                                 <tr><th>J'obéis à mon professeurs</th> <?php foreach ($item2 as $list): ?>
+                                    
+                                    <td><?= $this->nettoyer($list['response']) ?></td>
+                                    
+                                    
+                                   
+                                   <?php endforeach; ?>   <tr>
+                                 <tr><th>Je parle bien avec mes professeurs</th> <?php foreach ($item3 as $list): ?>
+                                    
+                                    <td><?= $this->nettoyer($list['response']) ?></td>
+                                    
+                                    
+                                   
+                                   <?php endforeach; ?>   <tr>
+                                 <tr><th>Je suis calme</th> <?php foreach ($item4 as $list): ?>
+                                    
+                                    <td><?= $this->nettoyer($list['response']) ?></td>
+                                    
+                                    
+                                   
+                                   <?php endforeach; ?>   <tr>
+                                 <tr><th>Je suis polis</th> <?php foreach ($item5 as $list): ?>
+                                    
+                                    <td><?= $this->nettoyer($list['response']) ?></td>
+                                    
+                                    
+                                   
+                                   <?php endforeach; ?>   <tr>
+                                     
+                                        <tr><th>J’embête pas me camarade de classe</th> <?php foreach ($item6 as $list): ?>
+                                    
+                                    <td><?= $this->nettoyer($list['response']) ?></td>
+                                    
+                                    
+                                   
+                                   <?php endforeach; ?>   <tr>
+                                        <tr><th>L'éleve devra être polis
+                                            </th> <?php foreach ($item7 as $list): ?>
+                                    
+                                    <td><?= $this->nettoyer($list['response']) ?></td>
+                                    
+                                    
+                                   
+                                   <?php endforeach; ?>   <tr> 
+                                 </tr>  
+                                   
+                        
                             
-                            <?php endforeach; ?>
+                            
                             </tbody>
                         </table>
+               
                     </div>
+
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
@@ -145,16 +195,13 @@ th.rotate > div > span {
 <script src="dist/js/demo.js"></script>
 <!-- page script -->
 <script>
-  $(function () {
-    $("#example1").DataTable();
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false
-    });
-  });
+ $(document).ready(function() {
+    $('#example1').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+} );
 </script>
 </body>
