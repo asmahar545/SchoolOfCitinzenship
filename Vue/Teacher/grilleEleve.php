@@ -12,8 +12,12 @@
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <!-- DataTables -->
-  <link rel="stylesheet" href="plugins/datatables/dataTables.bootstrap.css">
+  <link rel="stylesheet" href="plugins/datatables/jquery.dataTables.min.css">
   <!-- Theme style -->
+  <link rel="stylesheet" href="plugins/datatables/buttons.dataTables.min.css">
+ 
+  
+ 
   <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
@@ -26,7 +30,7 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body onload="window.print()" class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 <?php require 'Vue/_Commun/headerPrinc.php'; ?>
 <?php require 'Vue/_Commun/navPrincTeacher.php'; ?>
@@ -51,85 +55,124 @@
             <div class="box-header">
               <h3 class="box-title">Mes élèves</h3>
             </div>
+              <?php if ($nbr>0 ): ?>
+              
             <!-- /.box-header -->
            <div class="box-body table-responsive no-padding">
-                        <table  id="example1" >
+                          <table  id="example1" class="table table-bordered table-striped"> 
 
                            <thead>
                             <tr >
                                 <th>Item   </th>
                             <?php foreach ($nomStudent as $list): ?>
                                  
-                            <th class="rotate"><div><span><?= $this->nettoyer($list['nameE']) ?>    </span></div></th>
+                            <th  class="info" ><div><span><?= $this->nettoyer($list['nameE']) ?>    </span></div></th>
+                            
                             <?php endforeach; ?>
+                            
                             </tr>
                             </thead>
+                            <tfoot>
+                              <tr >
+                                  <th colspan="1" class="info">Carnaval </th>
+                                   <th  colspan="4" class="warning" >La commporte l'évlution de chaque proffesseur grille </th>
+                                   
+                                </tr>
+                            </tfoot>
                             <tbody>
                                
                                 
-                                 <tr><th>J'aide mes camarades de classes</th> <?php foreach ($item1 as $list): ?>
-                                    
-                                    <td><?= $this->nettoyer($list['response']) ?></td>
-                                    
-                                    
-                                   
+                                 <tr><th class="danger">J'aide mes camarades de classes</th>
+                                     <?php foreach ($item1 as $list): ?>
+                                      <?php if ($list['response'] ==1): ?>
+                                    <td><i class="fa fa-check"></i></td>
+                                     <?php else: ?>
+                                     <td><i class="fa fa-close"></i></td>
+                                     <?php endif; ?>
                                    <?php endforeach; ?>    
-                                    <tr>
-                                 <tr><th>J'obéis à mon professeurs</th> <?php foreach ($item2 as $list): ?>
+                                    </tr>
+                                 <tr><th class="danger">J'obéis à mon professeurs</th> <?php foreach ($item2 as $list): ?>
                                     
-                                    <td><?= $this->nettoyer($list['response']) ?></td>
-                                    
-                                    
-                                   
-                                   <?php endforeach; ?>   <tr>
-                                 <tr><th>Je parle bien avec mes professeurs</th> <?php foreach ($item3 as $list): ?>
-                                    
-                                    <td><?= $this->nettoyer($list['response']) ?></td>
+                                    <?php if ($list['response'] ==1): ?>
+                                    <td><i class="fa fa-check"></i></td>
+                                     <?php else: ?>
+                                     <td><i class="fa fa-close"></i></td>
+                                     <?php endif; ?>
                                     
                                     
                                    
-                                   <?php endforeach; ?>   <tr>
-                                 <tr><th>Je suis calme</th> <?php foreach ($item4 as $list): ?>
+                                   <?php endforeach; ?>   </tr>
+                                 <tr><th class="danger">Je parle bien avec mes professeurs</th> <?php foreach ($item3 as $list): ?>
                                     
-                                    <td><?= $this->nettoyer($list['response']) ?></td>
-                                    
-                                    
-                                   
-                                   <?php endforeach; ?>   <tr>
-                                 <tr><th>Je suis polis</th> <?php foreach ($item5 as $list): ?>
-                                    
-                                    <td><?= $this->nettoyer($list['response']) ?></td>
+                                   <?php if ($list['response'] ==1): ?>
+                                    <td><i class="fa fa-check"></i></td>
+                                     <?php else: ?>
+                                     <td><i class="fa fa-close"></i></td>
+                                     <?php endif; ?>
                                     
                                     
                                    
-                                   <?php endforeach; ?>   <tr>
+                                   <?php endforeach; ?>   </tr>
+                                 <tr><th class="danger">Je suis calme</th> <?php foreach ($item4 as $list): ?>
+                                    
+                                    <?php if ($list['response'] ==1): ?>
+                                    <td><i class="fa fa-check"></i></td>
+                                     <?php else: ?>
+                                     <td><i class="fa fa-close"></i></td>
+                                     <?php endif; ?>
+                                    
+                                    
+                                   
+                                   <?php endforeach; ?>   </tr>
+                                 <tr><th class="danger">Je suis polis</th> <?php foreach ($item5 as $list): ?>
+                                    
+                                   <?php if ($list['response'] ==1): ?>
+                                    <td><i class="fa fa-check"></i></td>
+                                     <?php else: ?>
+                                     <td><i class="fa fa-close"></i></td>
+                                     <?php endif; ?>
+                                    
+                                   
+                                   <?php endforeach; ?>   </tr>
                                      
-                                        <tr><th>J’embête pas me camarade de classe</th> <?php foreach ($item6 as $list): ?>
+                                        <tr><th class="danger">J’embête pas me camarade de classe</th> <?php foreach ($item6 as $list): ?>
                                     
-                                    <td><?= $this->nettoyer($list['response']) ?></td>
+                                  <?php if ($list['response'] ==1): ?>
+                                    <td><i class="fa fa-check"></i></td>
+                                     <?php else: ?>
+                                     <td><i class="fa fa-close"></i></td>
+                                     <?php endif; ?>
                                     
                                     
                                    
-                                   <?php endforeach; ?>   <tr>
-                                        <tr><th>L'éleve devra être polis
+                                   <?php endforeach; ?>   </tr>
+                                        <tr><th class="danger">L'éleve devra être polis
                                             </th> <?php foreach ($item7 as $list): ?>
                                     
-                                    <td><?= $this->nettoyer($list['response']) ?></td>
+                                   <?php if ($list['response'] ==1): ?>
+                                    <td><i class="fa fa-check"></i></td>
+                                     <?php else: ?>
+                                     <td><i class="fa fa-close"></i></td>
+                                     <?php endif; ?>
                                     
                                     
-                                   
-                                   <?php endforeach; ?>   <tr> 
-                                 </tr>  
-                                   
-                        
-                            
-                            
+                                   <?php endforeach; ?>   </tr> 
+                               
                             </tbody>
+                            
                         </table>
-               
+         
                     </div>
+ <a  href="javascript:window.print()" class="btn bg-info"><i class="fa fa-print"></i> Imprimer</a>
+             <?php else: ?>
+          <div class="callout callout-info">
+          <h4></h4>
+          
 
+          
+        </div>
             <!-- /.box-body -->
+             <?php endif; ?>
           </div>
           <!-- /.box -->
 
@@ -193,15 +236,28 @@ th.rotate > div > span {
 <script src="dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+<script src="plugins/pdf/jquery.dataTables.min.js"></script>
+  <script src="plugins/pdf/dataTables.buttons.min.js"></script>
+  <script src="plugins/pdf/pdfmake.min.js"></script>
+  <script src="plugins/pdf/vfs_fonts.js"></script>
+  <script src="plugins/pdf/buttons.html5.min.js"></script>
+  	
 <!-- page script -->
 <script>
- $(document).ready(function() {
+ 
+$(document).ready(function() {
     $('#example1').DataTable( {
         dom: 'Bfrtip',
         buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
+            {
+                extend: 'pdfHtml5',
+                orientation: 'landscape',
+                pageSize: 'LEGAL'
+            }
         ]
     } );
 } );
+
 </script>
+
 </body>

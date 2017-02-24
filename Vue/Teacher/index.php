@@ -63,9 +63,9 @@
       <div class="row">
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-aqua">
+          <div class="small-box bg-fuchsia">
             <div class="inner">
-              <h3>10</h3>
+              <h3><?= $this->nettoyer($nbrC) ?></h3>
 
               <p>Mes Classes</p>
             </div>
@@ -76,43 +76,19 @@
         <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-green">
+          <div class="small-box bg-olive">
             <div class="inner">
-              <h3>10<sup style="font-size: 20px"></sup></h3>
+              <h3><?= $this->nettoyer($nbrS) ?><sup style="font-size: 20px"></sup></h3>
 
-              <p>Mes Grilles</p>
+              <p>Mes Eleves évalués</p>
             </div>
             
             <a href="teacher/grille" class="small-box-footer">More info<i class="fa fa-arrow-circle-right"></i> </a>
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-yellow">
-            <div class="inner">
-              <h3>10</h3>
-
-              <p>Classes</p>
-            </div>
-           
-            <a href="admin/classe" class="small-box-footer">More info<i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-red">
-            <div class="inner">
-              <h3>10</h3>
-
-              <p>Eleves</p>
-            </div>
-            
-            <a href="Teacher/eleves" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
+        
+        
       </div>
       <!-- /.row -->
       <!-- Main row -->

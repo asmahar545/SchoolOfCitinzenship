@@ -31,7 +31,7 @@
         </li>
        <li class="treeview">
           <a href="teacher/monprofil">
-            <i class="fa fa-laptop"></i>
+            <i class="fa fa-user"></i>
             <span>Mon Profil</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -44,9 +44,9 @@
         </li>
          <li>
           <a href="teacher/mesclasses">
-            <i class="fa fa-th"></i> <span>J'évalue mes élèves</span>
+            <i class="fa fa-users"></i> <span>J'évalue mes élèves</span>
             <span class="pull-right-container">
-              <small class="label pull-right bg-green">ici</small>
+             <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
         </li>
@@ -54,7 +54,7 @@
        
         <li class="treeview">
           <a href="teacher/mesclasses">
-            <i class="fa fa-pie-chart"></i>
+           <i class="fa fa-file-text"></i>
             <span>Grille</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -68,7 +68,7 @@
         
         <li class="treeview">
           <a href="teacher/documentation">
-            <i class="fa fa-edit"></i> <span>Documentation</span>
+             <i class="fa fa-edit"></i> <span>Tutoriel</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>

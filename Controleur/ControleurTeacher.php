@@ -30,7 +30,9 @@ class ControleurTeacher extends ControleurSecurise
     public function index() {
         $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
         $adult=$this->adult->getadult($idU);
-        $this->genererVue(array('adult'=>$adult));
+        $nbClasse= $this->classe->getnbClassesParProffesseur($idU);
+        $nbStudent= $this->classe->getnbElevesParProffesseur($idU);
+        $this->genererVue(array('adult'=>$adult,'nbrC'=>$nbClasse,'nbrS'=>$nbStudent));
 
     }
     public function documentation(){
@@ -181,6 +183,7 @@ class ControleurTeacher extends ControleurSecurise
           if ($this->requete->existeParametre("id")){
               $idC = $this->requete->getParametre("id");
            $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+           $EvalueFalse= $this->classe->getEvalueFalse($idU, $idC);
            $nameItem1="J'aide mes camarades de classes";
            $nameItem2="J'obéis à mon professeurs";
            $nameItem3="Je parle bien avec mes professeurs";
@@ -209,7 +212,7 @@ class ControleurTeacher extends ControleurSecurise
                 'item5'=>$Item5,
                 'item6'=>$Item6,
                 'item7'=>$Item7,
-                
+                'nbr'=>$EvalueFalse,
                'nomStudent'=>$nomStudent,
                'item'=>$item));
    

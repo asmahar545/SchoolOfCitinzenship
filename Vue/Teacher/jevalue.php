@@ -102,7 +102,7 @@
                 <div class="form-group">
                     <div class=" col-sm-12">
                   <label>Commentaire </label>
-                  <textarea name="commentaire" class="form-control" rows="3" placeholder="Enter ..."><?=$commentaire['commentaire']?></textarea>
+                  <textarea name="commentaire" class="form-control" rows="3" placeholder="Enter ..." required><?=$commentaire['commentaire']?></textarea>
                 </div>
                 </div>
                 <div class="input-group">

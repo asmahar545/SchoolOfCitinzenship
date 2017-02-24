@@ -19,6 +19,31 @@ public function getnbClasses(){
         $ligne= $rep->fetch();
         return $ligne['nb'];
     }
+    public function getnbClassesParProffesseur($idU){
+
+
+        $rqt='select count(*) as nb from consultclass where id_adult=?';
+
+        $rep=  $this->executerRequete($rqt,array($idU));
+        $ligne= $rep->fetch();
+        return $ligne['nb'];
+    }
+      public function getnbElevesParProffesseur($idU){
+
+
+        $rqt='SELECT COUNT(DISTINCT (nameE)) as nb FROM `itemresponstudent` WHERE idU=?';
+
+        $rep=  $this->executerRequete($rqt,array($idU));
+        $ligne= $rep->fetch();
+        return $ligne['nb'];
+    }
+    
+    public function getEvalueFalse($idU,$classe){
+        $sql="SELECT COUNT(DISTINCT (nameE)) as nb FROM `itemresponstudent` WHERE idU=? and classe=?";
+         $rep=  $this->executerRequete($sql,array($idU,$classe));
+        $ligne= $rep->fetch();
+        return $ligne['nb'];
+    }
     public function getClasses()
     {
         $sql='select * from classe';
