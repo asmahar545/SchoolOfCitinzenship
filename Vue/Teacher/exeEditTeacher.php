@@ -1,4 +1,3 @@
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,22 +39,32 @@
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 <?php require 'Vue/_Commun/headerPrinc.php'; ?>
-<?php require 'Vue/_Commun/navPrinc.php'; ?>
+<?php require 'Vue/_Commun/navPrincTeacher.php'; ?>
 
-  <!-- Content Wrapper. Contains page content -->
+  
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <div class="callout callout-info">
-            <h4> Mon Profil a bien été éditer! </h4>
-           
-            <a href="teacher/monprofil">Mon profil</a> <br>
-            <a href="teacher/">Revenir au menu Principal</a>
-        </div>
+    <div class="container">
+     
 
-    </section>
+      <!-- Main content -->
+      <section class="content">
+        
+        <div class="callout callout-success">
+          <h4>Mon Profil a bien été modifié</h4>
+
+          <p>Merci</p>
+          
+          
+          <a href="teacher/monprofil">Revenir à mon profil</a> <br>
+          <a href="teacher/">Revenir au menu Principal</a>
+        </div>
+       
+        <!-- /.box -->
+      </section>
+      <!-- /.content -->
     </div>
-  <!-- /.content-wrapper -->
+    <!-- /.container -->
+  </div>
 <?php require 'Vue/_Commun/Folder.php'; ?>
 <?php require 'Vue/_Commun/Aside.php'; ?>
  

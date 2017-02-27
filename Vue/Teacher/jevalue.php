@@ -54,7 +54,7 @@
        <div class="col-md-12">
                <div class="box box-success">
             <div class="box-header with-border">
-              <h3 class="box-title">J'évalue mon élève pour la période de <?= $period['period']?> </h3>
+              <h3 class="box-title">J'évalue <?= $student['name']?>  <?= $student['firstName']?> pour la période de <?= $period['period']?> </h3>
             </div>
          
             

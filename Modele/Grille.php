@@ -108,9 +108,9 @@ class Grille extends Modele{
        $sql="DELETE FROM gridstudent";
        $this->executerRequete($sql);
    }
-   public function editPeriode($periode){
-       $sql="UPDATE `periodicity` SET `period` = ? WHERE `periodicity`.`id_periodicity` = 1";
-       $this->executerRequete($sql,array($periode));
+   public function editPeriode($dateDebut,$dateFin,$periode){
+       $sql="UPDATE `periodicity` SET `id_periodicity`=1,`dateStart`=?,`dateEnd`=?,`period`=? ";
+       $this->executerRequete($sql,array($dateDebut,$dateFin,$periode));
        
    }
    public function selectPeriod(){

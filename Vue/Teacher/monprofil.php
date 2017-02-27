@@ -37,7 +37,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Mon Profil <a href="teacher/editMonProfil/" class="btn btn-warning">Modifier</a>
+        Mon Profil 
       </h1>
      
      </section>  
@@ -56,11 +56,7 @@
 
               <p class="text-muted text-center">Professeur</p>
 
-              <ul class="list-group list-group-unbordered">
-                <li class="list-group-item">
-                  <b>Nombre d'étudiant</b> <a class="pull-right">150</a>
-                </li>
-              </ul>
+              
             </div>
             <!-- /.box-body -->
           </div>
@@ -107,7 +103,7 @@
         </div>
         <!-- /.col -->
       
-
+  <a href="teacher/editMonProfil/" class="btn btn-warning">Modifier</a>
     </section>
  <!-- /.content -->
   </div>
@@ -138,19 +134,7 @@
 <script src="dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
-<!-- page script -->
-<script>
-  $(function () {
-    $("#example1").DataTable();
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false
-    });
-  });
-</script>
+
+
 </body>
 

@@ -41,21 +41,30 @@
 <?php require 'Vue/_Commun/headerPrinc.php'; ?>
 <?php require 'Vue/_Commun/navPrinc.php'; ?>
 
-  <!-- Content Wrapper. Contains page content -->
+  
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <div class="callout callout-info">
-            <h4> Vou avez terminez l'évalutation de votre élève </h4>
-            Merci
-            <a href="teacher/mesclasses">Mes élèves</a>
-        </div>
+    <div class="container">
+     
 
-    </section> 
-   
-     </div>
- </div>
-  <!-- /.content-wrapper -->
+      <!-- Main content -->
+      <section class="content">
+        
+        <div class="callout callout-success">
+          <h4>L'évaluation de l'élève est terminer!</h4>
+
+          <p>Merci</p>
+          
+          
+          <a href="teacher/mesclasses">Revenir à mes élèves</a> <br>
+          <a href="teacher/">Revenir au menu Principal</a>
+        </div>
+       
+        <!-- /.box -->
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.container -->
+  </div>
 <?php require 'Vue/_Commun/Folder.php'; ?>
 <?php require 'Vue/_Commun/Aside.php'; ?>
  

@@ -39,7 +39,6 @@
 <div class="wrapper">
 <?php require 'Vue/_Commun/headerPrinc.php'; ?>
 <?php require 'Vue/_Commun/navPrincTeacher.php'; ?>
- 
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">

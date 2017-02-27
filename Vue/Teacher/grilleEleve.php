@@ -41,7 +41,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Grille de la classe 
+        Grille de la classe pour <?= $period['period']?> 
         <small></small>
       </h1>
      
@@ -74,15 +74,15 @@
                             </thead>
                             <tfoot>
                               <tr >
-                                  <th colspan="1" class="info">Carnaval </th>
-                                   <th  colspan="4" class="warning" >La commporte l'évlution de chaque proffesseur grille </th>
+                                  <th colspan="1" class="info"><?= $period['period']?> </th>
+                                   <th  colspan="4" class="warning" >Exigence croissante pour Item 1,2 et 3 </th>
                                    
                                 </tr>
                             </tfoot>
                             <tbody>
                                
                                 
-                                 <tr><th class="danger">J'aide mes camarades de classes</th>
+                                 <tr><th class="danger">Je m'exprime sans violence</th>
                                      <?php foreach ($item1 as $list): ?>
                                       <?php if ($list['response'] ==1): ?>
                                     <td><i class="fa fa-check"></i></td>
@@ -91,7 +91,7 @@
                                      <?php endif; ?>
                                    <?php endforeach; ?>    
                                     </tr>
-                                 <tr><th class="danger">J'obéis à mon professeurs</th> <?php foreach ($item2 as $list): ?>
+                                 <tr><th class="danger">Je respect le matériel des autres et de l'école</th> <?php foreach ($item2 as $list): ?>
                                     
                                     <?php if ($list['response'] ==1): ?>
                                     <td><i class="fa fa-check"></i></td>
@@ -102,7 +102,7 @@
                                     
                                    
                                    <?php endforeach; ?>   </tr>
-                                 <tr><th class="danger">Je parle bien avec mes professeurs</th> <?php foreach ($item3 as $list): ?>
+                                 <tr><th class="danger">Je suis honnête dans mes relations et évaluations.</th> <?php foreach ($item3 as $list): ?>
                                     
                                    <?php if ($list['response'] ==1): ?>
                                     <td><i class="fa fa-check"></i></td>
@@ -113,7 +113,7 @@
                                     
                                    
                                    <?php endforeach; ?>   </tr>
-                                 <tr><th class="danger">Je suis calme</th> <?php foreach ($item4 as $list): ?>
+                                 <tr><th class="danger">Je fais mes devoirs et mes leçons</th> <?php foreach ($item4 as $list): ?>
                                     
                                     <?php if ($list['response'] ==1): ?>
                                     <td><i class="fa fa-check"></i></td>
@@ -124,7 +124,7 @@
                                     
                                    
                                    <?php endforeach; ?>   </tr>
-                                 <tr><th class="danger">Je suis polis</th> <?php foreach ($item5 as $list): ?>
+                                 <tr><th class="danger">J'ai une tenue conforme au règlement.</th> <?php foreach ($item5 as $list): ?>
                                     
                                    <?php if ($list['response'] ==1): ?>
                                     <td><i class="fa fa-check"></i></td>
@@ -135,7 +135,7 @@
                                    
                                    <?php endforeach; ?>   </tr>
                                      
-                                        <tr><th class="danger">J’embête pas me camarade de classe</th> <?php foreach ($item6 as $list): ?>
+                                        <tr><th class="danger">Je me déplace de manière calme et ordonnée.</th> <?php foreach ($item6 as $list): ?>
                                     
                                   <?php if ($list['response'] ==1): ?>
                                     <td><i class="fa fa-check"></i></td>
@@ -146,7 +146,7 @@
                                     
                                    
                                    <?php endforeach; ?>   </tr>
-                                        <tr><th class="danger">L'éleve devra être polis
+                                        <tr><th class="danger">J'ai une attitude positive face au travail
                                             </th> <?php foreach ($item7 as $list): ?>
                                     
                                    <?php if ($list['response'] ==1): ?>
@@ -163,17 +163,21 @@
                         </table>
          
                     </div>
- <a  href="javascript:window.print()" class="btn bg-info"><i class="fa fa-print"></i> Imprimer</a>
+             <a  href="javascript:window.print()" class="btn bg-info"><i class="fa fa-print"></i> Imprimer</a>
+             </div>
              <?php else: ?>
-          <div class="callout callout-info">
-          <h4></h4>
-          
+ <br>
 
-          
+          <div class="callout callout-info">
+          <h4> Vous n'avez encore évaluez aucun des élèves de cette classe . </h4>
+       
+        </div>
+        <div class="callout callout-danger">
+        <h4> A évaluer avant le ...  </h4>
         </div>
             <!-- /.box-body -->
              <?php endif; ?>
-          </div>
+          
           <!-- /.box -->
 
           
@@ -242,7 +246,7 @@ th.rotate > div > span {
   <script src="plugins/pdf/vfs_fonts.js"></script>
   <script src="plugins/pdf/buttons.html5.min.js"></script>
   	
-<!-- page script -->
+<!-- page script 
 <script>
  
 $(document).ready(function() {
@@ -256,7 +260,7 @@ $(document).ready(function() {
             }
         ]
     } );
-} );
+} );-->
 
 </script>
 

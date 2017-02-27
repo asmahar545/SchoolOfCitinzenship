@@ -94,11 +94,12 @@ class ControleurTeacher extends ControleurSecurise
             }
     }
     public function mesclasses(){
+        $period=$this->grille->selectPeriod();
         $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
         $class= $this->classe->getTeacherUniqueClass($idU);
        
         $adult=$this->adult->getadult($idU);
-        $this->genererVue(array('adult'=>$adult,'class'=>$class));
+        $this->genererVue(array('adult'=>$adult,'class'=>$class,'period'=>$period));
     }
     public function evalue(){
         $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
@@ -122,7 +123,7 @@ class ControleurTeacher extends ControleurSecurise
         if ($this->requete->existeParametre("id")){
         $id = $this->requete->getParametre("id");
         $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
-        
+        $student= $this->student->getStudentsName($id);
         $adult =$this->adult->getadult($idU);
         $this->grille->addItemEvalueStudent($id, $idU);
         //trouver le commentire qui et null et le mettre dan texTArea,ensuite l'éditer   
@@ -135,7 +136,7 @@ class ControleurTeacher extends ControleurSecurise
         $period=$this->grille->selectPeriod();
         //dans exeEvaluationStudent
         $item=$this->grille->getEvalueStudent($idU, $id);
-        $this->genererVue(array('adult'=>$adult,'item'=>$item,'id'=>$id,'commentaire'=>$commentaire,'idgrid'=>$idgrid,'period'=>$period));
+        $this->genererVue(array('adult'=>$adult,'item'=>$item,'id'=>$id,'commentaire'=>$commentaire,'idgrid'=>$idgrid,'period'=>$period,'student'=>$student));
         }
     }
     
@@ -181,16 +182,17 @@ class ControleurTeacher extends ControleurSecurise
      }
      public function grilleEleve(){
           if ($this->requete->existeParametre("id")){
+              $period=$this->grille->selectPeriod();
               $idC = $this->requete->getParametre("id");
            $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
            $EvalueFalse= $this->classe->getEvalueFalse($idU, $idC);
-           $nameItem1="J'aide mes camarades de classes";
-           $nameItem2="J'obéis à mon professeurs";
-           $nameItem3="Je parle bien avec mes professeurs";
-           $nameItem4="Je suis calme";
-           $nameItem5="Je suis polis";
-           $nameItem6="J’embête pas me camarade de classe";
-           $nameItem7="L'éleve devra être polis";
+           $nameItem1="Je m'exprime sans violence";
+           $nameItem2="Je respect le matériel des autres et de l'école";
+           $nameItem3="Je suis honnête dans mes relations et évaluations.";
+           $nameItem4="Je fais mes devoirs et mes leçons";
+           $nameItem5="J'ai une tenue conforme au règlement.";
+           $nameItem6="Je me déplace de manière calme et ordonnée.";
+           $nameItem7="J'ai une attitude positive face au travail";
            //resultat item 1 " Je sui polis"
            $Item1= $this->grille->selectStudentEvalueParClasse($idC, $idU, $nameItem1);
            $Item2= $this->grille->selectStudentEvalueParClasse($idC, $idU, $nameItem2);
@@ -212,6 +214,7 @@ class ControleurTeacher extends ControleurSecurise
                 'item5'=>$Item5,
                 'item6'=>$Item6,
                 'item7'=>$Item7,
+               'period'=>$period,
                 'nbr'=>$EvalueFalse,
                'nomStudent'=>$nomStudent,
                'item'=>$item));

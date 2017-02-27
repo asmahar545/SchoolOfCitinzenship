@@ -50,7 +50,7 @@
     <section class="content">
      <div class="callout callout-success">
          
-          <p>Actuellement, l'évaluation se portera sur la période de  <?= $period['period']?> </p>
+          <p>Actuellement, l'évaluation se portera sur la période de  <?= $period['period']?> du <?=  date("d-m-Y ", strtotime($period['dateStart']))?>  au <?=  date("d-m-Y ", strtotime($period['dateEnd']))?> </p>
         </div>
      <h2 class="page-header">Réinitialisation des évaluations</h2>
 

@@ -57,10 +57,10 @@
 
                             <thead>
                             <tr >
-                            <th class="rotate"><div><span>Column header 1</span></div></th>
-                                <th class="rotate"><div><span>Nom</span></div></th>
-                                <th class="rotate"><div><span>Prénom</span></div></th>
-                                      <th class="rotate"><div><span>#     </span></div></th>
+                            <th ><div><span>N°</span></div></th>
+                                <th ><div><span>Nom</span></div></th>
+                                <th ><div><span>Prénom</span></div></th>
+                                      <th ><div><span>#     </span></div></th>
                             </tr>
                             </thead>
                             <tbody>

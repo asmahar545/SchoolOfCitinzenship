@@ -468,13 +468,20 @@ class ControleurAdmin extends ControleurSecurise
       
     }
   public function exeFinPeriode(){
-       if ($this->requete->existeParametre("periode"))
-               {
-     $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
-     $periode = $this->requete->getParametre("periode");
-     $this->grille->editPeriode($periode);
-     $adult=$this->adult->getadult($idU);
-       $this->genererVue(array('adult'=>$adult));}
+       if ($this->requete->existeParametre("periode")&&
+         $this->requete->existeParametre("dateDebut")&&
+          $this->requete->existeParametre("dateFin"))
+        {
+           
+           $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+           $periode = $this->requete->getParametre("periode");
+            $dateD = $this->requete->getParametre("dateDebut");
+            $dateF= $this->requete->getParametre("dateFin");
+            $dateDebut = date("Y-m-d ", strtotime($dateD));
+           $dateFin = date("Y-m-d ", strtotime($dateF));
+           $this->grille->editPeriode($dateDebut, $dateFin,$periode);
+           $adult=$this->adult->getadult($idU);
+           $this->genererVue(array('adult'=>$adult));}
        else{
            
              throw new Exception("Faite attention les champs ne sont pas tous définis");

@@ -51,17 +51,18 @@
       <div class="row">
        <div class="col-md-6">
 
-          <div class="box box-success">
+          <div class="box box-warning">
             
             <div class="box-body">
                     <form action="admin/exeFinPeriode"class="form-horizontal form-label-left" method="post">
                         <div class="box-header with-border">
                             <h3 class="box-title">Choix de la période</A></h3>
                         </div>
+                        <br>
                         <div class="box-body">
                            
                              <div class="form-group">
-                           
+                             <span class="form-group-addon">Période *</span>
                             <select class="form-control"  name="periode" type="text">
                             <option>Toussaint</option>
                             <option>Noel</option>
@@ -69,13 +70,22 @@
                             <option>Pâques</option>
                             <option>Juin</option>
                            </select>
-                </div>
+                         </div>
                             <br>
+                                <div class="form-group">
+                                <span class="form-group-addon">Date de début *</span>
+                                <input name="dateDebut" type="text" class="form-control" id="datepicker"required>
+                            </div>
+                            <br>
+                                <div class="form-group">
+                                <span class="form-group-addon">Date de fin *</span>
+                                <input name="dateFin" type="text" class="form-control" id="datepicker1"required>
+                            </div>
 
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-10">
 
-                                    <button type="submit" class="btn btn-success">Ajouter</button>
+                                    <button type="submit" class="btn btn-warning">Modifier</button>
                                 </div>
                             </div>
 
@@ -137,5 +147,13 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+   <script>
+    $('#datepicker').datepicker({
+      autoclose: true
+    });</script>
+      <script>
+    $('#datepicker1').datepicker({
+      autoclose: true
+    });</script>
 </body>
               

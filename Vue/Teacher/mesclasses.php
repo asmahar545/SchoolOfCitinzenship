@@ -49,7 +49,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Avec la liste des élèves par classe</h3>
+              <h3 class="box-title">Avec la liste des élèves par classe pour <?= $period['period']?></h3>
             </div>
             <!-- /.box-header -->
            <div class="box-body table-responsive no-padding">
