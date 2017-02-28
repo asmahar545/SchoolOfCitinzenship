@@ -222,5 +222,18 @@ class ControleurTeacher extends ControleurSecurise
           }
          
      }
+     public function commentaire(){
+         if ($this->requete->existeParametre("id")){
+         $idC = $this->requete->getParametre("id");
+         $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+         $adult=$this->adult->getadult($idU);
+         
+        $commentaire= $this->grille->selectCommentaireStudentParProfesseur($idC, $idU);
+        $this->genererVue(array('adult'=>$adult,'commentaire'=>$commentaire));}
+        
+ else {
+             throw new Exception("Veuillez évaluer votre élèves");
+        }
+     }
 
 }

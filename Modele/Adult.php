@@ -44,11 +44,11 @@ class Adult extends Modele
         return $ligne['nb'];
     }
     //ajoute un adult
-    public function addAdult($name,$firstname,$adress,$birthday,$sexe,$phone,$email,$password,$id_adultCategory)
+    public function addAdult($name,$firstname,$adress,$birthday,$sexe,$phone,$commentaire,$email,$password,$id_adultCategory)
     {
-        $sql='INSERT INTO `adult` (`id_adult`, `name`, `firstname`, `adress`, `birthday`, `sexe`, `phone`, `email`, `password`, `id_adultCategory`)  VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?,?)';
+        $sql='INSERT INTO `adult` (`id_adult`, `name`, `firstname`, `adress`, `birthday`, `sexe`, `phone`,`commentaire`, `email`, `password`, `id_adultCategory`)  VALUES (NULL, ?, ?, ?, ?,?, ?, ?, ?, ?,?)';
 
-        $this->executerRequete($sql,array($name,$firstname,$adress,$birthday,$sexe,$phone,$email,$password,$id_adultCategory));
+        $this->executerRequete($sql,array($name,$firstname,$adress,$birthday,$sexe,$phone,$commentaire,$email,$password,$id_adultCategory));
     }
     public function addLesson($cours,$nbr){
         $sql= 'INSERT INTO `cours` (`id_lesson`, `name`, `nbr`) VALUES (NULL, ?, ?)';

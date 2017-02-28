@@ -29,10 +29,22 @@
     <br>
     <br>
     <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="col-xs-1">
+        
+    </div>
  <div class="col-xs-6">
 <div class="login-box">
   <div class="login-logo">
-    <a href=""><b>ecoCit</b> </a>
+    <a href=""><b></b> </a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
@@ -50,7 +62,7 @@
 
                 <!-- /.col -->
                 <div class="col-xs-6">
-                    <button href="" type="submit" class="btn btn-primary btn-block btn-flat">Se connecter</button>
+                    <button href="" type="submit" class="btn btn-danger btn-block btn-flat">Se connecter</button>
                 </div>
                 <!-- /.col -->
             </div>
@@ -82,7 +94,7 @@
 <style>
 body
 {
-    background-image: url("images/ecole.jpg");
+    background-image: url("images/pageA.jpg");
 }
 </style>
 </body>

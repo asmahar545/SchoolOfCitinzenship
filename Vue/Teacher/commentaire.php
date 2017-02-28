@@ -37,8 +37,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Mes Classes
-        <small> </small>
+       Commentaire
+        <small>Ma classe</small>
       </h1>
      
     </section>
@@ -49,38 +49,37 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Avec la liste des élèves par classe pour <?= $period['period']?></h3>
+              <h3 class="box-title">Mes Commentaires</h3>
             </div>
             <!-- /.box-header -->
            <div class="box-body table-responsive no-padding">
-                
-                        <table  id="example1" class="table table-bordered table-striped">
+                        <table  class="table table-bordered table-striped">
 
                             <thead>
-                            <tr>
-                                <th>N°</th>
-                                <th>Classe</th>
-                                <th>      </th>
+                            <tr >
+                            <th ><div><span>N°</span></div></th>
+                                <th ><div><span>Nom</span></div></th>
+                                <th ><div><span>Prénom</span></div></th>
+                                      <th ><div><span>#     </span></div></th>
                             </tr>
                             </thead>
                             <tbody>
-                            <?php $var=0?>
-                            <?php foreach ($class as $list): ?>
+                            <?php $var=1?>
+                            <?php foreach ($commentaire as $list): ?>
                                 <tr>
                                     
-                                    <td><?php echo $var +1?></td>
-                                    <td><?= $this->nettoyer($list['yearSexion']) ?></td>
-                                    <td>
-                                        <a href="teacher/eleves/<?= $var =$this->nettoyer($list['id']) ?>" class="btn btn-danger btn-xs">Elèves</a>
-                                        <a href="teacher/grilleEleve/<?=  $this->nettoyer($list['id']) ?> " class="btn bg-purple btn-xs"><i class="fa fa-user"></i> Grille d'évaluation</a>
-                                        <a href="teacher/commentaire/<?=  $this->nettoyer($list['id']) ?> " class="btn bg-info btn-xs"><i class="fa fa-check-circle"></i> Commentaire</a>
-                                    </td>
+                                    <td><?php echo $var++ ?></td>
+                                    <td><?= $this->nettoyer($list['nameE']) ?></td>
+                                    <td><?= $this->nettoyer($list['firstE']) ?></td>
+                                    <td><?= $this->nettoyer($list['commentaire']) ?></td>
+                                    
                                 </tr>
                             
                             <?php endforeach; ?>
                             </tbody>
                         </table>
-                       </div>
+                    </div>
+            <a  href="javascript:window.print()" class="btn bg-info"><i class="fa fa-print"></i> Imprimer</a>
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
@@ -91,13 +90,14 @@
         <!-- /.col -->
       </div>
       <!-- /.row -->
+       
     </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
  
 
- <?php require 'Vue/_Commun/Folder.php'; ?>
+<?php require 'Vue/_Commun/Folder.php'; ?>
 <?php require 'Vue/_Commun/Aside.php'; ?>
   <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed
@@ -105,7 +105,31 @@
   <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
+<style>
+    th.rotate {
+  /* Something you can count on */
+  height: 20px;
+  white-space: nowrap;
+}
 
+th.rotate > div {
+  transform: 
+    /* Magic Numbers */
+    translate(30px, 0px)
+    /* 45 is really 360 - 45 */
+    rotate(315deg);
+  width: 30px;
+}
+th.rotate > div > span {
+  border-bottom: 1px solid #ccc;
+  padding: 5px 10px;
+}
+/* These aren't needed and will be weird if transforms don't work */
+.csstransforms & th.rotate {
+  height: 140px;
+  white-space: nowrap;
+}
+    </style>
 <!-- jQuery 2.2.3 -->
 <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
@@ -136,7 +160,3 @@
   });
 </script>
 </body>
-
-    
-
-   

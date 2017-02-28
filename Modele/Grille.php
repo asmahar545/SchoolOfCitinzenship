@@ -138,4 +138,10 @@ class Grille extends Modele{
        $item= $this->executerRequete($sql,array($idC,$idU));
        return $item;
    }
-}
+  public function selectCommentaireStudentParProfesseur($idC,$idU){
+      
+      $sql="SELECT DISTINCT (commentaire),nameE, firstE FROM `itemresponstudent` WHERE classe= ? and idU=?  ORDER by nameE ASC";
+      $Commentaire= $this->executerRequete($sql,array($idC,$idU));
+       return $Commentaire;
+  }
+  }

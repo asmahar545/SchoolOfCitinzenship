@@ -1,4 +1,4 @@
-f
+
 <?php
 require_once 'ControleurSecurise.php';
 require_once 'Modele/Adult.php';
@@ -498,7 +498,7 @@ class ControleurAdmin extends ControleurSecurise
            
        
   }
-
+ 
     //documentation
     public function documentation(){
      $idU = $this->requete->getSession()->getAttribut("idUtilisateur");

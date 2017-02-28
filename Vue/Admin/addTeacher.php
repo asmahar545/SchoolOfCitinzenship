@@ -114,7 +114,7 @@
                             <br>
                             <div class="input-group">
                                 <span class="input-group-addon">Password</span>
-                                <input name="password" type="password" class="form-control" placeholder=""required>
+                                <input name="password" type="text" class="form-control" placeholder=""required>
                             </div>
                             <br>
                             
@@ -132,6 +132,15 @@
                                 
                             </div>
                             <br>
+                             <!-- textarea -->
+                           <div class="input-group">
+                             <span class="input-group-addon">Commentaire</span>
+                             
+                            
+                               <textarea name="commentaire" class="form-control" rows="3" placeholder="Enter ..." required></textarea>
+                          
+                             </div>
+                             <br>
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-10">
 
