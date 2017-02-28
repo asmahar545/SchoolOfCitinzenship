@@ -1,7 +1,9 @@
 <?= require_once ('Vue/_Commun/headerPrinc.php');?>
 <?php $this->titre = "classe"; ?>
 
-<body class="hold-transition skin-blue sidebar-mini">
+
+
+<body class="hold-transition skin-black sidebar-mini">
 <div class="content-wrapper">
 
     <!-- Content Header (Page header) -->

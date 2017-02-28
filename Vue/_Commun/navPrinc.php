@@ -23,53 +23,41 @@
             <span>Bureau</span>
            
           </a>
-          <ul class="treeview-menu">
-            <li><a href="admin/"><i class="fa fa-circle-o"></i>Bureau</a></li>
-            
-          </ul>
+         
         </li>
         <li class="treeview">
-          <a href="admin/professeur">
+          <a href="admin/configuration">
             <i class="fa fa-calendar-plus-o"></i>
             <span>Sessions d'évaluation</span>
            
           </a>
-          <ul class="treeview-menu">
-            <li><a href="admin/configuration"><i class="fa fa-circle-o"></i>Sessions d'évaluation</a></li>
-            
-          </ul>
+          
         </li>
         <li class="treeview">
           <a href="admin/professeur">
             <i class="fa fa-user"></i>
             <span>Professeurs</span>
             <span class="pull-right-container">
-              <span class="label label-primary pull-right"> - </span>
+              <span class="label label-primary pull-right"> +3 </span>
             </span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="admin/professeur"><i class="fa fa-circle-o"></i>Professeurs</a></li>
-            
-          </ul>
+          
         </li>
          <li class="treeview">
           <a href="admin/professeur">
             <i class="fa fa-users"></i>
             <span>Élèves</span>
             <span class="pull-right-container">
-              <span class="label label-primary pull-right"> - </spanÉ
+              <span class="label label-primary pull-right"> +9 </spanÉ
             </span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="admin/student"><i class="fa fa-circle-o"></i>Élèves</a></li>
-            
-          </ul>
+          
         </li>
         <li>
           <a href="admin/classe">
             <i class="fa fa-th"></i> <span>Classes</span>
             <span class="pull-right-container">
-              <small class="label pull-right bg-green"> - </small>
+              <small class="label pull-right bg-green"> +3 </small>
             </span>
           </a>
         </li>
@@ -81,10 +69,7 @@
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="admin/grille"><i class="fa fa-circle-o"></i>Grille citoyenne</a></li>
-            
-          </ul>
+          
         </li>
         <li class="treeview">
           <a href="admin/droit">
@@ -94,10 +79,7 @@
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="admin/droit"><i class="fa fa-circle-o"></i>Autorisations</a></li>
-           
-          </ul>
+         
         </li>
         <li class="treeview">
           <a href="admin/documentation">
@@ -106,10 +88,7 @@
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="admin/documentation"><i class="fa fa-circle-o"></i> Explications</a></li>
-          
-          </ul>
+         
         </li>
       
        

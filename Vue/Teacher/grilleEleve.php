@@ -30,7 +30,7 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body onload="window.print()" class="hold-transition skin-blue sidebar-mini">
+<body onload="window.print()" class="hold-transition skin-black sidebar-mini">
 <div class="wrapper">
 <?php require 'Vue/_Commun/headerPrinc.php'; ?>
 <?php require 'Vue/_Commun/navPrincTeacher.php'; ?>

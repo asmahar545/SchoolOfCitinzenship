@@ -38,7 +38,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Data Tables
+        Classes
         <small>Elèves</small>
       </h1>
      
@@ -50,7 +50,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Classe</h3>
+              <h3 class="box-title"></h3>
             </div>
             <!-- /.box-header -->
              <div class="box-body table-responsive no-padding">
@@ -72,10 +72,10 @@
                                     <td><?php echo $var++ ?></td>
                                     <td><?= $this->nettoyer($list['yearSexion']) ?></td>
                                     <td>
-                                        <a href="admin/addClass " class="btn btn-success btn-xs">Ajouter</a>
+                                        <a href="admin/addClass " class="btn btn-success btn-xs"><i class="fa fa-plus"></i> </a>
                                       
                                      <!-- <a href="admin/editClass/  $this->nettoyer($list['id']) " class="btn btn-warning btn-xs">modifier </a>-->
-                                        <a href="admin/listStudentClass/<?=  $this->nettoyer($list['id']) ?>" class="btn bg-purple btn-xs"> Student</a>
+                                        <a href="admin/listStudentClass/<?=  $this->nettoyer($list['id']) ?>" class="btn bg-purple btn-xs"><i class="fa fa-users"></i</a>
                           
                                     </td>
                                 </tr>

@@ -26,7 +26,7 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-black sidebar-mini">
 <div class="wrapper">
 <?php require 'Vue/_Commun/headerPrinc.php'; ?>
 <?php require 'Vue/_Commun/navPrincTeacher.php'; ?>
@@ -37,7 +37,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Mes Classes
+        Évaluation
         <small> </small>
       </h1>
      
@@ -49,7 +49,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Avec la liste des élèves par classe pour <?= $period['period']?></h3>
+              <h3 class="box-title">J'évalue mes étudiant pour la période de <?= $period['period']?></h3>
             </div>
             <!-- /.box-header -->
            <div class="box-body table-responsive no-padding">

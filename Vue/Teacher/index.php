@@ -37,7 +37,7 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-black sidebar-mini">
 <div class="wrapper">
 <?php require 'Vue/_Commun/headerPrinc.php'; ?>
 <?php require 'Vue/_Commun/navPrincTeacher.php'; ?>
@@ -63,27 +63,27 @@
       <div class="row">
         <div class="col-lg-6 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-purple">
+          <div class="small-box bg-olive-active">
             <div class="inner">
               <h3><?= $this->nettoyer($nbrC) ?></h3>
 
-              <p>Mes Classes</p>
+              <p>Mes classes</p>
             </div>
            
-            <a href="teacher/mesclasses" class="small-box-footer">More info<i class="fa fa-arrow-circle-right"></i></a>
+            <a href="teacher/mesclasses" class="small-box-footer">Plus d'infos  <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
         <div class="col-lg-6 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-olive">
+          <div class="small-box bg-navy">
             <div class="inner">
               <h3><?= $this->nettoyer($nbrS) ?><sup style="font-size: 20px"></sup></h3>
 
-              <p>Mes Eleves évalués</p>
+              <p>Mes étudiants</p>
             </div>
             
-            <a href="teacher/mesclasses" class="small-box-footer">More info<i class="fa fa-arrow-circle-right"></i> </a>
+            <a href="teacher/mesclasses" class="small-box-footer">Plus d'infos  <i class="fa fa-arrow-circle-right"></i> </a>
           </div>
         </div>
         <!-- ./col -->

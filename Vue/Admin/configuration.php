@@ -37,7 +37,7 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-black sidebar-mini">
 <div class="wrapper">
 <?php require 'Vue/_Commun/headerPrinc.php'; ?>
 <?php require 'Vue/_Commun/navPrinc.php'; ?>
@@ -142,7 +142,7 @@
                        <div class="alert alert-danger alert-dismissible">
                         
                           <h4><i class="icon fa fa-warning"></i> Attention!</h4>
-                               Toute les évaluations seront supprimer pour une nouvelle année
+                               Toute les évaluations seront supprimer pour une nouvelle période
                          </div>
                          </div>
                        <div class="modal-footer">

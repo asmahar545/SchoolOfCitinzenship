@@ -26,7 +26,7 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-black sidebar-mini">
 <div class="wrapper">
 <?php require 'Vue/_Commun/headerPrinc.php'; ?>
 <?php require 'Vue/_Commun/navPrincTeacher.php'; ?>
@@ -50,7 +50,7 @@
           <!-- Profile Image -->
           <div class="box box-success">
             <div class="box-body box-profile">
-              <img class="profile-user-img img-responsive img-circle" src="dist/img/teacherHomme.jpg" alt="User profile picture">
+              <img class="profile-user-img img-responsive img-circle" src="dist/img/teacher.png" alt="User profile picture">
 
               <h3 class="profile-username text-center"><?= $adult['name']?> <?= $adult['firstname']?></h3>
 
