@@ -47,7 +47,7 @@
     <section class="content-header">
         <h1>
                 Bienvenue,
-                <small>admin</small>
+                <small>Administrateur</small>
         </h1>
     
       <ol class="breadcrumb">

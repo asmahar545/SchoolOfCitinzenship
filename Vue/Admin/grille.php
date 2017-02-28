@@ -39,7 +39,7 @@
     <section class="content-header">
       <h1>
         Data Tables
-        <small>Elèves</small>
+        <small>Élèves</small>
       </h1>
      
     </section>
