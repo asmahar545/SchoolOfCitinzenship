@@ -94,7 +94,7 @@
 <style>
 body
 {
-    background-image: url("images/pageA.jpg");
+    background-image: url("images/ecole.jpg");
 }
 </style>
 </body>

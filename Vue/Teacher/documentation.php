@@ -37,7 +37,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Documentation
+            Tutoriel
             <small>Présentation de l'application</small>
         </h1>
           <div class="box-body">
@@ -53,7 +53,7 @@
                   </div>
                   <div id="collapseOne" class="panel-collapse collapse in">
                     <div class="box-body">
-                     Explication
+                     Explications
                     </div>
                   </div>
                 </div>
@@ -61,7 +61,7 @@
                   <div class="box-header with-border">
                     <h4 class="box-title">
                       <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                      Evaluation par chaque professeur
+                      Évaluation par chaque professeur
                       </a>
                     </h4>
                   </div>

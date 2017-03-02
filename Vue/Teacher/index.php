@@ -99,7 +99,7 @@
         <div class="col-md-6">
           <div class="box box-solid">
             <div class="box-header with-border">
-              <h3 class="box-title">Carousel</h3>
+              <h3 class="box-title">Actualités</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -148,7 +148,7 @@
                <div class="timeline-item">
                 <div class="box box-solid">
               <div class="box-header with-border">
-              <h3 class="box-title">Vidéo</h3>
+              <h3 class="box-title">Inspiration</h3>
             </div>
 
                 <div class="timeline-body">
@@ -166,16 +166,16 @@
         <!-- right col (We are only adding the ID to make the widgets sortable)-->
         <section>
         <div class="col-md-6">
-        <div class="box box-solid bg-green-gradient">
+        <div class="box box-solid bg-gray-active">
             <div class="box-header">
               <i class="fa fa-calendar"></i>
 
-              <h3 class="box-title">Calendar</h3>
+              <h3 class="box-title">Calendrier</h3>
               <!-- tools box -->
               <div class="pull-right box-tools">
                 <!-- button with a dropdown -->
                 <div class="btn-group">
-                  <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown">
+                  <button type="button" class="btn btn-gray-active btn-sm dropdown-toggle" data-toggle="dropdown">
                     <i class="fa fa-bars"></i></button>
                   <ul class="dropdown-menu pull-right" role="menu">
                     <li><a href="#">Add new event</a></li>
@@ -184,9 +184,9 @@
                     <li><a href="#">View calendar</a></li>
                   </ul>
                 </div>
-                <button type="button" class="btn btn-success btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
+                <button type="button" class="btn btn-gray-active btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
                 </button>
-                <button type="button" class="btn btn-success btn-sm" data-widget="remove"><i class="fa fa-times"></i>
+                <button type="button" class="btn btn-gray-active btn-sm" data-widget="remove"><i class="fa fa-times"></i>
                 </button>
               </div>
               <!-- /. tools -->
@@ -197,59 +197,18 @@
               <div id="calendar" style="width: 100%"></div>
             </div>
             <!-- /.box-body -->
-            <div class="box-footer text-black">
-              <div class="row">
-                <div class="col-sm-6">
-                  <!-- Progress bars -->
-                  <div class="clearfix">
-                    <span class="pull-left">Task #1</span>
-                    <small class="pull-right">90%</small>
-                  </div>
-                  <div class="progress xs">
-                    <div class="progress-bar progress-bar-green" style="width: 90%;"></div>
-                  </div>
-
-                  <div class="clearfix">
-                    <span class="pull-left">Task #2</span>
-                    <small class="pull-right">70%</small>
-                  </div>
-                  <div class="progress xs">
-                    <div class="progress-bar progress-bar-green" style="width: 70%;"></div>
-                  </div>
-                </div>
-                <!-- /.col -->
-                <div class="col-sm-6">
-                  <div class="clearfix">
-                    <span class="pull-left">Task #3</span>
-                    <small class="pull-right">60%</small>
-                  </div>
-                  <div class="progress xs">
-                    <div class="progress-bar progress-bar-green" style="width: 60%;"></div>
-                  </div>
-
-                  <div class="clearfix">
-                    <span class="pull-left">Task #4</span>
-                    <small class="pull-right">40%</small>
-                  </div>
-                  <div class="progress xs">
-                    <div class="progress-bar progress-bar-green" style="width: 40%;"></div>
-                  </div>
-                </div>
-                <!-- /.col -->
-              </div>
-              <!-- /.row -->
-            </div>
+            
           </div>
         </DIV>
              <div class="col-sm-6">
       <div class="box box-danger">
         <div class="box-header with-border">
-          <h3 class="box-title">Télèchargement</h3>
+          <h3 class="box-title">Intention</h3>
           <span class="label label-primary pull-right"><i class="fa fa-html5"></i></span>
         </div><!-- /.box-header -->
         <div class="box-body">
-          <p>Document à télècharger ...</p>
-          <a href="fpdf181.zip" class="btn btn-primary"><i class="fa fa-download"></i> Download</a>
+          <p>Informations complémentaires</p>
+          <a href="fpdf181.zip" class="btn btn-danger"><i class="fa fa-download"></i> Télégarger</a>
         </div><!-- /.box-body -->
       </div><!-- /.box -->
     </div><!-- /.col -->

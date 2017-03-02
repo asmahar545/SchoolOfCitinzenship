@@ -39,7 +39,7 @@
     <section class="content-header">
       <h1>
         Classes
-        <small>Elèves</small>
+        <small>Élèves</small>
       </h1>
      
     </section>
@@ -57,8 +57,8 @@
               <table id="example1" class="table table-bordered table-hover">
              <thead>
                                 <th>N°</th>
-                                <th>Classe</th>
-                                <th>Edit</th>
+                                <th>Classes</th>
+                                <th>Actions </th>
                               
                       
 

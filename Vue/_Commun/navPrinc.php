@@ -44,7 +44,7 @@
           
         </li>
          <li class="treeview">
-          <a href="admin/professeur">
+          <a href="admin/student">
             <i class="fa fa-users"></i>
             <span>Élèves</span>
             <span class="pull-right-container">

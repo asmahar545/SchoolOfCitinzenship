@@ -58,9 +58,9 @@
                     <thead>
                             <tr>
                                 <th>N°</th>
-                                <th>Item</th>
-                                <th>Prénom</th>
-                                <th>Description</th>
+                                <th>Compétences</th>
+                                <th>Tag</th>
+                                <th>Informations complémentaires</th>
                             </tr>
                      </thead>
                      <tbody>
