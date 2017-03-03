@@ -498,7 +498,53 @@ class ControleurAdmin extends ControleurSecurise
            
        
   }
- 
+ public function resultatParClasse(){
+      if ($this->requete->existeParametre("id")){
+              $period=$this->grille->selectPeriod();
+              $idC = $this->requete->getParametre("id");
+              $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+              $nameItem1="Je m'exprime sans violence";
+           $nameItem2="Je respect le matériel des autres et de l'école";
+           $nameItem3="Je suis honnête dans mes relations et évaluations.";
+           $nameItem4="Je fais mes devoirs et mes leçons";
+           $nameItem5="J'ai une tenue conforme au règlement.";
+           $nameItem6="Je me déplace de manière calme et ordonnée.";
+           $nameItem7="J'ai une attitude positive face au travail";
+            $Item1= $this->grille->selectResultatStudentParClasse($nameItem1, $idC);
+            $Item2= $this->grille->selectResultatStudentParClasse($nameItem2, $idC);
+            $Item3= $this->grille->selectResultatStudentParClasse($nameItem3, $idC);
+            $Item4= $this->grille->selectResultatStudentParClasse($nameItem4, $idC);
+            $Item5= $this->grille->selectResultatStudentParClasse($nameItem5, $idC);
+            $Item6= $this->grille->selectResultatStudentParClasse($nameItem6, $idC);
+            $Item7= $this->grille->selectResultatStudentParClasse($nameItem7, $idC);
+            
+          
+              
+              $nomStudent=$this->grille->selectNomStudentEvalueParClasse($idC);
+              $item = $this->grille->selectItemStudentEvalueParClasse($idC);
+              $adult=$this->adult->getadult($idU);
+              $this->genererVue(array('adult'=>$adult,
+                  'item1'=>$Item1,
+                'item2'=>$Item2,
+                'item3'=>$Item3,
+                'item4'=>$Item4,
+                'item5'=>$Item5,
+                'item6'=>$Item6,
+                'item7'=>$Item7,
+                  'period'=>$period,
+                  'nomStudent'=>$nomStudent,
+                  'item'=>$item));
+              
+              
+      }
+    
+           else{
+           
+             throw new Exception("Faite attention les champs ne sont pas tous définis");
+         }
+          
+      
+ }
     //documentation
     public function documentation(){
      $idU = $this->requete->getSession()->getAttribut("idUtilisateur");

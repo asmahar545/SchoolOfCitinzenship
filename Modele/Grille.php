@@ -128,14 +128,14 @@ class Grille extends Modele{
       //vous n'aveze pas encore évaluez d'élève pour cette classe
    
    } 
-   public function selectNomStudentEvalueParClasse($idC,$idU) {
-       $sql="SELECT DISTINCT (nameE) FROM `itemresponstudent` WHERE classe=? and idU=? ORDER by nameE";
-       $nomStudent= $this->executerRequete($sql,array($idC,$idU));
+   public function selectNomStudentEvalueParClasse($idC) {
+       $sql="SELECT DISTINCT (nameE) FROM `itemresponstudent` WHERE classe=?  ORDER by nameE";
+       $nomStudent= $this->executerRequete($sql,array($idC));
        return $nomStudent;
    }
-   public function selectItemStudentEvalueParClasse($idC,$idU) {
-       $sql="SELECT DISTINCT (nameItem) FROM `itemresponstudent` WHERE classe=? and idU=? ORDER by nameItem";
-       $item= $this->executerRequete($sql,array($idC,$idU));
+   public function selectItemStudentEvalueParClasse($idC) {
+       $sql="SELECT DISTINCT (nameItem) FROM `itemresponstudent` WHERE classe=?  ORDER by nameItem";
+       $item= $this->executerRequete($sql,array($idC));
        return $item;
    }
   public function selectCommentaireStudentParProfesseur($idC,$idU){
@@ -143,5 +143,19 @@ class Grille extends Modele{
       $sql="SELECT DISTINCT (commentaire),nameE, firstE FROM `itemresponstudent` WHERE classe= ? and idU=?  ORDER by nameE ASC";
       $Commentaire= $this->executerRequete($sql,array($idC,$idU));
        return $Commentaire;
+  }
+  
+    public function selectResultatStudentParClasse($nameItem,$idC){
+      
+      $sql="SELECT SUM(response) as resultat,nameE from itemresponstudent where nameItem=? and classe=? group by nameE ORDER by nameE ASC";
+      $resultat= $this->executerRequete($sql,array($nameItem,$idC));
+      return $resultat;
+  }
+  
+    public function selecResultatStudentParProfesseur($nameItem,$nameE){
+      
+      $sql="SELECT SUM(response) as resultat from itemresponstudent where nameItem=? and nameE=?";
+      $resultat= $this->executerRequete($sql,array($nameItem,$nameE));
+      return $resultat;
   }
   }

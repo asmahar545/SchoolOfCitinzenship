@@ -75,8 +75,8 @@
                                         <a href="admin/addClass " class="btn btn-success btn-xs"><i class="fa fa-plus"></i> </a>
                                       
                                      <!-- <a href="admin/editClass/  $this->nettoyer($list['id']) " class="btn btn-warning btn-xs">modifier </a>-->
-                                        <a href="admin/listStudentClass/<?=  $this->nettoyer($list['id']) ?>" class="btn bg-purple btn-xs"><i class="fa fa-users"></i</a>
-                          
+                                     <a href="admin/listStudentClass/<?=  $this->nettoyer($list['id']) ?>" class="btn bg-purple btn-xs"><i class="fa fa-users"></i></a>
+                                     <a alt="Résultat des évaluations" href="admin/resultatParClasse/<?=  $this->nettoyer($list['id']) ?>" class="btn bg-red btn-xs"><i class="fa fa-file-pdf-o"></i></a>
                                     </td>
                                 </tr>
                             
