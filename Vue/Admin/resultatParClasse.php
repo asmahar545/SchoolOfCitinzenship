@@ -110,14 +110,14 @@
                                     
                                    
                                    <?php endforeach; ?>   </tr>
-                                 <tr><th class="danger">J'ai une tenue conforme au règlement.</th> <?php foreach ($item5 as $list): ?>
+                                 <tr><th class="danger">J'ai une tenue conforme au règlement</th> <?php foreach ($item5 as $list): ?>
                                     
                                   <td><?= $list['resultat'] ?></td>
                                     
                                    
                                    <?php endforeach; ?>   </tr>
                                      
-                                        <tr><th class="danger">Je me déplace de manière calme et ordonnée.</th> <?php foreach ($item6 as $list): ?>
+                                        <tr><th class="danger">Je me déplace de manière calme et ordonnée</th> <?php foreach ($item6 as $list): ?>
                                     
                                    <td><?= $list['resultat'] ?></td>
                                     
@@ -129,6 +129,27 @@
                                 <td><?= $list['resultat'] ?></td>
                                     
                                    <?php endforeach; ?>   </tr> 
+                                        <tr><th class="danger">J’écoute les professeurs et les élèves sans les interrompre.
+                                            </th> <?php foreach ($item8 as $list): ?>
+                                    
+                                  <td><?= $list['resultat'] ?></td>
+                                    
+                                    
+                                   <?php endforeach; ?>   </tr> 
+                                            <tr><th class="danger">Je circule dans l’école calmement
+                                            </th> <?php foreach ($item9 as $list): ?>
+                                    
+                                  <td><?= $list['resultat'] ?></td>
+                                    
+                                    
+                                   <?php endforeach; ?>   </tr> 
+                                              <tr><th class="danger">Je donne le meilleur de moi-même
+                                            </th> <?php foreach ($item10 as $list): ?>
+                                    
+                                  <td><?= $list['resultat'] ?></td>
+                                    
+                                    
+                                   <?php endforeach; ?>   </tr>
                                
                             </tbody>
                             
@@ -227,6 +248,6 @@ $(document).ready(function() {
     } );
 } );-->
 
-</script>
 
-</body
+
+</body>

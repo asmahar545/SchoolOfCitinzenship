@@ -503,13 +503,16 @@ class ControleurAdmin extends ControleurSecurise
               $period=$this->grille->selectPeriod();
               $idC = $this->requete->getParametre("id");
               $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
-              $nameItem1="Je m'exprime sans violence";
-           $nameItem2="Je respect le matériel des autres et de l'école";
-           $nameItem3="Je suis honnête dans mes relations et évaluations.";
-           $nameItem4="Je fais mes devoirs et mes leçons";
-           $nameItem5="J'ai une tenue conforme au règlement.";
-           $nameItem6="Je me déplace de manière calme et ordonnée.";
-           $nameItem7="J'ai une attitude positive face au travail";
+              $nameItem1="Je suis respectueux envers les personnes";
+              $nameItem2="J’adopte une attitude non violente";
+              $nameItem3="Je suis respectueux du matériel et de l’environnement";
+              $nameItem4="Je parle de façon adéquate";
+              $nameItem5="Je suis solidaire";
+              $nameItem6="Je respecte les règles de l’école  ";
+              $nameItem7="Je m’organise et je deviens autonome";
+              $nameItem8="Je suis respectueux du matériel et de l’environnement"; 
+              $nameItem9="Je circule dans l’école calmement";
+              $nameItem10="Je donne le meilleur de moi-même";
             $Item1= $this->grille->selectResultatStudentParClasse($nameItem1, $idC);
             $Item2= $this->grille->selectResultatStudentParClasse($nameItem2, $idC);
             $Item3= $this->grille->selectResultatStudentParClasse($nameItem3, $idC);
@@ -517,6 +520,9 @@ class ControleurAdmin extends ControleurSecurise
             $Item5= $this->grille->selectResultatStudentParClasse($nameItem5, $idC);
             $Item6= $this->grille->selectResultatStudentParClasse($nameItem6, $idC);
             $Item7= $this->grille->selectResultatStudentParClasse($nameItem7, $idC);
+            $Item8= $this->grille->selectResultatStudentParClasse($nameItem8, $idC);
+            $Item9= $this->grille->selectResultatStudentParClasse($nameItem9, $idC);
+            $Item10= $this->grille->selectResultatStudentParClasse($nameItem10, $idC);
             
           
               
@@ -531,6 +537,9 @@ class ControleurAdmin extends ControleurSecurise
                 'item5'=>$Item5,
                 'item6'=>$Item6,
                 'item7'=>$Item7,
+                  'item8'=>$Item8,
+                  'item9'=>$Item9,
+                  'item10'=>$Item10,
                   'period'=>$period,
                   'nomStudent'=>$nomStudent,
                   'item'=>$item));
@@ -552,13 +561,16 @@ class ControleurAdmin extends ControleurSecurise
             $period=$this->grille->selectPeriod();
             
             $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
-            $nameItem1="Je m'exprime sans violence";
-           $nameItem2="Je respect le matériel des autres et de l'école";
-           $nameItem3="Je suis honnête dans mes relations et évaluations.";
-           $nameItem4="Je fais mes devoirs et mes leçons";
-           $nameItem5="J'ai une tenue conforme au règlement.";
-           $nameItem6="Je me déplace de manière calme et ordonnée.";
-           $nameItem7="J'ai une attitude positive face au travail";
+          $nameItem1="Je suis respectueux envers les personnes";
+              $nameItem2="J’adopte une attitude non violente";
+              $nameItem3="Je suis respectueux du matériel et de l’environnement";
+              $nameItem4="Je parle de façon adéquate";
+              $nameItem5="Je suis solidaire";
+              $nameItem6="Je respecte les règles de l’école  ";
+              $nameItem7="Je m’organise et je deviens autonome";
+              $nameItem8="Je suis respectueux du matériel et de l’environnement"; 
+              $nameItem9="Je circule dans l’école calmement";
+              $nameItem10="Je donne le meilleur de moi-même";
            
             $Item1= $this->grille->selecResultatStudentParProfesseur($nameItem1, $nameE);
             $Item2= $this->grille->selecResultatStudentParProfesseur($nameItem2, $nameE);
@@ -567,6 +579,9 @@ class ControleurAdmin extends ControleurSecurise
             $Item5= $this->grille->selecResultatStudentParProfesseur($nameItem5, $nameE);
             $Item6= $this->grille->selecResultatStudentParProfesseur($nameItem6, $nameE);
             $Item7= $this->grille->selecResultatStudentParProfesseur($nameItem7, $nameE);
+            $Item8= $this->grille->selecResultatStudentParProfesseur($nameItem8, $nameE);
+            $Item9= $this->grille->selecResultatStudentParProfesseur($nameItem9, $nameE);
+            $Item10= $this->grille->selecResultatStudentParProfesseur($nameItem10, $nameE);
             
           
               
@@ -581,6 +596,9 @@ class ControleurAdmin extends ControleurSecurise
                 'item5'=>$Item5,
                 'item6'=>$Item6,
                 'item7'=>$Item7,
+                  'item8'=>$Item8,
+                  'item9'=>$Item9,
+                  'item10'=>$Item10,
                 'period'=>$period,
                 'name'=>$nameE,
                 'item'=>$item));
