@@ -32,6 +32,13 @@ public function getnbstudents(){
         $ligne= $student->fetch();
         return $ligne;
     }
+      public function getStudentsNameSeul($idS)
+    {
+        $sql = "select name from eleve where id_student=?";
+        $student= $this->executerRequete($sql,array($idS));
+        $ligne= $student->fetch();
+        return $ligne;
+    }
     public function getStudentClass($id){
         $sql = "select * from eleve where id_classe = ?";
         $student=$this->executerRequete($sql,array($id));

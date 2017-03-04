@@ -30,7 +30,7 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body  class="hold-transition skin-black sidebar-mini">
+<body class="hold-transition skin-black sidebar-mini">
 <div class="wrapper">
 <?php require 'Vue/_Commun/headerPrinc.php'; ?>
 <?php require 'Vue/_Commun/navPrinc.php'; ?>
@@ -41,8 +41,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Grille récapitulatif des évaluations des professeurs de la classe pour <?= $period['period']?> 
-        <small></small>
+        
+        Résultat
       </h1>
      
     </section>
@@ -53,33 +53,26 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Mes élèves</h3>
+              <h3 class="box-title">Grille récapitulatif des évaluations des professeurs de <?= $name?>   pour <?= $period['period']?> </h3>
             </div>
              
               
             <!-- /.box-header -->
            <div class="box-body table-responsive no-padding">
-                <table  id="example1" class="table table-bordered table-striped"> 
-
-                           <thead>
+                          <table  id="example1" class="table table-bordered table-striped"> 
+                             <thead>
                             <tr >
-                                <th>Item  
-                                
-                                
-                                </th>
-                            <?php foreach ($nomStudent as $list): ?>
-                                 
-                            <th   colspan="1" class="info" ><div><span><?= $this->nettoyer($list['nameE']) ?>    </span></div></th>
-                            
-                            <?php endforeach; ?>
+                                <th>Items </th>
+                                  <th> Nombre de voie positif </th>
                             
                             </tr>
                             </thead>
+                          
                             <tfoot>
                               <tr >
-                                  <th colspan="1" class="info"><?= $period['period']?> </th>
-                                   <th  colspan="4" class="warning" >Exigence croissante pour Item 1,2 et 3 </th>
-                                   <th colspan="4"  ><a  href="javascript:window.print()"  class="btn bg-purple btn-xs"><i class="fa fa-print"></i> Imprimer</a></th>
+                                  <th colspan="1" class=info><?= $period['period']?> </th>
+                                   <th  colspan="4" class="info" >Professeur ayant voté pour  l'élève</th>
+                                   <th ><a  href="javascript:window.print()" class="btn bg-purple  btn-xs"><i class="fa fa-print"></i> Imprimer</a></th>
                                 </tr>
                             </tfoot>
                             <tbody>
@@ -87,46 +80,49 @@
                                 
                                  <tr><th class="danger">Je m'exprime sans violence</th>
                                      <?php foreach ($item1 as $list): ?>
-                                     <td><?= $list['resultat'] ?></td>
+                                     
+                                    <td><?= $list['resultat'] ?></td>
+                                     
                                    <?php endforeach; ?>    
                                     </tr>
                                  <tr><th class="danger">Je respect le matériel des autres et de l'école</th> <?php foreach ($item2 as $list): ?>
                                     
-                                    <td><?= $list['resultat'] ?></td>
-                                     
+                                <td><?= $list['resultat'] ?></td>
                                     
                                     
                                    
                                    <?php endforeach; ?>   </tr>
                                  <tr><th class="danger">Je suis honnête dans mes relations et évaluations.</th> <?php foreach ($item3 as $list): ?>
                                     
-                                  <td><?= $list['resultat'] ?></td>
-                                    
+                                 <td><?= $list['resultat'] ?></td>
                                     
                                    
                                    <?php endforeach; ?>   </tr>
                                  <tr><th class="danger">Je fais mes devoirs et mes leçons</th> <?php foreach ($item4 as $list): ?>
-                                  <td><?= $list['resultat'] ?></td>
+                                    
+                                   <td><?= $list['resultat'] ?></td>
                                     
                                    
                                    <?php endforeach; ?>   </tr>
                                  <tr><th class="danger">J'ai une tenue conforme au règlement.</th> <?php foreach ($item5 as $list): ?>
                                     
-                                  <td><?= $list['resultat'] ?></td>
+                                <td><?= $list['resultat'] ?></td>
                                     
                                    
                                    <?php endforeach; ?>   </tr>
                                      
                                         <tr><th class="danger">Je me déplace de manière calme et ordonnée.</th> <?php foreach ($item6 as $list): ?>
                                     
-                                   <td><?= $list['resultat'] ?></td>
+                                  <td><?= $list['resultat'] ?></td>
                                     
                                     
                                    
                                    <?php endforeach; ?>   </tr>
                                         <tr><th class="danger">J'ai une attitude positive face au travail
                                             </th> <?php foreach ($item7 as $list): ?>
-                                <td><?= $list['resultat'] ?></td>
+                                    
+                                  <td><?= $list['resultat'] ?></td>
+                                    
                                     
                                    <?php endforeach; ?>   </tr> 
                                
@@ -134,7 +130,6 @@
                             
                         </table>
          
-                                   
                     </div>
              
              </div>
@@ -175,10 +170,10 @@
 th.rotate > div {
   transform: 
     /* Magic Numbers */
-    translate(10px, 0px)
+    translate(30px, 0px)
     /* 45 is really 360 - 45 */
-    rotate(90deg);
-  width: 100px;
+    rotate(315deg);
+  width: 30px;
 }
 th.rotate > div > span {
   border-bottom: 1px solid #ccc;

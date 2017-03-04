@@ -163,7 +163,7 @@
                         </table>
          
                     </div>
-             <a  href="javascript:window.print()" class="btn bg-info"><i class="fa fa-print"></i> Imprimer</a>
+             <a  href="javascript:window.print()" class="btn bg-purple  btn-xs""><i class="fa fa-print"></i> Imprimer</a>
              </div>
              <?php else: ?>
  <br>

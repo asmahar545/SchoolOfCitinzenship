@@ -82,7 +82,7 @@
                                     <td>
                                         <a href="admin/addStudent " class="btn btn-success btn-xs"><i class="fa fa-plus"></i> </a>
                                         <a href ="admin/editStudent/<?= $this->nettoyer($list['id_student']) ?> " class="btn btn-warning btn-xs"><i class="fa fa-cog"></i> </a>
-                                        
+                                         <a alt="Résultat des évaluations" href="admin/resultatParEleve/<?= $this->nettoyer($list['name']) ?> " class="btn bg-red btn-xs"><i class="fa fa-file-pdf-o"></i></a>
                                     </td>
 
 
