@@ -556,12 +556,14 @@ class ControleurAdmin extends ControleurSecurise
  }
   public function resultatParEleve(){
       if ($this->requete->existeParametre("id")){
-            $nameE = $this->requete->getParametre("id");
-            
+            $idE = $this->requete->getParametre("id");
+            //faut trouver un moyen de prendre idStudent que le nameE car il peut avoir plusieurs élève ayant le même prénom
             $period=$this->grille->selectPeriod();
-            
+            $student= $this->student->getStudentsName($idE); 
+                    $retard= $this->student->selectRetard($idE);
+            $ceinture= $this->student->selectCeinture($idE);
             $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
-          $nameItem1="Je suis respectueux envers les personnes";
+           $nameItem1="Je suis respectueux envers les personnes";
               $nameItem2="J’adopte une attitude non violente";
               $nameItem3="Je suis respectueux du matériel et de l’environnement";
               $nameItem4="Je parle de façon adéquate";
@@ -572,16 +574,16 @@ class ControleurAdmin extends ControleurSecurise
               $nameItem9="Je circule dans l’école calmement";
               $nameItem10="Je donne le meilleur de moi-même";
            
-            $Item1= $this->grille->selecResultatStudentParProfesseur($nameItem1, $nameE);
-            $Item2= $this->grille->selecResultatStudentParProfesseur($nameItem2, $nameE);
-            $Item3= $this->grille->selecResultatStudentParProfesseur($nameItem3, $nameE);
-            $Item4= $this->grille->selecResultatStudentParProfesseur($nameItem4, $nameE);
-            $Item5= $this->grille->selecResultatStudentParProfesseur($nameItem5, $nameE);
-            $Item6= $this->grille->selecResultatStudentParProfesseur($nameItem6, $nameE);
-            $Item7= $this->grille->selecResultatStudentParProfesseur($nameItem7, $nameE);
-            $Item8= $this->grille->selecResultatStudentParProfesseur($nameItem8, $nameE);
-            $Item9= $this->grille->selecResultatStudentParProfesseur($nameItem9, $nameE);
-            $Item10= $this->grille->selecResultatStudentParProfesseur($nameItem10, $nameE);
+            $Item1= $this->grille->selecResultatStudentParProfesseur($nameItem1, $idE);
+            $Item2= $this->grille->selecResultatStudentParProfesseur($nameItem2, $idE);
+            $Item3= $this->grille->selecResultatStudentParProfesseur($nameItem3, $idE);
+            $Item4= $this->grille->selecResultatStudentParProfesseur($nameItem4, $idE);
+            $Item5= $this->grille->selecResultatStudentParProfesseur($nameItem5, $idE);
+            $Item6= $this->grille->selecResultatStudentParProfesseur($nameItem6, $idE);
+            $Item7= $this->grille->selecResultatStudentParProfesseur($nameItem7, $idE);
+            $Item8= $this->grille->selecResultatStudentParProfesseur($nameItem8, $idE);
+            $Item9= $this->grille->selecResultatStudentParProfesseur($nameItem9, $idE);
+            $Item10= $this->grille->selecResultatStudentParProfesseur($nameItem10,$idE);
             
           
               
@@ -589,18 +591,20 @@ class ControleurAdmin extends ControleurSecurise
               $item = $this->grille->selectItemStudentEvalueParClasse(1);
               $adult=$this->adult->getadult($idU);
               $this->genererVue(array('adult'=>$adult,
-                  'item1'=>$Item1,
+                'item1'=>$Item1,
                 'item2'=>$Item2,
                 'item3'=>$Item3,
                 'item4'=>$Item4,
                 'item5'=>$Item5,
                 'item6'=>$Item6,
                 'item7'=>$Item7,
-                  'item8'=>$Item8,
+                'item8'=>$Item8,
                   'item9'=>$Item9,
                   'item10'=>$Item10,
                 'period'=>$period,
-                'name'=>$nameE,
+                  'ceinture'=>$ceinture,
+                  'retard'=>$retard,
+                'student'=>$student,
                 'item'=>$item));
               
               
@@ -613,6 +617,69 @@ class ControleurAdmin extends ControleurSecurise
           
       
  }
+  public function retardEleve(){
+      if ($this->requete->existeParametre("id")){
+    $idE = $this->requete->getParametre("id");
+     $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+     $adult=$this->adult->getadult($idU);
+      
+      $this->genererVue(array('adult'=>$adult,'id'=>$idE));}
+     
+  }
+  public function monterDeCeinture(){
+      if ($this->requete->existeParametre("id")){
+    $idE = $this->requete->getParametre("id");
+     $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+     $adult=$this->adult->getadult($idU);
+      
+      $this->genererVue(array('adult'=>$adult,'id'=>$idE));}
+      else
+          {
+         throw new Exception("Erreur de chargement de page"); 
+      }
+      
+}
+ public function exeMonterDeCeinture(){
+      if ($this->requete->existeParametre("id")&&$this->requete->existeParametre("ceinture")){
+     $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+     $adult=$this->adult->getadult($idU);
+      $ceinture = $this->requete->getParametre("ceinture");
+       $id = $this->requete->getParametre("id");
+     $this->student->editChildrenCeinture($ceinture, $id);
+      $this->genererVue(array('adult'=>$adult));}
+     else
+          {
+         throw new Exception("Erreur de chargement de page"); 
+      }
+      
+}
+ public function exeRetard(){
+      if ($this->requete->existeParametre("id")&&$this->requete->existeParametre("retard")){
+     $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+     $adult=$this->adult->getadult($idU);
+      $retard = $this->requete->getParametre("retard");
+       $id = $this->requete->getParametre("id");
+     $this->student->editChildrenRetard($retard, $id);
+      $this->genererVue(array('adult'=>$adult));}
+     else
+          {
+         throw new Exception("Erreur de chargement de page"); 
+      }
+      
+}
+ public function evaluationRestant(){
+      if ($this->requete->existeParametre("id")){
+     $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+     $adult=$this->adult->getadult($idU);
+     $id = $this->requete->getParametre("id");
+      $nbStudent= $this->classe->getnbElevesParProffesseur($id);
+      $this->genererVue(array('adult'=>$adult,'nbStudent'=>$nbStudent));}
+      else
+          {
+         throw new Exception("Erreur de chargement de page"); 
+      }
+      
+}
     //documentation
     public function documentation(){
      $idU = $this->requete->getSession()->getAttribut("idUtilisateur");

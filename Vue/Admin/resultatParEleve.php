@@ -53,7 +53,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Grille récapitulatif des évaluations des professeurs de <?= $name?>   pour <?= $period['period']?> </h3>
+              <h3 class="box-title">Grille récapitulatif des évaluations des professeurs de <?= $student['name']?> <?= $student['firstName']?>   pour <?= $period['period']?> </h3>
             </div>
              
               
@@ -71,7 +71,9 @@
                             <tfoot>
                               <tr >
                                   <th colspan="1" class=info><?= $period['period']?> </th>
-                                   <th  colspan="4" class="info" >Professeur ayant voté pour  l'élève</th>
+                                   
+                                   <th  colspan="1" class="danger" > Ceinture "<?= $ceinture['monteCeinture']?>"  et  <?= $retard['retard']?> retard(s) </th>
+                                    
                                    <th ><a  href="javascript:window.print()" class="btn bg-purple  btn-xs"><i class="fa fa-print"></i> Imprimer</a></th>
                                 </tr>
                             </tfoot>
@@ -125,7 +127,7 @@
                                     
                                     
                                    <?php endforeach; ?>   </tr> 
-                                          <tr><th class="danger">J’écoute les professeurs et les élèves sans les interrompre.
+                                          <tr><th class="danger">J’écoute les professeurs et les élèves sans les interrompre
                                             </th> <?php foreach ($item8 as $list): ?>
                                     
                                   <td><?= $list['resultat'] ?></td>

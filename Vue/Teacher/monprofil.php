@@ -74,36 +74,20 @@
               <p class="text-muted">
                <?= $adult['email']?>
               </p>
+                 <strong><i class="fa fa-book margin-r-5"></i>Mot de Passe</strong>
 
-              <hr>
+              <p class="text-muted">
+               <?= $adult['password']?>
+              </p>
 
-              <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
-
-              <p class="text-muted"><?= $adult['adress']?></p>
-
-              <hr>
-              <strong><i class="fa fa-map-marker margin-r-5"></i> Tél</strong>
-
-              <p class="text-muted"><?= $adult['phone']?></p>
-
-              <hr>
-
-              <strong><i class=" fa fa-birthday-cake"></i> Date de naissance</strong>
-
-             <p class="text-muted"><?= $adult['birthday']?></p>
-
-            <hr>
-
-              <strong><i class="fa fa-file-text-o margin-r-5"></i> Notes</strong>
-             <p class="text-muted"><?= $adult['commentaire']?></p>
             </div>
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
         </div>
         <!-- /.col -->
-      
-  <a href="teacher/editMonProfil/" class="btn btn-warning">Modifier</a>
+    <!--    
+  <a href="teacher/editMonProfil/" class="btn btn-warning">Modifier</a>-->
     </section>
  <!-- /.content -->
   </div>

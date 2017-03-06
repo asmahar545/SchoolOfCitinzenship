@@ -32,14 +32,14 @@
 
                 <p>
                   <?= $adult['name']?> <?= $adult['firstname']?>
-                  <small><?= $adult['phone']?></small>
+                 
                 </p>
               </li>
               <!-- Menu Body -->
               <li class="user-body">
                 <div class="row">
                   <div class="col-xs-12 text-center ">
-                    <button data-toggle="modal"  data-target="#loginModal" class="btn btn-default ">Déconnexion</button>
+                       <a href="connexion/"><button class="btn btn-succes" type="button"><i class="icon icon-check icon-lg"></i>Deconnexion</button></a>
                   </div>
                   
                 </div>
@@ -62,7 +62,7 @@
       </div>
     </nav>
   </header>
-<!-- Fenetre  mettre à jour pour  déconnecter-->
+<!-- Fenetre  mettre à jour pour  déconnecter-
     <div class="modal" id="loginModal" tabindex="-1">
                       <div class="modal-dialog">
                      <div class="modal-content">

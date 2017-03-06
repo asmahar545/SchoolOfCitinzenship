@@ -66,7 +66,7 @@
                                 <th>Item   </th>
                             <?php foreach ($nomStudent as $list): ?>
                                  
-                            <th  class="info" ><div><span><?= $this->nettoyer($list['nameE']) ?>    </span></div></th>
+                            <th  class="info" ><div><span><?= $this->nettoyer($list['nameE']) ?>   <?= $this->nettoyer($list['firstE'])  ?>    </span></div></th>
                             
                             <?php endforeach; ?>
                             
@@ -82,7 +82,7 @@
                             <tbody>
                                
                                 
-                                 <tr><th class="danger">Je m'exprime sans violence</th>
+                                 <tr><th class="danger">Je suis respectueux envers les personnes</th>
                                      <?php foreach ($item1 as $list): ?>
                                       <?php if ($list['response'] ==1): ?>
                                     <td><i class="fa fa-check"></i></td>
@@ -91,7 +91,7 @@
                                      <?php endif; ?>
                                    <?php endforeach; ?>    
                                     </tr>
-                                 <tr><th class="danger">Je respect le matériel des autres et de l'école</th> <?php foreach ($item2 as $list): ?>
+                                 <tr><th class="danger">J’adopte une attitude non violente</th> <?php foreach ($item2 as $list): ?>
                                     
                                     <?php if ($list['response'] ==1): ?>
                                     <td><i class="fa fa-check"></i></td>
@@ -102,7 +102,7 @@
                                     
                                    
                                    <?php endforeach; ?>   </tr>
-                                 <tr><th class="danger">Je suis honnête dans mes relations et évaluations.</th> <?php foreach ($item3 as $list): ?>
+                                 <tr><th class="danger">Je suis respectueux du matériel et de l’environnement</th> <?php foreach ($item3 as $list): ?>
                                     
                                    <?php if ($list['response'] ==1): ?>
                                     <td><i class="fa fa-check"></i></td>
@@ -113,7 +113,7 @@
                                     
                                    
                                    <?php endforeach; ?>   </tr>
-                                 <tr><th class="danger">Je fais mes devoirs et mes leçons</th> <?php foreach ($item4 as $list): ?>
+                                 <tr><th class="danger">Je parle de façon adéquate</th> <?php foreach ($item4 as $list): ?>
                                     
                                     <?php if ($list['response'] ==1): ?>
                                     <td><i class="fa fa-check"></i></td>
@@ -124,7 +124,7 @@
                                     
                                    
                                    <?php endforeach; ?>   </tr>
-                                 <tr><th class="danger">J'ai une tenue conforme au règlement.</th> <?php foreach ($item5 as $list): ?>
+                                 <tr><th class="danger">Je suis solidaire</th> <?php foreach ($item5 as $list): ?>
                                     
                                    <?php if ($list['response'] ==1): ?>
                                     <td><i class="fa fa-check"></i></td>
@@ -135,7 +135,7 @@
                                    
                                    <?php endforeach; ?>   </tr>
                                      
-                                        <tr><th class="danger">Je me déplace de manière calme et ordonnée.</th> <?php foreach ($item6 as $list): ?>
+                                        <tr><th class="danger">Je respecte les règles de l’école</th> <?php foreach ($item6 as $list): ?>
                                     
                                   <?php if ($list['response'] ==1): ?>
                                     <td><i class="fa fa-check"></i></td>
@@ -146,8 +146,41 @@
                                     
                                    
                                    <?php endforeach; ?>   </tr>
-                                        <tr><th class="danger">J'ai une attitude positive face au travail
+                                        <tr><th class="danger">Je m’organise et je deviens autonome
                                             </th> <?php foreach ($item7 as $list): ?>
+                                    
+                                   <?php if ($list['response'] ==1): ?>
+                                    <td><i class="fa fa-check"></i></td>
+                                     <?php else: ?>
+                                     <td><i class="fa fa-close"></i></td>
+                                     <?php endif; ?>
+                                    
+                                    
+                                   <?php endforeach; ?>   </tr>
+                                         <tr><th class="danger">J’écoute les professeurs et les élèves sans les interrompre.
+                                            </th> <?php foreach ($item8 as $list): ?>
+                                    
+                                   <?php if ($list['response'] ==1): ?>
+                                    <td><i class="fa fa-check"></i></td>
+                                     <?php else: ?>
+                                     <td><i class="fa fa-close"></i></td>
+                                     <?php endif; ?>
+                                    
+                                    
+                                   <?php endforeach; ?>   </tr> 
+                                          <tr><th class="danger">Je circule dans l’école calmement
+                                            </th> <?php foreach ($item9 as $list): ?>
+                                    
+                                   <?php if ($list['response'] ==1): ?>
+                                    <td><i class="fa fa-check"></i></td>
+                                     <?php else: ?>
+                                     <td><i class="fa fa-close"></i></td>
+                                     <?php endif; ?>
+                                    
+                                    
+                                   <?php endforeach; ?>   </tr> 
+                                           <tr><th class="danger">Je donne le meilleur de moi-même
+                                            </th> <?php foreach ($item10 as $list): ?>
                                     
                                    <?php if ($list['response'] ==1): ?>
                                     <td><i class="fa fa-check"></i></td>

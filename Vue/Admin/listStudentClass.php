@@ -50,7 +50,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Classe</h3>
+              <h3 class="box-title">Elèves</h3>
             </div>
             <!-- /.box-header -->
              <div class="box-body table-responsive no-padding">
@@ -60,11 +60,8 @@
                                 <th>N°</th>
                                 <th>Nom</th>
                                 <th>Prenom</th>
-                                <th>Adresse</th>
-                                <th>Date de naissance</th>
-                                <th>Sexe</th>
-                                <th>Télèphone</th>
-                            </tr>
+                                <th>Edit</th>
+                            
                             </thead>
                             <tbody>
                                 <?php $var=1?>
@@ -74,12 +71,10 @@
                                     <td class=" " ><?php echo $var++ ?></td>
                                     <td class=" " ><?= $this->nettoyer($list['name']) ?></td>
                                     <td class=" " ><?= $this->nettoyer($list['firstName']) ?></td>
-                                    <td class=" " ><?= $this->nettoyer($list['adress']) ?></td>
-                                    <td class=" " ><?= $this->nettoyer($list['birthday']) ?></td>
-                                    <td class=" " ><?= $this->nettoyer($list['sexe']) ?></td>
-                                    <td class=" " ><?= $this->nettoyer($list['phone']) ?></td>
-                                  
-                                </tr>
+                                    <td><a  href="admin/monterDeCeinture/<?=  $this->nettoyer($list['id_student']) ?>" class="btn bg-yellow-active btn-xs"><i class="fa fa-certificate"></i></a>
+                                        <a  href="admin/retardEleve/<?=  $this->nettoyer($list['id_student']) ?>" class="btn bg-red-active btn-xs"><i class="fa  fa-clock-o"></i></a>
+                                    </td>
+                               </tr>
 
                             <?php endforeach; ?>
                             </tbody>

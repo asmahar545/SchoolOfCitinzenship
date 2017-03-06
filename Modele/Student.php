@@ -70,5 +70,38 @@ public function getnbstudents(){
           $sql="INSERT INTO `evaluatestudent`(`response`, `id_student`, `id_adult`, `id_item`, `idGridStudent`) VALUES (?,?,?,?,?)";
           $rep=$this->executerRequete($sql,array($response,$id_student,$id_adult,$id_item,$idGridStudent));
       }
+      
+    public function editChildrenCeinture($ceinture,$id)
+    {
+    $sql="UPDATE `eleve` SET 
+          `monteCeinture`=? WHERE `eleve`.`id_student` = ?";
+    $rep=$this->executerRequete($sql,array($ceinture,$id));
+    }
+      public function editChildrenRetard($retard,$id)
+    {
+    $sql="UPDATE `eleve` SET 
+          `retard`=? WHERE `eleve`.`id_student` = ?";
+    $rep=$this->executerRequete($sql,array($retard,$id));
+    }
+ public function selectCeinture($idE)
+    {
+    $sql="select monteCeinture from eleve where id_student= ?";
+    $rep=$this->executerRequete($sql,array($idE));
+    if ($rep->rowCount() == 1){
+        return $rep->fetch(); } // Accès à la première ligne de résultat
+        else{
+            throw new Exception("Aucun éleve ne correspond 0 l4identifiqnt fourni");
+        }
+    }
+     public function selectRetard($idE)
+    {
+    $sql="select retard from eleve where id_student= ?";
+    $rep=$this->executerRequete($sql,array($idE));
+    if ($rep->rowCount() == 1){
+        return $rep->fetch(); } // Accès à la première ligne de résultat
+        else{
+            throw new Exception("Aucun éleve ne correspond 0 l4identifiqnt fourni");
+        }
+    }
 
 }

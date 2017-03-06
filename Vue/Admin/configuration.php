@@ -107,7 +107,7 @@
           <div class="col-md-2">
         <div class="span1 offset1">
         <div class="btn-group btn-group-vertical">
-        <button data-toggle="modal"  data-target="#loginModal4"  class="btn btn-danger">Envoi un email</button>
+        
         <a class="btn btn-info" href="admin/finDePeriode">Changer la période</a>
         <button data-toggle="modal"  data-target="#loginModal3"  class="btn btn-warning">Fin de la période</button>
     </div>

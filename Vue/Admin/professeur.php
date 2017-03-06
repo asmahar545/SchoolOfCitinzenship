@@ -59,11 +59,11 @@
                   <th>N°</th>
                   <th>Nom</th>
                    <th>Prenom</th>
-                                <th>Adresse</th>
-                                <th>Date de naissance</th>
-                                <th>Sexe</th>
-                                <th>Télèphone</th>
-                       <th>Edit</th>
+                                <th>Email</th>
+                                <th>Mot de passe</th>
+                                <th>Evaluation</th>
+                               
+                        
 
                          </tr>
                   </thead>
@@ -75,15 +75,12 @@
                                     <td class=" " ><?php echo $var++ ?></td>
                                     <td class=" " ><?= $this->nettoyer($list['name']) ?></td>
                                     <td class=" " ><?= $this->nettoyer($list['firstname']) ?></td>
-                                    <td class=" " ><?= $this->nettoyer($list['adress']) ?></td>
-                                    <td class=" " ><?= $this->nettoyer($list['birthday']) ?></td>
-                                    <td class=" " ><?= $this->nettoyer($list['sexe']) ?></td>
-                                    <td class=" " ><?= $this->nettoyer($list['phone']) ?></td>
-                                    <td>
-                                        <a href="admin/addTeacher " class="btn btn-success btn-xs"><i class="fa fa-plus"></i> </a>
-                                        <a href ="admin/editTeacher/<?= $this->nettoyer($list['id_adult']) ?>" class="btn btn-warning btn-xs"><i class="fa fa-cog"></i> </a>
-                                      
-                                    </td>
+                                    <td class=" " ><?= $this->nettoyer($list['email']) ?></td>
+                                    <td class=" " ><?= $this->nettoyer($list['password']) ?></td>
+                                    <td > 
+                                   <a  href="admin/evaluationRestant/<?= $this->nettoyer($list['id_adult']) ?> " class="btn bg-red btn-xs"><i class="fa fa-hourglass-2 "></i></a>
+                                   </td>
+                                    
 
 
                                 </tr>

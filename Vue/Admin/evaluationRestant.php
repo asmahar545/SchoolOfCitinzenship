@@ -1,4 +1,3 @@
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,8 +37,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Classes
-        <small>Élèves</small>
+        Nombre d'évaluation
+        
       </h1>
      
     </section>
@@ -53,37 +52,34 @@
               <h3 class="box-title"></h3>
             </div>
             <!-- /.box-header -->
-             <div class="box-body table-responsive no-padding">
+           <div class="box-body table-responsive no-padding">
+               
               <table id="example1" class="table table-bordered table-hover">
              <thead>
-                                <th>N°</th>
-                                <th>Classes</th>
-                                <th>Actions </th>
-                              
-                      
+                  <th>Nombre d'évaluations faites</th>
+                  <th>Nombre d'évaluations restantes</th>
+                  
+                        
 
                          </tr>
                   </thead>
-                <tbody
-                            <?php $var=1?>
-                            <?php foreach ($classes as $list): ?>
-                                <tr>
+                <tbody>
+                 
+               <tr>
                                     
-                                    <td><?php echo $var++ ?></td>
-                                    <td><?= $this->nettoyer($list['yearSexion']) ?></td>
-                                    <td>
-                                      
-                                     <!-- <a href="admin/editClass/  $this->nettoyer($list['id']) " class="btn btn-warning btn-xs">modifier </a>-->
-                                     <a href="admin/listStudentClass/<?=  $this->nettoyer($list['id']) ?>" class="btn bg-purple btn-xs"><i class="fa fa-users"></i></a>
-                                     <a alt="Résultat des évaluations" href="admin/resultatParClasse/<?=  $this->nettoyer($list['id']) ?>" class="btn bg-red btn-xs"><i class="fa fa-file-pdf-o"></i></a>
-                                     
+                                    <td class=" " ><?= $nbStudent ?>
+                                        <td class=" " ><?php ?></td>
                                     </td>
+                                    
+                                    
+
+
                                 </tr>
+                         
+
+
                             
-                            <?php endforeach; ?>
-                            
-   </tbody>
-                
+                            </tbody>
                 
               </table>
             </div>
@@ -142,4 +138,8 @@
   });
 </script>
 </body>
-                        
+
+
+
+
+                           

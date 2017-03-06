@@ -186,13 +186,16 @@ class ControleurTeacher extends ControleurSecurise
               $idC = $this->requete->getParametre("id");
            $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
            $EvalueFalse= $this->classe->getEvalueFalse($idU, $idC);
-           $nameItem1="Je m'exprime sans violence";
-           $nameItem2="Je respect le matériel des autres et de l'école";
-           $nameItem3="Je suis honnête dans mes relations et évaluations.";
-           $nameItem4="Je fais mes devoirs et mes leçons";
-           $nameItem5="J'ai une tenue conforme au règlement.";
-           $nameItem6="Je me déplace de manière calme et ordonnée.";
-           $nameItem7="J'ai une attitude positive face au travail";
+           $nameItem1="Je suis respectueux envers les personnes";
+              $nameItem2="J’adopte une attitude non violente";
+              $nameItem3="Je suis respectueux du matériel et de l’environnement";
+              $nameItem4="Je parle de façon adéquate";
+              $nameItem5="Je suis solidaire";
+              $nameItem6="Je respecte les règles de l’école  ";
+              $nameItem7="Je m’organise et je deviens autonome";
+              $nameItem8="Je suis respectueux du matériel et de l’environnement"; 
+              $nameItem9="Je circule dans l’école calmement";
+              $nameItem10="Je donne le meilleur de moi-même";
            //resultat item 1 " Je sui polis"
            $Item1= $this->grille->selectStudentEvalueParClasse($idC, $idU, $nameItem1);
            $Item2= $this->grille->selectStudentEvalueParClasse($idC, $idU, $nameItem2);
@@ -201,6 +204,10 @@ class ControleurTeacher extends ControleurSecurise
            $Item5= $this->grille->selectStudentEvalueParClasse($idC, $idU, $nameItem5);
            $Item6= $this->grille->selectStudentEvalueParClasse($idC, $idU, $nameItem6);
            $Item7= $this->grille->selectStudentEvalueParClasse($idC, $idU, $nameItem7);
+           
+             $Item8= $this->grille->selectStudentEvalueParClasse($idC, $idU, $nameItem7);  
+             $Item9= $this->grille->selectStudentEvalueParClasse($idC, $idU, $nameItem7);
+             $Item10= $this->grille->selectStudentEvalueParClasse($idC, $idU, $nameItem7);
            
            
            $adult=$this->adult->getadult($idU);
@@ -214,6 +221,9 @@ class ControleurTeacher extends ControleurSecurise
                 'item5'=>$Item5,
                 'item6'=>$Item6,
                 'item7'=>$Item7,
+               'item8'=>$Item8,
+                  'item9'=>$Item9,
+                  'item10'=>$Item10,
                'period'=>$period,
                 'nbr'=>$EvalueFalse,
                'nomStudent'=>$nomStudent,

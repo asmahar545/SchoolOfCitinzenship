@@ -59,11 +59,8 @@
                         <th>N°</th>
                         <th>Nom</th>
                         <th>Prenom</th>
-                        <th>Adresse</th>
-                        <th>Date de naissance</th>
-                        <th>Sexe</th>
-                       <th>Télèphone</th>
-                       <th>Edit</th>
+                        <th>Edit</th>
+                       
 
                          
                   </thead>
@@ -75,14 +72,9 @@
                                     <td class=" " ><?php echo $var++ ?></td>
                                     <td class=" " ><?= $this->nettoyer($list['name']) ?></td>
                                     <td class=" " ><?= $this->nettoyer($list['firstName']) ?></td>
-                                    <td class=" " ><?= $this->nettoyer($list['adress']) ?></td>
-                                    <td class=" " ><?= $this->nettoyer($list['birthday']) ?></td>
-                                    <td class=" " ><?= $this->nettoyer($list['sexe']) ?></td>
-                                    <td class=" " ><?= $this->nettoyer($list['phone']) ?></td>
                                     <td>
-                                        <a href="admin/addStudent " class="btn btn-success btn-xs"><i class="fa fa-plus"></i> </a>
-                                        <a href ="admin/editStudent/<?= $this->nettoyer($list['id_student']) ?> " class="btn btn-warning btn-xs"><i class="fa fa-cog"></i> </a>
-                                         <a alt="Résultat des évaluations" href="admin/resultatParEleve/<?= $this->nettoyer($list['name']) ?> " class="btn bg-red btn-xs"><i class="fa fa-file-pdf-o"></i></a>
+                                    
+                                         <a alt="Résultat des évaluations" href="admin/resultatParEleve/<?= $this->nettoyer($list['id_student']) ?> " class="btn bg-red btn-xs"><i class="fa fa-file-pdf-o"></i></a>
                                     </td>
 
 

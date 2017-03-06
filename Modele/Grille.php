@@ -153,10 +153,10 @@ class Grille extends Modele{
       return $resultat;
   }
   
-    public function selecResultatStudentParProfesseur($nameItem,$nameE){
+    public function selecResultatStudentParProfesseur($nameItem,$idE){
       
-      $sql="SELECT SUM(response) as resultat from itemresponstudent where nameItem=? and nameE=?";
-      $resultat= $this->executerRequete($sql,array($nameItem,$nameE));
+      $sql="SELECT SUM(response) as resultat from itemresponstudent where nameItem=? and idE=?";
+      $resultat= $this->executerRequete($sql,array($nameItem,$idE));
       return $resultat;
   }
   }

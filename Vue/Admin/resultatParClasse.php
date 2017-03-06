@@ -69,7 +69,7 @@
                                 </th>
                             <?php foreach ($nomStudent as $list): ?>
                                  
-                            <th   colspan="1" class="info" ><div><span><?= $this->nettoyer($list['nameE']) ?>    </span></div></th>
+                            <th   colspan="1" class="info" ><div><span><?= $this->nettoyer($list['nameE']) ?> <?= $this->nettoyer($list['firstE']) ?>    </span></div></th>
                             
                             <?php endforeach; ?>
                             

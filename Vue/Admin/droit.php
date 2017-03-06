@@ -81,7 +81,7 @@
                         </table>
                     </div>
              
-            <button data-toggle="modal"  data-target="#loginModal1" class="btn btn btn-success ">Ajouter un droit </button>
+            
              
             <div class="modal" id="loginModal1"tabindex="-1">
             <div class="modal-dialog">
