@@ -36,7 +36,11 @@
             <i class="fa fa-users"></i> <span> Mes étudiants</span>
           </a>
         </li>
-
+        <li>
+          <a href="teacher/classe">
+            <i class="fa fa-users"></i> <span>Ma classe(titulaire)</span>
+          </a>
+        </li>
         
         <li class="treeview">
           <a href="teacher/documentation">

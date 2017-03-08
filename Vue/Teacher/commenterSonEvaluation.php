@@ -2,7 +2,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <?php $this->titre = "Admin"; ?>
+  <?php $this->titre = "finDePeriode"; ?>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -20,8 +20,6 @@
   <link rel="stylesheet" href="plugins/iCheck/flat/blue.css">
   <!-- Morris chart -->
   <link rel="stylesheet" href="plugins/morris/morris.css">
-    <!-- iCheck for checkboxes and radio inputs -->
-  <link rel="stylesheet" href="plugins/iCheck/all.css">
   <!-- jvectormap -->
   <link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
   <!-- Date Picker -->
@@ -46,88 +44,46 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-   
+  
      <!-- Main content -->
     <section class="content">
       <!-- Small boxes (Stat box) -->
       <div class="row">
        <div class="col-md-12">
-               <div class="box box-success">
-            <div class="box-header with-border">
-              <h3 class="box-title">J'évalue <?= $student['name']?>  <?= $student['firstName']?> pour la période de <?= $period['period']?> </h3>
-            </div>
-         
+
+          <div class="box box-danger">
             
             <div class="box-body">
-             
-            <form action="teacher/exeEvaluationStudent/<?=  $id ?>"class="form-horizontal form-label-left" method="post">
-                <div class="form-group">   
-                <table class="table table-hover">
-               
-                    <thead>
-                            <tr>
-                                <th>N°</th>
-                                <th>Item</th>
-                                <th>Cocher</th>
-                             
-                            </tr>
-                     </thead>       
-                     <tbody>
-                           <?php $var=1?>
-                           <?php foreach ($item as $list): ?>
-                                <tr>
-                                    
-                                    <td><?php echo $var++ ?></td>
-                                   
-                                    <td><span class="input-group-addon"><?= $this->nettoyer($list['item'])?></span></td>
-                                    <?php if ( $this->nettoyer($list['response']) ==1) :?>
-                                  
-                                    <td><input  name="valider[]" value="<?= $this->nettoyer($list['id_item'])?>"  type='checkbox' class="flat-red" checked> </td>
-                                    <?php else :?>
-                                   
-                                    <td><input name="valider[]" value="<?= $this->nettoyer($list['id_item'])?>" class="flat-red" type='checkbox'> </td>
-                                    <?php endif; ?>
-                                     
-                                </tr>
-                            
-                            <?php endforeach; ?>
-                    </tbody>
-                   
-                   </table>
-                </div>
-              
-                
-                
-                
-                 <!-- textarea -->
-                <div class="form-group">
+                    <form action="teacher/exeCommentaire/<?= $id ?>"class="form-horizontal form-label-left" method="post">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Commentaire de l'élève en fin de période apré le conseil de classe</a></h3>
+                        </div>
+                        <br>
+                        <div class="box-body">
+                              <div class="form-group">
                     <div class=" col-sm-12">
                   <label>Commentaire </label>
-                  <textarea name="commentaire" class="form-control" rows="3" placeholder="Enter ..." required><?=$commentaire['commentaire']?></textarea>
+                  <textarea name="commentaire"  class="form-control" rows="3" placeholder="Enter ..." required><?=$commentaire['commentaire']?></textarea>
                 </div>
+                  </div>
+                             
+                            
+
+                            <br>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-10">
+
+                                    <button type="submit" class="btn btn-danger">Commenter</button>
+                                </div>
+                            </div>
+                    </form>
+
                 </div>
-                <!--  <div class="input-group">
-                    
-                    <label>Nombre de retard </label>
-                    <input type="number" class="form-control">
-                    
-               
-              </div>-->
-                </div>
-                 <div class="box-footer">
-               
-                <button type="submit" class="btn btn-success pull-right">Confirmer</button>
-              </div>
-                </form>
-          <!-- /.box -->
-          </div>
          </div>
        </div>
       </div>
- 
-      
-    </div>
-<div>
+
   </section>
     <!-- /.content -->
   </div>
@@ -179,14 +135,13 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
-<!-- iCheck 1.0.1 -->
-<script src="plugins/iCheck/icheck.min.js"></script>
-<script>//Flat red color scheme for iCheck
-    $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
-      checkboxClass: 'icheckbox_flat-green',
-      radioClass: 'iradio_flat-green'
+   <script>
+    $('#datepicker').datepicker({
+      autoclose: true
+    });</script>
+      <script>
+    $('#datepicker1').datepicker({
+      autoclose: true
     });</script>
 </body>
-          
-                    
-                    
+           

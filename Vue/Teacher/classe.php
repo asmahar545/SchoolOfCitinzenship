@@ -1,3 +1,4 @@
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,7 +30,7 @@
 <body class="hold-transition skin-black sidebar-mini">
 <div class="wrapper">
 <?php require 'Vue/_Commun/headerPrinc.php'; ?>
-<?php require 'Vue/_Commun/navPrinc.php'; ?>
+<?php require 'Vue/_Commun/navPrincTeacher.php'; ?>
  
 
   <!-- Content Wrapper. Contains page content -->
@@ -37,8 +38,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Nombre d'évaluation
-        
+        Classes
+        <small>Élèves</small>
       </h1>
      
     </section>
@@ -52,42 +53,37 @@
               <h3 class="box-title"></h3>
             </div>
             <!-- /.box-header -->
-           <div class="box-body table-responsive no-padding">
-               
+             <div class="box-body table-responsive no-padding">
               <table id="example1" class="table table-bordered table-hover">
              <thead>
-                 <th>Nombre d'évaluations total</th>
-                  <th>Nombre d'évaluations faites</th>
-                  <th>Nombre d'évaluations restantes</th>
-                  
-                  
-                        
+                                <th>N°</th>
+                                <th>Classes</th>
+                                <th>Actions </th>
+                              
+                      
 
                          </tr>
                   </thead>
-                <tbody>
-                 
-               <tr>
+                <tbody
+                            <?php $var=1?>
+                            <?php foreach ($classes as $list): ?>
+                                <tr>
                                     
-                                    <td class=" " ><?= $nbTotal?>
-                                        
+                                    <td><?php echo $var++ ?></td>
+                                    <td><?= $this->nettoyer($list['yearSexion']) ?></td>
+                                    <td>
+                                      
+                                     <!-- <a href="admin/editClass/  $this->nettoyer($list['id']) " class="btn btn-warning btn-xs">modifier </a>-->
+                                     <a href="teacher/listStudentClass/<?=  $this->nettoyer($list['id']) ?>" class="btn bg-purple btn-xs"><i class="fa fa-users"></i></a>
+                                  
+                                     
                                     </td>
-                                    <td class=" " ><?= $nbStudent ?>
-                                        
-                                    </td>
-                                    <td class=" " ><?= $nbTotal-$nbStudent   ?>
-                                        
-                                    </td>
-                                    
-                                    
-
-
                                 </tr>
-                         
-
-
                             
-                            </tbody>
+                            <?php endforeach; ?>
+                            
+   </tbody>
+                
                 
               </table>
             </div>
@@ -146,8 +142,4 @@
   });
 </script>
 </body>
-
-
-
-
-                           
+                        

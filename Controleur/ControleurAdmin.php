@@ -537,14 +537,13 @@ class ControleurAdmin extends ControleurSecurise
                 'item5'=>$Item5,
                 'item6'=>$Item6,
                 'item7'=>$Item7,
-                  'item8'=>$Item8,
-                  'item9'=>$Item9,
-                  'item10'=>$Item10,
-                  'period'=>$period,
-                  'nomStudent'=>$nomStudent,
-                  'item'=>$item));
-              
-              
+                'item8'=>$Item8,
+                'item9'=>$Item9,
+                'item10'=>$Item10,
+                'period'=>$period,
+                'nomStudent'=>$nomStudent,
+                'item'=>$item));
+    
       }
     
            else{
@@ -558,6 +557,7 @@ class ControleurAdmin extends ControleurSecurise
       if ($this->requete->existeParametre("id")){
             $idE = $this->requete->getParametre("id");
             //faut trouver un moyen de prendre idStudent que le nameE car il peut avoir plusieurs élève ayant le même prénom
+            $commentaire= $this->grille->selectCommentaire($idE);
             $period=$this->grille->selectPeriod();
             $student= $this->student->getStudentsName($idE); 
                     $retard= $this->student->selectRetard($idE);
@@ -605,6 +605,7 @@ class ControleurAdmin extends ControleurSecurise
                   'ceinture'=>$ceinture,
                   'retard'=>$retard,
                 'student'=>$student,
+                  'commentaire'=>$commentaire,
                 'item'=>$item));
               
               
@@ -622,8 +623,9 @@ class ControleurAdmin extends ControleurSecurise
     $idE = $this->requete->getParametre("id");
      $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
      $adult=$this->adult->getadult($idU);
+     $retard= $this->student->selectRetard($idE);
       
-      $this->genererVue(array('adult'=>$adult,'id'=>$idE));}
+     $this->genererVue(array('adult'=>$adult,'id'=>$idE,'retard'=>$retard));}
      
   }
   public function monterDeCeinture(){

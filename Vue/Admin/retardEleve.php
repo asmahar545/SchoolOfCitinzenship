@@ -56,13 +56,13 @@
             <div class="box-body">
                     <form action="admin/exeRetard/<?= $id ?>"class="form-horizontal form-label-left" method="post">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Choix de la ceinture pour l'élève</a></h3>
+                            <h3 class="box-title">Nombre de retard pour l'élève</a></h3>
                         </div>
                         <br>
                         <div class="box-body">
                             <div class="input-group">
                                 <span class="input-group-addon">Nombre de retard</span>
-                                <input name="retard" type="number" class="form-control" placeholder="Ex: 2" required>
+                                <input name="retard" type="number" class="form-control" required value="<?= $retard['retard']?>" >
                             </div>
                              
                             

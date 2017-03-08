@@ -1,3 +1,4 @@
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,7 +30,7 @@
 <body class="hold-transition skin-black sidebar-mini">
 <div class="wrapper">
 <?php require 'Vue/_Commun/headerPrinc.php'; ?>
-<?php require 'Vue/_Commun/navPrinc.php'; ?>
+<?php require 'Vue/_Commun/navPrincTeacher.php'; ?>
  
 
   <!-- Content Wrapper. Contains page content -->
@@ -37,8 +38,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Nombre d'évaluation
-        
+        Data Tables
+        <small>Classe-Elève</small>
       </h1>
      
     </section>
@@ -49,47 +50,36 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title"></h3>
+              <h3 class="box-title">Elèves</h3>
             </div>
             <!-- /.box-header -->
-           <div class="box-body table-responsive no-padding">
-               
-              <table id="example1" class="table table-bordered table-hover">
-             <thead>
-                 <th>Nombre d'évaluations total</th>
-                  <th>Nombre d'évaluations faites</th>
-                  <th>Nombre d'évaluations restantes</th>
-                  
-                  
-                        
+             <div class="box-body table-responsive no-padding">
+                        <table id="example1" class="table table-bordered table-striped">
 
-                         </tr>
-                  </thead>
-                <tbody>
-                 
-               <tr>
-                                    
-                                    <td class=" " ><?= $nbTotal?>
-                                        
-                                    </td>
-                                    <td class=" " ><?= $nbStudent ?>
-                                        
-                                    </td>
-                                    <td class=" " ><?= $nbTotal-$nbStudent   ?>
-                                        
-                                    </td>
-                                    
-                                    
-
-
-                                </tr>
-                         
-
-
+                            <thead>
+                                <th>N°</th>
+                                <th>Nom</th>
+                                <th>Prenom</th>
+                                <th>Edit</th>
                             
+                            </thead>
+                            <tbody>
+                                <?php $var=1?>
+                            <?php foreach ($lists as $list): ?>
+
+                                <tr>
+                                    <td class=" " ><?php echo $var++ ?></td>
+                                    <td class=" " ><?= $this->nettoyer($list['name']) ?></td>
+                                    <td class=" " ><?= $this->nettoyer($list['firstName']) ?></td>
+                                    <td>
+                                        <a  href="teacher/monterDeCeinture/<?=  $this->nettoyer($list['id_student']) ?>" class="btn bg-yellow-active btn-xs"><i class="fa fa-certificate"></i></a>
+                                        <a  href="teacher/commenterSonEvaluation/<?=  $this->nettoyer($list['id_student']) ?>" class="btn bg-purple btn-xs"><i class="f fa-edit"></i></a>
+                                    </td>
+                               </tr>
+
+                            <?php endforeach; ?>
                             </tbody>
-                
-              </table>
+                        </table>
             </div>
             <!-- /.box-body -->
           </div>
@@ -99,8 +89,7 @@
           <!-- /.box -->
         </div>
         <!-- /.col -->
-      </div>
-      <!-- /.row -->
+         
     </section>
     <!-- /.content -->
   </div>
@@ -146,8 +135,6 @@
   });
 </script>
 </body>
-
-
-
-
-                           
+        
+        
+       

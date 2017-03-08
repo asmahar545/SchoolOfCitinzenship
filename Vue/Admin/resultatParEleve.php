@@ -63,7 +63,7 @@
                              <thead>
                             <tr >
                                 <th>Items </th>
-                                  <th> Nombre de voie positif </th>
+                                <th> Nombre de voie positif </th>
                             
                             </tr>
                             </thead>
@@ -73,7 +73,7 @@
                                   <th colspan="1" class=info><?= $period['period']?> </th>
                                    
                                    <th  colspan="1" class="danger" > Ceinture "<?= $ceinture['monteCeinture']?>"  et  <?= $retard['retard']?> retard(s) </th>
-                                    
+                                    <th  colspan="1" class="danger" > Commentaire du Titulaire :<?= $commentaire['commentaire']?></th>
                                    <th ><a  href="javascript:window.print()" class="btn bg-purple  btn-xs"><i class="fa fa-print"></i> Imprimer</a></th>
                                 </tr>
                             </tfoot>

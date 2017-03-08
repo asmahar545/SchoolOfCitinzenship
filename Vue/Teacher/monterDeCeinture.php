@@ -2,7 +2,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <?php $this->titre = "Admin"; ?>
+  <?php $this->titre = "finDePeriode"; ?>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -39,32 +39,60 @@
 <body class="hold-transition skin-black sidebar-mini">
 <div class="wrapper">
 <?php require 'Vue/_Commun/headerPrinc.php'; ?>
-<?php require 'Vue/_Commun/navPrinc.php'; ?>
+<?php require 'Vue/_Commun/navPrincTeacher.php'; ?>
 
-  
+  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <div class="container">
-     
+    <!-- Content Header (Page header) -->
+  
+     <!-- Main content -->
+    <section class="content">
+      <!-- Small boxes (Stat box) -->
+      <div class="row">
+       <div class="col-md-6">
 
-      <!-- Main content -->
-      <section class="content">
-        
-        <div class="callout callout-warning">
-          <h4>La monter de ceinture de l'élève  bien été enregitré </h4>
+          <div class="box box-warning">
+            
+            <div class="box-body">
+                    <form action="teacher/exeMonterDeCeinture/<?= $id ?>"class="form-horizontal form-label-left" method="post">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Choix de la ceinture pour l'élève, son ancien badge était de la couleur bleue <?= $ceinture['monteCeinture']?></a></h3>
+                        </div>
+                        <br>
+                        <div class="box-body">
+                           
+                            <div class="form-group">
+                            <span class="form-group-addon">Monter de Ceinture</span>
+                            <select class="form-control"  name="ceinture" type="text">
+                            <option>Blanc</option>
+                            <option>Jaune</option>
+                            <option>Bleu</option>
+                            <option>Orange</option>
+                            <option>Violet</option>
+                            <option>Vert</option>
+                            
+                           </select>
+                         </div>
+                            
 
-           <a  href="admin/listStudentClass/1" class="btn btn-warning "> Continuer</a>
-          
-          
-          
-          
-        </div>
-       
-        <!-- /.box -->
-      </section>
-      <!-- /.content -->
-    </div>
-    <!-- /.container -->
+                            <div class="form-group">
+                                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-10">
+
+                                    <button type="submit" class="btn btn-warning">Modifier</button>
+                                </div>
+                            </div>
+
+                    </form>
+
+                </div>
+         </div>
+       </div>
+      </div>
+
+  </section>
+    <!-- /.content -->
   </div>
+  <!-- /.content-wrapper -->
 <?php require 'Vue/_Commun/Folder.php'; ?>
 <?php require 'Vue/_Commun/Aside.php'; ?>
  
@@ -112,4 +140,13 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
-</body> 
+   <script>
+    $('#datepicker').datepicker({
+      autoclose: true
+    });</script>
+      <script>
+    $('#datepicker1').datepicker({
+      autoclose: true
+    });</script>
+</body>
+              

@@ -71,7 +71,7 @@
                                     <td class=" " ><?php echo $var++ ?></td>
                                     <td class=" " ><?= $this->nettoyer($list['name']) ?></td>
                                     <td class=" " ><?= $this->nettoyer($list['firstName']) ?></td>
-                                    <td><a  href="admin/monterDeCeinture/<?=  $this->nettoyer($list['id_student']) ?>" class="btn bg-yellow-active btn-xs"><i class="fa fa-certificate"></i></a>
+                                    <td>
                                         <a  href="admin/retardEleve/<?=  $this->nettoyer($list['id_student']) ?>" class="btn bg-red-active btn-xs"><i class="fa  fa-clock-o"></i></a>
                                     </td>
                                </tr>

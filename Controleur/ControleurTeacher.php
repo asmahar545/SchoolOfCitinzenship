@@ -42,6 +42,26 @@ class ControleurTeacher extends ControleurSecurise
 
         
     }
+      public function classe(){
+        $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+        $adult=$this->adult->getadult($idU);
+        $classe=$this->classe->getClasses();
+        $this->genererVue(array('adult'=>$adult,'classes'=>$classe));
+    }
+    public function listStudentClass(){
+         if ($this->requete->existeParametre("id"))
+             {
+        $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+        $adult=$this->adult->getadult($idU);
+        $id = $this->requete->getParametre("id");
+        $student=$this->student->getStudentClass($id);
+         $this->genererVue(array('adult'=>$adult,'lists'=>$student,'id'=>$id
+                 ));  }
+          else
+           {
+           throw new Exception('Erreur du serveur ');
+       }
+    }
     public function monprofil(){
         
         $cat= $this->adult->getCat();
@@ -232,6 +252,51 @@ class ControleurTeacher extends ControleurSecurise
           }
          
      }
+      public function monterDeCeinture(){
+      if ($this->requete->existeParametre("id")){
+         
+    $idE = $this->requete->getParametre("id");
+     $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+     $adult=$this->adult->getadult($idU);
+     $ceinture= $this->student->selectCeinture($idE);
+     $this->genererVue(array('adult'=>$adult,'id'=>$idE,'ceinture'=>$ceinture));}
+      else
+          {
+         throw new Exception("Erreur de chargement de page"); 
+      }
+      
+}
+ public function exeMonterDeCeinture(){
+      if ($this->requete->existeParametre("id")&&$this->requete->existeParametre("ceinture")){
+     $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+     $adult=$this->adult->getadult($idU);
+      $ceinture = $this->requete->getParametre("ceinture");
+       $id = $this->requete->getParametre("id");
+     $this->student->editChildrenCeinture($ceinture, $id);
+      $this->genererVue(array('adult'=>$adult));}
+     else
+          {
+         throw new Exception("Erreur de chargement de page"); 
+      }
+      
+}
+
+    public function commenterSonEvaluation(){
+        
+      if ($this->requete->existeParametre("id")){
+    $idE = $this->requete->getParametre("id");
+     $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+     $adult=$this->adult->getadult($idU);
+     $commentaire= $this->grille->selectCommentaire($idE);
+      
+      $this->genererVue(array('adult'=>$adult,'id'=>$idE,'commentaire'=>$commentaire));}
+      else
+          {
+         throw new Exception("Erreur de chargement de page"); 
+      }
+      
+}
+
      public function commentaire(){
          if ($this->requete->existeParametre("id")){
          $idC = $this->requete->getParametre("id");
@@ -245,5 +310,26 @@ class ControleurTeacher extends ControleurSecurise
              throw new Exception("Veuillez évaluer votre élèves");
         }
      }
+     public function exeCommentaire(){
+    if ($this->requete->existeParametre("id") &&
+        $this->requete->existeParametre("commentaire"))
+        {
+          $idE = $this->requete->getParametre("id");
+          $commentaire= $this->requete->getParametre("commentaire");
+         
+          $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+         $adult=$this->adult->getadult($idU);
+           $idG=$this->grille->getIdGridstudent($idU, $idE);
+            
+      
+            $idgrid= $idG['idGridStudent'];
+             $this->grille->editCommentaire($idgrid, $commentaire);
+          $this->genererVue(array('adult'=>$adult));
+        
+        }
+      else {
+             throw new Exception("Veuillez évaluer votre élèves");
+        }
 
+}
 }

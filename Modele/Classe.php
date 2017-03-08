@@ -105,6 +105,8 @@ public function getnbClasses(){
             
         }
     }
+    //requete total student 
+    //select COUNT(id_student) from eleve,consultclass,adult,classe where id_classe.eleve= id.classe and  id-adult=1;
     
 }
 
