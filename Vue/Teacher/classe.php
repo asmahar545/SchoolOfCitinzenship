@@ -38,8 +38,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Classes
-        <small>Élèves</small>
+        Ma classe
+        <small>Séléctionnez la classe dont vous êtes titulaire</small>
       </h1>
      
     </section>
@@ -57,8 +57,8 @@
               <table id="example1" class="table table-bordered table-hover">
              <thead>
                                 <th>N°</th>
-                                <th>Classes</th>
-                                <th>Actions </th>
+                                <th>Classe</th>
+                                <th>Les jeunes</th>
                               
                       
 
@@ -74,7 +74,7 @@
                                     <td>
                                       
                                      <!-- <a href="admin/editClass/  $this->nettoyer($list['id']) " class="btn btn-warning btn-xs">modifier </a>-->
-                                     <a href="teacher/listStudentClass/<?=  $this->nettoyer($list['id']) ?>" class="btn bg-purple btn-xs"><i class="fa fa-users"></i></a>
+                                     <a href="teacher/listStudentClass/<?=  $this->nettoyer($list['id']) ?>" class="btn bg-green btn-xs"><i class="fa fa-users"></i></a>
                                   
                                      
                                     </td>

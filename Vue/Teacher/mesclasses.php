@@ -37,8 +37,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Évaluation
-        <small> </small>
+        Mes étudiants
+        <small> Choisissez votre classe pour procéder à l'évaluation des jeunes</small>
       </h1>
      
     </section>
@@ -49,7 +49,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">J'évalue mes étudiant pour la période de <?= $period['period']?></h3>
+              <h3 class="box-title">Période de <?= $period['period']?></h3>
             </div>
             <!-- /.box-header -->
            <div class="box-body table-responsive no-padding">
@@ -60,7 +60,7 @@
                             <tr>
                                 <th>N°</th>
                                 <th>Classe</th>
-                                <th>      </th>
+                                <th> Actions</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -73,7 +73,7 @@
                                     <td>
                                         <a href="teacher/eleves/<?= $var =$this->nettoyer($list['id']) ?>" class="btn btn-success btn-xs"><i class="fa fa-users"></i> </a>
                                         <a href="teacher/grilleEleve/<?=  $this->nettoyer($list['id']) ?> " class="btn bg-purple btn-xs"><i class="fa fa-file-text"></i> </a>
-                                        <a href="teacher/commentaire/<?=  $this->nettoyer($list['id']) ?> " class="btn bg-info btn-xs"><i class="fa fa-check-circle"></i> Commentaire</a>
+                                       
                                     </td>
                                 </tr>
                             

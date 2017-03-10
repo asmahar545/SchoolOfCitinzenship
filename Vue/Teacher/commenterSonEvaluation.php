@@ -56,13 +56,13 @@
             <div class="box-body">
                     <form action="teacher/exeCommentaire/<?= $id ?>"class="form-horizontal form-label-left" method="post">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Commentaire de l'élève en fin de période aprés le conseil de classe</a></h3>
+                            <h3 class="box-title">Commentaire</a></h3>
                         </div>
                         <br>
                         <div class="box-body">
                               <div class="form-group">
                     <div class=" col-sm-12">
-                  <label>Commentaire </label>
+                  <label>Laissez un commentaire générale sur le jeune après le conseil de classe </label>
                   <textarea name="commentaire"  class="form-control" rows="3" placeholder="Enter ..." required><?=$commentaire['commentaire']?></textarea>
                 </div>
                   </div>
@@ -74,7 +74,7 @@
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-10">
 
-                                    <button type="submit" class="btn btn-danger">Commenter</button>
+                                    <button type="submit" class="btn btn-danger">Envoyer</button>
                                 </div>
                             </div>
                     </form>

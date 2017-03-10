@@ -1,6 +1,6 @@
  <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      <b>Harmach </b>
+      <b>miec.be</b>
     </div>
-    Copyright &copy; 2017-2018 <strong> <a href="">Mouvement des écoles citoyennes de Belgique</a>.</strong> 
+    Copyright 2017-2018   &copy Harmach <strong> <a href="">  </a></strong> 
 </footer>

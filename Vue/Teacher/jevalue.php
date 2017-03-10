@@ -66,9 +66,9 @@
                
                     <thead>
                             <tr>
-                                <th>N°</th>
-                                <th>Item</th>
-                                <th>Cocher</th>
+                                <th></th>
+                                <th>Grille citoyenne</th>
+                                <th>Cochez</th>
                              
                             </tr>
                      </thead>       

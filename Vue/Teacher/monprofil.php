@@ -37,7 +37,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Mon Profil 
+        Profil personnel
       </h1>
      
      </section>  
@@ -65,16 +65,16 @@
           <!-- About Me Box -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">A propos</h3>
+              <h3 class="box-title">À propos</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <strong><i class="fa fa-book margin-r-5"></i> Email</strong>
+              <strong><i class="fa fa-book margin-r-5"></i> Adresse e-mail</strong>
 
               <p class="text-muted">
                <?= $adult['email']?>
               </p>
-                 <strong><i class="fa fa-book margin-r-5"></i>Mot de Passe</strong>
+                 <strong><i class="fa fa-book margin-r-5"></i>Mot de passe</strong>
 
               <p class="text-muted">
                <?= $adult['password']?>

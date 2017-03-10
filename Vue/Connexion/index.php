@@ -2,7 +2,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Valio</title>
+  <title>v a l i o</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -21,34 +21,37 @@
 <?php if (isset($msgErreur)) : ?>
     <div class="alert alert-danger alert-dismissable">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <strong>Mots de passe incorrect</strong> <?= $this->nettoyer($msgErreur) ?>
+        <strong>Attention ! </strong> <?= $this->nettoyer($msgErreur) ?>
     </div>
 <?php endif; ?>
 <div class="row">
     
+  
     <br>
     <br>
     <br>
     <br>
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="col-xs-1">
+    <div class="col-xs-3">
         
     </div>
- <div class="col-xs-6">
+ <div class="col-xs-6"> 
 <div class="login-box">
-  <div class="login-logo">
-    <a href=""><b></b> </a>
+  <div class="login-logo"> 
+    <a href=""> <b> 
+    </a> v a  l  i  o  </b></a> 
+<p> </p>
+    <b> 
+    </a>  </b>
   </div>
   <!-- /.login-logo -->
-  <div class="login-box-body">
-    <p class="login-box-msg">Connectez-vous pour accéder à votre compte </p>
+  <div class="login-box-body">  
+    <p class="login-box-msg"> Une application pour valoriser les comportments citoyens
+    <p> </p>
+
+    <b>Connectez-vous pour accéder à votre compte</b>
+
+     </p>
        <form action="connexion/connecter" method="post">
             <div class="form-group has-feedback">
                 <input name="login" type="email" class="form-control" placeholder="Adresse e-mail">
@@ -61,8 +64,8 @@
             <div class="row">
 
                 <!-- /.col -->
-                <div class="col-xs-6">
-                    <button href="" type="submit" class="btn btn-danger btn-block btn-flat">Se connecter </button> 
+                <div class="col-xs-7">
+                    <button href="" type="submit" class="btn btn-gray  btn-block btn-flat"> Se connecter </button> 
                 </div>
                 <!-- /.col -->
             </div>

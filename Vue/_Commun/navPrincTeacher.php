@@ -38,13 +38,13 @@
         </li>
         <li>
           <a href="teacher/classe">
-            <i class="fa fa-users"></i> <span>Ma classe(titulaire)</span>
+            <i class="fa  fa-th-large"></i> <span>Ma classe </span>
           </a>
         </li>
         
         <li class="treeview">
           <a href="teacher/documentation">
-             <i class="fa fa-edit"></i> <span> Tutoriel </span>
+             <i class="fa fa-play"></i> <span> Tutoriel </span>
           </a>
           
         </li>

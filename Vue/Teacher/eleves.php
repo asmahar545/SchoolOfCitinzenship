@@ -37,8 +37,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Evaluation
-        <small>J'évalue</small>
+        Évaluation
+        <small>J'évalue mes jeunes</small>
       </h1>
      
     </section>
@@ -49,7 +49,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Mes élèves</h3>
+              <h3 class="box-title"></h3>
             </div>
             <!-- /.box-header -->
            <div class="box-body table-responsive no-padding">
@@ -60,7 +60,7 @@
                             <th ><div><span>N°</span></div></th>
                                 <th><div><span>Nom</span></div></th>
                                 <th ><div><span>Prénom</span></div></th>
-                                <th ><div><span>#</span></div></th>
+                                <th ><div><span>Action</span></div></th>
                             </tr>
                             </thead>
                             <tbody>

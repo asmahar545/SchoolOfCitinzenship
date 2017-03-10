@@ -3,9 +3,9 @@
     <!-- Logo -->
     <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>V</b>a</span>
+      <span class="logo-mini"><b>valio</b></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Valio</b></span>
+      <span class="logo-lg"><b>valio</b></span>
       
     </a>
     <!-- Header Navbar: style can be found in header.less -->
@@ -28,12 +28,10 @@
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="dist/img/connexion.png" class="img-circle" alt="User Image">
+                <img src="dist/img/teacher.png" class="img-circle" alt="User Image">
 
                 <p>
-                  <?= $adult['name']?> <?= $adult['firstname']?>
-                 
-                </p>
+                  <?= $adult['name']?> <?= $adult['firstname']?> </p>
               </li>
               <!-- Menu Body -->
               <li class="user-body">

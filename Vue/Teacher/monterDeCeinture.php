@@ -56,13 +56,16 @@
             <div class="box-body">
                     <form action="teacher/exeMonterDeCeinture/<?= $id ?>"class="form-horizontal form-label-left" method="post">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Choix de la ceinture pour l'élève, son ancien badge était de la couleur bleue <?= $ceinture['monteCeinture']?></a></h3>
+                            <h3 class="box-title">Mettez à jour le badge de l'étudiant. 
+                            <br>
+                            <br>
+                            Le badget actuel du jeune est <?= $ceinture['monteCeinture']?>.</a></h3>
                         </div>
                         <br>
                         <div class="box-body">
                            
                             <div class="form-group">
-                            <span class="form-group-addon">Monter de Ceinture</span>
+                            <span class="form-group-addon">Couleurs</span>
                             <select class="form-control"  name="ceinture" type="text">
                             <option>Blanc</option>
                             <option>Jaune</option>

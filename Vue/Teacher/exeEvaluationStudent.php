@@ -50,13 +50,13 @@
       <section class="content">
         
         <div class="callout callout-success">
-          <h4>L'évaluation de l'élève est terminer!</h4>
+          <h4>L'évaluation a été envoyée </h4>
 
-          <p>Merci</p>
+          <p>Le jeune en question à été évalué </p>
           
           
-          <a href="teacher/mesclasses">Revenir à mes élèves</a> <br>
-          <a href="teacher/">Revenir au menu Principal</a>
+          <a href="teacher/mesclasses">Revenir à mes classes</a> <br>
+          <a href="teacher/">Revenir au bureau</a>
         </div>
        
         <!-- /.box -->

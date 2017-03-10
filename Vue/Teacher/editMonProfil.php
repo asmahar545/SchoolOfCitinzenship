@@ -47,7 +47,7 @@
      
         <section class="content-header">
       <h1>
-        Mon Profil
+        Mon profil
       </h1>
       
         </section>  
