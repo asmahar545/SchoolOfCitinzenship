@@ -57,21 +57,24 @@
               <table id="example1" class="table table-bordered table-hover">
                     <thead>
                             <tr>
-                                <th>N°</th>
-                                <th>Compétences</th>
+                                
                                 <th>Tag</th>
+                                <th>Compétences</th>
                                 <th>Informations complémentaires</th>
                             </tr>
                      </thead>
                      <tbody>
-                            <?php $var=1?>
+                            
                             <?php foreach ($grille as $list): ?>
                                 <tr>
                                     
-                                    <td><?php echo $var++ ?></td>
+
+
+                                    <td> <span class="label label-success"><?= $this->nettoyer($list['nameCat']) ?></span></td>
+
                                     <td><?= $this->nettoyer($list['itemname']) ?></td>
                                     
-                                    <td> <span class="label label-success"><?= $this->nettoyer($list['nameCat']) ?></span></td>
+                                   
                                    
                                     
                                     

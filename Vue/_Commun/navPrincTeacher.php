@@ -10,7 +10,7 @@
         </div>
         <div class="pull-left info">
           <p><?= $adult['name']?></p><strong><?= $adult['firstname']?></strong>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          <a href="#"><i class="fa fa-circle text-success"></i> Online </a>
         </div>
       </div>
     
@@ -33,7 +33,7 @@
         </li>
          <li>
           <a href="teacher/mesclasses">
-            <i class="fa fa-users"></i> <span> Mes étudiants</span>
+            <i class="fa fa-users"></i> <span> Mes étudiants </span>
           </a>
         </li>
         <li>
@@ -44,7 +44,7 @@
         
         <li class="treeview">
           <a href="teacher/documentation">
-             <i class="fa fa-edit"></i> <span>Tutoriel</span>
+             <i class="fa fa-edit"></i> <span> Tutoriel </span>
           </a>
           
         </li>
