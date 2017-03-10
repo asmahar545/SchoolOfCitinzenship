@@ -136,8 +136,7 @@ class Grille extends Modele{
    
    } 
    public function selectNomStudentEvalueParClasse($idC) {
-       $sql="SELECT DISTINCT nameE,firstE FROM `itemresponstudent` WHERE classe= ? 
-       ORDER by nameE";
+       $sql="SELECT DISTINCT firstE FROM `itemresponstudent` WHERE classe=? ORDER by firstE";
        $nomStudent= $this->executerRequete($sql,array($idC));
        return $nomStudent;
    }

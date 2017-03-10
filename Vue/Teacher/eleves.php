@@ -58,23 +58,26 @@
                             <thead>
                             <tr >
                             <th ><div><span>N°</span></div></th>
-                                <th ><div><span>Nom</span></div></th>
+                                <th><div><span>Nom</span></div></th>
                                 <th ><div><span>Prénom</span></div></th>
-                                      <th ><div><span>#     </span></div></th>
+                                <th ><div><span>#</span></div></th>
                             </tr>
                             </thead>
                             <tbody>
                             <?php $var=1?>
                             <?php foreach ($student as $list): ?>
+                                  
+
                                 <tr>
                                     
                                     <td><?php echo $var++ ?></td>
                                     <td><?= $this->nettoyer($list['name']) ?></td>
                                     <td><?= $this->nettoyer($list['firstName']) ?></td>
                                     <td><a href="teacher/jevalue/<?= $this->nettoyer($list['id_student']) ?>" class="btn btn-primary btn-xs">J'évalue</a></td>
+                                 
                                     
                                 </tr>
-                            
+                                 
                             <?php endforeach; ?>
                             </tbody>
                         </table>

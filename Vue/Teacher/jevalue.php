@@ -99,13 +99,13 @@
                 
                 
                 
-                 <!-- textarea -->
+                 <!-- textarea
                 <div class="form-group">
                     <div class=" col-sm-12">
                   <label>Commentaire </label>
-                  <textarea name="commentaire" class="form-control" rows="3" placeholder="Enter ..." required><?=$commentaire['commentaire']?></textarea>
+                  <textarea name="commentaire" class="form-control" rows="3" placeholder="Enter ..." required>php//$commentaire['commentaire']php</textarea>
                 </div>
-                </div>
+                </div> -->
                 <!--  <div class="input-group">
                     
                     <label>Nombre de retard </label>

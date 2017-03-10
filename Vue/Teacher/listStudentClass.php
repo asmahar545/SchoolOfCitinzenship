@@ -73,7 +73,7 @@
                                     <td class=" " ><?= $this->nettoyer($list['firstName']) ?></td>
                                     <td>
                                         <a  href="teacher/monterDeCeinture/<?=  $this->nettoyer($list['id_student']) ?>" class="btn bg-yellow-active btn-xs"><i class="fa fa-certificate"></i></a>
-                                        <a  href="teacher/commenterSonEvaluation/<?=  $this->nettoyer($list['id_student']) ?>" class="btn bg-purple btn-xs"><i class="f fa-edit"></i></a>
+                                        <a  href="teacher/commenterSonEvaluation/<?=  $this->nettoyer($list['id_student']) ?>" class="btn bg-navy btn-xs"><i class="fa fa-edit"></i></a>
                                     </td>
                                </tr>
 

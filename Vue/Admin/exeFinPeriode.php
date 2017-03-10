@@ -41,19 +41,26 @@
 <?php require 'Vue/_Commun/headerPrinc.php'; ?>
 <?php require 'Vue/_Commun/navPrinc.php'; ?>
 
-  <!-- Content Wrapper. Contains page content -->
+  
   <div class="content-wrapper">
+    <div class="container">
+   
+      <!-- Main content -->
+      <section class="content">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
+    
         <div class="callout callout-info">
             <h4>La Période a changé</h4>
             Toute modification sera faite.
             <a href="admin/configuration">Menu principale</a>
         </div>
 
-    </section>
+    <!-- /.box -->
+      </section>
+      <!-- /.content -->
     </div>
-  <!-- /.content-wrapper -->
+    <!-- /.container -->
+  </div>
 <?php require 'Vue/_Commun/Folder.php'; ?>
 <?php require 'Vue/_Commun/Aside.php'; ?>
  
@@ -102,6 +109,3 @@
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
 </body> 
-
-
-

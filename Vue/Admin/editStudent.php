@@ -64,9 +64,9 @@
       <div class="row">
        <div class="col-md-12">
 
-          <div class="box box-success">
+          <div class="box box-warning">
             <div class="box-header">
-              <h3 class="box-title">Input masks</h3>
+              <h3 class="box-title">Modifier l'élève</h3>
             </div>
             <div class="box-body">
                     <form action="admin/exeEditStudent/<?= $student['id_student'] ?>"class="form-horizontal form-label-left" method="post">
@@ -84,43 +84,7 @@
                                 <input name="firstname" type="text" class="form-control"  value="<?= $student['firstName'] ?> "placeholder="">
                             </div>
                             <br>
-                            <div class="input-group">
-                                <span class="input-group-addon">Adresse</span>
-                                <input name="adress" type="text" class="form-control"r value="<?= $student['adress'] ?> ">
-                            </div>
-                            <br>
-                            <div class="input-group">
-                                <span class="input-group-addon">Date de naissance</span>
-                                <input name="birthday"  class="form-control" id="datepicker" value="<?= $student['birthday'] ?> ">
-                            </div>
-                            <br>
-                            <?php if ($student['sexe']== "femme"): ?>
-                            
-                            <div class="input-group">
-                                <span class="input-group-addon">Sexe</span>
-                                  <select name="sexe"  class="form-control" value="<?= $student['sexe'] ?> " placeholder=" ">
-                                      <option >homme </option>
-                                      <option selected="selected">femme</option>
-                                </select> 
-                            </div>
-                            
-                            <br>
-                            <?php else: ?>
-                              <div class="input-group">
-                                <span class="input-group-addon">Sexe</span>
-                                  <select name="sexe"  class="form-control" value="<?= $student['sexe'] ?> " placeholder=" ">
-                                      <option selected="selected">homme </option>
-                                      <option >femme</option>
-                                </select> 
-                            </div>
-                            
-                            <br>
-                            <?php endif; ?>
-                            <div class="input-group">
-                                <span class="input-group-addon">Télèphone</span>
-                                <input name="phone" type="phone" class="form-control" placeholder="" value="<?= $student['phone'] ?> ">
-                            </div>
-                            <br>
+                           
                              <div class="input-group">
                                 <span class="input-group-addon">Classe</span>
                                 <select name="idclasse" type="text" class="form-control" placeholder="">
@@ -138,7 +102,7 @@
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-10 col-md-offset-10">
 
-                                    <button type="submit" class="btn btn-success">Modifier</button>
+                                    <button type="submit" class="btn btn-warning">Modifier</button>
                                 </div>
                             </div>
 

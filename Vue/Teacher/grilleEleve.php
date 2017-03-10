@@ -66,7 +66,7 @@
                                 <th>Item   </th>
                             <?php foreach ($nomStudent as $list): ?>
                                  
-                            <th  class="info" ><div><span><?= $this->nettoyer($list['nameE']) ?>   <?= $this->nettoyer($list['firstE'])  ?>    </span></div></th>
+                            <th  class="info" ><div><span><?= $this->nettoyer($list['firstE']) ?>     </span></div></th>
                             
                             <?php endforeach; ?>
                             

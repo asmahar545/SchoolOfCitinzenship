@@ -111,7 +111,7 @@ class ControleurAdmin extends ControleurSecurise
         
      }
     
-     public function exeEditClass(){
+         public function exeEditClass(){
          if ($this->requete->existeParametre("classe") && $this->requete->existeParametre("id"))
                  {
              $classe = $this->requete->getParametre("classe");
@@ -190,20 +190,15 @@ class ControleurAdmin extends ControleurSecurise
      }
      public function exeEditStudent(){
         if ( $this->requete->existeParametre("name") && $this->requete->existeParametre("idclasse")&&  $this->requete->existeParametre("firstname")&&
-            $this->requete->existeParametre("adress") && $this->requete->existeParametre("birthday")&&
-            $this->requete->existeParametre("sexe")&& $this->requete->existeParametre("phone") &&
+            
                 $id = $this->requete->getParametre("id"))
            {
            $name = $this->requete->getParametre("name");
         $firstname = $this->requete->getParametre("firstname");
-        $adress = $this->requete->getParametre("adress");
-        $birthday = $this->requete->getParametre("birthday");
-        $date = date("Y-m-d ", strtotime($birthday));
-        $sexe = $this->requete->getParametre("sexe");
-        $phone = $this->requete->getParametre("phone");
+       
         $classe = $this->requete->getParametre("idclasse");
         $id = $this->requete->getParametre("id");
-        $this->student->editChildren($name,$firstname,$adress,$date,$sexe,$phone,$classe,$id);
+        $this->student->editChildren($name,$firstname,$classe,$id);
            
             $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
             
@@ -503,6 +498,7 @@ class ControleurAdmin extends ControleurSecurise
               $period=$this->grille->selectPeriod();
               $idC = $this->requete->getParametre("id");
               $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+              $nbrTeachEvalue= $this->classe->nombreTeacherevalueUneClasse($idC);
               $nameItem1="Je suis respectueux envers les personnes";
               $nameItem2="J’adopte une attitude non violente";
               $nameItem3="Je suis respectueux du matériel et de l’environnement";
@@ -541,6 +537,7 @@ class ControleurAdmin extends ControleurSecurise
                 'item9'=>$Item9,
                 'item10'=>$Item10,
                 'period'=>$period,
+                  'nbteacher'=> $nbrTeachEvalue,
                 'nomStudent'=>$nomStudent,
                 'item'=>$item));
     
@@ -675,7 +672,8 @@ class ControleurAdmin extends ControleurSecurise
      $adult=$this->adult->getadult($idU);
      $id = $this->requete->getParametre("id");
       $nbStudent= $this->classe->getnbElevesParProffesseur($id);
-      $this->genererVue(array('adult'=>$adult,'nbStudent'=>$nbStudent));}
+      $nbStudentTotalEvalue=$this->classe->nombreEleveTotalEvalue($id);
+      $this->genererVue(array('adult'=>$adult,'nbStudent'=>$nbStudent,'nbstudentTotal'=>$nbStudentTotalEvalue));}
       else
           {
          throw new Exception("Erreur de chargement de page"); 

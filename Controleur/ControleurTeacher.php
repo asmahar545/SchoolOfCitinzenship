@@ -134,7 +134,18 @@ class ControleurTeacher extends ControleurSecurise
            $id = $this->requete->getParametre("id");
            $student= $this->student->getStudentClass($id);
            $adult=$this->adult->getadult($idU);
-           $this->genererVue(array('adult'=>$adult,'student'=>$student,'idC'=>$id));}
+          // $num=0;
+         //while($donnees=$student->fetch()) {
+         //  {
+         //   
+         //   $nb= $this->classe->evalueTeacherEleve($idU, $donnees['id_student']);
+           // $num++;
+          //  $tab[]=array($nb=>$num);         
+         // }
+               
+         //}
+          
+           $this->genererVue(array('adult'=>$adult,'student'=>$student));}
         else{
              throw new Exception("Faite attention les champs ne sont pas tous définis");
         }
@@ -162,11 +173,11 @@ class ControleurTeacher extends ControleurSecurise
     
     public function exeEvaluationStudent(){
         if ($this->requete->existeParametre("valider")
-          &&$this->requete->existeParametre("commentaire")&&
+          &&
             $this->requete->existeParametre("id"))
             {
              
-           $commentaire= $this->requete->getParametre("commentaire");
+          // $commentaire= $this->requete->getParametre("commentaire");
             $idS = $this->requete->getParametre("id");
             $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
             $adult=$this->adult->getadult($idU);
@@ -177,7 +188,7 @@ class ControleurTeacher extends ControleurSecurise
             
         
              //éditer un commentaire 
-            $this->grille->editCommentaire($idgrid, $commentaire);
+            //$this->grille->editCommentaire($idgrid, $commentaire);
             $tab1=$_POST['valider'];
             //je remet tout à jour 
             $this->grille->editItemStudentAjour($idS, $idU);

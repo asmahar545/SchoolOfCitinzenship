@@ -52,11 +52,12 @@ public function getnbstudents(){
         $rep=$this->executerRequete($sql,array($name,$firstname,$adress,$birthday,$sexe,$phone,$id_classe));
     }
     
-    public function editChildren($name,$firstname,$adress,$birthday,$sexe,$phone,$id_classe,$id)
+    public function 
+        editChildren($name,$firstname,$id_classe,$id)
     {
-    $sql="UPDATE `eleve` SET `name` = ?, `firstName` = ?, `adress` = ?, `birthday` = ?, 
-          `sexe` = ?, `phone` = ?, `id_classe` = ? WHERE `eleve`.`id_student` = ?";
-    $rep=$this->executerRequete($sql,array($name,$firstname,$adress,$birthday,$sexe,$phone,$id_classe,$id));
+    $sql="UPDATE `eleve` SET `name` = ?, `firstName` = ?, 
+          `id_classe` = ? WHERE `eleve`.`id_student` = ?";
+    $rep=$this->executerRequete($sql,array($name,$firstname,$id_classe,$id));
     }
       public function getStudent($id){
         $sql="select * from eleve where id_student= ?";

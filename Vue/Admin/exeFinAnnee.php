@@ -19,7 +19,6 @@
   <!-- iCheck -->
   <link rel="stylesheet" href="plugins/iCheck/flat/blue.css">
   <!-- Morris chart -->
-  <link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
   <link rel="stylesheet" href="plugins/morris/morris.css">
   <!-- jvectormap -->
   <link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
@@ -42,11 +41,12 @@
 <?php require 'Vue/_Commun/headerPrinc.php'; ?>
 <?php require 'Vue/_Commun/navPrinc.php'; ?>
 
-  <!-- Content Wrapper. Contains page content -->
+  
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    
-     <!-- Main content -->
+    <div class="container">
+     
+
+      <!-- Main content -->
     <section class="content">
       <div class="alert alert-success alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>

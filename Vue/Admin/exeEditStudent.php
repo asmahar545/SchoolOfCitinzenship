@@ -41,19 +41,29 @@
 <?php require 'Vue/_Commun/headerPrinc.php'; ?>
 <?php require 'Vue/_Commun/navPrinc.php'; ?>
 
-  <!-- Content Wrapper. Contains page content -->
+  
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <div class="callout callout-info">
-            <h4>Classe bien ajouté !</h4>
-            Toute modification sera faite .
-            <a href="admin/">Menu principale</a>
-        </div>
+    <div class="container">
+     
 
-    </section>
+      <!-- Main content -->
+      <section class="content">
+        
+        <div class="callout callout-warning">
+          <h4>Modification bien faite </h4>
+
+          <a  href="admin/student" class="btn btn-warning "> Retour</a>
+          
+          
+          
+        </div>
+       
+        <!-- /.box -->
+      </section>
+      <!-- /.content -->
     </div>
-  <!-- /.content-wrapper -->
+    <!-- /.container -->
+  </div>
 <?php require 'Vue/_Commun/Folder.php'; ?>
 <?php require 'Vue/_Commun/Aside.php'; ?>
  
@@ -102,6 +112,3 @@
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
 </body> 
-
-
-

@@ -37,7 +37,14 @@ public function getnbClasses(){
         $ligne= $rep->fetch();
         return $ligne['nb'];
     }
-    
+    public function evalueTeacherEleve($idU,$idE){
+
+
+        $rqt='SELECT COUNT(*) as nb FROM `itemresponstudent` WHERE idU=? and idE=?';
+        $rep=  $this->executerRequete($rqt,array($idU,$idE));
+        $ligne= $rep->fetch();
+        return $ligne['nb'];
+    }
     public function getEvalueFalse($idU,$classe){
         $sql="SELECT COUNT(DISTINCT (nameE)) as nb FROM `itemresponstudent` WHERE idU=? and classe=?";
          $rep=  $this->executerRequete($sql,array($idU,$classe));
@@ -105,8 +112,20 @@ public function getnbClasses(){
             
         }
     }
-    //requete total student 
-    //select COUNT(id_student) from eleve,consultclass,adult,classe where id_classe.eleve= id.classe and  id-adult=1;
-    
+     public function nombreEleveTotalEvalue($idU){
+    $sql="select COUNT(id_student) as nb from eleve,consultclass,adult,classe 
+            where eleve.id_classe= classe.id and adult.id_adult= consultclass.id_adult 
+            and consultclass.id_classe=classe.id and adult.id_adult=? ";
+    $rep=$this->executerRequete($sql,array($idU));
+     $ligne= $rep->fetch();
+        return $ligne['nb'];
+     }
+     public function nombreTeacherevalueUneClasse($idC){
+         $sql="SELECT COUNT(*) as nb FROM adult, consultclass WHERE adult.id_adult = consultclass.id_adult AND consultclass.id_classe = ?";
+         $rep=$this->executerRequete($sql,array($idC));
+         
+         $ligne= $rep->fetch();
+        return $ligne['nb'];
+}
 }
 

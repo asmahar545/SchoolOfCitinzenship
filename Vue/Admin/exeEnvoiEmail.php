@@ -39,11 +39,14 @@
 <body class="hold-transition skin-black sidebar-mini">
 <div class="wrapper">
 <?php require 'Vue/_Commun/headerPrinc.php'; ?>
-<?php require 'Vue/_Commun/navPrincTeacher.php'; ?>
+<?php require 'Vue/_Commun/navPrinc.php'; ?>
 
-  <!-- Content Wrapper. Contains page content -->
+  
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
+    <div class="container">
+     
+
+      <!-- Main content -->
     <section class="content-header">
         <div class="callout callout-info">
             <h4>Le Email a été envoyé </h4>

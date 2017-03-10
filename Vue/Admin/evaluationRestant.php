@@ -69,13 +69,13 @@
                  
                <tr>
                                     
-                                    <td class=" " ><?= $nbTotal?>
+                                    <td class=" " ><?= $nbstudentTotal?>
                                         
                                     </td>
                                     <td class=" " ><?= $nbStudent ?>
                                         
                                     </td>
-                                    <td class=" " ><?= $nbTotal-$nbStudent   ?>
+                                    <td class=" " ><?= $nbstudentTotal-$nbStudent   ?>
                                         
                                     </td>
                                     

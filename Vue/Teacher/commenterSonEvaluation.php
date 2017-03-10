@@ -56,7 +56,7 @@
             <div class="box-body">
                     <form action="teacher/exeCommentaire/<?= $id ?>"class="form-horizontal form-label-left" method="post">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Commentaire de l'élève en fin de période apré le conseil de classe</a></h3>
+                            <h3 class="box-title">Commentaire de l'élève en fin de période aprés le conseil de classe</a></h3>
                         </div>
                         <br>
                         <div class="box-body">
