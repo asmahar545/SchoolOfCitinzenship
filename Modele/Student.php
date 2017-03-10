@@ -46,10 +46,15 @@ public function getnbstudents(){
         return $student;
     }
     //ajouter un étudiant
-    public function addChildren($name,$firstname,$adress,$birthday,$sexe,$phone,$id_classe)
+    public function addChildren($name,$firstname,$id_classe)
     {
-        $sql="INSERT INTO `eleve` (`id_student`, `name`, `firstName`, `adress`, `birthday`, `sexe`, `phone`, `id_classe`) VALUES (NULL,?,?,?,?,?,?,?)";
-        $rep=$this->executerRequete($sql,array($name,$firstname,$adress,$birthday,$sexe,$phone,$id_classe));
+        $sql="INSERT INTO `eleve`(`id_student`, `name`, `firstName`, `monteCeinture`, `retard`, `id_classe`) VALUES (Null,?,?,'blanc',0,?)";
+        $rep=$this->executerRequete($sql,array($name,$firstname,$id_classe));
+    }
+    public function deleteChildren($idE)
+    {
+        $sql=" DELETE FROM `eleve` WHERE id_student=?";
+        $rep=$this->executerRequete($sql,array($idE));
     }
     
     public function 

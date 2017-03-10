@@ -78,7 +78,10 @@
                                     <td class=" " ><?= $this->nettoyer($list['email']) ?></td>
                                     <td class=" " ><?= $this->nettoyer($list['password']) ?></td>
                                     <td > 
-                                   <a  href="admin/evaluationRestant/<?= $this->nettoyer($list['id_adult']) ?> " class="btn bg-red btn-xs"><i class="fa fa-hourglass-2 "></i></a>
+                                     <a  href="admin/editTeacher/<?= $this->nettoyer($list['id_adult']) ?> " class="btn btn-warning btn-xs"><i class="fa fa-edit "></i></a>
+                                     <a  href="admin/addTeacher/<?= $this->nettoyer($list['id_adult']) ?> " class="btn btn-success btn-xs"><i class="fa fa-plus "></i></a>
+                                     <a  href="admin/exeDeleteTeacher/<?= $this->nettoyer($list['id_adult']) ?> " class="btn btn-danger btn-xs"><i class="fa fa-close "></i></a>
+                                   <a  href="admin/evaluationRestant/<?= $this->nettoyer($list['id_adult']) ?> " class="btn btn-info btn-xs"><i class="fa fa-hourglass-2 "></i></a>
                                    </td>
                                     
 

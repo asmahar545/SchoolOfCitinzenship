@@ -2,7 +2,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <?php $this->titre = "finDePeriode"; ?>
+  <?php $this->titre = "Admin"; ?>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -41,51 +41,29 @@
 <?php require 'Vue/_Commun/headerPrinc.php'; ?>
 <?php require 'Vue/_Commun/navPrinc.php'; ?>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
   
-     <!-- Main content -->
-    <section class="content">
-      <!-- Small boxes (Stat box) -->
-      <div class="row">
-       <div class="col-md-6">
+  <div class="content-wrapper">
+    <div class="container">
+     
 
-          <div class="box box-danger">
-            
-            <div class="box-body">
-                    <form action="admin/exeRetard/<?= $id ?>"class="form-horizontal form-label-left" method="post">
-                        <div class="box-header with-border">
-                            <h3 class="box-title">Nombre de retard pour l'élève</a></h3>
-                        </div>
-                        <br>
-                        <div class="box-body">
-                            <div class="input-group">
-                                <span class="input-group-addon">Nombre de retard</span>
-                                <input name="retard" type="number" class="form-control" required value="<?= $retard['retard']?>" >
-                            </div>
-                             
-                            
+      <!-- Main content -->
+      <section class="content">
+        
+        <div class="callout callout-warning">
+          <h4>Suppression faite </h4>
 
-                            <br>
-
-                            <div class="form-group">
-                                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-10">
-
-                                    <button type="submit" class="btn btn-danger">Ajouter</button>
-                                </div>
-                            </div>
-                    </form>
-
-                </div>
-         </div>
-       </div>
-      </div>
-
-  </section>
-    <!-- /.content -->
+          <a  href="admin/student" class="btn btn-warning "> Retour</a>
+          
+          
+          
+        </div>
+       
+        <!-- /.box -->
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.container -->
   </div>
-  <!-- /.content-wrapper -->
 <?php require 'Vue/_Commun/Folder.php'; ?>
 <?php require 'Vue/_Commun/Aside.php'; ?>
  
@@ -133,13 +111,4 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
-   <script>
-    $('#datepicker').datepicker({
-      autoclose: true
-    });</script>
-      <script>
-    $('#datepicker1').datepicker({
-      autoclose: true
-    });</script>
-</body>
-              
+</body> 

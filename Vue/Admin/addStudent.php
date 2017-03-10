@@ -81,29 +81,7 @@
                                 <span class="input-group-addon">Prénom</span>
                                 <input name="firstname" type="text" class="form-control" placeholder=""required>
                             </div>
-                            <br>
-                            <div class="input-group">
-                                <span class="input-group-addon">Adresse</span>
-                                <input name="adress" type="text" class="form-control"required>
-                            </div>
-                            <br>
-                            <div class="input-group">
-                                <span class="input-group-addon">Date de naissance</span>
-                                <input name="birthday" type="text" class="form-control" id="datepicker"required>
-                            </div>
-                            <br>
-                             <div class="input-group">
-                                <span class="input-group-addon">Sexe</span>
-                                  <select name="sexe" type="text" class="form-control" placeholder=""required>
-                                      <option>homme </option>
-                                      <option>femme</option>
-                                </select> 
-                            </div>
-                            <br>
-                            <div class="input-group">
-                                <span class="input-group-addon">Télèphone</span>
-                                <input name="phone" type="number" class="form-control" placeholder="" required>
-                            </div>
+                          
                             <br>
                                 <div class="input-group">
                                 <span class="input-group-addon">Classe</span>

@@ -87,7 +87,9 @@
                            
                              <div class="input-group">
                                 <span class="input-group-addon">Classe</span>
+                                
                                 <select name="idclasse" type="text" class="form-control" placeholder="">
+                                     <option value="' . <?= $student['id_classe'] ?> . '" selected disabled><?= $year['yearSexion'] ?></option>
                                     <?php
                                     foreach ($classe as $list):
 

@@ -44,11 +44,17 @@ class Adult extends Modele
         return $ligne['nb'];
     }
     //ajoute un adult
-    public function addAdult($name,$firstname,$adress,$birthday,$sexe,$phone,$commentaire,$email,$password,$id_adultCategory)
+    public function addAdult($name,$firstname,$email,$password)
     {
-        $sql='INSERT INTO `adult` (`id_adult`, `name`, `firstname`, `adress`, `birthday`, `sexe`, `phone`,`commentaire`, `email`, `password`, `id_adultCategory`)  VALUES (NULL, ?, ?, ?, ?,?, ?, ?, ?, ?,?)';
+        $sql='INSERT INTO `adult` (`id_adult`, `name`, `firstname`, `email`, `password`, `id_adultCategory`)  VALUES (NULL,?, ?, ?, ?,1)';
 
-        $this->executerRequete($sql,array($name,$firstname,$adress,$birthday,$sexe,$phone,$commentaire,$email,$password,$id_adultCategory));
+        $this->executerRequete($sql,array($name,$firstname,$email,$password));
+    }
+    public function deleteAdult($idU)
+    {
+        $sql='DELETE FROM `adult` WHERE id_adult=?';
+
+        $this->executerRequete($sql,array($idU));
     }
     public function addLesson($cours,$nbr){
         $sql= 'INSERT INTO `cours` (`id_lesson`, `name`, `nbr`) VALUES (NULL, ?, ?)';
@@ -64,13 +70,12 @@ class Adult extends Modele
         
     }
     //modifie l'adult
-    public function editAdult($name,$firstname,$adress,$birthday,$sexe,$phone,$commentaire,$email,$password,$id_adultCategory,$id){
-        $sql="UPDATE `adult` SET `name` = ?, `firstname` = ?, `adress` = ?, 
-        `birthday` = ?, `sexe` = ?, `phone` = ?,
-        `email` = ?, `commentaire` = ?,`password` = ?,
-        `id_adultCategory` = ? WHERE `adult`.`id_adult` = ?";
+    public function editAdult($name,$firstname,$email,$password,$id){
+        $sql="UPDATE `adult` SET `name` = ?, `firstname` = ?,  
+        `email` = ?,`password` = ?,
+        `id_adultCategory` = 1 WHERE `adult`.`id_adult` = ?";
         
-        $this->executerRequete($sql,array($name,$firstname,$adress,$birthday,$sexe,$phone,$email,$commentaire,$password,$id_adultCategory,$id));
+        $this->executerRequete($sql,array($name,$firstname,$email,$password,$id));
     }
    
       

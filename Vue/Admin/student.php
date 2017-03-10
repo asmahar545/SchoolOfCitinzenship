@@ -73,9 +73,12 @@
                                     <td class=" " ><?= $this->nettoyer($list['name']) ?></td>
                                     <td class=" " ><?= $this->nettoyer($list['firstName']) ?></td>
                                     <td>
-                                    <a alt="Résultat des évaluations" href="admin/editStudent/<?= $this->nettoyer($list['id_student']) ?> " class="btn bg-navy btn-xs"><i class="fa fa-edit"></i></a>
-                                    
+                                    <a alt="Résultat des évaluations" href="admin/editStudent/<?= $this->nettoyer($list['id_student']) ?> " class="btn btn-warning btn-xs"><i class="fa fa-edit"></i></a>
+                                    <a alt="Résultat des évaluations" href="admin/addStudent/<?= $this->nettoyer($list['id_student']) ?> " class="btn btn-success btn-xs"><i class="fa fa-plus"></i></a>
                                          <a alt="Résultat des évaluations" href="admin/resultatParEleve/<?= $this->nettoyer($list['id_student']) ?> " class="btn bg-red btn-xs"><i class="fa fa-file-pdf-o"></i></a>
+                                          <a alt="Résultat des évaluations" href="admin/exeDeleteChildren/<?= $this->nettoyer($list['id_student']) ?> " class="btn btn-info btn-xs"><i class="fa fa-close"></i></a>
+                                         
+                                         
                                     </td>
 
 

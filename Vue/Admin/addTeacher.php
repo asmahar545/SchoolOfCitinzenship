@@ -46,15 +46,8 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-        <h1>
-                Bienvenue,
-                <small>admin</small>
-        </h1>
+        
     
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
-      </ol>
     </section>
      <!-- Main content -->
     <section class="content">
@@ -63,9 +56,7 @@
        <div class="col-md-12">
 
           <div class="box box-success">
-            <div class="box-header">
-              <h3 class="box-title">Input masks</h3>
-            </div>
+            
             <div class="box-body">
                     <form action="admin/exeAddTeacher"class="form-horizontal form-label-left" method="post">
                         <div class="box-header with-border">
@@ -81,32 +72,8 @@
                                 <span class="input-group-addon">Prénom</span>
                                 <input name="firstname" type="text" class="form-control" placeholder=""required>
                             </div>
-                            <br>
-                            <div class="input-group">
-                                <span class="input-group-addon">Adresse</span>
-                                <input name="adress" type="text" class="form-control"required>
-                            </div>
-                
-                            <br>
-                            <div class="input-group">
-                                <span class="input-group-addon">Date de naissance</span>
-                                <input name="birthday" type="cale" class="form-control"id="datepicker"required>
-                            </div>
-                            <br>
-                            <div class="input-group">
-                                <span class="input-group-addon">Sexe</span>
-                                  <select name="sexe" type="text" class="form-control" placeholder=""required>
-                                      <option>homme </option>
-                                      <option>femme</option>
-                                </select> 
-                            </div>
-                            <br>
-                            <div class="input-group">
-                                <span class="input-group-addon">Télèphone</span>
-                                <input name="phone" type="number" class="form-control" placeholder=""required>
-                            </div>
-                            <br>
-
+                            
+                            </br>
                             <div class="input-group">
                                 <span class="input-group-addon">Email</span>
                                 <input name="email" type= "email" class="form-control" placeholder=""required>
@@ -116,31 +83,10 @@
                                 <span class="input-group-addon">Password</span>
                                 <input name="password" type="text" class="form-control" placeholder=""required>
                             </div>
-                            <br>
                             
-                            <div class="input-group">
-                                <span class="input-group-addon">Catégorie</span>
-                                <select name="id_adultCategory" type="text" class="form-control" placeholder=""required>
-                                    <?php
-                                    foreach ($cat as $list):
-
-                                        echo '<option value="' . $this->nettoyer($list['id_adultCategory']) . '">' . $this->nettoyer($list['name']) . '</option>';
-                                        ?>
-                                    <?php endforeach; ?>
-
-                                </select> 
-                                
-                            </div>
-                            <br>
+                            
                              <!-- textarea -->
-                           <div class="input-group">
-                             <span class="input-group-addon">Commentaire</span>
-                             
-                            
-                               <textarea name="commentaire" class="form-control" rows="3" placeholder="Enter ..." required></textarea>
-                          
-                             </div>
-                             <br>
+                         
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-10">
 

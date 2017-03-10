@@ -150,27 +150,39 @@ class ControleurAdmin extends ControleurSecurise
 
     }
     public function exeAddStudent(){
-        if ($this->requete->existeParametre("name") && $this->requete->existeParametre("idclasse")&&  $this->requete->existeParametre("firstname")&&
-            $this->requete->existeParametre("adress") && $this->requete->existeParametre("birthday")&&
-            $this->requete->existeParametre("sexe")&& $this->requete->existeParametre("phone")
+        if ($this->requete->existeParametre("name") && $this->requete->existeParametre("idclasse")&&  $this->requete->existeParametre("firstname")
+           
             )
         {
 
         $name = $this->requete->getParametre("name");
         $firstname = $this->requete->getParametre("firstname");
-        $adress = $this->requete->getParametre("adress");
-        $birthday = $this->requete->getParametre("birthday");
-        $date = date("Y-m-d ", strtotime($birthday));
-        $sexe = $this->requete->getParametre("sexe");
-        $phone = $this->requete->getParametre("phone");
+     
         $classe = $this->requete->getParametre("idclasse");
-        $this->student->addChildren($name,$firstname,$adress,$date,$sexe,$phone,$classe);
+        $this->student->addChildren($name,$firstname,$classe);
         $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
         $adult=$this->adult->getadult($idU);
         $this->genererVue(array('adult'=>$adult));
         }
         else {
             throw new Exception("Faite attention les paramètres ne sont pas tous définis");
+        }
+
+    }
+    public function exeDeleteChildren(){
+        if (  $this->requete->existeParametre("id")
+           
+            )
+        {
+  
+        $id = $this->requete->getParametre("id");
+        $this->student->deleteChildren($id);
+        $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+        $adult=$this->adult->getadult($idU);
+        $this->genererVue(array('adult'=>$adult));
+        }
+        else {
+            throw new Exception("Imposible de suprimer l'élève car il a de évaluation en cours");
         }
 
     }
@@ -183,10 +195,30 @@ class ControleurAdmin extends ControleurSecurise
        $adult=$this->adult->getadult($idU);
        $id = $this->requete->getParametre("id");
        $student=$this->student->getStudent($id);
-       $this->genererVue(array('adult'=>$adult ,'student'=>$student,'classe'=>$classe));
+       $year= $this->classe->selectClasseEleve($id);
+       $this->genererVue(array('adult'=>$adult ,'student'=>$student,'classe'=>$classe,'year'=>$year));
        }
        
         
+     }
+    public function exeDeleteTeacher(){
+     if ( $this->requete->existeParametre("id") )
+            
+                
+           {
+         
+        $id = $this->requete->getParametre("id");
+        $this->adult->deleteAdult($id);
+           
+            $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+            
+            $adult=$this->adult->getadult($idU);
+      
+      $this->genererVue(array('adult'=>$adult));
+      }
+        else {
+            throw new Exception("Le professeur ne peut pas être supprimer car il a évalué des élèves");
+        }
      }
      public function exeEditStudent(){
         if ( $this->requete->existeParametre("name") && $this->requete->existeParametre("idclasse")&&  $this->requete->existeParametre("firstname")&&
@@ -227,24 +259,19 @@ class ControleurAdmin extends ControleurSecurise
     public function exeAddTeacher()
         {
             if ($this->requete->existeParametre("name") && $this->requete->existeParametre("firstname") &&
-                $this->requete->existeParametre("adress") && $this->requete->existeParametre("birthday") &&
-                $this->requete->existeParametre("sexe") && $this->requete->existeParametre("phone") &&
-                $this->requete->existeParametre("email") && $this->requete->existeParametre("commentaire") &&$this->requete->existeParametre("password")
-                && $this->requete->existeParametre("id_adultCategory")
+               
+                $this->requete->existeParametre("email") && $this->requete->existeParametre("password")
+               
             ) {
                 $name = $this->requete->getParametre("name");
                 $firstname = $this->requete->getParametre("firstname");
-                $adress = $this->requete->getParametre("adress");
-                $birthday = $this->requete->getParametre("birthday");
-                 $commentaire = $this->requete->getParametre("commentaire");
-                $date = date("Y-m-d ", strtotime($birthday));
-                $sexe = $this->requete->getParametre("sexe");
-                $phone = $this->requete->getParametre("phone");
+                
+              
                 $email = $this->requete->getParametre("email");
                 $password = $this->requete->getParametre("password");
-                $id_adultCategory = $this->requete->getParametre("id_adultCategory");
+                
 
-                $this->adult->addAdult($name, $firstname, $adress, $date, $sexe, $phone,$commentaire, $email, $password, $id_adultCategory);
+                $this->adult->addAdult($name, $firstname, $email, $password);
                 $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
                 $adult = $this->adult->getadult($idU);
                 $this->genererVue(array('adult' => $adult));
@@ -264,7 +291,7 @@ class ControleurAdmin extends ControleurSecurise
        $id = $this->requete->getParametre("id");
        $teacher=$this->adult->getadult($id);
       
-      $this->genererVue(array('adult'=>$adult,'cat'=>$cat,'teacher'=>$teacher));
+      $this->genererVue(array('adult'=>$adult,'cat'=>$cat,'teacher'=>$teacher,'id'=>$id));
       }
         else {
             throw new Exception("Faite attention les paramètres ne sont pas tous définis");
@@ -278,28 +305,23 @@ class ControleurAdmin extends ControleurSecurise
             {
         if ($this->requete->existeParametre("name") && $this->requete->existeParametre("firstname")
                  &&
-                $this->requete->existeParametre("adress") && $this->requete->existeParametre("birthday") &&
-                $this->requete->existeParametre("sexe") && $this->requete->existeParametre("phone") && 
-                $this->requete->existeParametre("commentaire") &&
+               
+                
+                
                 $this->requete->existeParametre("email") && $this->requete->existeParametre("password")
-                && $this->requete->existeParametre("id_adultCategory")&& $this->requete->existeParametre("id")
+                && $this->requete->existeParametre("id")
             ) {
             
                  $idT=$this->requete->existeParametre("id");
                 $name = $this->requete->getParametre("name");
                 $firstname = $this->requete->getParametre("firstname");
-                $adress = $this->requete->getParametre("adress");
-                $birthday = $this->requete->getParametre("birthday");
-                $commentaire = $this->requete->getParametre("commentaire");
-                $date = date("Y-m-d ", strtotime($birthday));
-                $sexe = $this->requete->getParametre("sexe");
-                $phone = $this->requete->getParametre("phone");
+              
                 $email = $this->requete->getParametre("email");
                 $password = $this->requete->getParametre("password");
-                $id_adultCategory = $this->requete->getParametre("id_adultCategory");
                 
                 
-                $this->adult->editAdult($name, $firstname, $adress, $birthday, $sexe, $phone, $commentaire, $email, $password, $id_adultCategory, $idT);
+                
+                $this->adult->editAdult($name, $firstname,$email, $password, $idT);
                 
                 $idU = $this->requete->getSession()->getAttribut("idUtilisateur"); 
                 $adult=$this->adult->getadult($idU);

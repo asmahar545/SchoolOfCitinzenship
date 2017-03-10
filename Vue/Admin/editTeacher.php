@@ -45,17 +45,7 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <h1>
-                Bienvenue,
-                <small>admin</small>
-        </h1>
     
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
-      </ol>
-    </section>
      <!-- Main content -->
     <section class="content">
       <!-- Small boxes (Stat box) -->
@@ -65,7 +55,7 @@
             
             <div class="box-body">
                 <div class="box box-warning">
-                    <form action="admin/exeEditTeacher"class="form-horizontal form-label-left" method="post">
+                    <form action="admin/exeEditTeacher/<?=$id ?>"class="form-horizontal form-label-left" method="post">
                         <div class="box-header with-border">
                             <h3 class="box-title">Modification d'un Professeur</A></h3>
                         </div>
@@ -74,51 +64,13 @@
                                 <span class="input-group-addon">Nom</span>
                                 <input name="name" type="text" class="form-control" value="<?= $teacher['name'] ?> ">
                             </div>
+                            
                             <br>
                             <div class="input-group">
                                 <span class="input-group-addon">Prénom</span>
-                                <input name="firstname" type="text" class="form-control" placeholder=""value="<?= $teacher['firstname'] ?> ">
+                                <input name="firstname" type="text" class="form-control" value="<?= $teacher['firstname'] ?> ">
                             </div>
-                            <br>
-                            <div class="input-group">
-                                <span class="input-group-addon">Adresse</span>
-                                <input name="adress" type="text" class="form-control"value="<?= $teacher['adress'] ?> ">
-                            </div>
-                
-                            <br>
-                            <div class="input-group">
-                                <span class="input-group-addon">Date de naissance</span>
-                                <input name="birthday" class="form-control" value="<?= $teacher['birthday'] ?> " id="datepicker">
-                            </div>
-                            <br>
-                               <?php if ($teacher['sexe']== "femme"): ?>
-                            
-                            <div class="input-group">
-                                <span class="input-group-addon">Sexe</span>
-                                  <select name="sexe"  class="form-control" value="<?= $teacher['sexe'] ?> " placeholder=" ">
-                                      <option >homme </option>
-                                      <option selected="selected">femme</option>
-                                </select> 
-                            </div>
-                            
-                            <br>
-                            <?php else: ?>
-                              <div class="input-group">
-                                <span class="input-group-addon">Sexe</span>
-                                  <select name="sexe"  class="form-control" value="<?= $teacher['sexe'] ?> " placeholder=" ">
-                                      <option selected="selected">homme </option>
-                                      <option >femme</option>
-                                </select> 
-                            </div>
-                            
-                            <br>
-                            <?php endif; ?>
-                            <div class="input-group">
-                                <span class="input-group-addon">Télèphone</span>
-                                <input name="phone" type="phone" class="form-control" placeholder="" value="<?= $teacher['phone'] ?> ">
-                            </div>
-                            <br>
-
+                             <br>
                             <div class="input-group">
                                 <span class="input-group-addon">Email</span>
                                 <input name="email" type= "email" class="form-control" placeholder=""value="<?= $teacher['email'] ?> ">
@@ -130,20 +82,7 @@
                             </div>
                             <br>
                             
-                            <div class="input-group">
-                                <span class="input-group-addon">Catégorie</span>
-                                <select name="id_adultCategory" type="text" class="form-control" placeholder="">
-                                    <?php
-                                    foreach ($cat as $list):
-
-                                        echo '<option value="' . $this->nettoyer($list['id_adultCategory']) . '">' . $this->nettoyer($list['name']) . '</option>';
-                                        ?>
-                                    <?php endforeach; ?>
-
-                                </select> 
-                                
-                            </div>
-                            <br>
+                          
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-10">
 

@@ -127,5 +127,11 @@ public function getnbClasses(){
          $ligne= $rep->fetch();
         return $ligne['nb'];
 }
+public function selectClasseEleve($idE){
+        $sql="SELECT yearSexion from classe, eleve where classe.id =eleve.id_classe AND id_student=?";
+         $rep=$this->executerRequete($sql,array($idE));
+         $ligne= $rep->fetch();
+        return $ligne;
+    }
 }
 
