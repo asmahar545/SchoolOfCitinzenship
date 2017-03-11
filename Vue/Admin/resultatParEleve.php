@@ -53,7 +53,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Grille récapitulatif des évaluations des professeurs de <?= $student['name']?> <?= $student['firstName']?>   pour <?= $period['period']?> </h3>
+              <h3 class="box-title">Évaluation de <?= $student['name']?> <?= $student['firstName']?>   pour la période de <?= $period['period']?> </h3>
             </div>
              
               
@@ -62,8 +62,8 @@
                           <table  id="example1" class="table table-bordered table-striped"> 
                              <thead>
                             <tr >
-                                <th>Items </th>
-                                <th> Nombre de voie positif </th>
+                                <th>Grille citoyenne </th>
+                                <th> Nombres de voix positives </th>
                             
                             </tr>
                             </thead>
@@ -73,7 +73,7 @@
                                   <th colspan="1" class=info><?= $period['period']?> </th>
                                    
                                    <th  colspan="1" class="danger" > Ceinture "<?= $ceinture['monteCeinture']?>"  et  <?= $retard['retard']?> retard(s) </th>
-                                    <th  colspan="1" class="danger" > Commentaire du Titulaire :<?= $commentaire['commentaire']?></th>
+                                    <th  colspan="1" class="danger" > Commentaire du titulaire <?= $commentaire['commentaire']?></th>
                                    <th ><a  href="javascript:window.print()" class="btn bg-purple  btn-xs"><i class="fa fa-print"></i> Imprimer</a></th>
                                 </tr>
                             </tfoot>

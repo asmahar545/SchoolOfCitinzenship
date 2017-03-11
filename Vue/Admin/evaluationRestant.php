@@ -37,8 +37,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Nombre d'évaluation
-        
+        État des évaluations
       </h1>
      
     </section>
@@ -54,11 +53,11 @@
             <!-- /.box-header -->
            <div class="box-body table-responsive no-padding">
                
-              <table id="example1" class="table table-bordered table-hover">
+              <table class="table table-bordered table-hover">
              <thead>
-                 <th>Nombre d'évaluations total</th>
-                  <th>Nombre d'évaluations faites</th>
-                  <th>Nombre d'évaluations restantes</th>
+                 <th>Nombres d'évaluations total</th>
+                  <th>Nombres d'évaluations faite</th>
+                  <th>Nombres d'évaluations restante</th>
                   
                   
                         

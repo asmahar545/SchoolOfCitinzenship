@@ -64,7 +64,7 @@
             <div class="inner">
               <h3><?= $this->nettoyer($nbrs) ?></h3>
 
-              <p>Étudiants</p>
+              <p>Jeunes</p>
             </div>
            
             <a href="Admin/student" class="small-box-footer"> Plus d'infos <i class="fa fa-arrow-circle-right"></i></a>
@@ -104,72 +104,6 @@
       <!-- Main row -->
       <div class="row">
       
-         <section>
-        <div class="col-md-6">
-          <div class="box box-solid">
-            <div class="box-header with-border">
-              <h3 class="box-title">Actualité</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                  <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                  <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
-                  <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
-                </ol>
-                <div class="carousel-inner">
-                  <div class="item active">
-                    <img src="http://placehold.it/900x500/39CCCC/ffffff&text=I+Love+Bootstrap" alt="First slide">
-
-                    <div class="carousel-caption">
-                      First Slide
-                    </div>
-                  </div>
-                  <div class="item">
-                    <img src="http://placehold.it/900x500/3c8dbc/ffffff&text=I+Love+Bootstrap" alt="Second slide">
-
-                    <div class="carousel-caption">
-                      Second Slide
-                    </div>
-                  </div>
-                  <div class="item">
-                    <img src="http://placehold.it/900x500/f39c12/ffffff&text=I+Love+Bootstrap" alt="Third slide">
-
-                    <div class="carousel-caption">
-                      Third Slide
-                    </div>
-                  </div>
-                </div>
-                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                  <span class="fa fa-angle-left"></span>
-                </a>
-                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                  <span class="fa fa-angle-right"></span>
-                </a>
-              </div>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
-        </div>
-            <div class="col-md-6" >
-               <div class="timeline-item">
-                <div class="box box-solid">
-              <div class="box-header with-border">
-              <h3 class="box-title">Inspiration</h3>
-            </div>
-
-                <div class="timeline-body">
-                  <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/8F-E9Yf4I3w" frameborder="0" allowfullscreen></iframe>
-                  </div>
-                </div>
-                </div>
-              </div>
-            </div>
-        <!-- /.col -->
-        </section>
       </div>
       <!-- /.row (main row) -->
             <div class="row">
@@ -206,18 +140,7 @@
             
           </div>
         </DIV>
-             <div class="col-sm-6">
-      <div class="box box-danger">
-        <div class="box-header with-border">
-          <h3 class="box-title">Informations pratiques</h3>
-          <span class="label label-red pull-right"><i class="fa fa-html5"></i></span>
-        </div><!-- /.box-header -->
-        <div class="box-body">
-          <p>Document à télécharger </p>
-          <a href="fpdf181.zip" class="btn btn-danger"><i class="fa fa-download"></i> Télécharger</a>
-        </div><!-- /.box-body -->
-      </div><!-- /.box -->
-    </div><!-- /.col -->
+             
         </div>
         <!-- right col 
 

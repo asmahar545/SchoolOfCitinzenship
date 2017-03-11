@@ -38,8 +38,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Data Tables
-        <small>Élèves</small>
+        Grille citoyenne
+        <small>Items d'évaluation</small>
       </h1>
      
     </section>
@@ -50,16 +50,16 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Classe</h3>
+              <h3 class="box-title"></h3>
             </div>
             <!-- /.box-header -->
              <div class="box-body table-responsive no-padding">
-              <table id="example1" class="table table-bordered table-hover">
+              <table  class="table table-bordered table-hover">
                     <thead>
                             <tr>
                                 
                                 <th>Tag</th>
-                                <th>Compétences</th>
+                                <th>Items</th>
                                 <th>Informations complémentaires</th>
                             </tr>
                      </thead>

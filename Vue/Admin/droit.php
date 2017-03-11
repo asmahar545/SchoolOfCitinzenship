@@ -38,8 +38,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Professeurs
-        <small>Donner le droit à un professeur</small>
+        Autorisations
+        <small>Consultez un droit d'un professeur.</small>
       </h1>
      
     </section>
@@ -50,7 +50,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Accés au classes </h3>
+              <h3 class="box-title"> </h3>
             </div>
             <!-- /.box-header -->
              <div class="box-body table-responsive no-padding">
@@ -59,7 +59,7 @@
                             <thead>
                             <th>N°</th>
                             <th>Nom</th>
-                            <th>Prenom</th>
+                            <th>Prénom</th>
                             <th>Classe</th>
                                
                             </tr>

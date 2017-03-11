@@ -28,7 +28,7 @@
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="dist/img/teacher.png" class="img-circle" alt="User Image">
+                <img src="dist/img/connexion.png" class="img-circle" alt="User Image">
 
                 <p>
                   <?= $adult['name']?> <?= $adult['firstname']?> </p>
@@ -37,7 +37,7 @@
               <li class="user-body">
                 <div class="row">
                   <div class="col-xs-12 text-center ">
-                       <a href="connexion/"><button class="btn btn-succes" type="button"><i class="icon icon-check icon-lg"></i>Deconnexion</button></a>
+                       <a href="connexion/"><button class="btn btn-succes" type="button"><i class="icon icon-check icon-lg"></i>Déconnexion</button></a>
                   </div>
                   
                 </div>

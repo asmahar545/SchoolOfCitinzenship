@@ -42,7 +42,7 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
+    <!-- Content Header (Page head)er) -->
   
      
         <section class="content-header">

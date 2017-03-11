@@ -49,14 +49,14 @@
     <section class="content">
       <!-- Small boxes (Stat box) -->
       <div class="row">
-       <div class="col-md-6">
+       <div class="col-md-8">
 
           <div class="box box-warning">
             
             <div class="box-body">
                     <form action="admin/exeFinPeriode"class="form-horizontal form-label-left" method="post">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Choix de la période</A></h3>
+                            <h3 class="box-title">Choississez la période</A></h3>
                         </div>
                         <br>
                         <div class="box-body">
@@ -65,7 +65,7 @@
                              <span class="form-group-addon">Période *</span>
                             <select class="form-control"  name="periode" type="text">
                             <option>Toussaint</option>
-                            <option>Noel</option>
+                            <option>Noël</option>
                             <option>Carnaval</option>
                             <option>Pâques</option>
                             <option>Juin</option>
@@ -85,7 +85,7 @@
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-10">
 
-                                    <button type="submit" class="btn btn-warning">Modifier</button>
+                                    <button type="submit" class="btn btn-warning">Mettre à jour</button>
                                 </div>
                             </div>
 

@@ -44,7 +44,7 @@
          <li class="treeview">
           <a href="admin/student">
             <i class="fa fa-users"></i>
-            <span>Élèves</span>
+            <span>Jeunes</span>
            
           </a>
           

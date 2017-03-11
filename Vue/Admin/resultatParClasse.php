@@ -41,7 +41,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Grille récapitulatif des évaluations des professeurs de la classe pour <?= $period['period']?> 
+        Grille récapitulative par classe pour la période de <?= $period['period']?> 
         <small></small>
       </h1>
      
@@ -53,7 +53,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Mes élèves, <?= $nbteacher ?> professeurs ont évalué cette classe</h3>
+              <h3 class="box-title"> <?= $nbteacher ?> professeurs ont évalué cette classe</h3>
             </div>
              
               
@@ -63,7 +63,7 @@
 
                            <thead>
                             <tr >
-                                <th>Item  
+                                <th>Grille citoyenne  
                                 
                                 
                                 </th>
@@ -78,8 +78,8 @@
                             <tfoot>
                               <tr >
                                   <th colspan="1" class="info"><?= $period['period']?> </th>
-                                   <th colspan="5" class="warning" >Nombre de professeur ayant évalué cette classe : <?= $nbteacher ?> professeur(s)</th>
-                                   <th colspan="5" class="danger" ><i class="fa fa-check">Tout les professeurs ont évalués bon</i> ou nombre de votes positif</th>
+                                   <th colspan="5" class="warning" >Professeur ayant évalués cette classe : <?= $nbteacher ?> </th>
+                                   <th colspan="5" class="danger" ><i class="fa fa-check">   Ultimatum de voix positives </i> </th> 
                                    
                                    <th colspan="4"  ><a  href="javascript:window.print()"  class="btn bg-purple btn-xs"><i class="fa fa-print"></i> Imprimer</a></th>
                                 </tr>

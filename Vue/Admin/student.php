@@ -38,8 +38,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Élèves
-        <small>Classe</small>
+        Jeunes
+        <small>Consultez, modifiez ou supprimez un jeune. </small>
       </h1>
      
     </section>
@@ -50,7 +50,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Élèves</h3>
+              <h3 class="box-title"></h3>
             </div>
             <!-- /.box-header -->
              <div class="box-body table-responsive no-padding">
@@ -58,8 +58,8 @@
              <thead>
                         <th>N°</th>
                         <th>Nom</th>
-                        <th>Prenom</th>
-                        <th>Edit</th>
+                        <th>Prénom</th>
+                        <th>Actions</th>
                        
 
                          

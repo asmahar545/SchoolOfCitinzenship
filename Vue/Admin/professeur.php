@@ -38,7 +38,7 @@
     <section class="content-header">
       <h1>
         Professeurs
-        <small>Liste</small>
+        <small>Consultez, modifiez ou supprimez un professeur.</small>
       </h1>
      
     </section>
@@ -58,10 +58,10 @@
              <thead>
                   <th>N°</th>
                   <th>Nom</th>
-                   <th>Prenom</th>
-                                <th>Email</th>
+                   <th>Prénom</th>
+                                <th>E-mail</th>
                                 <th>Mot de passe</th>
-                                <th>Evaluation</th>
+                                <th>Actions</th>
                                
                         
 

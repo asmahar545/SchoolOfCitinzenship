@@ -60,7 +60,7 @@
             <div class="box-body">
                     <form action="admin/exeAddTeacher"class="form-horizontal form-label-left" method="post">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Ajouter un Professeur</A></h3>
+                            <h3 class="box-title">Ajouter un professeur</A></h3>
                         </div>
                         <div class="box-body">
                             <div class="input-group">
@@ -75,12 +75,12 @@
                             
                             </br>
                             <div class="input-group">
-                                <span class="input-group-addon">Email</span>
+                                <span class="input-group-addon">E-mail</span>
                                 <input name="email" type= "email" class="form-control" placeholder=""required>
                             </div>
                             <br>
                             <div class="input-group">
-                                <span class="input-group-addon">Password</span>
+                                <span class="input-group-addon">Mot de passe</span>
                                 <input name="password" type="text" class="form-control" placeholder=""required>
                             </div>
                             

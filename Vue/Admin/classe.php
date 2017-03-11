@@ -39,7 +39,7 @@
     <section class="content-header">
       <h1>
         Classes
-        <small>Élèves</small>
+        <small>Consultez les évalutions générales.</small>
       </h1>
      
     </section>

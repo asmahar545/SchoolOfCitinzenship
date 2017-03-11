@@ -50,12 +50,12 @@
     <section class="content">
      <div class="callout callout-success">
          
-          <p>Actuellement, l'évaluation se portera sur la période de  <?= $period['period']?> du <?=  date("d-m-Y ", strtotime($period['dateStart']))?>  au <?=  date("d-m-Y ", strtotime($period['dateEnd']))?> </p>
+          <p>L'évaluation actuelle se porte sur la période de  <?= $period['period']?> du <?=  date("d-m-Y ", strtotime($period['dateStart']))?>  au <?=  date("d-m-Y ", strtotime($period['dateEnd']))?> </p>
         </div>
         <section class="content-header">
   <h1>
-  Sessions d'évalutions
-    <small>Commencez ou clotûrez une session </small>
+  Session d'évalution
+    <small>Changez ou clotûrez une session. </small>
   </h1>
      
     </section>
@@ -75,13 +75,13 @@
               <div class="tab-pane active" id="tab_1">
                 <b>Informations importantes</b>
 
-                <p>Changer la période consiste à 
+                <p>Changer la période consiste à ouvrir une nouvelle session d'évaluation avec une date de début ainsi que de fin. Les données de la session qui seront récoltés sont lié à la période séléctionner. 
               </div>
               <!-- /.tab-pane -->
               <div class="tab-pane" id="tab_2">
                 <b>Informations importantes</b>
 
-                <p>Clotûrer la période consiste à 
+                <p>Clotûrer la période consiste à supprimer les données précédement récoltés pour ainsi commencer une nouvelle session. Avant de clotûrer une période, il est important de sauvegarder les données générées de la session actuelle.
               </div>
               <!-- /.tab-pane -->
               <div class="tab-pane" id="tab_3">
@@ -99,13 +99,12 @@
           </div>
           <!-- nav-tabs-custom -->
         </div>
-          <div class="col-md-8">
+          <div class="col-md-2">
         <div class="span1 offset1">
         <div class="btn-group btn-group-vertical">
-          <br>
-            <br>
-              <br>
-                <br>
+          
+            
+                
         <a class="btn btn-warning" href="admin/finDePeriode">Changement de la période</a>
         <button data-toggle="modal"  data-target="#loginModal3"  class="btn btn-danger">Fin de la période</button>
     </div>
@@ -132,20 +131,20 @@
                      <div class="modal-content">
                          <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">x</button>
-                          <h4 class="modal-title">Informations</h4>
+                          <h4 class="modal-title">Confirmez votre choix</h4>
                        </div>
                         <div class="modal-body">
                       
                       
                        <div class="alert alert-danger alert-dismissible">
                         
-                          <h4><i class="icon fa fa-warning"></i> Attention!</h4>
-                               Toute les évaluations seront supprimer pour une nouvelle période
+                          <h4><i class="icon fa fa-warning"></i> Attention !</h4>
+                               Toutes les précédentes évaluations seront supprimées pour une nouvelle période.
                          </div>
                          </div>
                        <div class="modal-footer">
         
-                       <a href="admin/exeFinAnnee"><button class="btn btn-danger" type="button"><i class="icon icon-check icon-lg"></i>Oui</button></a>
+                       <a href="admin/exeFinAnnee"><button class="btn btn-danger" type="button"><i class="icon icon-check icon-lg"></i>D'accord</button></a>
                    <a href="admin/configuration"><button class="btn btn-primary" type="button"><i class="icon icon-check icon-lg"></i> Retour</button></a>
                       </div>
                  </div>
@@ -166,7 +165,7 @@
                        <div class="alert alert-success alert-dismissible">
                         
                           <h4><i class="icon fa fa-warning"></i> Attention!</h4>
-                             Vous voulez vraiment envoyer un email à tout le professeurs eet éducateurs
+                             Vous voulez vraiment envoyer un e-mail à tout le professeurs et éducateurs
                          </div>
                          </div>
                        <div class="modal-footer">
