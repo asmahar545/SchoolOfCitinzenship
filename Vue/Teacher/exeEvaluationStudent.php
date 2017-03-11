@@ -57,10 +57,35 @@
           
           <a href="teacher/mesclasses">Revenir à mes classes</a> <br>
           <a href="teacher/">Revenir au bureau</a>
+          
         </div>
        
         <!-- /.box -->
       </section>
+      <table  id="example1" class="table table-bordered table-striped">
+
+                            <thead>
+                            <tr >
+                            <th ><div><span>N°</span></div></th>
+                             
+                            </tr>
+                            </thead>
+                            <tbody>
+                           
+                            <?php foreach ($tab as $list): ?>
+                                  
+
+                                <tr>
+                                 
+                                    <td><?= $this->nettoyer($list) ?></td>
+                                    
+                                 
+                                    
+                                </tr>
+                                 
+                            <?php endforeach; ?>
+                            </tbody>
+                        </table>
       <!-- /.content -->
     </div>
     <!-- /.container -->

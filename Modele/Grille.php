@@ -129,14 +129,15 @@ class Grille extends Modele{
        
    }
    public function selectStudentEvalueParClasse($idC,$idU,$nameItem){
-      $sql="SELECT `response`, `nameE`, firstE, `nameT`, `nameItem` FROM `itemresponstudent` WHERE classe=? and idU=? and nameItem=? ORDER by nameE ASC, nameItem ASC";
+      $sql="SELECT `response`, `nameE`, firstE, `nameT`, `nameItem` FROM `itemresponstudent` WHERE classe=? and idU=? and nameItem=? ORDER by firstE,nameE ASC, nameItem ASC";
       $student= $this->executerRequete($sql,array($idC,$idU,$nameItem));
       return $student;
+      
       //vous n'aveze pas encore évaluez d'élève pour cette classe
    
    } 
    public function selectNomStudentEvalueParClasse($idC) {
-       $sql="SELECT DISTINCT firstE FROM `itemresponstudent` WHERE classe=? ORDER by firstE";
+       $sql="SELECT DISTINCT nameE,firstE FROM `itemresponstudent` WHERE classe=? ORDER by firstE ASC";
        $nomStudent= $this->executerRequete($sql,array($idC));
        return $nomStudent;
    }
@@ -154,7 +155,7 @@ class Grille extends Modele{
   
     public function selectResultatStudentParClasse($nameItem,$idC){
       
-      $sql="SELECT SUM(response) as resultat,nameE from itemresponstudent where nameItem=? and classe=? group by nameE ORDER by nameE ASC";
+      $sql="SELECT SUM(response) as resultat,firstE from itemresponstudent where nameItem=? and classe=?  group by firstE,nameE ORDER by firstE ASC";
       $resultat= $this->executerRequete($sql,array($nameItem,$idC));
       return $resultat;
   }

@@ -66,7 +66,7 @@
                                 <th>Item   </th>
                             <?php foreach ($nomStudent as $list): ?>
                                  
-                            <th  class="info" ><div><span><?= $this->nettoyer($list['firstE']) ?>     </span></div></th>
+                            <th  class="info" ><div><span><?= $this->nettoyer($list['nameE']) ?> <?= $this->nettoyer($list['firstE']) ?>     </span></div></th>
                             
                             <?php endforeach; ?>
                             
@@ -157,15 +157,14 @@
                                     
                                     
                                    <?php endforeach; ?>   </tr>
-                                         <tr><th class="danger">J’écoute les professeurs et les élèves sans les interrompre.
+                                         <tr><th class="danger">J’écoute les professeurs et les élèves sans les interrompre
                                             </th> <?php foreach ($item8 as $list): ?>
                                     
-                                   <?php if ($list['response'] ==1): ?>
+                                    <?php if ($list['response'] ==1): ?>
                                     <td><i class="fa fa-check"></i></td>
                                      <?php else: ?>
                                      <td><i class="fa fa-close"></i></td>
                                      <?php endif; ?>
-                                    
                                     
                                    <?php endforeach; ?>   </tr> 
                                           <tr><th class="danger">Je circule dans l’école calmement

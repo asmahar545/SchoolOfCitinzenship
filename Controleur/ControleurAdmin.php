@@ -521,14 +521,14 @@ class ControleurAdmin extends ControleurSecurise
               $idC = $this->requete->getParametre("id");
               $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
               $nbrTeachEvalue= $this->classe->nombreTeacherevalueUneClasse($idC);
-              $nameItem1="Je suis respectueux envers les personnes";
+             $nameItem1="Je suis respectueux envers les personnes";
               $nameItem2="J’adopte une attitude non violente";
               $nameItem3="Je suis respectueux du matériel et de l’environnement";
               $nameItem4="Je parle de façon adéquate";
               $nameItem5="Je suis solidaire";
-              $nameItem6="Je respecte les règles de l’école  ";
+              $nameItem6="Je respecte les règles de l’école";
               $nameItem7="Je m’organise et je deviens autonome";
-              $nameItem8="Je suis respectueux du matériel et de l’environnement"; 
+              $nameItem8="J’écoute les professeurs et les élèves sans les interrompre"; 
               $nameItem9="Je circule dans l’école calmement";
               $nameItem10="Je donne le meilleur de moi-même";
             $Item1= $this->grille->selectResultatStudentParClasse($nameItem1, $idC);
@@ -559,7 +559,7 @@ class ControleurAdmin extends ControleurSecurise
                 'item9'=>$Item9,
                 'item10'=>$Item10,
                 'period'=>$period,
-                  'nbteacher'=> $nbrTeachEvalue,
+                'nbteacher'=> $nbrTeachEvalue,
                 'nomStudent'=>$nomStudent,
                 'item'=>$item));
     
@@ -582,14 +582,14 @@ class ControleurAdmin extends ControleurSecurise
                     $retard= $this->student->selectRetard($idE);
             $ceinture= $this->student->selectCeinture($idE);
             $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
-           $nameItem1="Je suis respectueux envers les personnes";
+          $nameItem1="Je suis respectueux envers les personnes";
               $nameItem2="J’adopte une attitude non violente";
               $nameItem3="Je suis respectueux du matériel et de l’environnement";
               $nameItem4="Je parle de façon adéquate";
               $nameItem5="Je suis solidaire";
-              $nameItem6="Je respecte les règles de l’école  ";
+              $nameItem6="Je respecte les règles de l’école";
               $nameItem7="Je m’organise et je deviens autonome";
-              $nameItem8="Je suis respectueux du matériel et de l’environnement"; 
+              $nameItem8="J’écoute les professeurs et les élèves sans les interrompre"; 
               $nameItem9="Je circule dans l’école calmement";
               $nameItem10="Je donne le meilleur de moi-même";
            
