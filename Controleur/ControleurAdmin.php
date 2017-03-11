@@ -28,7 +28,9 @@ class ControleurAdmin extends ControleurSecurise
         $nbrc= $this->classe->getnbClasses();
         $nbrs=$this->student->getnbstudents();
         $nbra= $this->adult->getnbadults();
-        $this->genererVue(array('adult'=>$adult,'nbr'=>$nbra,'nbrc'=>$nbrc,'nbrs'=>$nbrs));
+        $nombreEvalueTotalToutProfesseur= $this->classe->nombreEleveTotalEvalueToutProfeseur();
+        $nbrDejaProf= $this->classe->nombreEleveEvalueToutProfeseur();
+        $this->genererVue(array('adult'=>$adult,'nbr'=>$nbra,'nbrc'=>$nbrc,'nbrs'=>$nbrs,'nbrtotal'=>$nombreEvalueTotalToutProfesseur,'nbr2'=>$nbrDejaProf));
 
     }
     //Liste professeur, student, classe
@@ -297,8 +299,6 @@ class ControleurAdmin extends ControleurSecurise
             throw new Exception("Faite attention les paramètres ne sont pas tous définis");
         }
 
-       
-        
   
           }
           public function exeEditTeacher()
@@ -306,13 +306,11 @@ class ControleurAdmin extends ControleurSecurise
         if ($this->requete->existeParametre("name") && $this->requete->existeParametre("firstname")
                  &&
                
-                
-                
                 $this->requete->existeParametre("email") && $this->requete->existeParametre("password")
                 && $this->requete->existeParametre("id")
             ) {
             
-                 $idT=$this->requete->existeParametre("id");
+                 $id=$this->requete->existeParametre("id");
                 $name = $this->requete->getParametre("name");
                 $firstname = $this->requete->getParametre("firstname");
               
@@ -321,11 +319,11 @@ class ControleurAdmin extends ControleurSecurise
                 
                 
                 
-                $this->adult->editAdult($name, $firstname,$email, $password, $idT);
+                $this->adult->editAdult($name, $firstname,$email, $password, $id);
                 
                 $idU = $this->requete->getSession()->getAttribut("idUtilisateur"); 
                 $adult=$this->adult->getadult($idU);
-                $this->genererVue(array('adult'=>$adult,'idT'=>$idT));
+                $this->genererVue(array('adult'=>$adult,'id'=>$id));
              
             } else {
                 throw new Exception("Faite attention les champs ne sont pas tous définis");

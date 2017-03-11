@@ -71,9 +71,7 @@ class Adult extends Modele
     }
     //modifie l'adult
     public function editAdult($name,$firstname,$email,$password,$id){
-        $sql="UPDATE `adult` SET `name` = ?, `firstname` = ?,  
-        `email` = ?,`password` = ?,
-        `id_adultCategory` = 1 WHERE `adult`.`id_adult` = ?";
+        $sql="UPDATE `adult` SET  `name` = ?, `firstname` = ?, `email` = ?, `password` = ? WHERE `adult`.`id_adult` = ?";
         
         $this->executerRequete($sql,array($name,$firstname,$email,$password,$id));
     }

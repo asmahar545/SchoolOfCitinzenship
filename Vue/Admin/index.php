@@ -52,7 +52,7 @@
                 <small>Administrateur</small>
         </h1>
     
-   
+    </section>
 
     <!-- Main content -->
     <section class="content">
@@ -140,12 +140,62 @@
             
           </div>
         </DIV>
-             
+          <div class="col-md-6">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title"></h3>
+            </div>
+            <!-- /.box-header -->
+           <div class="box-body table-responsive no-padding">
+               
+              <table class="table table-bordered table-hover">
+             <thead>
+                 <th>Nombres d'évaluations total</th>
+                  <th>Nombres d'évaluations faite</th>
+                  <th>Nombres d'évaluations restante</th>
+                 
+                  </thead>
+                <tbody>
+                 
+               <tr>
+                                    
+                                    <td class=" " ><?= $nbrtotal?>
+                                        
+                                    </td>
+                                    <td class="" ><?= $nbr2/10 ?> 
+                                        
+                                    </td>
+                                    <td class=""> <?= $nbrtotal-(($nbr2/10))?>
+                                        
+                                    </td>
+                                    
+                                    
+
+
+                                </tr>
+                         
+
+
+                            
+                            </tbody>
+                
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+
+          
+          <!-- /.box -->
+        </div> 
+            
         </div>
-        <!-- right col 
+       
 
     </section>
-     /.content -->
+        
+
+     
   </div>
   <!-- /.content-wrapper -->
 <?php require 'Vue/_Commun/Folder.php'; ?>

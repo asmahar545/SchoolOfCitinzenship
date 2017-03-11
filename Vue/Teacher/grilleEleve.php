@@ -200,12 +200,10 @@
              <?php else: ?>
  <br>
 
-          <div class="callout callout-info">
-          <h4> Vous n'avez encore évaluez aucun des élèves de cette classe . </h4>
-       
-        </div>
+          
         <div class="callout callout-danger">
-        <h4> A évaluer avant le ...  </h4>
+        <h4> Jeunes non-évalués </h4>
+        <p>Veuillez évaluer les jeunes avant de confirmer.</p>
         </div>
             <!-- /.box-body -->
              <?php endif; ?>

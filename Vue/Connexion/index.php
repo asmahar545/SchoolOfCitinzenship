@@ -2,7 +2,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>v a l i o</title>
+  <title>valio</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -39,7 +39,7 @@
 <div class="login-box">
   <div class="login-logo"> 
     <a href=""> <b> 
-    </a> v a  l  i  o  </b></a> 
+    </a>valio</b>.CampusSaintJean</a> 
 <p> </p>
     <b> 
     </a>  </b>

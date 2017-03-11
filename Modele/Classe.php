@@ -133,5 +133,19 @@ public function selectClasseEleve($idE){
          $ligne= $rep->fetch();
         return $ligne;
     }
+    public function nombreEleveTotalEvalueToutProfeseur(){
+    $sql="select COUNT(id_student) as nb from eleve,consultclass,adult,classe 
+            where eleve.id_classe= classe.id and adult.id_adult= consultclass.id_adult 
+            and consultclass.id_classe=classe.id ";
+    $rep=$this->executerRequete($sql);
+     $ligne= $rep->fetch();
+        return $ligne['nb'];
+     }
+      public function nombreEleveEvalueToutProfeseur(){
+    $sql="select COUNT(*) as nb  FROM itemresponstudent";
+    $rep=$this->executerRequete($sql);
+     $ligne= $rep->fetch();
+        return $ligne['nb'];
+     }
 }
 
