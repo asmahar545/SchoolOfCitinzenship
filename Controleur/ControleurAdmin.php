@@ -470,7 +470,10 @@ class ControleurAdmin extends ControleurSecurise
      $period=$this->grille->selectPeriod();
      $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
      $adult=$this->adult->getadult($idU);
-     $this->genererVue(array('adult'=>$adult,'period'=>$period));
+     $nombreEvalueTotalToutProfesseur= $this->classe->nombreEleveTotalEvalueToutProfeseur();
+     $nbrDejaProf= $this->classe->nombreEleveEvalueToutProfeseur();
+     $this->genererVue(array('adult'=>$adult ,'nbrTotal'=>$nombreEvalueTotalToutProfesseur,'nbrEvalue'=>$nbrDejaProf,'period'=>$period));
+     
       
     }
     
@@ -508,7 +511,9 @@ class ControleurAdmin extends ControleurSecurise
      
      $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
      $adult=$this->adult->getadult($idU);
-       $this->genererVue(array('adult'=>$adult));
+     $nombreEvalueTotalToutProfesseur= $this->classe->nombreEleveTotalEvalueToutProfeseur();
+     $nbrDejaProf= $this->classe->nombreEleveEvalueToutProfeseur();
+     $this->genererVue(array('adult'=>$adult ,'nbrTotal'=>$nombreEvalueTotalToutProfesseur,'nbrEvalue'=>$nbrDejaProf));
      
            
        

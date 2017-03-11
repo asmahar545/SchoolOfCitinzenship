@@ -62,7 +62,7 @@
      <br>
 
       <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-9">
           <!-- Custom Tabs -->
           <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
@@ -105,8 +105,14 @@
           
             
                 
-        <a class="btn btn-warning" href="admin/finDePeriode">Changement de la période</a>
+        
+         <a class="btn btn-warning" href="admin/finDePeriode">Changement de la période</a>
+           <?php if (($nbrEvalue/10)==$nbrTotal): ?>
+        
         <button data-toggle="modal"  data-target="#loginModal3"  class="btn btn-danger">Fin de la période</button>
+        <?php else: ?>
+        <button data-toggle="modal" disabled="disabled" data-target="#loginModal3"  class="btn btn-danger">Fin de la période </button>
+        <?php endif; ?>
     </div>
 </div>   
           </div>

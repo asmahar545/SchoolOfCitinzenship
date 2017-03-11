@@ -158,7 +158,7 @@
                 <tbody>
                  
                <tr>
-                                    
+             
                                     <td class=" " ><?= $nbrtotal?>
                                         
                                     </td>
