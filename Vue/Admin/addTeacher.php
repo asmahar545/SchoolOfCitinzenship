@@ -80,7 +80,7 @@
                             </div>
                             <br>
                             <div class="input-group">
-                                <span class="input-group-addon">Mot de passe</span>
+                                <span class="input-group-addon">Mot de passe </span>
                                 <input name="password" type="text" class="form-control" placeholder=""required>
                             </div>
                             

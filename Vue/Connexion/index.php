@@ -32,24 +32,22 @@
     <br>
     <br>
     <br>
-    <div class="col-xs-3">
+    <div class="col-xs-2">
         
     </div>
- <div class="col-xs-6"> 
+ <div class="col-xs-8"> 
 <div class="login-box">
   <div class="login-logo"> 
     <a href=""> <b> 
     </a>valio</b>.CampusSaintJean</a> 
-<p> </p>
-    <b> 
-    </a>  </b>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">  
-    <p class="login-box-msg"> Une application pour valoriser les comportments citoyens
-    <p> </p>
+    <p class="login-box-msg">Valoriser les comportements citoyens avec <b>valio</b>.app
+  <br>
+  <br>
 
-    <b>Connectez-vous pour accéder à votre compte</b>
+    <b>Connectez-vous</b>
 
      </p>
        <form action="connexion/connecter" method="post">
@@ -64,8 +62,8 @@
             <div class="row">
 
                 <!-- /.col -->
-                <div class="col-xs-7">
-                    <button href="" type="submit" class="btn btn-gray  btn-block btn-flat"> Se connecter </button> 
+                <div class="col-xs-10">
+                    <button href="" type="submit" class="btn btn-info btn-block btn-flat"> Se connecter </button> 
                 </div>
                 <!-- /.col -->
             </div>

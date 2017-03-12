@@ -143,16 +143,16 @@
           <div class="col-md-6">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title"></h3>
+              <h3 class="box-title">Évolution de la session d'évaluation</h3>
             </div>
             <!-- /.box-header -->
            <div class="box-body table-responsive no-padding">
                
               <table class="table table-bordered table-hover">
              <thead>
-                 <th>Nombres d'évaluations total</th>
-                  <th>Nombres d'évaluations faite</th>
-                  <th>Nombres d'évaluations restante</th>
+                 <th>Nombre total des évaluations </th>
+                  <th>Évaluations envoyés </th>
+                  <th>Évaluations restantes</th>
                  
                   </thead>
                 <tbody>
