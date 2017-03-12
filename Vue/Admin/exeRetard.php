@@ -52,7 +52,7 @@
         <div class="callout callout-warning">
           <h4>Le retard de l'élève  bien été enregitré </h4>
 
-          <a  href="admin/listStudentClass/1" class="btn btn-warning "> Continuer</a>
+          <a  href="admin/classe" class="btn btn-warning "> Continuer</a>
           
           
           

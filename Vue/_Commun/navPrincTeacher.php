@@ -41,12 +41,19 @@
             <i class="fa  fa-th-large"></i> <span>Ma classe </span>
           </a>
         </li>
+          <li class="treeview">
+          <a href="teacher/grille">
+            <i class="fa fa-file-text"></i>
+            <span>Grille citoyenne</span>
+            
+          </a>
+          
+        </li>
         
         <li class="treeview">
           <a href="teacher/documentation">
              <i class="fa fa-play"></i> <span> Tutoriel </span>
           </a>
-          
         </li>
       
       

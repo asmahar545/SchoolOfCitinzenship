@@ -36,7 +36,7 @@ class ControleurConnexion extends Controleur
             if ($this->utilisateur->connecter($login, $mdp)) {
 
                 //si il est admin
-                 if($login =="admin@gmail.com"&& $mdp =="admin") {
+                 if($login =="tmezouli@yahoo.fr"&& $mdp =="campuscinfosec") {
                     $utilisateur = $this->utilisateur->getUtilisateur($login, $mdp);
 
                     $this->requete->getSession()->setAttribut("idUtilisateur",
@@ -65,7 +65,7 @@ class ControleurConnexion extends Controleur
     public function deconnecter()
     {
         $this->requete->getSession()->detruire();
-        $this->rediriger("Accueil");
+        $this->rediriger("admin");
     }
 }
 

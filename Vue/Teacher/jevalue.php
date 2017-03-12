@@ -123,14 +123,12 @@
           </div>
          </div>
        </div>
+      </section>
       </div>
  
       
-    </div>
-<div>
-  </section>
-    <!-- /.content -->
-  </div>
+    
+
   <!-- /.content-wrapper -->
 <?php require 'Vue/_Commun/Folder.php'; ?>
 <?php require 'Vue/_Commun/Aside.php'; ?>

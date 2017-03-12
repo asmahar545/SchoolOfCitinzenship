@@ -55,7 +55,7 @@
             
             <div class="box-body">
                 <div class="box box-warning">
-                    <form action="admin/exeEditTeacher/<?= $id ?>"class="form-horizontal form-label-left" method="post">
+                    <form action="admin/exeEditTeacher/<?= $teacher['id_adult'] ?>"class="form-horizontal form-label-left" method="post">
                         <div class="box-header with-border">
                             <h3 class="box-title">Modification d'un Professeur</A></h3>
                         </div>
@@ -154,5 +154,5 @@
       autoclose: true
     });</script>
     </body> 
-    </body> 
+    
     

@@ -38,7 +38,7 @@
               <li class="user-body">
                 <div class="row">
                   <div class="col-xs-12 text-center ">
-                       <a href="connexion/"><button class="btn btn-succes" type="button"><i class="icon icon-check icon-lg"></i>Déconnexion</button></a>
+                       <a href="connexion/deconnecter"><button class="btn btn-succes" type="button"><i class="icon icon-check icon-lg"></i>Déconnexion</button></a>
                   </div>
                   
                 </div>

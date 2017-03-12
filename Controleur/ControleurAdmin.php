@@ -223,7 +223,8 @@ class ControleurAdmin extends ControleurSecurise
         }
      }
      public function exeEditStudent(){
-        if ( $this->requete->existeParametre("name") && $this->requete->existeParametre("idclasse")&&  $this->requete->existeParametre("firstname")&&
+        if ( $this->requete->existeParametre("name") && $this->requete->existeParametre("idclasse")
+                &&  $this->requete->existeParametre("firstname")&&
             
                 $id = $this->requete->getParametre("id"))
            {
@@ -293,7 +294,7 @@ class ControleurAdmin extends ControleurSecurise
        $id = $this->requete->getParametre("id");
        $teacher=$this->adult->getadult($id);
       
-      $this->genererVue(array('adult'=>$adult,'cat'=>$cat,'teacher'=>$teacher,'id'=>$id));
+      $this->genererVue(array('adult'=>$adult,'cat'=>$cat,'teacher'=>$teacher));
       }
         else {
             throw new Exception("Faite attention les paramètres ne sont pas tous définis");
@@ -301,33 +302,32 @@ class ControleurAdmin extends ControleurSecurise
 
   
           }
+          
+          
           public function exeEditTeacher()
             {
-        if ($this->requete->existeParametre("name") && $this->requete->existeParametre("firstname")
-                 &&
-               
-                $this->requete->existeParametre("email") && $this->requete->existeParametre("password")
-                && $this->requete->existeParametre("id")
-            ) {
+        if ( $this->requete->existeParametre("name") && $this->requete->existeParametre("id")
+                &&  $this->requete->existeParametre("firstname")&&$this->requete->existeParametre("email")&&
             
-                 $id=$this->requete->existeParametre("id");
-                $name = $this->requete->getParametre("name");
-                $firstname = $this->requete->getParametre("firstname");
-              
-                $email = $this->requete->getParametre("email");
-                $password = $this->requete->getParametre("password");
-                
-                
-                
-                $this->adult->editAdult($name, $firstname,$email, $password, $id);
-                
-                $idU = $this->requete->getSession()->getAttribut("idUtilisateur"); 
-                $adult=$this->adult->getadult($idU);
-                $this->genererVue(array('adult'=>$adult,'id'=>$id));
-             
-            } else {
-                throw new Exception("Faite attention les champs ne sont pas tous définis");
-            }
+                $id = $this->requete->getParametre("password"))
+           {
+           $name = $this->requete->getParametre("name");
+           $firstname = $this->requete->getParametre("firstname");
+            $password = $this->requete->getParametre("password");
+            $email = $this->requete->getParametre("email");
+            $id = $this->requete->getParametre("id");
+            $this->adult->editAdult($name, $firstname, $email, $password, $id);
+           
+            $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+            
+            $adult=$this->adult->getadult($idU);
+      
+      $this->genererVue(array('adult'=>$adult,'id'=>$id));
+      }
+        else {
+            throw new Exception("Faite attention les paramètres ne sont pas tous définis");
+        }
+     
     }
      public function droit(){
       $idU = $this->requete->getSession()->getAttribut("idUtilisateur");

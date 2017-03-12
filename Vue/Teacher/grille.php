@@ -30,7 +30,7 @@
 <body class="hold-transition skin-black sidebar-mini">
 <div class="wrapper">
 <?php require 'Vue/_Commun/headerPrinc.php'; ?>
-<?php require 'Vue/_Commun/navPrinc.php'; ?>
+<?php require 'Vue/_Commun/navPrincTeacher.php'; ?>
  
 
   <!-- Content Wrapper. Contains page content -->
@@ -38,8 +38,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Jeunes
-        <small>Consultez, modifiez ou supprimez un jeune. </small>
+        Grille citoyenne
+        <small>Items d'évaluation</small>
       </h1>
      
     </section>
@@ -54,42 +54,39 @@
             </div>
             <!-- /.box-header -->
              <div class="box-body table-responsive no-padding">
-              <table id="example1" class="table table-bordered table-hover">
-             <thead>
-                        <th>N°</th>
-                        <th>Nom</th>
-                        <th>Prénom</th>
-                        <th>Actions</th>
-                       
-
-                         
-                  </thead>
-                <tbody>
-                 <?php $var=1?>
-                 <?php foreach ($lists as $list): ?>
-
+              <table  class="table table-bordered table-hover">
+                    <thead>
+                            <tr>
+                                
+                                <th>Tag</th>
+                                <th>Items</th>
+                                <th>Informations complémentaires</th>
+                            </tr>
+                     </thead>
+                     <tbody>
+                            
+                            <?php foreach ($grille as $list): ?>
                                 <tr>
-                                    <td class=" " ><?php echo $var++ ?></td>
-                                    <td class=" " ><?= $this->nettoyer($list['name']) ?></td>
-                                    <td class=" " ><?= $this->nettoyer($list['firstName']) ?></td>
-                                    <td>
-                                    <a alt="Résultat des évaluations" href="admin/editStudent/<?= $this->nettoyer($list['id_student']) ?> " class="btn btn-warning btn-xs"><i class="fa fa-edit"></i></a>
-                                    <a alt="Résultat des évaluations" href="admin/addStudent/<?= $this->nettoyer($list['id_student']) ?> " class="btn btn-success btn-xs"><i class="fa fa-plus"></i></a>
-                                         <a alt="Résultat des évaluations" href="admin/resultatParEleve/<?= $this->nettoyer($list['id_student']) ?> " class="btn bg-red btn-xs"><i class="fa fa-file-pdf-o"></i></a>
-                                          <a disabled="disabled" alt="Résultat des évaluations" href="admin/exeDeleteChildren/<?= $this->nettoyer($list['id_student']) ?> " class="btn btn-info btn-xs"><i class="fa fa-close"></i></a>
-                                         
-                                         
-                                    </td>
+                                    
 
 
+                                    <td> <span class="label label-danger"><?= $this->nettoyer($list['nameCat']) ?></span></td>
+
+                                    <td><?= $this->nettoyer($list['itemname']) ?></td>
+                                    
+                                   
+                                   
+                                    
+                                    
+                                    <td> <span><?= $this->nettoyer($list['des']) ?></span></td>
                                 </tr>
-
+                            
                             <?php endforeach; ?>
-                            </tbody>
-                
-                
-              </table>
-            </div>
+                    </tbody>
+           
+          
+                 </table>
+              </div>
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
@@ -98,8 +95,7 @@
           <!-- /.box -->
         </div>
         <!-- /.col -->
-      </div>
-      <!-- /.row -->
+         
     </section>
     <!-- /.content -->
   </div>
@@ -145,4 +141,7 @@
   });
 </script>
 </body>
-
+        
+        
+        
+            

@@ -28,11 +28,14 @@ class ControleurTeacher extends ControleurSecurise
 
     }
     public function index() {
+        
         $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
         $adult=$this->adult->getadult($idU);
+         $nbStudents= $this->classe->getnbElevesParProffesseur($idU);
+      $nbStudentTotalEvalue=$this->classe->nombreEleveTotalEvalue($idU);
         $nbClasse= $this->classe->getnbClassesParProffesseur($idU);
         $nbStudent= $this->classe->getnbElevesParProffesseur($idU);
-        $this->genererVue(array('adult'=>$adult,'nbrC'=>$nbClasse,'nbrS'=>$nbStudent));
+        $this->genererVue(array('adult'=>$adult,'nbrC'=>$nbClasse,'nbrS'=>$nbStudent,'nbstudentTotal'=>$nbStudentTotalEvalue,'nbStudents'=>$nbStudents));
 
     }
     public function documentation(){
@@ -62,6 +65,12 @@ class ControleurTeacher extends ControleurSecurise
            throw new Exception('Erreur du serveur ');
        }
     }
+     public function grille(){
+     $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+     $adult=$this->adult->getadult($idU);
+     $grille= $this->grille->getGrille();
+     $this->genererVue(array('adult'=>$adult,'grille'=>$grille));
+     }
     public function monprofil(){
         
         $cat= $this->adult->getCat();

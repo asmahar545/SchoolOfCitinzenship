@@ -52,7 +52,7 @@
         <div class="callout callout-warning">
           <h4>Modification terminée </h4>
 
-          <a  href="admin/" class="btn btn-warning "> Revenir au menu principale</a>
+          <a  href="admin/" class="btn btn-warning "> Revenir au menu principale  <?= $id?></a>
           
           
           

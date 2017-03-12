@@ -125,6 +125,58 @@
           </div>
         </DIV>
              <div class="col-sm-6">
+                 
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title"></h3>
+            </div>
+            <!-- /.box-header -->
+           <div class="box-body table-responsive no-padding">
+               
+              <table class="table table-bordered table-hover">
+             <thead>
+                 <th>Nombres d'évaluations total</th>
+                  <th>Nombres d'évaluations faite</th>
+                  <th>Nombres d'évaluations restante</th>
+                  
+                  
+                        
+
+                         </tr>
+                  </thead>
+                <tbody>
+                 
+               <tr>
+                                    
+                                    <td class=" " ><?= $nbstudentTotal?>
+                                        
+                                    </td>
+                                    <td class=" " ><?= $nbStudents ?>
+                                        
+                                    </td>
+                                    <td class=" " ><?= $nbstudentTotal-$nbStudents   ?>
+                                        
+                                    </td>
+                                    
+                                    
+
+
+                                </tr>
+                         
+
+
+                            
+                            </tbody>
+                
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+
+          
+          <!-- /.box -->
+        
       
     </div><!-- /.col -->
         </div>

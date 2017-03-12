@@ -16,11 +16,12 @@ class Adult extends Modele
 
     public function getadult($id)
     {
-
-        $sql="select * from adult where id_adult= $id";
-        $rep=  $this->executerRequete($sql);
-        $ligne= $rep->fetch();
-        return $ligne;
+        $sql="select * from adult where id_adult= ?";
+        $rep=$this->executerRequete($sql,array($id));
+        if ($rep->rowCount() == 1){
+        return $rep->fetch(); } // Accès à la première ligne de résultat
+        else{
+        throw new Exception("Aucun éleve ne correspond 0 l4identifiqnt fourni");}
     }
     public function getAdultClass(){
                                                        
@@ -73,7 +74,8 @@ class Adult extends Modele
     public function editAdult($name,$firstname,$email,$password,$id){
         $sql="UPDATE `adult` SET  `name` = ?, `firstname` = ?, `email` = ?, `password` = ? WHERE `adult`.`id_adult` = ?";
         
-        $this->executerRequete($sql,array($name,$firstname,$email,$password,$id));
+       
+        $rep=$this->executerRequete($sql,array($name,$firstname,$email,$password,$id));
     }
    
       
