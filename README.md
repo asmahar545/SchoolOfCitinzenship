@@ -1,6 +1,6 @@
 
-SchoolOfCitinzenship
+Valoriser les comportements citoyens avec valio.app
 
 
-Application de e-commerce construite avec le framework MVC
->>>>>>> f964f03 Modification faite
+Application de valio construite avec le framework MVC
+
