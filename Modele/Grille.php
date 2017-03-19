@@ -68,7 +68,7 @@ class Grille extends Modele{
     
     public function addItemEvalueStudent($idS,$idU){
     
-    $sql ="SET @p0=?; SET @p1=?; SET @p2='1'; SET @p3='1'; SELECT ` ajoutItemStudentEvalue`(@p0, @p1, @p2, @p3) AS ` ajoutItemStudentEvalue`;";
+    $sql ="CALL `evalueStudent`(?, ?, 1, 1);;";
     $this->executerRequete($sql,array($idU,$idS));   
     }
     public function editItemStudent($idS,$idU,$idItem,$responce){

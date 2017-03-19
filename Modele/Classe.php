@@ -31,7 +31,7 @@ public function getnbClasses(){
       public function getnbElevesParProffesseur($idU){
 
 
-        $rqt='SELECT COUNT(DISTINCT (nameE)) as nb FROM `itemresponstudent` WHERE idU=?';
+        $rqt='SELECT COUNT(*) as nb FROM `itemresponstudent` WHERE idU=?';
 
         $rep=  $this->executerRequete($rqt,array($idU));
         $ligne= $rep->fetch();

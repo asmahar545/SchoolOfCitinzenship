@@ -95,7 +95,7 @@
 <style>
 body
 {
-    background: url("images/ecole.png") center center no-repeat;
+    background: url("images/ecole.svg") center center no-repeat;
     background-size: cover 
 }
 </style>

@@ -251,6 +251,7 @@ class ControleurTeacher extends ControleurSecurise
            
            
            $adult=$this->adult->getadult($idU);
+           
            $nomStudent=$this->grille->selectNomStudentEvalueParClasse($idC);
            $item = $this->grille->selectItemStudentEvalueParClasse($idC);
            $this->genererVue(array('adult'=>$adult,

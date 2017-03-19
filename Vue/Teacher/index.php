@@ -74,7 +74,7 @@
           <!-- small box -->
           <div class="small-box bg-navy">
             <div class="inner">
-              <h3><?= $this->nettoyer($nbrS) ?><sup style="font-size: 20px"></sup></h3>
+              <h3><?= $this->nettoyer($nbrS/10) ?><sup style="font-size: 20px"></sup></h3>
 
               <p>Mes jeunes évalués</p>
             </div>
@@ -151,10 +151,10 @@
                                     <td class=" " ><?= $nbstudentTotal?>
                                         
                                     </td>
-                                    <td class=" " ><?= $nbStudents ?>
+                                    <td class=" " ><?= $nbStudents/10 ?>
                                         
                                     </td>
-                                    <td class=" " ><?= $nbstudentTotal-$nbStudents   ?>
+                                    <td class=" " ><?= $nbstudentTotal-($nbStudents/10)   ?>
                                         
                                     </td>
                                     

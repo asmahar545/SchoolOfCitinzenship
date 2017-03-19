@@ -60,7 +60,7 @@
                   <th>Nom</th>
                    <th>Prénom</th>
                                 <th>E-mail</th>
-                                <th>Mot de passe</th>
+                                
                                 <th>Actions</th>
                                
                         
@@ -76,7 +76,7 @@
                                     <td class=" " ><?= $this->nettoyer($list['name']) ?></td>
                                     <td class=" " ><?= $this->nettoyer($list['firstname']) ?></td>
                                     <td class=" " ><?= $this->nettoyer($list['email']) ?></td>
-                                    <td class=" " ><?= $this->nettoyer($list['password']) ?></td>
+                                    
                                     <td > 
                                      <a  href="admin/editTeacher/<?= $this->nettoyer($list['id_adult']) ?> " class="btn btn-warning btn-xs"><i class="fa fa-edit "></i></a>
                                      <a  href="admin/addTeacher/<?= $this->nettoyer($list['id_adult']) ?> " class="btn btn-success btn-xs"><i class="fa fa-plus "></i></a>

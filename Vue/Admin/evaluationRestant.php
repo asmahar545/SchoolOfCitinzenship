@@ -71,10 +71,10 @@
                                     <td class=" " ><?= $nbstudentTotal?>
                                         
                                     </td>
-                                    <td class=" " ><?= $nbStudent ?>
+                                    <td class=" " ><?= $nbStudent/10 ?>
                                         
                                     </td>
-                                    <td class=" " ><?= $nbstudentTotal-$nbStudent   ?>
+                                    <td class=" " ><?= $nbstudentTotal-($nbStudent/10)   ?>
                                         
                                     </td>
                                     
