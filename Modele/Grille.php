@@ -137,10 +137,31 @@ class Grille extends Modele{
    
    } 
    public function selectNomStudentEvalueParClasse($idC) {
-       $sql="SELECT DISTINCT nameE,firstE FROM `itemresponstudent` WHERE classe=? ORDER by firstE ASC";
-       $nomStudent= $this->executerRequete($sql,array($idC));
+       $sql="SELECT DISTINCT nameE,firstE FROM `itemresponstudent` WHERE classe=?  ORDER by firstE ASC";
+       $nomStudent= $this->executerRequete($sql,array($idC,));
        return $nomStudent;
    }
+   public function selectNomStudentEvalueParClasseParTeacher($idC,$idU) {
+       $sql="SELECT DISTINCT nameE,firstE FROM `itemresponstudent` WHERE classe=? AND IdU=? ORDER by firstE ASC";
+       $nomStudent= $this->executerRequete($sql,array($idC,$idU));
+       return $nomStudent;
+   }
+   //compte le nombre d'étudiant dans une classe
+    public function selectNbrClasse($idC) {
+       $sql="SELECT count( id_student) as nbr FROM eleve,classe WHERE eleve.id_classe=classe.id AND id_classe=?";
+       $nbr= $this->executerRequete($sql,array($idC));
+       $ligne= $nbr->fetch();
+       return $ligne;
+   }
+   
+   //compte le nombre d'évalution faite dans cette clase par le teacher
+    public function selectNomStudentEvalueParClasseParTeacherNbr($idC,$idU) {
+       $sql="SELECT count(DISTINCT nameE,firstE) as nbr FROM `itemresponstudent` WHERE classe=? AND IdU=? ORDER by firstE ASC";
+       $nbr= $this->executerRequete($sql,array($idC,$idU));
+       $ligne= $nbr->fetch();
+       return $ligne;
+   }
+   
    public function selectItemStudentEvalueParClasse($idC) {
        $sql="SELECT DISTINCT (nameItem) FROM `itemresponstudent` WHERE classe=?  ORDER by nameItem";
        $item= $this->executerRequete($sql,array($idC));

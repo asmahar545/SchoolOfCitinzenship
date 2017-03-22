@@ -39,7 +39,10 @@
       <h1>
         Évaluation
         <small>J'évalue mes jeunes</small>
+        
+              
       </h1>
+       
      
     </section>
 
@@ -49,7 +52,32 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title"></h3>
+               <?php if ($nbrE['nbr'] ==0 ): ?>
+                  <div class="alert alert-danger alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <i class="icon fa fa-warning"></i>
+                Vous n'avez pas encore évaluer cette classe. 
+               </div> 
+                                   
+               <?php elseif($nbrE == $nbrT): ?>
+                <div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <i class="icon fa fa-check"></i>
+                Vous avez terminé l'évaluation de cette classe.
+               </div>
+                      
+                 <?php else: ?>
+                <div class="alert alert-warning alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <i class="icon fa fa-warning"></i>
+                Vous n'avez pas encore terminé d'évaluer cette classe. Il vous reste <?= $nbrT['nbr']-($nbrE['nbr'])?> éleves à évaluer.
+                 </div>
+               <?php endif; ?>
+               
+
+               
+               
+             
             </div>
             <!-- /.box-header -->
            <div class="box-body table-responsive no-padding">

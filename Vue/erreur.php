@@ -36,19 +36,13 @@
 
       <!-- Main content -->
       <section class="content">
-        <div class="callout callout-info">
-          <h4><h4><?= $msgErreur ?></h4>
+        <div class="callout callout-warning">
+          <h4>Attention</h4>
           
 
-          <p>Add the layout-top-nav class to the body tag to get this layout. This feature can also be used with a
-            sidebar! So use this class if you want to remove the custom dropdown menus from the navbar and use regular
-            links instead.</p>
+          <p><?= $msgErreur ?></p>
         </div>
-        <div class="callout callout-danger">
-          <h4>Warning!</h4>
-
-          <p>Erreur de l'application</p>
-        </div>
+       
        
         <!-- /.box -->
       </section>

@@ -68,8 +68,9 @@
                             <span class="form-group-addon">Couleurs</span>
                             <select class="form-control"  name="ceinture" type="text">
                             <option>Blanc</option>
-                            <option>Jaune</option>
                             <option>Bleu</option>
+                            <option>Jaune</option>
+                            
                             <option>Orange</option>
                             <option>Violet</option>
                             <option>Vert</option>

@@ -61,6 +61,7 @@
                             <th>Nom</th>
                             <th>Prénom</th>
                             <th>Classe</th>
+                            <th>Action</th>
                                
                             </tr>
                             </thead>
@@ -73,7 +74,8 @@
                                     <td class=" " ><?= $this->nettoyer($list['name']) ?></td>
                                     <td class=" " ><?= $this->nettoyer($list['firstname']) ?></td>
                                     <td class=" " ><?= $this->nettoyer($list['yearSexion']) ?></td>
-                                    
+                                    <td><button data-toggle="modal" data-target="#loginModal1" class="btn btn-success btn-xs"><i class="fa fa-plus "></i></button>
+                                    <a disabled="disabled" alt="Résultat des évaluations" class="btn btn-danger btn-xs"><i class="fa fa-close"></i></a></td>
                                 </tr>
 
                             <?php endforeach; ?>
@@ -88,14 +90,17 @@
          <div class="modal-content">
             <div class="modal-header">
              <button type="button" class="close" data-dismiss="modal">x</button>
-               <h4 class="modal-title">Sélèctionez le professeur ainsi que la classe</h4>
+               <h4 class="modal-title">Donner un droit :</h4>
                </div>
+             
+             <br>
                <div class="modal-body">
                  <div class="box box-success">
-                    <form action="admin/droit"class="form-horizontal form-label-left" method="post">
+                    <form action="admin/exeAddDroit"class="form-horizontal form-label-left" method="post">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Ajouter un  droit:</h3>
+                            <h3 class="box-title">Sélectionner le professeur ainsi que la classe</h3>
                         </div>
+                        <br>
                      <div class="input-group">
                                 <span class="input-group-addon">Professeurs</span>
                                 <select name="classe" type="text" class="form-control" placeholder="">
@@ -110,7 +115,7 @@
                        
                         </div>
                         <br>
-                        <br>
+                        
                      <div class="input-group">
                         <span class="input-group-addon">Classe</span>
                              <select name="adult" type="text" class="form-control" placeholder="">

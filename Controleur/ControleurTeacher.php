@@ -143,18 +143,11 @@ class ControleurTeacher extends ControleurSecurise
            $id = $this->requete->getParametre("id");
            $student= $this->student->getStudentClass($id);
            $adult=$this->adult->getadult($idU);
-          // $num=0;
-         //while($donnees=$student->fetch()) {
-         //  {
-         //   
-         //   $nb= $this->classe->evalueTeacherEleve($idU, $donnees['id_student']);
-           // $num++;
-          //  $tab[]=array($nb=>$num);         
-         // }
-               
-         //}
-          
-           $this->genererVue(array('adult'=>$adult,'student'=>$student));}
+           //nombre d'evaluation /nombe total d'eleve
+           $nbrtotal= $this->grille->selectNbrClasse($id);
+           $nbrE= $this->grille->selectNomStudentEvalueParClasseParTeacherNbr($id, $idU);
+           
+           $this->genererVue(array('adult'=>$adult,'student'=>$student,'nbrT'=>$nbrtotal ,'nbrE'=>$nbrE));}
         else{
              throw new Exception("Faite attention les champs ne sont pas tous définis");
         }
@@ -175,7 +168,9 @@ class ControleurTeacher extends ControleurSecurise
         $commentaire= $this->grille->getCommentaire($idgrid);
         $period=$this->grille->selectPeriod();
         //dans exeEvaluationStudent
+        
         $item=$this->grille->getEvalueStudent($idU, $id);
+       
         $this->genererVue(array('adult'=>$adult,'item'=>$item,'id'=>$id,'commentaire'=>$commentaire,'idgrid'=>$idgrid,'period'=>$period,'student'=>$student));
         }
     }
@@ -252,7 +247,7 @@ class ControleurTeacher extends ControleurSecurise
            
            $adult=$this->adult->getadult($idU);
            
-           $nomStudent=$this->grille->selectNomStudentEvalueParClasse($idC);
+           $nomStudent=$this->grille->selectNomStudentEvalueParClasseParTeacher($idC,$idU);
            $item = $this->grille->selectItemStudentEvalueParClasse($idC);
            $this->genererVue(array('adult'=>$adult,
                'item1'=>$Item1,

@@ -101,6 +101,15 @@ public function getnbClasses(){
        return $rep;
      
     }
+    
+    //delete un droit
+    public function deleteDroit($idc,$ida){
+       
+       $sql="DELETE FROM `consultclass` WHERE `consultclass`.`id_classe` = ? AND `consultclass`.`id_adult` =  ?";
+       $rep=$this->executerRequete($sql,array($idc,$ida));
+       return $rep;
+     
+    }
     public function droitExist($idc,$ida){
         $sql= "select * from consultclass where id_classe = ? and id_adult=?";
         $rep=$this->executerRequete($sql,array($idc,$ida));
