@@ -208,10 +208,12 @@ class ControleurTeacher extends ControleurSecurise
            $idgrid= $idG['idGridStudent'];
            //trouver le commentaire qui et null et le mettre dan texTArea,ensuite l'éditer 
            $commentaire= $this->grille->getCommentaire($idgrid);
-        
-           $this->genererVue(array('adult'=>$adult,'id'=>$idU,'tab'=>$tab1));}
+           //trouver la idclasse de l'élève
+           $idC= $this->classe->getClasseEleve($idS);
+                   
+           $this->genererVue(array('adult'=>$adult,'id'=>$idU,'tab'=>$tab1,'idC'=>$idC));}
     
-     else {
+         else {
              throw new Exception("Veuillez évaluer votre élèves");
         }
      }

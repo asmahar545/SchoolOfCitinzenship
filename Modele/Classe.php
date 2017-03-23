@@ -156,5 +156,12 @@ public function selectClasseEleve($idE){
      $ligne= $rep->fetch();
         return $ligne['nb'];
      }
+     public function getClasseEleve($idE){
+        $sql="SELECT id_classe as nb FROM `eleve`where id_student=?";
+        $rep=$this->executerRequete($sql,array($idE));
+        $ligne= $rep->fetch();
+        return $ligne['nb'];
+            
+     }
 }
 

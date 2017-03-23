@@ -50,13 +50,18 @@
       <section class="content">
         
         <div class="callout callout-success">
-          <h4>L'évaluation a été envoyée </h4>
+          <h4>L'évaluation a été envoyée </h4><br>
 
-          <p>Le jeune en question à été évalué </p>
+          <p>Le jeune en question à été évalué </p><br>
           
+          <h4>Veuillez choisir une des trois propositions</h4>
           
-          <a href="teacher/mesclasses">Revenir à mes classes</a> <br>
-          <a href="teacher/">Revenir au bureau</a>
+          <a href="teacher/eleves/<?=$idC ?>">Revenir  à la  classe</a><br>
+          
+          <a href="teacher/mesclasses">Revenir à mes classes</a><br> 
+          
+           <a href="teacher/">Revenir à mon bureau</a> 
+          
           
         </div>
        
