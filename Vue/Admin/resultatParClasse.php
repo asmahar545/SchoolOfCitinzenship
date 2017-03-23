@@ -53,7 +53,8 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title"> <?= $nbteacher ?> professeurs ont évalué cette classe</h3>
+             <h3 class="box-title">Classe: <?= $nomClass['yearSexion'] ?></h3><br><br>
+              Nombre de professeurs ou d'éducateurs ayant évalué: <?= $nbteacher ?>  
             </div>
              
               

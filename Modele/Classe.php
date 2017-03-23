@@ -76,7 +76,7 @@ public function getnbClasses(){
         if ($rep->rowCount() == 1){
         return $rep->fetch(); } // Accès à la première ligne de résultat
         else{
-            throw new Exception("Aucun classe ne correspond 0 l4identifiqnt fourni");
+            throw new Exception("Aucun classe ne correspond à l' identifiqnt fourni");
     }  
     }
     public function deleteClass($id){

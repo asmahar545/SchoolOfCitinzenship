@@ -535,7 +535,7 @@ class ControleurAdmin extends ControleurSecurise
               $idC = $this->requete->getParametre("id");
               $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
               $nbrTeachEvalue= $this->classe->nombreTeacherevalueUneClasse($idC);
-              
+              $nomClasse= $this->classe->getClass($idC);
               $nameItem1="Je suis respectueux envers les personnes";
               $nameItem2="J’adopte une attitude non violente";
               $nameItem3="Je suis respectueux du matériel et de l’environnement";
@@ -574,6 +574,7 @@ class ControleurAdmin extends ControleurSecurise
                 'item9'=>$Item9,
                 'item10'=>$Item10,
                 'period'=>$period,
+                'nomClass'=>$nomClasse,
                 'nbteacher'=> $nbrTeachEvalue,
                 'nomStudent'=>$nomStudent,
                 'item'=>$item));
