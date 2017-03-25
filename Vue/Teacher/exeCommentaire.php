@@ -50,13 +50,13 @@
       <section class="content">
         
         <div class="callout callout-success">
-          <h4>Commentaire a été enregitré</h4>
+          <h4>Commentaire a été envoyé</h4>
 
          
-          
-          
-          <a href="teacher/classe">Revenir à mes élèves</a> <br>
-          <a href="teacher/">Revenir au menu Principal</a>
+          <br>
+          <a href="teacher/listStudentClass/<?=$idC ?>">Revenir à mes élèves</a> <br> <br>
+          <a href="teacher/classe">Revenir à mes classes</a> <br> <br>
+          <a href="teacher/">Revenir au menu Principal </a><br> <br>
         </div>
        
         <!-- /.box -->

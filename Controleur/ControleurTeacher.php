@@ -335,14 +335,14 @@ class ControleurTeacher extends ControleurSecurise
           $idE = $this->requete->getParametre("id");
           $commentaire= $this->requete->getParametre("commentaire");
          
-          $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+         $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
          $adult=$this->adult->getadult($idU);
-           $idG=$this->grille->getIdGridstudent($idU, $idE);
+         $idG=$this->grille->getIdGridstudent($idU, $idE);
             
-      
-            $idgrid= $idG['idGridStudent'];
-             $this->grille->editCommentaire($idgrid, $commentaire);
-          $this->genererVue(array('adult'=>$adult));
+           $idC= $this->classe->getClasseEleve($idE);
+          $idgrid= $idG['idGridStudent'];
+          $this->grille->editCommentaire($commentaire,$idgrid);
+          $this->genererVue(array('adult'=>$adult,'idC'=>$idC));
         
         }
       else {

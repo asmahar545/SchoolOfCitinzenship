@@ -94,7 +94,7 @@ class Grille extends Modele{
         $ligne= $idG->fetch();
         return $ligne;
     }
-   public function editCommentaire($idG,$commentaire){
+   public function editCommentaire($commentaire,$idG){
         $sql="UPDATE `gridstudent` SET `commentaire`=? WHERE idGridStudent = ?";
         $this->executerRequete($sql,array($commentaire,$idG));
    }
