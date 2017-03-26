@@ -10,7 +10,7 @@
         </div>
         <div class="pull-left info">
           <p><?= $adult['name']?></p><strong><?= $adult['firstname']?></strong>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          <a><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
     

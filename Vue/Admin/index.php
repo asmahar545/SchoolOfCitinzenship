@@ -184,7 +184,16 @@
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
-
+            <div class="box box-danger">
+        <div class="box-header with-border">
+          <h3 class="box-title">Tutoriel</h3>
+          <span class="label label-danger pull-right"><i class="fa fa-database"></i></span>
+        </div><!-- /.box-header -->
+        <div class="box-body">
+          <p>Télèchargement du tutoriel <b>en pdf</b></p>
+          <a  class="btn btn-danger"><i class="fa fa-download"></i> Download</a>
+        </div><!-- /.box-body -->
+      </div><!-- /.box -->
           
           <!-- /.box -->
         </div> 

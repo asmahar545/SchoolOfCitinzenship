@@ -97,6 +97,8 @@ class Grille extends Modele{
    public function editCommentaire($commentaire,$idG){
         $sql="UPDATE `gridstudent` SET `commentaire`=? WHERE idGridStudent = ?";
         $this->executerRequete($sql,array($commentaire,$idG));
+        $rqt="UPDATE `itemresponstudent` SET `commentaire`=? WHERE idE=?";
+        $this->executerRequete($rqt, array($commentaire,$idG));
    }
     public function selectCommentaire($idE){
     $sql="SELECT `commentaire` FROM `itemresponstudent` WHERE idE=? and nameItem='Je suis solidaire'";
@@ -108,6 +110,12 @@ class Grille extends Modele{
    public function deleteEvaluationStudent(){
        $sql="DELETE FROM evaluatestudent";
        $this->executerRequete($sql);
+       
+       
+   }
+    public function deleteEvaluationStudentAutorisation($idU,$idC){
+       $sql="DELETE FROM itemresponstudent where idU=? AND classe=?";
+       $this->executerRequete($sql,array($idU,$idC));
        
        
    }

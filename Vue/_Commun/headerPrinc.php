@@ -1,7 +1,7 @@
 
 <header class="main-header">
     <!-- Logo -->
-    <a href="index3.html" class="logo">
+    <a  class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>v</b>CSJ</span>
       <!-- logo for regular state and mobile devices -->

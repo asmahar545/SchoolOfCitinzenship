@@ -171,6 +171,26 @@ class ControleurAdmin extends ControleurSecurise
         }
 
     }
+     public function exeDeleteAutorisation(){
+        if (  $this->requete->existeParametre("classe") &&
+              $this->requete->existeParametre("adult")
+           
+            )
+        {
+  
+        $classe = $this->requete->getParametre("classe");
+        $idU= $this->requete->getParametre("adult");
+        $this->classe->deleteDroit($classe, $idU);
+        
+        $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+        $adult=$this->adult->getadult($idU);
+        $this->genererVue(array('adult'=>$adult));
+        }
+        else {
+            throw new Exception("Impossible de supprimer cette autorisation car il a de évaluation en cours de ce professeur avec cette classe");
+        }
+
+    }
     public function exeDeleteChildren(){
         if (  $this->requete->existeParametre("id")
            
@@ -335,7 +355,9 @@ class ControleurAdmin extends ControleurSecurise
       $teacher = $this->classe->getTeacherClass();
       $class= $this->classe->getClasses();
       $teachers =$this->adult->getAdults();
-      $this->genererVue(array('adult'=>$adult,'teacher'=>$teacher,'clas'=>$class,'teachers'=>$teachers)); 
+      $class2= $this->classe->getClasses();
+      $teacher2 =$this->adult->getAdults();
+      $this->genererVue(array('adult'=>$adult,'teacher'=>$teacher,'clas'=>$class,'teachers'=>$teachers,'classe2'=>$class2,'teacher2'=>$teacher2)); 
      }
      
      public function exeAddDroit(){

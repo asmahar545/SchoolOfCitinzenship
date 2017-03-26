@@ -51,6 +51,12 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title"> </h3>
+              <p>En supprimant une autorisation,
+               il y a défault du système pour le total des évaluations.
+               Veuillez supprimer une autorisation qu'en fin de période. En ajoutant une autorisation,
+               il y a augmentation d'évaluation.
+               Veuillez ajouter une autorisation qu'en fin de période.</p>
+             
             </div>
             <!-- /.box-header -->
              <div class="box-body table-responsive no-padding">
@@ -75,7 +81,7 @@
                                     <td class=" " ><?= $this->nettoyer($list['firstname']) ?></td>
                                     <td class=" " ><?= $this->nettoyer($list['yearSexion']) ?></td>
                                     <td><button data-toggle="modal" data-target="#loginModal1" class="btn btn-success btn-xs"><i class="fa fa-plus "></i></button>
-                                    <a disabled="disabled" alt="Résultat des évaluations" class="btn btn-danger btn-xs"><i class="fa fa-close"></i></a></td>
+                                    <button data-toggle="modal" data-target="#loginModal2" class="btn btn-danger btn-xs"><i class="fa fa-close "></i></button></td>
                                 </tr>
 
                             <?php endforeach; ?>
@@ -90,7 +96,7 @@
          <div class="modal-content">
             <div class="modal-header">
              <button type="button" class="close" data-dismiss="modal">x</button>
-               <h4 class="modal-title">Donner un droit :</h4>
+               <h4 class="modal-title">Ajouter une autorisation:</h4>
                </div>
              
              <br>
@@ -102,7 +108,7 @@
                         </div>
                         <br>
                      <div class="input-group">
-                                <span class="input-group-addon">Professeurs</span>
+                                <span class="input-group-addon">Classe</span>
                                 <select name="classe" type="text" class="form-control" placeholder="">
                                     <?php
                                     foreach ($clas as $list):
@@ -117,7 +123,7 @@
                         <br>
                         
                      <div class="input-group">
-                        <span class="input-group-addon">Classe</span>
+                        <span class="input-group-addon">Professeur</span>
                              <select name="adult" type="text" class="form-control" placeholder="">
                                 <?php
                                 foreach ($teachers as $list):
@@ -150,7 +156,77 @@
                    </div>
                 </div>
          </div>
-            
+            <!-- MODAL SUPPRESSION--->
+               <div class="modal" id="loginModal2"tabindex="-1">
+            <div class="modal-dialog">
+         <div class="modal-content">
+            <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal">x</button>
+             <h4 class="modal-title">Supression d'une autoriation:</h4><br><br>
+               <p>Attention! Cette supression peut causer une erreur. 
+               En effet, en supprimant une autorisation,
+               il peut  y avoir un défault du système.
+               Veuillez supprimer une autorisation qu'en fin de période.</p>
+               </div>
+             
+             <br>
+               <div class="modal-body">
+                 <div class="box box-danger">
+                    <form action="admin/exeDeleteAutorisation/"class="form-horizontal form-label-left" method="post">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Sélectionner le professeur ainsi que la classe</h3>
+                        </div>
+                        <br>
+                     <div class="input-group">
+                                <span class="input-group-addon">Classe</span>
+                                <select name="classe" type="text" class="form-control" placeholder="">
+                                    <?php
+                                    foreach ($classe2 as $list):
+
+                                        echo '<option value="' . $this->nettoyer($list['id']) . '">' . $this->nettoyer($list['yearSexion']) . '</option>';
+                                        ?>
+                                    <?php endforeach; ?>
+
+                                </select> 
+                       
+                        </div>
+                        <br>
+                        
+                     <div class="input-group">
+                        <span class="input-group-addon">Professeur</span>
+                             <select name="adult" type="text" class="form-control" placeholder="">
+                                <?php
+                                foreach ($teacher2 as $list):
+
+                                 echo '<option value="' . $this->nettoyer($list['id_adult']) . '">' . $this->nettoyer($list['name']) .' ' .$this->nettoyer($list['firstname']) .  '</option>';
+                                 ?>
+                                 <?php endforeach; ?>
+
+                                </select> 
+                                
+                             </div>
+                          <br>
+                    
+                        <br>
+                         <div class="form-group">
+                                <div class="col-md-6 col-sm-6 col-xs-10 col-md-offset-9">
+
+                                    <button type="submit" class="btn btn-danger">Supprimer</button>
+                                </div>
+                         </div>
+
+                    </form>
+
+                </div>
+                    </div>
+                    <div class="modal-footer">
+                  
+                    <a href="admin/droit"><button class="btn btn-primary" type="button"><i class="icon icon-check icon-lg"></i> Retour</button></a>
+                     
+                    </div>
+                   </div>
+                </div>
+         </div>
              
  </div>
             <!-- /.box-body -->
