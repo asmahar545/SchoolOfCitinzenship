@@ -128,16 +128,17 @@
                  
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title"></h3>
+              <h3 class="box-title">État de l’évaluation</h3>
             </div>
             <!-- /.box-header -->
            <div class="box-body table-responsive no-padding">
                
               <table class="table table-bordered table-hover">
              <thead>
-                 <th>Nombres d'évaluations total</th>
-                  <th>Nombres d'évaluations faite</th>
-                  <th>Nombres d'évaluations restante</th>
+                
+                 <th>Total</th>
+                  <th>Faites</th>
+                  <th> Restantes</th>
                   
                   
                         
@@ -177,16 +178,7 @@
           
           <!-- /.box -->
         
-      <div class="box box-danger">
-        <div class="box-header with-border">
-          <h3 class="box-title">Tutoriel</h3>
-          <span class="label label-danger pull-right"><i class="fa fa-database"></i></span>
-        </div><!-- /.box-header -->
-        <div class="box-body">
-          <p>Télèchargement du tutoriel <b>en pdf</b></p>
-          <a  class="btn btn-danger"><i class="fa fa-download"></i> Download</a>
-        </div><!-- /.box-body -->
-      </div><!-- /.box -->
+      
     
       
     </div><!-- /.col -->
