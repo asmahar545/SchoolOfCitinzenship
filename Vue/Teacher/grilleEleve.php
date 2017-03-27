@@ -53,7 +53,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Mes élèves</h3>
+              <h3 class="box-title"> Classe <?= $nomClasse['yearSexion'] ?></h3>
             </div>
               <?php if ($nbr>0 ): ?>
               
@@ -63,7 +63,7 @@
 
                            <thead>
                             <tr >
-                                <th>Item   </th>
+                                <th>Items   </th>
                             <?php foreach ($nomStudent as $list): ?>
                                  
                             <th  class="info" ><div><span><?= $this->nettoyer($list['nameE']) ?> <?= $this->nettoyer($list['firstE']) ?>     </span></div></th>
@@ -75,7 +75,7 @@
                             <tfoot>
                               <tr >
                                   <th colspan="1" class="info"><?= $period['period']?> </th>
-                                   <th  colspan="4" class="warning" >Exigence croissante pour Item 1,2 et 3 </th>
+                                   
                                    
                                 </tr>
                             </tfoot>

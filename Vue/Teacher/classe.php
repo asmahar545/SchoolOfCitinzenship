@@ -59,9 +59,7 @@
                                 <th>N°</th>
                                 <th>Classe</th>
                                 <th>Les jeunes</th>
-                              
-                      
-
+                          
                          </tr>
                   </thead>
                 <tbody

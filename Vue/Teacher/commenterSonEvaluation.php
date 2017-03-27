@@ -56,15 +56,15 @@
             <div class="box-body">
                     <form action="teacher/exeCommentaire/<?= $id ?>"class="form-horizontal form-label-left" method="post">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Commentaire</a></h3>
+                            <h3 class="box-title">Commentaire général du conseil de classe</h3>
                         </div>
                         <br>
                         <div class="box-body">
                               <div class="form-group">
                     <div class=" col-sm-12">
-                  <label>Laissez un commentaire générale sur le jeune après le conseil de classe </label>
-                  <textarea name="commentaire"  class="form-control" rows="3" placeholder="Enter ..." required><?=$commentaire['commentaire']?></textarea>
-                </div>
+                  <label> Laissez un commentaire générale sur le jeune après le conseil de classe</label>
+                  <textarea name="commentaire"  class="form-control" rows="3" placeholder="Ecrivez-le ici..." required><?=$commentaire['commentaire']?></textarea>
+                  </div>
                   </div>
                              
                             

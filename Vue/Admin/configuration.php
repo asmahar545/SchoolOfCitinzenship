@@ -145,7 +145,7 @@
                        <div class="alert alert-danger alert-dismissible">
                         
                           <h4><i class="icon fa fa-warning"></i> Attention !</h4>
-                               Toutes les précédentes évaluations seront supprimées pour une nouvelle période.
+                               Toutes les précédentes évaluations seront supprimées.
                          </div>
                          </div>
                        <div class="modal-footer">

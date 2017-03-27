@@ -39,7 +39,7 @@
     <section class="content-header">
       <h1>
         Ma classe
-        <small> Mettez à jour les décisions du conseil de classe </small>
+        <small>Mettez à jour le badge et le commentaire du conseil de classe</small>
       </h1>
      
     </section>
@@ -50,7 +50,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Mes jeunes</h3>
+              <h3 class="box-title">Badge et commentaire</h3>
             </div>
             <!-- /.box-header -->
              <div class="box-body table-responsive no-padding">

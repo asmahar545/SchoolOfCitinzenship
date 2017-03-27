@@ -56,22 +56,7 @@
         <div class="row">
         <div class="col-xs-12">
              <ul class="timeline">
-                 <li>
-             <i class="fa  fa-folder-open-o bg-navy"></i>
-             <div class="timeline-item">
-           <div class="box box-danger">
-        <div class="box-header with-border">
-          <h3 class="box-title">Tutoriel</h3>
-          <span class="label label-danger pull-right"><i class="fa fa-database"></i></span>
-        </div><!-- /.box-header -->
-        <div class="box-body">
-          <p>Des explications simples	
-           pour utiliser valio <b>en pdf</b></p>
-          <a href="document/tutoriel.pdf" class="btn btn-danger"><i class="fa fa-download"></i> Télècharger</a>
-        </div><!-- /.box-body -->
-      </div><!-- /.box -->
-             </div>
-           </li>
+           
             <li>
               <i class="fa fa-video-camera bg-navy"></i>
 
@@ -82,12 +67,31 @@
 
                 <div class="timeline-body">
                   <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="" frameborder="0" allowfullscreen></iframe>
+                      <video height="100" width="100" controls>
+                        <source class="embed-responsive-item"src="images/video.mp4" type="video/mp4" frameborder="0"  allowfullscreen>
+                       </video>
+                
                   </div>
                 </div>
                 
               </div>
             </li>
+             <li>
+             <i class="fa  fa-folder-open-o bg-navy"></i>
+             <div class="timeline-item">
+           <div class="box box-danger">
+        <div class="box-header with-border">
+          <h3 class="box-title">Tutoriel</h3>
+          
+        </div><!-- /.box-header -->
+        <div class="box-body">
+          <p>Des explications simples	
+           pour utiliser valio <b></b></p>
+          <a href="document/Tutoriel.pdf" class="btn btn-danger"><i class="fa fa-download"></i> Télècharger</a>
+        </div><!-- /.box-body -->
+      </div><!-- /.box -->
+             </div>
+           </li>
             
              </ul>
             </di>

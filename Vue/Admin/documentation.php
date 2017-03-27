@@ -2,7 +2,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <?php $this->titre = "Documentation"; ?>
+  <?php $this->titre = "Student"; ?>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -36,32 +36,57 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
+      <h1>
+       Tutoriel
+        <small></small>
+      </h1>
      
-       <div class="row">
-        <div class="col-md-12">
-          <div class="box box-solid">
-            <div class="box-header with-border">
-              <h3 class="box-title">Tutoriel</h3>
-            </div>
-            <!-- /.box-header -->
-            
-                </div>
-              </div>
-            </div>
-            <!-- /.box-body -->
-          </div>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+    
+          
           <!-- /.box -->
         </div>
-        </div> 
-        
-        
-        </section>
+        <!-- /.col -->
+      </div>
+        <div class="row">
+        <div class="col-xs-12">
+             <ul class="timeline">
+           
+           
+             <li>
+             <i class="fa  fa-folder-open-o bg-navy"></i>
+             <div class="timeline-item">
+           <div class="box box-danger">
+        <div class="box-header with-border">
+          <h3 class="box-title">Tutoriel</h3>
+          
+        </div><!-- /.box-header -->
+        <div class="box-body">
+          <p>Des explications simples	
+           pour utiliser valio <b></b></p>
+          <a href="document/Tutoriel.pdf" class="btn btn-danger"><i class="fa fa-download"></i> Télècharger</a>
+        </div><!-- /.box-body -->
+      </div><!-- /.box -->
+             </div>
+           </li>
+            
+             </ul>
+            </di>
+        </div>
+      <!-- /.row -->
+       
+    </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
  
 
- <?php require 'Vue/_Commun/Folder.php'; ?>
+<?php require 'Vue/_Commun/Folder.php'; ?>
 <?php require 'Vue/_Commun/Aside.php'; ?>
   <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed
@@ -69,7 +94,31 @@
   <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
+<style>
+    th.rotate {
+  /* Something you can count on */
+  height: 20px;
+  white-space: nowrap;
+}
 
+th.rotate > div {
+  transform: 
+    /* Magic Numbers */
+    translate(30px, 0px)
+    /* 45 is really 360 - 45 */
+    rotate(315deg);
+  width: 30px;
+}
+th.rotate > div > span {
+  border-bottom: 1px solid #ccc;
+  padding: 5px 10px;
+}
+/* These aren't needed and will be weird if transforms don't work */
+.csstransforms & th.rotate {
+  height: 140px;
+  white-space: nowrap;
+}
+    </style>
 <!-- jQuery 2.2.3 -->
 <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
@@ -86,5 +135,17 @@
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
 <!-- page script -->
-
+<script>
+  $(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false
+    });
+  });
+</script>
 </body>

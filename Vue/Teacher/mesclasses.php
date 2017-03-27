@@ -38,7 +38,7 @@
     <section class="content-header">
       <h1>
         Mes étudiants
-        <small> Choisissez votre classe pour procéder à l'évaluation des jeunes</small>
+        <small> Choisissez la classe pour procéder à l'évaluation des jeunes</small>
       </h1>
      
     </section>

@@ -56,10 +56,12 @@
             <div class="box-body">
                     <form action="teacher/exeMonterDeCeinture/<?= $id ?>"class="form-horizontal form-label-left" method="post">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Mettez à jour le badge de l'étudiant. 
+                            <h3 class="box-title">Le badge actuel de l'étudiant est <?= $ceinture['monteCeinture']?>.
                             <br>
                             <br>
-                            Le badget actuel du jeune est <?= $ceinture['monteCeinture']?>.</a></h3>
+                            
+                            Mettez-le à jour si son évaluation est positive. 
+                           </h3>
                         </div>
                         <br>
                         <div class="box-body">
@@ -80,10 +82,10 @@
                             
 
                             <div class="form-group">
-                                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-10">
+                              
 
                                     <button type="submit" class="btn btn-warning">Modifier</button>
-                                </div>
+                               
                             </div>
 
                     </form>

@@ -142,12 +142,14 @@ class ControleurTeacher extends ControleurSecurise
            $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
            $id = $this->requete->getParametre("id");
            $student= $this->student->getStudentClass($id);
+           
            $adult=$this->adult->getadult($idU);
            //nombre d'evaluation /nombe total d'eleve
            $nbrtotal= $this->grille->selectNbrClasse($id);
+           $nomClasse= $this->classe->getClass($id);
            $nbrE= $this->grille->selectNomStudentEvalueParClasseParTeacherNbr($id, $idU);
            
-           $this->genererVue(array('adult'=>$adult,'student'=>$student,'nbrT'=>$nbrtotal ,'nbrE'=>$nbrE));}
+           $this->genererVue(array('adult'=>$adult,'student'=>$student,'nbrT'=>$nbrtotal ,'nbrE'=>$nbrE,'nomClasse'=> $nomClasse));}
         else{
              throw new Exception("Faite attention les champs ne sont pas tous définis");
         }
@@ -246,7 +248,7 @@ class ControleurTeacher extends ControleurSecurise
            $Item9= $this->grille->selectStudentEvalueParClasse($idC, $idU, $nameItem9);
            $Item10= $this->grille->selectStudentEvalueParClasse($idC, $idU, $nameItem10);
            
-           
+           $nomClasse= $this->classe->getClass($idC);
            $adult=$this->adult->getadult($idU);
            
            $nomStudent=$this->grille->selectNomStudentEvalueParClasseParTeacher($idC,$idU);
@@ -260,10 +262,11 @@ class ControleurTeacher extends ControleurSecurise
                 'item6'=>$Item6,
                 'item7'=>$Item7,
                'item8'=>$Item8,
-                  'item9'=>$Item9,
-                  'item10'=>$Item10,
+               'item9'=>$Item9,
+               'item10'=>$Item10,
                'period'=>$period,
-                'nbr'=>$EvalueFalse,
+               'nbr'=>$EvalueFalse,
+               'nomClasse'=>$nomClasse,
                'nomStudent'=>$nomStudent,
                'item'=>$item));
    
@@ -290,8 +293,9 @@ class ControleurTeacher extends ControleurSecurise
      $adult=$this->adult->getadult($idU);
       $ceinture = $this->requete->getParametre("ceinture");
        $id = $this->requete->getParametre("id");
+       $idC= $this->classe->getClasseEleve($id);
      $this->student->editChildrenCeinture($ceinture, $id);
-      $this->genererVue(array('adult'=>$adult));}
+      $this->genererVue(array('adult'=>$adult,'idC'=>$idC));}
      else
           {
          throw new Exception("Erreur de chargement de page"); 

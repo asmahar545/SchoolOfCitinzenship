@@ -47,17 +47,23 @@
      
 
       <!-- Main content -->
-    <section class="content">
-      <div class="alert alert-success alert-dismissible">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                <h4><i class="icon fa fa-check"></i> Nouvelle session d'évaluation!</h4>
-                Toute les évaluations ont supprimé pour une nouvelle année
-              </div>
+      <section class="content">
+        
+        <div class="callout callout-warning">
+          <h4>Toute les évaluations ont été supprimé</h4>
 
-  </section>
-    <!-- /.content -->
+          <a  href="admin/configuration" class="btn btn-warning "> Retour</a>
+          
+          
+          
+        </div>
+       
+        <!-- /.box -->
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.container -->
   </div>
-  <!-- /.content-wrapper -->
 <?php require 'Vue/_Commun/Folder.php'; ?>
 <?php require 'Vue/_Commun/Aside.php'; ?>
  
@@ -105,9 +111,4 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
-     <script>
-    $('#datepicker').datepicker({
-      autoclose: true
-    });</script>
- 
-    </body>
+</body> 

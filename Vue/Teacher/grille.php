@@ -57,8 +57,7 @@
               <table  class="table table-bordered table-hover">
                     <thead>
                             <tr>
-                                
-                                <th>Tag</th>
+                               <th>Tag</th>
                                 <th>Items</th>
                                 <th>Informations complémentaires</th>
                             </tr>
@@ -67,17 +66,11 @@
                             
                             <?php foreach ($grille as $list): ?>
                                 <tr>
-                                    
-
-
-                                    <td> <span class="label label-danger"><?= $this->nettoyer($list['nameCat']) ?></span></td>
+                                 
+                                    <td> <span class="label label-success"><?= $this->nettoyer($list['nameCat']) ?></span></td>
 
                                     <td><?= $this->nettoyer($list['itemname']) ?></td>
-                                    
-                                   
-                                   
-                                    
-                                    
+                                  
                                     <td> <span><?= $this->nettoyer($list['des']) ?></span></td>
                                 </tr>
                             

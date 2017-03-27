@@ -37,8 +37,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Évaluation
-        <small>J'évalue mes jeunes</small>
+        La classe 
+        <small><?= $nomClasse['yearSexion'] ?></small>
         
               
       </h1>
@@ -70,7 +70,7 @@
                 <div class="alert alert-warning alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                 <i class="icon fa fa-warning"></i>
-                Vous n'avez pas encore terminé d'évaluer cette classe. Il vous reste <?= $nbrT['nbr']-($nbrE['nbr'])?> éleves à évaluer.
+               Votre évaluation est en cours. Il vous reste <?= $nbrT['nbr']-($nbrE['nbr'])?> étudiant(s) à évaluer.
                  </div>
                <?php endif; ?>
                
@@ -84,11 +84,11 @@
                         <table  id="example1" class="table table-bordered table-striped">
 
                             <thead>
-                            <tr >
-                            <th ><div><span>N°</span></div></th>
-                                <th><div><span>Nom</span></div></th>
-                                <th ><div><span>Prénom</span></div></th>
-                                <th ><div><span>Action</span></div></th>
+                            <tr>
+                            <th><div><span>N°</span></div></th>
+                            <th><div><span>Nom</span></div></th>
+                            <th><div><span>Prénom</span></div></th>
+                            <th><div><span>Action</span></div></th>
                             </tr>
                             </thead>
                             <tbody>
