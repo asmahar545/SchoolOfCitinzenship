@@ -216,7 +216,21 @@ class ControleurTeacher extends ControleurSecurise
            $this->genererVue(array('adult'=>$adult,'id'=>$idU,'tab'=>$tab1,'idC'=>$idC));}
     
          else {
-             throw new Exception("Veuillez évaluer votre élèves");
+            
+            $idS = $this->requete->getParametre("id");
+            $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+            $adult=$this->adult->getadult($idU);
+            $idG=$this->grille->getIdGridstudent($idU, $idS);
+            $idgrid= $idG['idGridStudent'];
+             //trouver le commentaire qui et null et le mettre dan texTArea,ensuite l'éditer 
+             $this->grille->editItemStudentAjour($idS, $idU);
+             $commentaire= $this->grille->getCommentaire($idgrid);
+             $this->grille->editItemStudentToutAzero($idS, $idU);
+          
+      
+           //trouver la idclasse de l'élève
+           $idC= $this->classe->getClasseEleve($idS);
+           $this->genererVue(array('adult'=>$adult,'id'=>$idU,'idC'=>$idC));
         }
      }
      public function grilleEleve(){

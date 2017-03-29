@@ -77,6 +77,12 @@ class Grille extends Modele{
          `response`= ? WHERE id_adult= ? AND id_student= ? AND id_item=? ' ;
        $this->executerRequete($sql,array($responce,$idU,$idS,$idItem));
     }
+    public function editItemStudentToutAzero($idS,$idU){
+     
+    $sql='UPDATE `studentitem` SET 
+         `response`= 0 WHERE id_adult= ? AND id_student= ?' ;
+       $this->executerRequete($sql,array($idU,$idS));
+    }
      public function editItemStudentAjour($idS,$idU){
        $sql='UPDATE `studentitem` SET 
                `response`= 0 WHERE id_adult= ? AND id_student= ?  ' ;
@@ -137,7 +143,7 @@ class Grille extends Modele{
        
    }
    public function selectStudentEvalueParClasse($idC,$idU,$nameItem){
-      $sql="SELECT `response`, `nameE`, firstE, `nameT`, `nameItem` FROM `itemresponstudent` WHERE classe=? and idU=? and nameItem=? ORDER by firstE,nameE ASC, nameItem ASC";
+      $sql="SELECT `response`, `nameE`, firstE, `nameT`, `nameItem` FROM `itemresponstudent` WHERE classe=? and idU=? and nameItem=? ORDER by nameE ASC, nameItem ASC";
       $student= $this->executerRequete($sql,array($idC,$idU,$nameItem));
       return $student;
       
@@ -145,12 +151,12 @@ class Grille extends Modele{
    
    } 
    public function selectNomStudentEvalueParClasse($idC) {
-       $sql="SELECT DISTINCT nameE,firstE FROM `itemresponstudent` WHERE classe=?  ORDER by firstE ASC";
+       $sql="SELECT DISTINCT nameE,firstE FROM `itemresponstudent` WHERE classe=?  ORDER by nameE ASC";
        $nomStudent= $this->executerRequete($sql,array($idC,));
        return $nomStudent;
    }
    public function selectNomStudentEvalueParClasseParTeacher($idC,$idU) {
-       $sql="SELECT DISTINCT nameE,firstE FROM `itemresponstudent` WHERE classe=? AND IdU=? ORDER by firstE ASC";
+       $sql="SELECT DISTINCT nameE,firstE FROM `itemresponstudent` WHERE classe=? AND IdU=? ORDER by nameE ASC";
        $nomStudent= $this->executerRequete($sql,array($idC,$idU));
        return $nomStudent;
    }
@@ -184,7 +190,7 @@ class Grille extends Modele{
   
     public function selectResultatStudentParClasse($nameItem,$idC){
       
-      $sql="SELECT SUM(response) as resultat,firstE from itemresponstudent where nameItem=? and classe=?  group by firstE,nameE ORDER by firstE ASC";
+      $sql="SELECT SUM(response) as resultat,nameE,firstE from itemresponstudent where nameItem=? and classe=?  group by firstE,nameE ORDER by nameE ASC";
       $resultat= $this->executerRequete($sql,array($nameItem,$idC));
       return $resultat;
   }

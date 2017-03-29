@@ -41,7 +41,7 @@ public function getnbstudents(){
         return $ligne;
     }
     public function getStudentClass($id){
-        $sql = "select * from eleve where id_classe = ?";
+        $sql = "select * from eleve where id_classe = ? order by name ASC";
         $student=$this->executerRequete($sql,array($id));
         return $student;
     }

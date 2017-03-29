@@ -177,7 +177,9 @@ th.rotate > div > span {
 <!-- page script -->
 <script>
   $(function () {
-    $("#example1").DataTable();
+    $("#example1").DataTable({
+        "pageLength": 25
+    });
     $('#example2').DataTable({
       "paging": true,
       "lengthChange": false,
