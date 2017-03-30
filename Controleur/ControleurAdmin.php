@@ -181,13 +181,13 @@ class ControleurAdmin extends ControleurSecurise
         $classe = $this->requete->getParametre("classe");
         $idU= $this->requete->getParametre("adult");
         $this->classe->deleteDroit($classe, $idU);
-        
+        $this->classe->deleteEvaluationDuDroit($classe, $idU);
         $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
         $adult=$this->adult->getadult($idU);
         $this->genererVue(array('adult'=>$adult));
         }
         else {
-            throw new Exception("Impossible de supprimer cette autorisation car il a de évaluation en cours de ce professeur avec cette classe");
+            throw new Exception("Impossible de supprimer cette autorisation  ");
         }
 
     }

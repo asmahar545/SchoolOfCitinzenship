@@ -110,6 +110,13 @@ public function getnbClasses(){
        return $rep;
      
     }
+    public function deleteEvaluationDuDroit($idc,$ida){
+       
+       $sql="DELETE FROM evaluatestudent WHERE id_adult=? and id_student IN (SELECT id_student FROM eleve WHERE id_classe=?)";
+       $this->executerRequete($sql,array($ida,$idc));
+      
+     
+    }
     public function droitExist($idc,$ida){
         $sql= "select * from consultclass where id_classe = ? and id_adult=?";
         $rep=$this->executerRequete($sql,array($idc,$ida));

@@ -51,11 +51,7 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title"> </h3>
-              <p>En supprimant une autorisation,
-               il y a défault du système pour le total des évaluations.
-               Veuillez supprimer une autorisation qu'en fin de période. En ajoutant une autorisation,
-               il y a augmentation d'évaluation.
-               Veuillez ajouter une autorisation qu'en fin de période.</p>
+             
              
             </div>
             <!-- /.box-header -->
@@ -162,11 +158,9 @@
          <div class="modal-content">
             <div class="modal-header">
              <button type="button" class="close" data-dismiss="modal">x</button>
-             <h4 class="modal-title">Supression d'une autoriation:</h4><br><br>
-               <p>Attention! Cette supression peut causer une erreur. 
-               En effet, en supprimant une autorisation,
-               il peut  y avoir un défault du système.
-               Veuillez supprimer une autorisation qu'en fin de période.</p>
+             <h4 class="modal-title">Supression d'une autorisation:</h4><br><br>
+             <p>Attention, en supprimant une autorisation d'un professeur ayant <b>conclu</b> l'évaluation d'une classe,
+                celle-ci sera, par conséquent, effacée</p>
                </div>
              
              <br>
