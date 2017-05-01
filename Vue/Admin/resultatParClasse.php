@@ -96,7 +96,7 @@
                                      if ($list['resultat'] ==$nbteacher): ?>
                                     <td><i class="fa fa-check"></i></td>
                                      <?php else: ?>
-                                     <td><?= $list['resultat']?></td>
+                                     <td><?= $list['resultat']?>/<?= $nbteacher ?> </td>
                                      <?php endif; ?>
                                    <?php endforeach; ?>    
                                     </tr>
@@ -105,7 +105,7 @@
                                      <?php if ($list['resultat'] ==$nbteacher): ?>
                                     <td><i class="fa fa-check"></i></td>
                                      <?php else: ?>
-                                     <td><?= $list['resultat']?></td>
+                                     <td><?= $list['resultat']?>/<?= $nbteacher ?> </td>
                                      <?php endif; ?>
                                      
                                     
@@ -117,7 +117,7 @@
                                     <?php if ($list['resultat'] ==$nbteacher): ?>
                                     <td><i class="fa fa-check"></i></td>
                                      <?php else: ?>
-                                     <td><?= $list['resultat']?></td>
+                                     <td><?= $list['resultat']?>/<?= $nbteacher ?> </td>
                                      <?php endif; ?>
                                     
                                     
@@ -127,7 +127,7 @@
                                     <?php if ($list['resultat'] ==$nbteacher): ?>
                                     <td><i class="fa fa-check"></i></td>
                                      <?php else: ?>
-                                     <td><?= $list['resultat']?></td>
+                                     <td><?= $list['resultat']?>/<?= $nbteacher ?> </td>
                                      <?php endif; ?>
                                     
                                    
@@ -137,7 +137,7 @@
                                    <?php if ($list['resultat'] ==$nbteacher): ?>
                                     <td><i class="fa fa-check"></i></td>
                                      <?php else: ?>
-                                     <td><?= $list['resultat']?></td>
+                                     <td><?= $list['resultat']?>/<?= $nbteacher ?> </td>
                                      <?php endif; ?>
                                     
                                    
@@ -148,7 +148,7 @@
                                     <?php if ($list['resultat'] ==$nbteacher): ?>
                                     <td><i class="fa fa-check"></i></td>
                                      <?php else: ?>
-                                     <td><?= $list['resultat']?></td>
+                                     <td><?= $list['resultat']?>/<?= $nbteacher ?> </td>
                                      <?php endif; ?>
                                
                                    
@@ -158,7 +158,7 @@
                                  <?php if ($list['resultat'] ==$nbteacher): ?>
                                     <td><i class="fa fa-check"></i></td>
                                      <?php else: ?>
-                                     <td><?= $list['resultat']?></td>
+                                     <td><?= $list['resultat']?>/<?= $nbteacher ?> </td>
                                      <?php endif; ?>
                                     
                                    <?php endforeach; ?>   </tr> 
@@ -167,7 +167,7 @@
                                      <?php if ($list['resultat'] ==$nbteacher): ?>
                                     <td><i class="fa fa-check"></i></td>
                                      <?php else: ?>
-                                     <td><?= $list['resultat']?></td>
+                                     <td><?= $list['resultat']?>/<?= $nbteacher ?> </td>
                                      <?php endif; ?>
                                     
                                     
@@ -178,7 +178,7 @@
                                     <?php if ($list['resultat'] ==$nbteacher): ?>
                                     <td><i class="fa fa-check"></i></td>
                                      <?php else: ?>
-                                     <td><?= $list['resultat']?></td>
+                                     <td><?= $list['resultat']?>/<?= $nbteacher ?> </td>
                                      <?php endif; ?>
                                     
                                     
@@ -189,7 +189,7 @@
                                    <?php if ($list['resultat'] ==$nbteacher): ?>
                                     <td><i class="fa fa-check"></i></td>
                                      <?php else: ?>
-                                     <td><?= $list['resultat']?></td>
+                                     <td><?= $list['resultat']?>/<?= $nbteacher ?> </td>
                                      <?php endif; ?>
                                     
                                     

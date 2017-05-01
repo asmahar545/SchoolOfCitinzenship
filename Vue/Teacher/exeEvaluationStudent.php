@@ -56,7 +56,7 @@
           
           <h4>Veuillez choisir une des trois propositions</h4>
           
-          <a href="teacher/eleves/<?=$idC ?>">Revenir  à la  classe</a><br>
+          <a href="teacher/eleves/<?=$idC['nb'] ?>">Revenir  à la  classe</a><br>
           
           <a href="teacher/mesclasses">Revenir à mes classes</a><br> 
           

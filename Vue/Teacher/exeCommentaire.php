@@ -54,7 +54,7 @@
 
          
           <br>
-          <a href="teacher/listStudentClass/<?=$idC ?>">Revenir à mes élèves</a> <br> <br>
+          <a href="teacher/listStudentClass/<?=$idC['nb'] ?> ?>">Revenir à mes élèves</a> <br> <br>
           <a href="teacher/classe">Revenir à mes classes</a> <br> <br>
           <a href="teacher/">Revenir au menu principal </a><br> <br>
         </div>

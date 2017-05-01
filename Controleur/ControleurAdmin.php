@@ -614,13 +614,16 @@ class ControleurAdmin extends ControleurSecurise
       if ($this->requete->existeParametre("id")){
             $idE = $this->requete->getParametre("id");
             //faut trouver un moyen de prendre idStudent que le nameE car il peut avoir plusieurs élève ayant le même prénom
+            $idC= $this->classe->getClasseEleve($idE);
+            $idClasse= $idC['nb'];
+            $nbrTeachEvalue= $this->classe->nombreTeacherevalueUneClasse($idClasse);
             $commentaire= $this->grille->selectCommentaire($idE);
             $period=$this->grille->selectPeriod();
             $student= $this->student->getStudentsName($idE); 
-                    $retard= $this->student->selectRetard($idE);
+            $retard= $this->student->selectRetard($idE);
             $ceinture= $this->student->selectCeinture($idE);
             $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
-          $nameItem1="Je suis respectueux envers les personnes";
+              $nameItem1="Je suis respectueux envers les personnes";
               $nameItem2="J’adopte une attitude non violente";
               $nameItem3="Je suis respectueux du matériel et de l’environnement";
               $nameItem4="Je parle de façon adéquate";
@@ -663,6 +666,7 @@ class ControleurAdmin extends ControleurSecurise
                   'retard'=>$retard,
                 'student'=>$student,
                   'commentaire'=>$commentaire,
+                  'nbteacher'=> $nbrTeachEvalue,
                 'item'=>$item));
               
               

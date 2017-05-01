@@ -52,7 +52,7 @@
         <div class="callout callout-success">
             
           <h4>La montée de niveau de l’élève a bien été enregistrée </h4>
-          <a href="teacher/listStudentClass/<?=$idC ?>">Revenir à mes élèves</a> <br> <br>
+          <a href="teacher/listStudentClass/<?=$idC['nb'] ?>">Revenir à mes élèves</a> <br> <br>
           <a href="teacher/classe">Revenir à mes classes</a> <br> <br>
           <a href="teacher/">Revenir au menu principal </a><br> <br>
            
