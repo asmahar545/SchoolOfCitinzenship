@@ -119,6 +119,56 @@
         <!-- /.col --> 
       </div>
   </section>
+  
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Professeurs qui n'ont pas commencé à évaluer leurs élèves</h3>
+            </div>
+            <!-- /.box-header -->
+             <div class="box-body table-responsive no-padding">
+              <table id="example1" class="table table-bordered table-hover">
+                    <thead>
+                            <tr>
+                                <th>N°</th>
+                                <th>Nom</th>
+                                <th>Prénom</th>
+                               
+                            </tr>
+                     </thead>
+                     <tbody>
+                            <?php $var=1?>
+                            <?php foreach ($teacherNon as $list): ?>
+                                <tr>
+                                    
+                                    <td><?php echo $var++ ?></td>
+                                    <td><?= $this->nettoyer($list['name']) ?></td>
+                                    
+                                    <td><?= $this->nettoyer($list['firstname']) ?></td>
+                                   
+                                    
+                                    
+                                </tr>
+                            
+                            <?php endforeach; ?>
+                    </tbody>
+           
+          
+                 </table>
+              </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+
+          
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+         
+    </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->

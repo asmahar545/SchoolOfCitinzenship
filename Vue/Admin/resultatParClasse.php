@@ -79,7 +79,7 @@
                             <tfoot>
                               <tr >
                                   <th colspan="1" class="info"><?= $period['period']?> </th>
-                                   <th colspan="5" class="warning" >Nombre de professeur de la classe : <?= $nbteacher ?> </th>
+                                   <th colspan="5" class="warning" >Nombre de professeur de la classe : <?= $nbteachers ?> </th>
                                    <th colspan="5" class="danger" ><i class="fa fa-check">   </i> Ultimatum de voix positives</th> 
                                    
                                    <th colspan="4"  ><a  href="javascript:window.print()"  class="btn bg-purple btn-xs"><i class="fa fa-print"></i> Imprimer</a></th>

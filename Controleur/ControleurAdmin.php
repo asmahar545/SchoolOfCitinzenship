@@ -500,12 +500,14 @@ class ControleurAdmin extends ControleurSecurise
         
     }
     public function configuration(){
+        
+        $teachersPasEvalue = $this->adult->nonEvaluateTeacher();
      $period=$this->grille->selectPeriod();
      $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
      $adult=$this->adult->getadult($idU);
      $nombreEvalueTotalToutProfesseur= $this->classe->nombreEleveTotalEvalueToutProfeseur();
      $nbrDejaProf= $this->classe->nombreEleveEvalueToutProfeseur();
-     $this->genererVue(array('adult'=>$adult ,'nbrTotal'=>$nombreEvalueTotalToutProfesseur,'nbrEvalue'=>$nbrDejaProf,'period'=>$period));
+     $this->genererVue(array('teacherNon'=>$teachersPasEvalue,'adult'=>$adult ,'nbrTotal'=>$nombreEvalueTotalToutProfesseur,'nbrEvalue'=>$nbrDejaProf,'period'=>$period));
      
       
     }
@@ -553,10 +555,11 @@ class ControleurAdmin extends ControleurSecurise
   }
  public function resultatParClasse(){
       if ($this->requete->existeParametre("id")){
-              $period=$this->grille->selectPeriod();
               $idC = $this->requete->getParametre("id");
+               $period=$this->grille->selectPeriod();
               $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
-              $nbrTeachEvalue= $this->classe->nombreTeacherevalueUneClasse($idC);
+              $nbrTeachEvalueTOTAL= $this->classe->nombreTeacherevalueUneClasse($idC);
+              $nbrTeachEvalues=$this->adult->teacherNbrEvaluate($idC);
               $nomClasse= $this->classe->getClass($idC);
               $nameItem1="Je suis respectueux envers les personnes";
               $nameItem2="J’adopte une attitude non violente";
@@ -578,9 +581,7 @@ class ControleurAdmin extends ControleurSecurise
             $Item8= $this->grille->selectResultatStudentParClasse($nameItem8, $idC);
             $Item9= $this->grille->selectResultatStudentParClasse($nameItem9, $idC);
             $Item10= $this->grille->selectResultatStudentParClasse($nameItem10, $idC);
-            
-          
-              
+           
               $nomStudent=$this->grille->selectNomStudentEvalueParClasse($idC);
               $item = $this->grille->selectItemStudentEvalueParClasse($idC);
               $adult=$this->adult->getadult($idU);
@@ -597,7 +598,8 @@ class ControleurAdmin extends ControleurSecurise
                 'item10'=>$Item10,
                 'period'=>$period,
                 'nomClass'=>$nomClasse,
-                'nbteacher'=> $nbrTeachEvalue,
+                'nbteacher'=> $nbrTeachEvalues,
+                'nbteachers'=>$nbrTeachEvalueTOTAL,
                 'nomStudent'=>$nomStudent,
                 'item'=>$item));
     
@@ -617,6 +619,7 @@ class ControleurAdmin extends ControleurSecurise
             $idC= $this->classe->getClasseEleve($idE);
             $idClasse= $idC['nb'];
             $nbrTeachEvalue= $this->classe->nombreTeacherevalueUneClasse($idClasse);
+            $nbrTeachEvalues=$this->adult->teacherNbrEvaluate($idClasse);
             $commentaire= $this->grille->selectCommentaire($idE);
             $period=$this->grille->selectPeriod();
             $student= $this->student->getStudentsName($idE); 
@@ -667,6 +670,7 @@ class ControleurAdmin extends ControleurSecurise
                 'student'=>$student,
                   'commentaire'=>$commentaire,
                   'nbteacher'=> $nbrTeachEvalue,
+                  'nbteachers'=> $nbrTeachEvalues,
                 'item'=>$item));
               
               

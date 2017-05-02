@@ -77,6 +77,20 @@ class Adult extends Modele
        
         $rep=$this->executerRequete($sql,array($name,$firstname,$email,$password,$id));
     }
+    public function teacherNbrEvaluate($classe)
+     {
+        $sql="select count(*) FROM itemresponstudent WHERE classe= ? group by idU";
+        $rep=$this->executerRequete($sql,array($classe));
+        $nb= $rep->rowCount();
+        return $nb;
+    }
+public function nonEvaluateTeacher(){
+ 
+   $sql="SELECT * FROM `adult` where id_adult in (select id_adult FROM consultclass where id_adult NOT in (SELECT id_adult FROM evaluatestudent))";
+   $tab=$this->executerRequete($sql);
+   return $tab;
+}
+
    
       
 }
