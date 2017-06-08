@@ -38,43 +38,47 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
+     
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        
-        Résultat
-      </h1>
+         
+     
      
     </section>
 
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-10">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Évaluation de <?= $student['name']?> <?= $student['firstName']?>   pour la période de <?= $period['period']?> </h3>
+                
+                <h4 class="box-title"><img src="images/CampusSaintJean-LOGO.jpg" width="180">&nbsp;&nbsp;&nbsp;&nbsp;<b> Evaluation comportementale de <?= $student['name']?> <?= $student['firstName']?><b> </h4>
+                <p> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?= $period['period']?> 2017</p>
+              <h4>Pour cette période tes professeurs et éducateurs ont évalué ton comportement<br> 
+                  d'élève et de citoyen :
+              </h4>
             </div>
              
-              
             <!-- /.box-header -->
            <div class="box-body table-responsive no-padding">
                           <table  id="example1" class="table table-bordered table-striped"> 
                              <thead>
-                            <tr >
-                                <th>Grille citoyenne </th>
-                                <th> Nombres de voix positives </th>
+                            <tr>
+                                <th>Compétences	évaluées</th>
+                                <th> <i class="fa fa-close"></i>/<i class="fa fa-check"></i>
+                               <!--       Nbre d’évaluations	positives / Nbre total d’évaluations--> </th>
                             
                             </tr>
                             </thead>
                           
                             <tfoot>
                               <tr >
-                                  <th colspan="1" class=info><?= $period['period']?> </th>
+                                  
+                                  <th><a class="danger" href="javascript:window.print()" ><i class="fa fa-clock-o"></i> Nombre de retard : </a></th>
+                                   <th colspan="1" class="danger" > <?= $retard['retard']?>  </th>
+                                  <!--  <th colspan="1" class="danger" > Commentaire du titulaire // $commentaire['commentaire'] </th> -->
                                    
-                                   <th  colspan="1" class="danger" > Ceinture "<?= $ceinture['monteCeinture']?>"  et  <?= $retard['retard']?> retard(s) </th>
-                                    <th  colspan="1" class="danger" > Commentaire du titulaire <?= $commentaire['commentaire']?></th>
-                                   <th ><a  href="javascript:window.print()" class="btn bg-purple  btn-xs"><i class="fa fa-print"></i> Imprimer</a></th>
                                 </tr>
                             </tfoot>
                             <tbody>
@@ -166,6 +170,50 @@
           
           <!-- /.box -->
         </div>
+           <div class="col-xs-2">
+                 <?php if ($ceinture['monteCeinture']=="Jaune"): ?>
+               <h3> <font color="red"> Félicitations!</font></h3> <br><h4><b>Tu obtiens le badge <?= $ceinture['monteCeinture']?>.<b> </h4>
+               <br> 
+               <br> 
+               <br> 
+               <br> 
+               <br> <br> <br> 
+               <br> <br> 
+               <br> <br> 
+               <br> 
+               <br> 
+               <br> 
+               <br> <br> 
+                 <br>
+             
+               
+              
+                   <img src="images/bleu.jpg" width="120">  
+                <?php else: ?>
+                   <h3> <font color="red">  Félicitations!</font></h3> <br><h4><b>Tu obtiens le badge <?= $ceinture['monteCeinture']?>.<b> </h4>
+                   <br> 
+               <br> 
+               <br> 
+               <br> 
+               <br> <br> <br> 
+               <br> <br> 
+               <br> <br> 
+               <br> 
+               <br> 
+               <br> 
+               <br> <br>                
+                 <br> 
+                   <img src="images/blanc.jpg" width="120">
+                   
+    
+                  <?php endif; ?>
+                
+                  
+                          		
+             </div>
+                      
+               
+               
         <!-- /.col -->
       </div>
       <!-- /.row -->

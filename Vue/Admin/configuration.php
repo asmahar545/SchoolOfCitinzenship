@@ -126,7 +126,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Professeurs qui n'ont pas commencé à évaluer leurs élèves</h3>
+              <h3 class="box-title">Professeurs qui n'ont pas débuté l'évaluation</h3>
             </div>
             <!-- /.box-header -->
              <div class="box-body table-responsive no-padding">

@@ -693,33 +693,37 @@ class ControleurAdmin extends ControleurSecurise
      $this->genererVue(array('adult'=>$adult,'id'=>$idE,'retard'=>$retard));}
      
   }
-  public function monterDeCeinture(){
+public function monterDeCeinture(){
       if ($this->requete->existeParametre("id")){
+         
     $idE = $this->requete->getParametre("id");
      $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
      $adult=$this->adult->getadult($idU);
-      
-      $this->genererVue(array('adult'=>$adult,'id'=>$idE));}
+     $ceinture= $this->student->selectCeinture($idE);
+     $this->genererVue(array('adult'=>$adult,'id'=>$idE,'ceinture'=>$ceinture));}
       else
           {
          throw new Exception("Erreur de chargement de page"); 
       }
       
 }
- public function exeMonterDeCeinture(){
+
+public function exeMonterDeCeinture(){
       if ($this->requete->existeParametre("id")&&$this->requete->existeParametre("ceinture")){
      $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
      $adult=$this->adult->getadult($idU);
       $ceinture = $this->requete->getParametre("ceinture");
        $id = $this->requete->getParametre("id");
+       $idC= $this->classe->getClasseEleve($id);
      $this->student->editChildrenCeinture($ceinture, $id);
-      $this->genererVue(array('adult'=>$adult));}
+      $this->genererVue(array('adult'=>$adult,'idC'=>$idC));}
      else
           {
          throw new Exception("Erreur de chargement de page"); 
       }
       
 }
+
  public function exeRetard(){
       if ($this->requete->existeParametre("id")&&$this->requete->existeParametre("retard")){
      $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
@@ -727,7 +731,8 @@ class ControleurAdmin extends ControleurSecurise
       $retard = $this->requete->getParametre("retard");
        $id = $this->requete->getParametre("id");
      $this->student->editChildrenRetard($retard, $id);
-      $this->genererVue(array('adult'=>$adult));}
+      $idC= $this->classe->getClasseEleve($id);
+      $this->genererVue(array('adult'=>$adult,'idC'=>$idC));}
      else
           {
          throw new Exception("Erreur de chargement de page"); 

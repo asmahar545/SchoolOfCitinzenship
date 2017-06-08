@@ -56,9 +56,13 @@
             <div class="box-body">
                     <form action="admin/exeMonterDeCeinture/<?= $id ?>"class="form-horizontal form-label-left" method="post">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Choix de la ceinture pour l'élève</a></h3>
+                            <h3 class="box-title">Le badge actuel de l'étudiant est <?= $ceinture['monteCeinture']?>.
+                            <br>
+                            <br>
+                            
+                            Mettez-le à jour si son évaluation est positive. 
+                           </h3>
                         </div>
-                        <br>
                         <div class="box-body">
                            
                             <div class="form-group">

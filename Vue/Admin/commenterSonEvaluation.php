@@ -2,7 +2,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <?php $this->titre = "Admin"; ?>
+  <?php $this->titre = "finDePeriode"; ?>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -41,31 +41,43 @@
 <?php require 'Vue/_Commun/headerPrinc.php'; ?>
 <?php require 'Vue/_Commun/navPrinc.php'; ?>
 
-  
+  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <div class="container">
-     
+    <!-- Content Header (Page header) -->
+  
+     <!-- Main content -->
+    <section class="content">
+      <!-- Small boxes (Stat box) -->
+      <div class="row">
+       <div class="col-md-12">
 
-      <!-- Main content -->
-      <section class="content">
-        
-        <div class="callout callout-warning">
-          <h4>Le retard de l'élève  bien été enregitré </h4>
-          <a href="admin/listStudentClass/<?=$idC['nb'] ?>">Revenir à mes élèves</a> <br> <br>
-          <a href="admin/classe">Revenir à mes classes</a> <br> <br>
-          <a href="admin/">Revenir au menu principal </a><br> <br>
-          
-          
-          
-          
-        </div>
-       
-        <!-- /.box -->
-      </section>
-      <!-- /.content -->
-    </div>
-    <!-- /.container -->
+          <div class="box box-danger">
+            
+            <div class="box-body">
+                   
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Commentaire général du conseil de classe</h3>
+                        </div>
+                        <br>
+                        <div class="box-body">
+                              <div class="form-group">
+                    <div class=" col-sm-12">
+                  <label> Laissez un commentaire générale sur le jeune après le conseil de classe</label>
+                  <textarea name="commentaire"  class="form-control" rows="3" placeholder="Ecrivez-le ici..." required><?=$commentaire['commentaire']?></textarea>
+                  </div>
+                  </div>
+                     
+
+
+                </div>
+         </div>
+       </div>
+      </div>
+
+  </section>
+    <!-- /.content -->
   </div>
+  <!-- /.content-wrapper -->
 <?php require 'Vue/_Commun/Folder.php'; ?>
 <?php require 'Vue/_Commun/Aside.php'; ?>
  
@@ -113,4 +125,13 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
-</body> 
+   <script>
+    $('#datepicker').datepicker({
+      autoclose: true
+    });</script>
+      <script>
+    $('#datepicker1').datepicker({
+      autoclose: true
+    });</script>
+</body>
+           
