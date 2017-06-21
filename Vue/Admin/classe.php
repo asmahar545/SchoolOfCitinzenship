@@ -54,7 +54,7 @@
             </div>
             <!-- /.box-header -->
              <div class="box-body table-responsive no-padding">
-              <table id="example1" class="table table-bordered table-hover">
+              <table id="example2" class="table table-bordered table-striped">
              <thead>
                                 <th>N°</th>
                                 <th>Classes</th>
@@ -129,6 +129,7 @@
 <script src="dist/js/demo.js"></script>
 <!-- page script -->
 <script>
+
   $(function () {
     $("#example1").DataTable();
     $('#example2').DataTable({

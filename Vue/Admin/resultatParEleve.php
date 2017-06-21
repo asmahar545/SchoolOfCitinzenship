@@ -190,7 +190,7 @@
               
                    <img src="images/bleu.jpg" width="120">  
                 <?php else: ?>
-                   <h3> <font color="red">  Félicitations!</font></h3> <br><h4><b>Tu obtiens le badge <?= $ceinture['monteCeinture']?>.<b> </h4>
+                   <h3><b>Tu as actuellement le badge <?= $ceinture['monteCeinture']?>.<b> </h3>
                    <br> 
                <br> 
                <br> 

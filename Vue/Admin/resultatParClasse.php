@@ -64,7 +64,7 @@
 
                            <thead>
                             <tr >
-                                <th>Grille citoyenne  
+                                <th class ="font">Grille citoyenne  
                                 
                                 
                                 </th>
@@ -232,10 +232,10 @@
 <!-- ./wrapper -->
 <style>
     th.item{
-        font-size: 50%
+        font-size: 45%
     }
 th.font{
-        font-size: 70%;
+        font-size: 40%;
     }
     th.rotate {
   /* Something you can count on */
