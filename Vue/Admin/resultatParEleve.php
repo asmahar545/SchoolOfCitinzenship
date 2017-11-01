@@ -68,6 +68,8 @@
                                                             <th>Compétences	évaluées</th>
                                                             <th> <i class="fa fa-close"></i>/<i class="fa fa-check"></i>
                                                                 <!--       Nbre d’évaluations	positives / Nbre total d’évaluations--> </th>
+                                                            <th> <i class="fa fa-user"></i></th>
+
 
                                                         </tr>
                                                     </thead>
@@ -85,9 +87,19 @@
 
 
                                                         <tr><th class="danger">Je suis respectueux envers les personnes</th>
+                                                            <!--Cotations-->
                                                             <?php foreach ($item1 as $list): ?>
 
                                                                 <td><?= $list['resultat'] ?>/<?= $nbteachers ?></td>
+
+                                                            <?php endforeach; ?>
+
+
+                                                            <!-- Professeurs   qui ont coté négativement-->
+                                                            <?php foreach ($prof1 as $prof): ?>
+
+                                                                <td class="info"><?= $prof['nameT'] ?></td>
+
 
                                                             <?php endforeach; ?>
                                                         </tr>
@@ -97,25 +109,60 @@
 
 
 
-                                                            <?php endforeach; ?>   </tr>
+                                                            <?php endforeach; ?>
+                                                            <!-- Professeurs   qui ont coté négativement-->
+                                                            <?php foreach ($prof2 as $prof): ?>
+
+                                                                <td class="info"><?= $prof['nameT'] ?></td>
+
+
+                                                            <?php endforeach; ?>
+                                                        </tr>
                                                         <tr><th class="danger">Je suis respectueux du matériel et de l’environnement</th> <?php foreach ($item3 as $list): ?>
 
                                                                 <td><?= $list['resultat'] ?>/<?= $nbteachers ?> </td>
 
 
-                                                            <?php endforeach; ?>   </tr>
+                                                            <?php endforeach; ?>
+                                                            <!-- Professeurs   qui ont coté négativement-->
+                                                            <?php foreach ($prof3 as $prof): ?>
+
+                                                                <td class="info"><?= $prof['nameT'] ?></td>
+
+
+                                                            <?php endforeach; ?>
+
+
+                                                        </tr>
                                                         <tr><th class="danger">Je parle de façon adéquate</th> <?php foreach ($item4 as $list): ?>
 
                                                                 <td><?= $list['resultat'] ?>/<?= $nbteachers ?> </td>
 
 
-                                                            <?php endforeach; ?>   </tr>
+                                                            <?php endforeach; ?>
+
+                                                            <!-- Professeurs   qui ont coté négativement-->
+                                                            <?php foreach ($prof4 as $prof): ?>
+
+                                                                <td class="info"><?= $prof['nameT'] ?></td>
+
+
+                                                            <?php endforeach; ?>
+                                                        </tr>
                                                         <tr><th class="danger">Je suis solidaire</th> <?php foreach ($item5 as $list): ?>
 
                                                                 <td><?= $list['resultat'] ?>/<?= $nbteachers ?> </td>
 
 
-                                                            <?php endforeach; ?>   </tr>
+                                                            <?php endforeach; ?>
+
+                                                            <!-- Professeurs   qui ont coté négativement-->
+                                                            <?php foreach ($prof5 as $prof): ?>
+
+                                                                <td class="info"><?= $prof['nameT'] ?></td>
+
+
+                                                            <?php endforeach; ?></tr>
 
                                                         <tr><th class="danger">Je respecte les règles de l’école</th> <?php foreach ($item6 as $list): ?>
 
@@ -123,35 +170,73 @@
 
 
 
-                                                            <?php endforeach; ?>   </tr>
+                                                            <?php endforeach; ?>
+
+                                                            <!-- Professeurs   qui ont coté négativement-->
+                                                            <?php foreach ($prof6 as $prof): ?>
+
+                                                                <td class="info"><?= $prof['nameT'] ?></td>
+
+
+                                                            <?php endforeach; ?></tr>
                                                         <tr><th class="danger">	Je m’organise et je deviens autonome
                                                             </th> <?php foreach ($item7 as $list): ?>
 
                                                                 <td><?= $list['resultat'] ?>/<?= $nbteachers ?> </td>
 
 
-                                                            <?php endforeach; ?>   </tr>
+                                                            <?php endforeach; ?>
+
+                                                            <!-- Professeurs   qui ont coté négativement-->
+                                                            <?php foreach ($prof7 as $prof): ?>
+
+                                                                <td class="info"><?= $prof['nameT'] ?></td>
+
+
+                                                            <?php endforeach; ?></tr>
                                                         <tr><th class="danger">J’écoute les professeurs et les élèves sans les interrompre
                                                             </th> <?php foreach ($item8 as $list): ?>
 
                                                                 <td><?= $list['resultat'] ?>/<?= $nbteachers ?> </td>
 
 
-                                                            <?php endforeach; ?>   </tr>
+                                                            <?php endforeach; ?>
+                                                            <!-- Professeurs   qui ont coté négativement-->
+                                                            <?php foreach ($prof8 as $prof): ?>
+
+                                                                <td class="info"><?= $prof['nameT'] ?></td>
+
+
+                                                            <?php endforeach; ?></tr>
                                                         <tr><th class="danger">Je circule dans l’école calmement
                                                             </th> <?php foreach ($item9 as $list): ?>
 
                                                                 <td><?= $list['resultat'] ?>/<?= $nbteachers ?> </td>
 
 
-                                                            <?php endforeach; ?>   </tr>
+                                                            <?php endforeach; ?>
+                                                            <!-- Professeurs   qui ont coté négativement-->
+                                                            <?php foreach ($prof9 as $prof): ?>
+
+                                                                <td class="info"><?= $prof['nameT'] ?></td>
+
+
+                                                            <?php endforeach; ?>
+                                                        </tr>
                                                         <tr><th class="danger">Je donne le meilleur de moi-même
                                                             </th> <?php foreach ($item10 as $list): ?>
 
                                                                 <td><?= $list['resultat'] ?>/<?= $nbteachers ?> </td>
 
 
-                                                            <?php endforeach; ?>   </tr>
+                                                            <?php endforeach; ?>
+                                                            <!-- Professeurs   qui ont coté négativement-->
+                                                            <?php foreach ($prof10 as $prof): ?>
+
+                                                                <td class="info"><?= $prof['nameT'] ?></td>
+
+
+                                                            <?php endforeach; ?></tr>
 
                                                     </tbody>
 
