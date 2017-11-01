@@ -10,25 +10,22 @@ require_once 'Modele/Adult.php';
  *
  * @author Baptiste Pesquet
  */
-class ControleurConnexion extends Controleur
-{
+class ControleurConnexion extends Controleur {
+
     private $adult;
 
-    public function __construct()
-    {
+    public function __construct() {
         $this->adult = new Adult();
         $this->utilisateur = new Utilisateur();
     }
 
-    public function index()
-    {
+    public function index() {
         $this->genererVue();
     }
 
-    public function connecter()
-    {
+    public function connecter() {
         if ($this->requete->existeParametre("login") &&
-            $this->requete->existeParametre("mdp")
+                $this->requete->existeParametre("mdp")
         ) {
             $login = $this->requete->getParametre("login");
             $mdp = $this->requete->getParametre("mdp");
@@ -36,36 +33,31 @@ class ControleurConnexion extends Controleur
             if ($this->utilisateur->connecter($login, $mdp)) {
 
                 //si il est admin
-                 if($login =="tic@campus-st-jean.be" && $mdp =="campus41136") {
+                if ($login == "info@valioapp.be" && $mdp == "valio") {
                     $utilisateur = $this->utilisateur->getUtilisateur($login, $mdp);
 
-                    $this->requete->getSession()->setAttribut("idUtilisateur",
-                        $utilisateur['idUtilisateur']);
+                    $this->requete->getSession()->setAttribut("idUtilisateur", $utilisateur['idUtilisateur']);
                     $this->requete->getSession()->setAttribut("login", $utilisateur['login']);
                     $this->rediriger("Admin");
                 }  //si il est un des menbres du personnel
                 else {
                     $utilisateur = $this->utilisateur->getUtilisateur($login, $mdp);
 
-                    $this->requete->getSession()->setAttribut("idUtilisateur",
-                        $utilisateur['idUtilisateur']);
+                    $this->requete->getSession()->setAttribut("idUtilisateur", $utilisateur['idUtilisateur']);
                     $this->requete->getSession()->setAttribut("login", $utilisateur['login']);
                     $this->rediriger("Teacher");
                 }
-
             } else
                 $this->genererVue(array('msgErreur' =>
                     'Login ou mot de passe incorrects'), "index");
         } else
             $this->genererVue(array('msgErreur' =>
                 'Login ou mot de passe non défini'), "index");
-
     }
 
-    public function deconnecter()
-    {
+    public function deconnecter() {
         $this->requete->getSession()->detruire();
         $this->rediriger("admin");
     }
-}
 
+}
