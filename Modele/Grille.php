@@ -101,15 +101,15 @@ class Grille extends Modele {
     }
 
     public function editCommentaire($commentaire, $idG) {
-        $sql = "UPDATE `gridstudent` SET `commentaire`=? WHERE idGridStudent = ?";
+        $sql = "UPDATE `gridstudent` SET `commentaire`= ?  WHERE  idGridStudent = ?";
         $this->executerRequete($sql, array($commentaire, $idG));
         $rqt = "UPDATE `itemresponstudent` SET `commentaire`=? WHERE idE=?";
         $this->executerRequete($rqt, array($commentaire, $idG));
     }
 
-    public function selectCommentaire($idE) {
-        $sql = "SELECT `commentaire` FROM `itemresponstudent` WHERE idE=? and nameItem='Je suis solidaire'";
-        $com = $this->executerRequete($sql, array($idE));
+    public function selectCommentaire($idE, $idU) {
+        $sql = "SELECT `commentaire` FROM `itemresponstudent` WHERE idE=? and nameItem='Je suis solidaire' and idU= ?";
+        $com = $this->executerRequete($sql, array($idE, $idU));
         $ligne = $com->fetch();
         return $ligne;
     }

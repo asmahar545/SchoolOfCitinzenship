@@ -1,6 +1,6 @@
- <footer class="main-footer">
+<footer class="main-footer">
     <div class="pull-right hidden-xs">
-      <b>miec.be</b>
+        <b>2017-2018</b>
     </div>
-  <b>valioapp</b>.be
+    <b>valioapp</b>.be
 </footer>
