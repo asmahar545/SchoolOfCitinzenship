@@ -65,6 +65,19 @@ class ControleurAdmin extends ControleurSecurise {
         $this->genererVue(array('adult' => $adult, 'classes' => $classe));
     }
 
+    public function badge() {
+        $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+
+
+        $adult = $this->adult->getadult($idU);
+        $classe = $this->classe->getClasses();
+        $bleue = $this->student->getStudentsBadges("Bleu");
+        $blanc = $this->student->getStudentsBadges("Blanc");
+        $jaune = $this->student->getStudentsBadges("Jaune");
+
+        $this->genererVue(array('adult' => $adult, 'classes' => $classe, 'Bleue' => $bleue, 'Blanc' => $blanc, 'Jaune' => $jaune));
+    }
+
     public function listStudentClass() {
         if ($this->requete->existeParametre("id")) {
             $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
@@ -606,13 +619,6 @@ class ControleurAdmin extends ControleurSecurise {
             $prof9 = $this->grille->selectTeacherEvaluateNegative($nameItem9, $idE);
             $prof10 = $this->grille->selectTeacherEvaluateNegative($nameItem10, $idE);
 
-
-
-
-
-
-
-
             $item = $this->grille->selectItemStudentEvalueParClasse(1);
             $adult = $this->adult->getadult($idU);
             $this->genererVue(array('adult' => $adult,
@@ -663,11 +669,13 @@ class ControleurAdmin extends ControleurSecurise {
 
     public function monterDeCeinture() {
         if ($this->requete->existeParametre("id")) {
-
+            //connaitre la période
+            $periodScolaire = $this->grille->selectPeriodScolaire();
+            $period = $periodScolaire['period'];
             $idE = $this->requete->getParametre("id");
             $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
             $adult = $this->adult->getadult($idU);
-            $ceinture = $this->student->selectCeinture($idE);
+            $ceinture = $this->student->selectCeinture($period, $idE);
             $this->genererVue(array('adult' => $adult, 'id' => $idE, 'ceinture' => $ceinture));
         } else {
             throw new Exception("Erreur de chargement de page");
@@ -678,10 +686,14 @@ class ControleurAdmin extends ControleurSecurise {
         if ($this->requete->existeParametre("id") && $this->requete->existeParametre("ceinture")) {
             $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
             $adult = $this->adult->getadult($idU);
+            //connaitre la période
+            $periodScolaire = $this->grille->selectPeriodScolaire();
+            $period = $periodScolaire['period'];
+            //connaitrele badge
             $ceinture = $this->requete->getParametre("ceinture");
             $id = $this->requete->getParametre("id");
             $idC = $this->classe->getClasseEleve($id);
-            $this->student->editChildrenCeinture($ceinture, $id);
+            $this->student->editChildrenCeinture($period, $ceinture, $id);
             $this->genererVue(array('adult' => $adult, 'idC' => $idC));
         } else {
             throw new Exception("Erreur de chargement de page");

@@ -136,15 +136,19 @@ class ControleurTeacher extends ControleurSecurise {
         if ($this->requete->existeParametre("id")) {
             $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
             $id = $this->requete->getParametre("id");
+            //liste des élèves d'une classe .
             $student = $this->student->getStudentClass($id);
 
+            //liste des élèves évalués d'une classe par ce professeur
+            $studentFait = $this->student->getStudentEvalueTeacher($id, $idU);
+            $studentF = $this->student->getStudentEvalueTeacher($id, $idU);
             $adult = $this->adult->getadult($idU);
             //nombre d'evaluation /nombe total d'eleve
             $nbrtotal = $this->grille->selectNbrClasse($id);
             $nomClasse = $this->classe->getClass($id);
             $nbrE = $this->grille->selectNomStudentEvalueParClasseParTeacherNbr($id, $idU);
 
-            $this->genererVue(array('adult' => $adult, 'student' => $student, 'nbrT' => $nbrtotal, 'nbrE' => $nbrE, 'nomClasse' => $nomClasse));
+            $this->genererVue(array('adult' => $adult, 'studentF' => $studentF, 'student' => $student, 'studentfait' => $studentFait, 'nbrT' => $nbrtotal, 'nbrE' => $nbrE, 'nomClasse' => $nomClasse));
         } else {
             throw new Exception("Faite attention les champs ne sont pas tous définis");
         }
@@ -205,6 +209,12 @@ class ControleurTeacher extends ControleurSecurise {
             $commentaire = $this->grille->getCommentaire($idgrid);
             //trouver la idclasse de l'élève
             $idC = $this->classe->getClasseEleve($idS);
+            //idSuivant
+            //  $idSuivant = $this->student->getIdSuivantStudent($idC, $idS);
+            // ouverture de exeEvaluateStudent $this->genererVue(array('adult' => $adult, 'id' => $idU, 'tab' => $tab1, 'idC' => $idC));///
+
+
+
 
             $this->genererVue(array('adult' => $adult, 'id' => $idU, 'tab' => $tab1, 'idC' => $idC));
         } else {
@@ -218,11 +228,25 @@ class ControleurTeacher extends ControleurSecurise {
             $this->grille->editItemStudentAjour($idS, $idU);
             $commentaire = $this->grille->getCommentaire($idgrid);
             $this->grille->editItemStudentToutAzero($idS, $idU);
-
-
             //trouver la idclasse de l'élève
             $idC = $this->classe->getClasseEleve($idS);
-            $this->genererVue(array('adult' => $adult, 'id' => $idU, 'idC' => $idC));
+
+
+            $id = $this->requete->getParametre("id");
+
+            $student = $this->student->getStudentsName($id);
+
+            $this->grille->addItemEvalueStudent($id, $idU);
+            //trouver le commentire qui et null et le mettre dan texTArea,ensuite l'éditer
+            $idG = $this->grille->getIdGridstudent($idU, $id);
+
+            $idgrid = $idG['idGridStudent'];
+            //trouver le commentaire qui et null et le mettre dan texTArea,ensuite l'éditer
+            $commentaire = $this->grille->getCommentaire($idgrid);
+            $period = $this->grille->selectPeriod();
+            //dans exeEvaluationStudent
+            $item = $this->grille->getEvalueStudent($idU, $id);
+            $this->genererVue(array('adult' => $adult, 'id' => $idU, 'tab' => $tab1, 'idC' => $idC));
         }
     }
 

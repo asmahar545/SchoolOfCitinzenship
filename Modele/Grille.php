@@ -141,6 +141,13 @@ class Grille extends Modele {
         return $ligne;
     }
 
+    public function selectPeriodScolaire() {
+        $sql = "SELECT `period` FROM `periodicity` WHERE id_periodicity =1";
+        $period = $this->executerRequete($sql);
+        $ligne = $period->fetch();
+        return $ligne;
+    }
+
     public function selectStudentEvalueParClasse($idC, $idU, $nameItem) {
         $sql = "SELECT `response`, `nameE`, firstE, `nameT`, `nameItem` FROM `itemresponstudent` WHERE classe=? and idU=? and nameItem=? ORDER by nameE ASC, nameItem ASC";
         $student = $this->executerRequete($sql, array($idC, $idU, $nameItem));

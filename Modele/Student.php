@@ -27,6 +27,14 @@ class Student extends Modele {
         return $student;
     }
 
+    public function getStudentsBadges($couleur) {
+        $sql = "SELECT name,firstName from eleve where Toussaint=?";
+        $student = $this->executerRequete($sql, array($couleur));
+        return$student;
+    }
+
+    /*  requete pour avoir lal liste des eleves evalue et pas =select name, firstName from eleve where id_classe = 3 UNION All SELECT nameE, firstE FROM `itemresponstudent` where classe= 3 and idU= 745 group by nameE ORDER BY name ASC */
+
     public function getStudentsName($idS) {
         $sql = "select * from eleve where id_student=?";
         $student = $this->executerRequete($sql, array($idS));
@@ -47,7 +55,14 @@ class Student extends Modele {
         return $student;
     }
 
-    // trouver l'id Suivant
+//fontion qui permet de trouver la liste des élèves évalué par le professeur( permet de savoir quels élève a été fait ou non
+    public function getStudentEvalueTeacher($idC, $IdT) {
+        $sql = "SELECT idE,nameE, firstE FROM `itemresponstudent` where classe= ? and idU= ?group by nameE,firstE ORDER BY nameE ASC";
+        $student = $this->executerRequete($sql, array($idC, $IdT));
+        return $student;
+    }
+
+// trouver l'id Suivant
     public function getIdSuivantStudent($id, $idS) {
         $sql = "select id_student from eleve where id_classe = ? and id_student > ? LIMIT 1";
         $student = $this->executerRequete($sql, array($id));
@@ -55,9 +70,9 @@ class Student extends Modele {
         return $IdSuiv;
     }
 
-    //ajouter un étudiant
+//ajouter un étudiant
     public function addChildren($name, $firstname, $id_classe) {
-        $sql = "INSERT INTO `eleve`(`id_student`, `name`, `firstName`, `monteCeinture`, `retard`, `id_classe`) VALUES (Null,?,?,'blanc',0,?)";
+        $sql = "INSERT INTO `eleve`(`id_student`, `name`, `firstName`, ``, `retard`, `id_classe`) VALUES (Null,?,?,'blanc',0,?)";
         $rep = $this->executerRequete($sql, array($name, $firstname, $id_classe));
     }
 
@@ -88,9 +103,9 @@ class Student extends Modele {
         $rep = $this->executerRequete($sql, array($response, $id_student, $id_adult, $id_item, $idGridStudent));
     }
 
-    public function editChildrenCeinture($ceinture, $id) {
-        $sql = "UPDATE `eleve` SET
-          `monteCeinture`=? WHERE `eleve`.`id_student` = ?";
+    public function editChildrenCeinture($period, $ceinture, $id) {
+
+        $sql = 'UPDATE `eleve` SET    ' . $period . ' = ? WHERE `eleve`.`id_student` = ?';
         $rep = $this->executerRequete($sql, array($ceinture, $id));
     }
 
@@ -100,19 +115,20 @@ class Student extends Modele {
         $rep = $this->executerRequete($sql, array($retard, $id));
     }
 
-    public function selectCeinture($idE) {
-        $sql = "select monteCeinture from eleve where id_student= ?";
+    public function selectCeinture($period, $idE) {
+
+        $sql = 'select  ' . $period . ' as periode from eleve where id_student= ?';
         $rep = $this->executerRequete($sql, array($idE));
         if ($rep->rowCount() == 1) {
             return $rep->fetch();
         } // Accès à la première ligne de résultat
         else {
-            throw new Exception("Aucun éleve ne correspond 0 l4identifiqnt fourni");
+            throw new Exception("Aucun éleve ne correspond à l'iidentifiqnt fourni");
         }
     }
 
     public function selectRetard($idE) {
-        $sql = "select retard from eleve where id_student= ?";
+        $sql = "select retard from eleve where id_student = ?";
         $rep = $this->executerRequete($sql, array($idE));
         if ($rep->rowCount() == 1) {
             return $rep->fetch();
