@@ -54,22 +54,25 @@
                 <section class="content-header">
                     <h1>
                         Badges
-                        <small>Liste des badges des élèves pour la période de " " </small>
+                        <small>Liste des badges des élèves pour la période de "Toussaint" </small>
                     </h1>
 
                 </section>
                 <br>
 
                 <div class="row">
-                    <div class="col-md-9">
+                    <div class="col-md-11">
                         <!-- Custom Tabs -->
+                        <small>Classe "1C1"</small>
                         <div class="nav-tabs-custom">
                             <ul class="nav nav-tabs">
                                 <li class="active"><a href="#tab_1" data-toggle="tab">Listes des badges Blanc</a></li>
 
                                 <li><a href="#tab_2" data-toggle="tab">Listes des badges Jaune</a></li>
                                 <li><a href="#tab_3" data-toggle="tab">Listes des badges Bleue</a></li>
-
+                                <li><a href="#tab_4" data-toggle="tab">Listes des badges Orange</a></li>
+                                <li><a href="#tab_5" data-toggle="tab">Listes des badges Violet</a></li>
+                                <li><a href="#tab_6" data-toggle="tab">Listes des badges Vert</a></li>
 
                             </ul>
                             <div class="tab-content">
@@ -177,35 +180,596 @@
                                     </div>
                                     <!-- /.tab-pane -->
                                 </div>
+                                <div class="tab-pane" id="tab_4">
+                                    <div class="tab-pane active" id="tab_1">
+
+                                        <div class="box-body table-responsive no-padding">
+                                            <table id="example1" class="table table-bordered table-striped">
+                                                <thead>
+                                                <th>N°</th>
+                                                <th>Nom</th>
+                                                <th>Prénom</th>
+
+
+
+
+                                                </tr>
+                                                </thead>
+                                                <tbody
+                                                <?php $var = 1 ?>
+                                                <?php foreach ($Orange as $list): ?>
+                                                        <tr>
+
+                                                            <td><?php echo $var++ ?></td>
+                                                            <td><?= $this->nettoyer($list['name']) ?></td>
+                                                            <td><?= $this->nettoyer($list['firstName']) ?></td>
+                                                        </tr>
+
+                                                    <?php endforeach; ?>
+
+                                                </tbody>
+
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- /.tab-pane -->
+                                </div>
+                                <div class="tab-pane" id="tab_5">
+                                    <div class="tab-pane active" id="tab_1">
+
+                                        <div class="box-body table-responsive no-padding">
+                                            <table id="example1" class="table table-bordered table-striped">
+                                                <thead>
+                                                <th>N°</th>
+                                                <th>Nom</th>
+                                                <th>Prénom</th>
+
+
+
+
+                                                </tr>
+                                                </thead>
+                                                <tbody
+                                                <?php $var = 1 ?>
+                                                <?php foreach ($Violet as $list): ?>
+                                                        <tr>
+
+                                                            <td><?php echo $var++ ?></td>
+                                                            <td><?= $this->nettoyer($list['name']) ?></td>
+                                                            <td><?= $this->nettoyer($list['firstName']) ?></td>
+                                                        </tr>
+
+                                                    <?php endforeach; ?>
+
+                                                </tbody>
+
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- /.tab-pane -->
+                                </div>
+                                <div class="tab-pane" id="tab_6">
+                                    <div class="tab-pane active" id="tab_1">
+
+                                        <div class="box-body table-responsive no-padding">
+                                            <table id="example1" class="table table-bordered table-striped">
+                                                <thead>
+                                                <th>N°</th>
+                                                <th>Nom</th>
+                                                <th>Prénom</th>
+
+
+
+
+                                                </tr>
+                                                </thead>
+                                                <tbody
+                                                <?php $var = 1 ?>
+                                                <?php foreach ($Vert as $list): ?>
+                                                        <tr>
+
+                                                            <td><?php echo $var++ ?></td>
+                                                            <td><?= $this->nettoyer($list['name']) ?></td>
+                                                            <td><?= $this->nettoyer($list['firstName']) ?></td>
+                                                        </tr>
+
+                                                    <?php endforeach; ?>
+
+                                                </tbody>
+
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- /.tab-pane -->
+                                </div>
                                 <!-- /.tab-pane -->
                             </div>
                             <!-- /.tab-content -->
                         </div>
                         <!-- nav-tabs-custom -->
                     </div>
-                    <div class="col-md-2">
-                        <div class="span1 offset1">
-                            <div class="btn-group btn-group-vertical">
 
-
-                                <a class="btn btn-warning" ><i class="fa fa-certificate"></i> Blanc</a>
-
-
-                                <a class="btn btn-danger" ><i class="fa fa-certificate"></i> Jaune</a>
-
-
-                                <a class="btn btn-info" s><i class="fa fa-certificate"></i> Bleue</a>
-
-
-
-
-
-                            </div>
-                        </div>
-                    </div>
                     <!-- /.col -->
                 </div>
             </section>
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-11">
+                        <!-- Custom Tabs -->
+                        <small>Classe "1C2"</small>
+                        <div class="nav-tabs-custom">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#2tab_1" data-toggle="tab">Listes des badges Blanc</a></li>
+                                <li><a href="#2tab_2" data-toggle="tab">Listes des badges Jaune</a></li>
+                                <li><a href="#2tab_3" data-toggle="tab">Listes des badges Bleue</a></li>
+                                <li><a href="#2tab_4" data-toggle="tab">Listes des badges Orange</a></li>
+                                <li><a href="#2tab_5" data-toggle="tab">Listes des badges Violet</a></li>
+                                <li><a href="#2tab_6" data-toggle="tab">Listes des badges Vert</a></li>
+
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="2tab_1">
+
+                                    <div class="box-body table-responsive no-padding">
+                                        <table id="example1" class="table table-bordered table-hover">
+                                            <thead>
+                                            <th>N°</th>
+                                            <th>Nom</th>
+                                            <th>Prénom</th>
+
+
+
+
+                                            </tr>
+                                            </thead>
+                                            <tbody
+                                            <?php $var = 1 ?>
+                                            <?php foreach ($Blanc2 as $list): ?>
+                                                    <tr>
+
+                                                        <td><?php echo $var++ ?></td>
+                                                        <td><?= $this->nettoyer($list['name']) ?></td>
+                                                        <td><?= $this->nettoyer($list['firstName']) ?></td>
+                                                    </tr>
+
+                                                <?php endforeach; ?>
+
+                                            </tbody>
+
+
+                                        </table>
+                                    </div>
+                                </div>
+                                <!-- /.tab-pane -->
+                                <div class="tab-pane" id="2tab_2">
+                                    <div class="tab-pane active" id="tab_1">
+
+                                        <div class="box-body table-responsive no-padding">
+                                            <table id="example1" class="table table-bordered table-striped">
+                                                <thead>
+                                                <th>N°</th>
+                                                <th>Nom</th>
+                                                <th>Prénom</th>
+
+
+
+
+                                                </tr>
+                                                </thead>
+                                                <tbody
+                                                <?php $var = 1 ?>
+                                                <?php foreach ($Jaune2 as $list): ?>
+                                                        <tr>
+
+                                                            <td><?php echo $var++ ?></td>
+                                                            <td><?= $this->nettoyer($list['name']) ?></td>
+                                                            <td><?= $this->nettoyer($list['firstName']) ?></td>
+                                                        </tr>
+
+                                                    <?php endforeach; ?>
+
+                                                </tbody>
+
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- /.tab-pane -->
+                                </div>
+                                <!-- /.tab-pane -->
+                                <div class="tab-pane" id="2tab_3">
+                                    <div class="tab-pane active" id="tab_1">
+
+                                        <div class="box-body table-responsive no-padding">
+                                            <table id="example1" class="table table-bordered table-striped">
+                                                <thead>
+                                                <th>N°</th>
+                                                <th>Nom</th>
+                                                <th>Prénom</th>
+
+
+
+
+                                                </tr>
+                                                </thead>
+                                                <tbody
+                                                <?php $var = 1 ?>
+                                                <?php foreach ($Bleue2 as $list): ?>
+                                                        <tr>
+
+                                                            <td><?php echo $var++ ?></td>
+                                                            <td><?= $this->nettoyer($list['name']) ?></td>
+                                                            <td><?= $this->nettoyer($list['firstName']) ?></td>
+                                                        </tr>
+
+                                                    <?php endforeach; ?>
+
+                                                </tbody>
+
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- /.tab-pane -->
+                                </div>
+                                <div class="tab-pane" id="2tab_4">
+                                    <div class="tab-pane active" id="2tab_1">
+
+                                        <div class="box-body table-responsive no-padding">
+                                            <table id="example1" class="table table-bordered table-striped">
+                                                <thead>
+                                                <th>N°</th>
+                                                <th>Nom</th>
+                                                <th>Prénom</th>
+
+
+
+
+                                                </tr>
+                                                </thead>
+                                                <tbody
+                                                <?php $var = 1 ?>
+                                                <?php foreach ($Orange2 as $list): ?>
+                                                        <tr>
+
+                                                            <td><?php echo $var++ ?></td>
+                                                            <td><?= $this->nettoyer($list['name']) ?></td>
+                                                            <td><?= $this->nettoyer($list['firstName']) ?></td>
+                                                        </tr>
+
+                                                    <?php endforeach; ?>
+
+                                                </tbody>
+
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- /.tab-pane -->
+                                </div>
+                                <div class="tab-pane" id="2tab_5">
+                                    <div class="tab-pane active" id="tab_1">
+
+                                        <div class="box-body table-responsive no-padding">
+                                            <table id="example1" class="table table-bordered table-striped">
+                                                <thead>
+                                                <th>N°</th>
+                                                <th>Nom</th>
+                                                <th>Prénom</th>
+
+
+
+
+                                                </tr>
+                                                </thead>
+                                                <tbody
+                                                <?php $var = 1 ?>
+                                                <?php foreach ($Violet2 as $list): ?>
+                                                        <tr>
+
+                                                            <td><?php echo $var++ ?></td>
+                                                            <td><?= $this->nettoyer($list['name']) ?></td>
+                                                            <td><?= $this->nettoyer($list['firstName']) ?></td>
+                                                        </tr>
+
+                                                    <?php endforeach; ?>
+
+                                                </tbody>
+
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- /.tab-pane -->
+                                </div>
+                                <div class="tab-pane" id="2tab_6">
+                                    <div class="tab-pane active" id="tab_1">
+
+                                        <div class="box-body table-responsive no-padding">
+                                            <table id="example1" class="table table-bordered table-striped">
+                                                <thead>
+                                                <th>N°</th>
+                                                <th>Nom</th>
+                                                <th>Prénom</th>
+
+
+
+
+                                                </tr>
+                                                </thead>
+                                                <tbody
+                                                <?php $var = 1 ?>
+                                                <?php foreach ($Vert2 as $list): ?>
+                                                        <tr>
+
+                                                            <td><?php echo $var++ ?></td>
+                                                            <td><?= $this->nettoyer($list['name']) ?></td>
+                                                            <td><?= $this->nettoyer($list['firstName']) ?></td>
+                                                        </tr>
+
+                                                    <?php endforeach; ?>
+
+                                                </tbody>
+
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- /.tab-pane -->
+                                </div>
+                                <!-- /.tab-pane -->
+                            </div>
+                            <!-- /.tab-content -->
+                        </div>
+                        <!-- nav-tabs-custom -->
+                    </div>
+
+                    <!-- /.col -->
+                </div>
+            </section>
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-11">
+                        <!-- Custom Tabs -->
+                        <small>Classe "1C3"</small>
+                        <div class="nav-tabs-custom">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#3tab_1" data-toggle="tab">Listes des badges Blanc</a></li>
+                                <li><a href="#3tab_2" data-toggle="tab">Listes des badges Jaune</a></li>
+                                <li><a href="#3tab_3" data-toggle="tab">Listes des badges Bleue</a></li>
+                                <li><a href="#3tab_4" data-toggle="tab">Listes des badges Orange</a></li>
+                                <li><a href="#3tab_5" data-toggle="tab">Listes des badges Violet</a></li>
+                                <li><a href="#3tab_6" data-toggle="tab">Listes des badges Vert</a></li>
+
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="3tab_1">
+
+                                    <div class="box-body table-responsive no-padding">
+                                        <table id="example1" class="table table-bordered table-hover">
+                                            <thead>
+                                            <th>N°</th>
+                                            <th>Nom</th>
+                                            <th>Prénom</th>
+
+
+
+
+                                            </tr>
+                                            </thead>
+                                            <tbody
+                                            <?php $var = 1 ?>
+                                            <?php foreach ($Blanc3 as $list): ?>
+                                                    <tr>
+
+                                                        <td><?php echo $var++ ?></td>
+                                                        <td><?= $this->nettoyer($list['name']) ?></td>
+                                                        <td><?= $this->nettoyer($list['firstName']) ?></td>
+                                                    </tr>
+
+                                                <?php endforeach; ?>
+
+                                            </tbody>
+
+
+                                        </table>
+                                    </div>
+                                </div>
+                                <!-- /.tab-pane -->
+                                <div class="tab-pane" id="3tab_2">
+                                    <div class="tab-pane active" id="tab_1">
+
+                                        <div class="box-body table-responsive no-padding">
+                                            <table id="example1" class="table table-bordered table-striped">
+                                                <thead>
+                                                <th>N°</th>
+                                                <th>Nom</th>
+                                                <th>Prénom</th>
+
+
+
+
+                                                </tr>
+                                                </thead>
+                                                <tbody
+                                                <?php $var = 1 ?>
+                                                <?php foreach ($Jaune3 as $list): ?>
+                                                        <tr>
+
+                                                            <td><?php echo $var++ ?></td>
+                                                            <td><?= $this->nettoyer($list['name']) ?></td>
+                                                            <td><?= $this->nettoyer($list['firstName']) ?></td>
+                                                        </tr>
+
+                                                    <?php endforeach; ?>
+
+                                                </tbody>
+
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- /.tab-pane -->
+                                </div>
+                                <!-- /.tab-pane -->
+                                <div class="tab-pane" id="3tab_3">
+                                    <div class="tab-pane active" id="tab_1">
+
+                                        <div class="box-body table-responsive no-padding">
+                                            <table id="example1" class="table table-bordered table-striped">
+                                                <thead>
+                                                <th>N°</th>
+                                                <th>Nom</th>
+                                                <th>Prénom</th>
+
+
+
+
+                                                </tr>
+                                                </thead>
+                                                <tbody
+                                                <?php $var = 1 ?>
+                                                <?php foreach ($Bleue3 as $list): ?>
+                                                        <tr>
+
+                                                            <td><?php echo $var++ ?></td>
+                                                            <td><?= $this->nettoyer($list['name']) ?></td>
+                                                            <td><?= $this->nettoyer($list['firstName']) ?></td>
+                                                        </tr>
+
+                                                    <?php endforeach; ?>
+
+                                                </tbody>
+
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- /.tab-pane -->
+                                </div>
+                                <div class="tab-pane" id="3tab_4">
+                                    <div class="tab-pane active" id="2tab_1">
+
+                                        <div class="box-body table-responsive no-padding">
+                                            <table id="example1" class="table table-bordered table-striped">
+                                                <thead>
+                                                <th>N°</th>
+                                                <th>Nom</th>
+                                                <th>Prénom</th>
+
+
+
+
+                                                </tr>
+                                                </thead>
+                                                <tbody
+                                                <?php $var = 1 ?>
+                                                <?php foreach ($Orange3 as $list): ?>
+                                                        <tr>
+
+                                                            <td><?php echo $var++ ?></td>
+                                                            <td><?= $this->nettoyer($list['name']) ?></td>
+                                                            <td><?= $this->nettoyer($list['firstName']) ?></td>
+                                                        </tr>
+
+                                                    <?php endforeach; ?>
+
+                                                </tbody>
+
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- /.tab-pane -->
+                                </div>
+                                <div class="tab-pane" id="3tab_5">
+                                    <div class="tab-pane active" id="tab_1">
+
+                                        <div class="box-body table-responsive no-padding">
+                                            <table id="example1" class="table table-bordered table-striped">
+                                                <thead>
+                                                <th>N°</th>
+                                                <th>Nom</th>
+                                                <th>Prénom</th>
+
+
+
+
+                                                </tr>
+                                                </thead>
+                                                <tbody
+                                                <?php $var = 1 ?>
+                                                <?php foreach ($Violet3 as $list): ?>
+                                                        <tr>
+
+                                                            <td><?php echo $var++ ?></td>
+                                                            <td><?= $this->nettoyer($list['name']) ?></td>
+                                                            <td><?= $this->nettoyer($list['firstName']) ?></td>
+                                                        </tr>
+
+                                                    <?php endforeach; ?>
+
+                                                </tbody>
+
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- /.tab-pane -->
+                                </div>
+                                <div class="tab-pane" id="3tab_6">
+                                    <div class="tab-pane active" id="tab_1">
+
+                                        <div class="box-body table-responsive no-padding">
+                                            <table id="example1" class="table table-bordered table-striped">
+                                                <thead>
+                                                <th>N°</th>
+                                                <th>Nom</th>
+                                                <th>Prénom</th>
+
+
+
+
+                                                </tr>
+                                                </thead>
+                                                <tbody
+                                                <?php $var = 1 ?>
+                                                <?php foreach ($Vert3 as $list): ?>
+                                                        <tr>
+
+                                                            <td><?php echo $var++ ?></td>
+                                                            <td><?= $this->nettoyer($list['name']) ?></td>
+                                                            <td><?= $this->nettoyer($list['firstName']) ?></td>
+                                                        </tr>
+
+                                                    <?php endforeach; ?>
+
+                                                </tbody>
+
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- /.tab-pane -->
+                                </div>
+                                <!-- /.tab-pane -->
+                            </div>
+                            <!-- /.tab-content -->
+                        </div>
+                        <!-- nav-tabs-custom -->
+                    </div>
+
+                    <!-- /.col -->
+                </div>
+            </section>
+
 
             <!-- Main content -->
 

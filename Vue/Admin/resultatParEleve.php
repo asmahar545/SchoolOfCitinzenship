@@ -54,7 +54,7 @@
                             <div class="box-header">
 
                                 <h4 class="box-title"><img src="images/CampusSaintJean-LOGO.jpg" width="180">&nbsp;&nbsp;&nbsp;&nbsp;<b> Evaluation comportementale de <?= $student['name'] ?> <?= $student['firstName'] ?><b> </h4>
-                                            <p> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?= $period['period'] ?> 2017</p>
+                                            <p> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?= $period['period'] ?> 2018</p>
                                             <h4>Pour cette période tes professeurs et éducateurs ont évalué ton comportement<br>
                                                 d'élève et de citoyen :
                                             </h4>
@@ -67,8 +67,8 @@
                                                         <tr>
                                                             <th>Compétences	évaluées</th>
                                                             <th> <i class="fa fa-close"></i>/<i class="fa fa-check"></i>
-                                                                <!--       Nbre d’évaluations	positives / Nbre total d’évaluations--> </th>
-                                                            <th> <i class="fa fa-user"></i></th>
+                                                                <!--       Nbre d’évaluations	positives / Nbre total d’évaluations </th>
+                                                            <th> <i class="fa fa-user"></i></th>-->
 
 
                                                         </tr>
@@ -95,13 +95,7 @@
                                                             <?php endforeach; ?>
 
 
-                                                            <!-- Professeurs   qui ont coté négativement-->
-                                                            <?php foreach ($prof1 as $prof): ?>
 
-                                                                <td class="info"><?= $prof['nameT'] ?></td>
-
-
-                                                            <?php endforeach; ?>
                                                         </tr>
                                                         <tr><th class="danger">J’adopte une attitude non violente</th> <?php foreach ($item2 as $list): ?>
 
@@ -110,13 +104,7 @@
 
 
                                                             <?php endforeach; ?>
-                                                            <!-- Professeurs   qui ont coté négativement-->
-                                                            <?php foreach ($prof2 as $prof): ?>
 
-                                                                <td class="info"><?= $prof['nameT'] ?></td>
-
-
-                                                            <?php endforeach; ?>
                                                         </tr>
                                                         <tr><th class="danger">Je suis respectueux du matériel et de l’environnement</th> <?php foreach ($item3 as $list): ?>
 
@@ -124,14 +112,6 @@
 
 
                                                             <?php endforeach; ?>
-                                                            <!-- Professeurs   qui ont coté négativement-->
-                                                            <?php foreach ($prof3 as $prof): ?>
-
-                                                                <td class="info"><?= $prof['nameT'] ?></td>
-
-
-                                                            <?php endforeach; ?>
-
 
                                                         </tr>
                                                         <tr><th class="danger">Je parle de façon adéquate</th> <?php foreach ($item4 as $list): ?>
@@ -141,28 +121,16 @@
 
                                                             <?php endforeach; ?>
 
-                                                            <!-- Professeurs   qui ont coté négativement-->
-                                                            <?php foreach ($prof4 as $prof): ?>
 
-                                                                <td class="info"><?= $prof['nameT'] ?></td>
-
-
-                                                            <?php endforeach; ?>
                                                         </tr>
                                                         <tr><th class="danger">Je suis solidaire</th> <?php foreach ($item5 as $list): ?>
 
                                                                 <td><?= $list['resultat'] ?>/<?= $nbteachers ?> </td>
 
 
-                                                            <?php endforeach; ?>
-
-                                                            <!-- Professeurs   qui ont coté négativement-->
-                                                            <?php foreach ($prof5 as $prof): ?>
-
-                                                                <td class="info"><?= $prof['nameT'] ?></td>
-
-
                                                             <?php endforeach; ?></tr>
+
+
 
                                                         <tr><th class="danger">Je respecte les règles de l’école</th> <?php foreach ($item6 as $list): ?>
 
@@ -170,44 +138,26 @@
 
 
 
-                                                            <?php endforeach; ?>
-
-                                                            <!-- Professeurs   qui ont coté négativement-->
-                                                            <?php foreach ($prof6 as $prof): ?>
-
-                                                                <td class="info"><?= $prof['nameT'] ?></td>
+                                                            <?php endforeach; ?></th>
 
 
-                                                            <?php endforeach; ?></tr>
                                                         <tr><th class="danger">	Je m’organise et je deviens autonome
                                                             </th> <?php foreach ($item7 as $list): ?>
 
                                                                 <td><?= $list['resultat'] ?>/<?= $nbteachers ?> </td>
 
 
-                                                            <?php endforeach; ?>
-
-                                                            <!-- Professeurs   qui ont coté négativement-->
-                                                            <?php foreach ($prof7 as $prof): ?>
-
-                                                                <td class="info"><?= $prof['nameT'] ?></td>
-
-
                                                             <?php endforeach; ?></tr>
+
+
                                                         <tr><th class="danger">J’écoute les professeurs et les élèves sans les interrompre
                                                             </th> <?php foreach ($item8 as $list): ?>
 
                                                                 <td><?= $list['resultat'] ?>/<?= $nbteachers ?> </td>
 
 
-                                                            <?php endforeach; ?>
-                                                            <!-- Professeurs   qui ont coté négativement-->
-                                                            <?php foreach ($prof8 as $prof): ?>
-
-                                                                <td class="info"><?= $prof['nameT'] ?></td>
-
-
                                                             <?php endforeach; ?></tr>
+
                                                         <tr><th class="danger">Je circule dans l’école calmement
                                                             </th> <?php foreach ($item9 as $list): ?>
 
@@ -215,13 +165,7 @@
 
 
                                                             <?php endforeach; ?>
-                                                            <!-- Professeurs   qui ont coté négativement-->
-                                                            <?php foreach ($prof9 as $prof): ?>
 
-                                                                <td class="info"><?= $prof['nameT'] ?></td>
-
-
-                                                            <?php endforeach; ?>
                                                         </tr>
                                                         <tr><th class="danger">Je donne le meilleur de moi-même
                                                             </th> <?php foreach ($item10 as $list): ?>
@@ -230,13 +174,7 @@
 
 
                                                             <?php endforeach; ?>
-                                                            <!-- Professeurs   qui ont coté négativement-->
-                                                            <?php foreach ($prof10 as $prof): ?>
-
-                                                                <td class="info"><?= $prof['nameT'] ?></td>
-
-
-                                                            <?php endforeach; ?></tr>
+                                                        </tr>
 
                                                     </tbody>
 
@@ -256,11 +194,12 @@
                                             <!-- /.box -->
                                             </div>
                                             <div class="col-xs-2">
-                                                <?php if ($ceinture['monteCeinture'] == "Bleu"): ?>
-                                                    <h3> <font color="red"> Félicitations!</font></h3> <br><h4><b>Tu obtiens le badge <?= $ceinture['monteCeinture'] ?>.<b> </h4>
+                                                <?php if ($ceinture['periode'] == "Bleu"): ?>
+                                                    <h3><b>Tu obtiens le badge <?= $ceinture['periode'] ?>.<b> </h3>
                                                                 <br>
                                                                 <br>
                                                                 <br>
+                                                                Commentaire du titulaire:
                                                                 <br>
                                                                 <br> <br> <br>
                                                                 <br> <br>
@@ -274,12 +213,14 @@
 
 
                                                                 <img src="images/bleu.jpg" width="120">
-                                                            <?php elseif ($ceinture['monteCeinture'] == "Blanc"): ?>
-                                                                <h3><b>Tu as actuellement le badge <?= $ceinture['monteCeinture'] ?>.<b> </h3>
+                                                            <?php elseif ($ceinture['periode'] == "Blanc"): ?>
+                                                                <h3><b>Tu obtiens le badge<?= $ceinture['periode'] ?>.<b> </h3>
                                                                             <br>
                                                                             <br>
                                                                             <br>
+                                                                            Commentaire du titulaire:
                                                                             <br>
+
                                                                             <br> <br> <br>
                                                                             <br> <br>
                                                                             <br> <br>
@@ -290,108 +231,143 @@
                                                                             <br>
                                                                             <img src="images/blanc.jpg" width="120">
 
+                                                                        <?php elseif ($ceinture['periode'] == "Jaune"): ?>
+                                                                            <h3><b>Tu obtiens le badge <?= $ceinture['periode'] ?>.<b> </h3>
+                                                                                        <br>
+                                                                                        <br>
+                                                                                        <br>
+                                                                                        Commentaire du titulaire:
 
-                                                                        <?php else: ?>
-                                                                            <h3><font color="red">Félicitations! </font></h3> <br><h4><br>Tu as actuellement le badge <?= $ceinture['monteCeinture'] ?>.<b> </h4>
-                                                                            <br>
-                                                                            <br>
-                                                                            <br>
-                                                                            <br>
-                                                                            <br> <br> <br>
-                                                                            <br> <br>
-                                                                            <br> <br>
-                                                                            <br>
-                                                                            <br>
-                                                                            <br>
-                                                                            <br> <br>
-                                                                            <br>
-                                                                            <img src="images/jaune.jpg" width="120">
-                                                                        <?php endif; ?>
+                                                                                        <br>
 
-
-                                                                        </div>
-
-
-
-                                                                        <!-- /.col -->
-                                                                        </div>
-                                                                        <!-- /.row -->
-                                                                        </section>
-                                                                        <!-- /.content -->
-                                                                        </div>
-                                                                        <!-- /.content-wrapper -->
+                                                                                        <br> <br> <br>
+                                                                                        <br> <br>
+                                                                                        <br> <br>
+                                                                                        <br>
+                                                                                        <br>
+                                                                                        <br>
+                                                                                        <br> <br>
+                                                                                        <br>
+                                                                                        <img src="images/jaune.jpg" width="120">
+                                                                                    <?php elseif ($ceinture['periode'] == "Orange"): ?>
+                                                                                        <h3><b>Tu obtiens le badge <?= $ceinture['periode'] ?>.<b> </h3>
+                                                                                                    <br>
+                                                                                                    <br>
+                                                                                                    <br>
+                                                                                                    Commentaire du titulaire:
+                                                                                                    <br>
 
 
-                                                                        <?php require 'Vue/_Commun/Folder.php'; ?>
-                                                                        <?php require 'Vue/_Commun/Aside.php'; ?>
-                                                                        <!-- /.control-sidebar -->
-                                                                        <!-- Add the sidebar's background. This div must be placed
-                                                                             immediately after the control sidebar -->
-                                                                        <div class="control-sidebar-bg"></div>
-                                                                        </div>
-                                                                        <!-- ./wrapper -->
-                                                                        <style>
-                                                                            th.rotate {
-                                                                                /* Something you can count on */
-                                                                                height: 20px;
-                                                                                white-space: nowrap;
-                                                                            }
+                                                                                                    <br> <br> <br>
+                                                                                                    <br> <br>
+                                                                                                    <br> <br>
+                                                                                                    <br>
+                                                                                                    <br>
+                                                                                                    <br>
+                                                                                                    <br> <br>
+                                                                                                    <br>
+                                                                                                    <img src="images/orange.png" width="120" >
+                                                                                                <?php else: ?>
+                                                                                                    <h3><br>Tu n'as actuellement aucun badge à cette période.<br> </h3>
+                                                                                                    <br>
+                                                                                                    <br>
+                                                                                                    <br>
+                                                                                                    <br>
+                                                                                                    <br> <br> <br>
+                                                                                                    <br> <br>
+                                                                                                    <br> <br>
+                                                                                                    <br>
+                                                                                                    <br>
+                                                                                                    <br>
+                                                                                                    <br> <br>
+                                                                                                    <br>
 
-                                                                            th.rotate > div {
-                                                                                transform:
-                                                                                    /* Magic Numbers */
-                                                                                    translate(30px, 0px)
-                                                                                    /* 45 is really 360 - 45 */
-                                                                                    rotate(315deg);
-                                                                                width: 30px;
-                                                                            }
-                                                                            th.rotate > div > span {
-                                                                                border-bottom: 1px solid #ccc;
-                                                                                padding: 5px 10px;
-                                                                            }
-                                                                            /* These aren't needed and will be weird if transforms don't work */
-                                                                            .csstransforms & th.rotate {
-                                                                                height: 140px;
-                                                                                white-space: nowrap;
-                                                                            }
-                                                                        </style>
-                                                                        <!-- jQuery 2.2.3 -->
-                                                                        <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
-                                                                        <!-- Bootstrap 3.3.6 -->
-                                                                        <script src="bootstrap/js/bootstrap.min.js"></script>
-                                                                        <!-- DataTables -->
-                                                                        <script src="plugins/datatables/jquery.dataTables.min.js"></script>
-                                                                        <script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
-                                                                        <!-- SlimScroll -->
-                                                                        <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
-                                                                        <!-- FastClick -->
-                                                                        <script src="plugins/fastclick/fastclick.js"></script>
-                                                                        <!-- AdminLTE App -->
-                                                                        <script src="dist/js/app.min.js"></script>
-                                                                        <!-- AdminLTE for demo purposes -->
-                                                                        <script src="dist/js/demo.js"></script>
-                                                                        <script src="plugins/pdf/jquery.dataTables.min.js"></script>
-                                                                        <script src="plugins/pdf/dataTables.buttons.min.js"></script>
-                                                                        <script src="plugins/pdf/pdfmake.min.js"></script>
-                                                                        <script src="plugins/pdf/vfs_fonts.js"></script>
-                                                                        <script src="plugins/pdf/buttons.html5.min.js"></script>
+                                                                                                <?php endif; ?>
 
-                                                                        <!-- page script
-                                                                        <script>
 
-                                                                        $(document).ready(function() {
-                                                                            $('#example1').DataTable( {
-                                                                                dom: 'Bfrtip',
-                                                                                buttons: [
-                                                                                    {
-                                                                                        extend: 'pdfHtml5',
-                                                                                        orientation: 'landscape',
-                                                                                        pageSize: 'LEGAL'
-                                                                                    }
-                                                                                ]
-                                                                            } );
-                                                                        } );-->
+                                                                                                </div>
 
-                                                                        </script>
 
-                                                                        </body
+
+                                                                                                <!-- /.col -->
+                                                                                                </div>
+                                                                                                <!-- /.row -->
+                                                                                                </section>
+                                                                                                <!-- /.content -->
+                                                                                                </div>
+                                                                                                <!-- /.content-wrapper -->
+
+
+                                                                                                <?php require 'Vue/_Commun/Folder.php'; ?>
+                                                                                                <?php require 'Vue/_Commun/Aside.php'; ?>
+                                                                                                <!-- /.control-sidebar -->
+                                                                                                <!-- Add the sidebar's background. This div must be placed
+                                                                                                     immediately after the control sidebar -->
+                                                                                                <div class="control-sidebar-bg"></div>
+                                                                                                </div>
+                                                                                                <!-- ./wrapper -->
+                                                                                                <style>
+                                                                                                    th.rotate {
+                                                                                                        /* Something you can count on */
+                                                                                                        height: 20px;
+                                                                                                        white-space: nowrap;
+                                                                                                    }
+
+                                                                                                    th.rotate > div {
+                                                                                                        transform:
+                                                                                                            /* Magic Numbers */
+                                                                                                            translate(30px, 0px)
+                                                                                                            /* 45 is really 360 - 45 */
+                                                                                                            rotate(315deg);
+                                                                                                        width: 30px;
+                                                                                                    }
+                                                                                                    th.rotate > div > span {
+                                                                                                        border-bottom: 1px solid #ccc;
+                                                                                                        padding: 5px 10px;
+                                                                                                    }
+                                                                                                    /* These aren't needed and will be weird if transforms don't work */
+                                                                                                    .csstransforms & th.rotate {
+                                                                                                        height: 140px;
+                                                                                                        white-space: nowrap;
+                                                                                                    }
+                                                                                                </style>
+                                                                                                <!-- jQuery 2.2.3 -->
+                                                                                                <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+                                                                                                <!-- Bootstrap 3.3.6 -->
+                                                                                                <script src="bootstrap/js/bootstrap.min.js"></script>
+                                                                                                <!-- DataTables -->
+                                                                                                <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+                                                                                                <script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
+                                                                                                <!-- SlimScroll -->
+                                                                                                <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+                                                                                                <!-- FastClick -->
+                                                                                                <script src="plugins/fastclick/fastclick.js"></script>
+                                                                                                <!-- AdminLTE App -->
+                                                                                                <script src="dist/js/app.min.js"></script>
+                                                                                                <!-- AdminLTE for demo purposes -->
+                                                                                                <script src="dist/js/demo.js"></script>
+                                                                                                <script src="plugins/pdf/jquery.dataTables.min.js"></script>
+                                                                                                <script src="plugins/pdf/dataTables.buttons.min.js"></script>
+                                                                                                <script src="plugins/pdf/pdfmake.min.js"></script>
+                                                                                                <script src="plugins/pdf/vfs_fonts.js"></script>
+                                                                                                <script src="plugins/pdf/buttons.html5.min.js"></script>
+
+                                                                                                <!-- page script
+                                                                                                <script>
+
+                                                                                                $(document).ready(function() {
+                                                                                                    $('#example1').DataTable( {
+                                                                                                        dom: 'Bfrtip',
+                                                                                                        buttons: [
+                                                                                                            {
+                                                                                                                extend: 'pdfHtml5',
+                                                                                                                orientation: 'landscape',
+                                                                                                                pageSize: 'LEGAL'
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    } );
+                                                                                                } );-->
+
+                                                                                                </script>
+
+                                                                                                </body

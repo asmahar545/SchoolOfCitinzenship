@@ -47,7 +47,7 @@
             <section class="content-header">
                 <div class="callout callout-info">
                     <h4>L'élève a bien été ajouté !</h4>
-                    Toute modification sera faite .
+
                     <a href="admin/">Menu principale</a>
                 </div>
 

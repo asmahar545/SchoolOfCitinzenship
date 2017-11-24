@@ -71,11 +71,73 @@ class ControleurAdmin extends ControleurSecurise {
 
         $adult = $this->adult->getadult($idU);
         $classe = $this->classe->getClasses();
-        $bleue = $this->student->getStudentsBadges("Bleu");
-        $blanc = $this->student->getStudentsBadges("Blanc");
-        $jaune = $this->student->getStudentsBadges("Jaune");
+        //classe 1
+        $bleue = $this->student->getStudentsBadgesToussaint1("Bleu");
+        $blanc = $this->student->getStudentsBadgesToussaint1("Blanc");
+        $jaune = $this->student->getStudentsBadgesToussaint1("Jaune");
+        $orange = $this->student->getStudentsBadgesToussaint1("Orange");
+        $violet = $this->student->getStudentsBadgesToussaint1("Violet");
+        $vert = $this->student->getStudentsBadgesToussaint1("Vert");
+        //classe 2
+        $bleue2 = $this->student->getStudentsBadgesToussaint2("Bleu");
+        $blanc2 = $this->student->getStudentsBadgesToussaint2("Blanc");
+        $jaune2 = $this->student->getStudentsBadgesToussaint2("Jaune");
+        $orange2 = $this->student->getStudentsBadgesToussaint2("Orange");
+        $violet2 = $this->student->getStudentsBadgesToussaint2("Violet");
+        $vert2 = $this->student->getStudentsBadgesToussaint2("Vert");
 
-        $this->genererVue(array('adult' => $adult, 'classes' => $classe, 'Bleue' => $bleue, 'Blanc' => $blanc, 'Jaune' => $jaune));
+
+        //classe 3
+        $bleue3 = $this->student->getStudentsBadgesToussaint3("Bleu");
+        $blanc3 = $this->student->getStudentsBadgesToussaint3("Blanc");
+        $jaune3 = $this->student->getStudentsBadgesToussaint3("Jaune");
+        $orange3 = $this->student->getStudentsBadgesToussaint3("Orange");
+        $violet3 = $this->student->getStudentsBadgesToussaint3("Violet");
+        $vert3 = $this->student->getStudentsBadgesToussaint3("Vert");
+        //classe4
+        $bleue4 = $this->student->getStudentsBadgesToussaint4("Bleu");
+        $blanc4 = $this->student->getStudentsBadgesToussaint4("Blanc");
+        $jaune4 = $this->student->getStudentsBadgesToussaint4("Jaune");
+        $orange4 = $this->student->getStudentsBadgesToussaint4("Orange");
+        $violet4 = $this->student->getStudentsBadgesToussaint4("Violet");
+        $vert4 = $this->student->getStudentsBadgesToussaint4("Vert");
+        //classe 5
+        //classe6
+        //classe 7
+        //classe 8
+        //classe 9
+        //classe 10
+        // classe 11
+        //classe 12
+        // classe 13
+        // classe 14
+        // classe 15
+        // classe 16
+        // classe 17
+        // classe 18
+        // classe 19
+        // classe 20
+        // classe 21
+        // classe 22
+        // classe 23
+        // classe 24
+        // classe 25
+        // classe 26
+        // classe 27
+        // classe 28
+        // classe 29
+        // classe 30
+
+
+
+
+
+        $this->genererVue(array('adult' => $adult, 'classes' => $classe,
+            'Bleue' => $bleue, 'Blanc' => $blanc, 'Jaune' => $jaune, 'Orange' => $orange, 'Violet' => $violet, "Vert" => $vert,
+            'Bleue2' => $bleue2, 'Blanc2' => $blanc2, 'Jaune2' => $jaune2, 'Orange2' => $orange2, 'Violet2' => $violet2, "Vert2" => $vert2,
+            'Bleue3' => $bleue3, 'Blanc3' => $blanc3, 'Jaune3' => $jaune3, 'Orange3' => $orange3, 'Violet3' => $violet3, "Vert3" => $vert3,
+            'Bleue4' => $bleue4, 'Blanc4' => $blanc4, 'Jaune4' => $jaune4, 'Orange4' => $orange4, 'Violet4' => $violet2, "Vert4" => $vert4
+        ));
     }
 
     public function listStudentClass() {
@@ -578,11 +640,16 @@ class ControleurAdmin extends ControleurSecurise {
             $idClasse = $idC['nb'];
             $nbrTeachEvalue = $this->classe->nombreTeacherevalueUneClasse($idClasse);
             $nbrTeachEvalues = $this->adult->teacherNbrEvaluate($idClasse);
+
             $commentaire = $this->grille->selectCommentaire($idE);
-            $period = $this->grille->selectPeriod();
+            $periode = $this->grille->selectPeriod();
             $student = $this->student->getStudentsName($idE);
             $retard = $this->student->selectRetard($idE);
-            $ceinture = $this->student->selectCeinture($idE);
+
+            //connaitre la période
+            $periodScolaire = $this->grille->selectPeriodScolaire();
+            $period = $periodScolaire['period'];
+            $ceinture = $this->student->selectCeinture($period, $idE);
             $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
 
             //initialisations des Items
@@ -642,7 +709,7 @@ class ControleurAdmin extends ControleurSecurise {
                 'prof8' => $prof8,
                 'prof9' => $prof9,
                 'prof10' => $prof10,
-                'period' => $period,
+                'period' => $periode,
                 'ceinture' => $ceinture,
                 'retard' => $retard,
                 'student' => $student,
@@ -669,14 +736,25 @@ class ControleurAdmin extends ControleurSecurise {
 
     public function monterDeCeinture() {
         if ($this->requete->existeParametre("id")) {
-            //connaitre la période
+            //connaitre la période actuelle
             $periodScolaire = $this->grille->selectPeriodScolaire();
             $period = $periodScolaire['period'];
+
             $idE = $this->requete->getParametre("id");
             $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
             $adult = $this->adult->getadult($idU);
-            $ceinture = $this->student->selectCeinture($period, $idE);
-            $this->genererVue(array('adult' => $adult, 'id' => $idE, 'ceinture' => $ceinture));
+            //badge en Toussaint
+            $toussaint = "Toussaint";
+            $ceintureToussaint = $this->student->selectCeinture($toussaint, $idE);
+            //badge à Noel
+            $noel = "Noël";
+            $ceintureNoel = $this->student->selectCeinture($noel, $idE);
+            // badge à Paques
+            $paques = "Pâques";
+            $ceinturePaques = $this->student->selectCeinture($paques, $idE);
+            $juin = "juin";
+            $ceintureJuin = $this->student->selectCeinture($juin, $idE);
+            $this->genererVue(array('adult' => $adult, 'id' => $idE, 'ceinture' => $ceinture, 'periodactuel' => $periodScolaire, 'badgeNoel' => $ceintureNoel, 'badgeJuin' => $ceintureJuin, 'badgeToussaint' => $ceintureToussaint, 'badgePaques' => $ceinturePaques));
         } else {
             throw new Exception("Erreur de chargement de page");
         }

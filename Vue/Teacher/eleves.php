@@ -144,29 +144,29 @@
                                     </tbody>
                                 </table>
                             </div>
+                            <!--
+                                                        <div class="box-body table-responsive no-padding">
+                                                            <table  id="example1" class="table table-bordered table-striped">
 
-                            <div class="box-body table-responsive no-padding">
-                                <table  id="example1" class="table table-bordered table-striped">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th><div><span>N°</span></div></th>
+                                                                        <th><div><span>Nom</span></div></th>
+                                                                        <th><div><span>Prénom</span></div></th>
 
-                                    <thead>
-                                        <tr>
-                                            <th><div><span>N°</span></div></th>
-                                            <th><div><span>Nom</span></div></th>
-                                            <th><div><span>Prénom</span></div></th>
+                                                                        <th><div><span>Fait</span></div></th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
 
-                                            <th><div><span>Fait</span></div></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        foreach ($tableau as $valeur) {
-                                            echo $valeur, '<br/>';
-                                        }
-                                        ?>
+                                                                    //foreach ($tableau as $valeur) {
+                                                                     //   echo $valeur, '<br/>';
 
-                                    </tbody>
-                                </table>
-                            </div>
+                                                                    ?>
+
+                                                                </tbody>
+                                                            </table>
+                                                        </div>-->
                             <!-- /.box-body -->
                         </div>
                         <!-- /.box -->

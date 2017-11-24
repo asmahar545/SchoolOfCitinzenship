@@ -305,12 +305,25 @@ class ControleurTeacher extends ControleurSecurise {
 
     public function monterDeCeinture() {
         if ($this->requete->existeParametre("id")) {
+            //connaitre la période actuelle
+            $periodScolaire = $this->grille->selectPeriodScolaire();
+            $period = $periodScolaire['period'];
 
             $idE = $this->requete->getParametre("id");
             $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
             $adult = $this->adult->getadult($idU);
-            $ceinture = $this->student->selectCeinture($idE);
-            $this->genererVue(array('adult' => $adult, 'id' => $idE, 'ceinture' => $ceinture));
+            //badge en Toussaint
+            $toussaint = "Toussaint";
+            $ceintureToussaint = $this->student->selectCeinture($toussaint, $idE);
+            //badge à Noel
+            $noel = "Noël";
+            $ceintureNoel = $this->student->selectCeinture($noel, $idE);
+            // badge à Paques
+            $paques = "Pâques";
+            $ceinturePaques = $this->student->selectCeinture($paques, $idE);
+            $juin = "juin";
+            $ceintureJuin = $this->student->selectCeinture($juin, $idE);
+            $this->genererVue(array('adult' => $adult, 'id' => $idE, 'ceinture' => $ceinture, 'periodactuel' => $periodScolaire, 'badgeNoel' => $ceintureNoel, 'badgeJuin' => $ceintureJuin, 'badgeToussaint' => $ceintureToussaint, 'badgePaques' => $ceinturePaques));
         } else {
             throw new Exception("Erreur de chargement de page");
         }
@@ -320,10 +333,14 @@ class ControleurTeacher extends ControleurSecurise {
         if ($this->requete->existeParametre("id") && $this->requete->existeParametre("ceinture")) {
             $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
             $adult = $this->adult->getadult($idU);
+            //connaitre la période
+            $periodScolaire = $this->grille->selectPeriodScolaire();
+            $period = $periodScolaire['period'];
+            //connaitrele badge
             $ceinture = $this->requete->getParametre("ceinture");
             $id = $this->requete->getParametre("id");
             $idC = $this->classe->getClasseEleve($id);
-            $this->student->editChildrenCeinture($ceinture, $id);
+            $this->student->editChildrenCeinture($period, $ceinture, $id);
             $this->genererVue(array('adult' => $adult, 'idC' => $idC));
         } else {
             throw new Exception("Erreur de chargement de page");

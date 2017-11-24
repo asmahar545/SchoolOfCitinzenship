@@ -27,8 +27,217 @@ class Student extends Modele {
         return $student;
     }
 
-    public function getStudentsBadges($couleur) {
-        $sql = "SELECT name,firstName from eleve where Toussaint=?";
+    // commentaire du Titulaire
+    public function getCommentaireTitulaire($idE, $IdT) {
+        $sql = "SELECT commentaire FROM `itemresponstudent` WHERE idE= ? and idU= ? group by commentaire";
+        $commentaire = $this->executerRequete($sql, array($idE, $idT));
+        $comm = $commentaire > fetch();
+        return $comm;
+    }
+
+    //
+    public function getIdTitulaire($idC) {
+        $sql = "SELECT `Titulaire` FROM `classe` WHERE id= ?";
+        $titulaire = $this->executerRequete($sql, array($idC));
+        $idU = $titulaire > fetch();
+        return $idU;
+    }
+
+    // classe 1 à la toussaint
+    public function getStudentsBadgesToussaint1($couleur) {
+        $sql = "SELECT name,firstName from eleve where Toussaint=? and id_classe= 1";
+        $student = $this->executerRequete($sql, array($couleur));
+        return$student;
+    }
+
+    public function getStudentsBadgesToussaint2($couleur) {
+        $sql = "SELECT name,firstName from eleve where Toussaint=? and id_classe= 2";
+        $student = $this->executerRequete($sql, array($couleur));
+        return$student;
+    }
+
+    public function getStudentsBadgesToussaint3($couleur) {
+        $sql = "SELECT name,firstName from eleve where Toussaint=? and id_classe= 3";
+        $student = $this->executerRequete($sql, array($couleur));
+        return$student;
+    }
+
+    public function getStudentsBadgesToussaint4($couleur) {
+        $sql = "SELECT name,firstName from eleve where Toussaint=? and id_classe= 4";
+        $student = $this->executerRequete($sql, array($couleur));
+        return$student;
+    }
+
+    public function getStudentsBadgesToussaint5($couleur) {
+        $sql = "SELECT name,firstName from eleve where Toussaint=? and id_classe= 5";
+        $student = $this->executerRequete($sql, array($couleur));
+        return$student;
+    }
+
+    public function getStudentsBadgesToussaint6($couleur) {
+        $sql = "SELECT name,firstName from eleve where Toussaint=? and id_classe= 6";
+        $student = $this->executerRequete($sql, array($couleur));
+        return$student;
+    }
+
+    public function getStudentsBadgesToussaint7($couleur) {
+        $sql = "SELECT name,firstName from eleve where Toussaint=? and id_classe= 7";
+        $student = $this->executerRequete($sql, array($couleur));
+        return$student;
+    }
+
+    public function getStudentsBadgesToussaint8($couleur) {
+        $sql = "SELECT name,firstName from eleve where Toussaint=? and id_classe= 8";
+        $student = $this->executerRequete($sql, array($couleur));
+        return$student;
+    }
+
+    public function getStudentsBadgesToussaint9($couleur) {
+        $sql = "SELECT name,firstName from eleve where Toussaint=? and id_classe= 9";
+        $student = $this->executerRequete($sql, array($couleur));
+        return$student;
+    }
+
+    public function getStudentsBadgesToussaint10($couleur) {
+        $sql = "SELECT name,firstName from eleve where Toussaint=? and id_classe= 10";
+        $student = $this->executerRequete($sql, array($couleur));
+        return$student;
+    }
+
+    public function getStudentsBadgesToussaint11($couleur) {
+        $sql = "SELECT name,firstName from eleve where Toussaint=? and id_classe= 11";
+        $student = $this->executerRequete($sql, array($couleur));
+        return$student;
+    }
+
+    public function getStudentsBadgesToussaint12($couleur) {
+        $sql = "SELECT name,firstName from eleve where Toussaint=? and id_classe=12";
+        $student = $this->executerRequete($sql, array($couleur));
+        return$student;
+    }
+
+    public function getStudentsBadgesToussaint13($couleur) {
+        $sql = "SELECT name,firstName from eleve where Toussaint=? and id_classe= 13";
+        $student = $this->executerRequete($sql, array($couleur));
+        return$student;
+    }
+
+    public function getStudentsBadgesToussaint14($couleur) {
+        $sql = "SELECT name,firstName from eleve where Toussaint=? and id_classe= 14";
+        $student = $this->executerRequete($sql, array($couleur));
+        return$student;
+    }
+
+    public function getStudentsBadgesToussaint15($couleur) {
+        $sql = "SELECT name,firstName from eleve where Toussaint=? and id_classe= 15";
+        $student = $this->executerRequete($sql, array($couleur));
+        return$student;
+    }
+
+    public function getStudentsBadgesToussaint16($couleur) {
+        $sql = "SELECT name,firstName from eleve where Toussaint=? and id_classe= 16";
+        $student = $this->executerRequete($sql, array($couleur));
+        return$student;
+    }
+
+    public function getStudentsBadgesToussaint17($couleur) {
+        $sql = "SELECT name,firstName from eleve where Toussaint=? and id_classe= 17";
+        $student = $this->executerRequete($sql, array($couleur));
+        return$student;
+    }
+
+    public function getStudentsBadgesToussaint18($couleur) {
+        $sql = "SELECT name,firstName from eleve where Toussaint=? and id_classe= 18";
+        $student = $this->executerRequete($sql, array($couleur));
+        return$student;
+    }
+
+    public function getStudentsBadgesToussaint19($couleur) {
+        $sql = "SELECT name,firstName from eleve where Toussaint=? and id_classe= 19";
+        $student = $this->executerRequete($sql, array($couleur));
+        return$student;
+    }
+
+    public function getStudentsBadgesToussaint20($couleur) {
+        $sql = "SELECT name,firstName from eleve where Toussaint=? and id_classe= 20";
+        $student = $this->executerRequete($sql, array($couleur));
+        return$student;
+    }
+
+    public function getStudentsBadgesToussaint21($couleur) {
+        $sql = "SELECT name,firstName from eleve where Toussaint=? and id_classe= 21";
+        $student = $this->executerRequete($sql, array($couleur));
+        return$student;
+    }
+
+    public function getStudentsBadgesToussaint22($couleur) {
+        $sql = "SELECT name,firstName from eleve where Toussaint=? and id_classe= 22";
+        $student = $this->executerRequete($sql, array($couleur));
+        return$student;
+    }
+
+    public function getStudentsBadgesToussaint23($couleur) {
+        $sql = "SELECT name,firstName from eleve where Toussaint=? and id_classe= 23";
+        $student = $this->executerRequete($sql, array($couleur));
+        return$student;
+    }
+
+    public function getStudentsBadgesToussaint24($couleur) {
+        $sql = "SELECT name,firstName from eleve where Toussaint=? and id_classe= 24";
+        $student = $this->executerRequete($sql, array($couleur));
+        return$student;
+    }
+
+    public function getStudentsBadgesToussaint25($couleur) {
+        $sql = "SELECT name,firstName from eleve where Toussaint=? and id_classe= 25";
+        $student = $this->executerRequete($sql, array($couleur));
+        return$student;
+    }
+
+    public function getStudentsBadgesToussaint26($couleur) {
+        $sql = "SELECT name,firstName from eleve where Toussaint=? and id_classe= 26";
+        $student = $this->executerRequete($sql, array($couleur));
+        return$student;
+    }
+
+    public function getStudentsBadgesToussaint27($couleur) {
+        $sql = "SELECT name,firstName from eleve where Toussaint=? and id_classe= 27";
+        $student = $this->executerRequete($sql, array($couleur));
+        return$student;
+    }
+
+    public function getStudentsBadgesToussaint28($couleur) {
+        $sql = "SELECT name,firstName from eleve where Toussaint=? and id_classe= 28";
+        $student = $this->executerRequete($sql, array($couleur));
+        return$student;
+    }
+
+    public function getStudentsBadgesToussaint29($couleur) {
+        $sql = "SELECT name,firstName from eleve where Toussaint=? and id_classe= 29";
+        $student = $this->executerRequete($sql, array($couleur));
+        return$student;
+    }
+
+    public function getStudentsBadgesToussaint30($couleur) {
+        $sql = "SELECT name,firstName from eleve where Toussaint=? and id_classe= 30";
+        $student = $this->executerRequete($sql, array($couleur));
+        return$student;
+    }
+
+    public function getStudentsBadgeNoel($couleur) {
+        $sql = "SELECT name,firstName from eleve where Noel=?";
+        $student = $this->executerRequete($sql, array($couleur));
+        return$student;
+    }
+
+    public function getStudentsBadgesPaques($couleur) {
+        $sql = "SELECT name,firstName from eleve where Paques=?";
+        $student = $this->executerRequete($sql, array($couleur));
+        return$student;
+    }
+
+    public function getStudentsBadgesJuin($couleur) {
+        $sql = "SELECT name,firstName from eleve where =?";
         $student = $this->executerRequete($sql, array($couleur));
         return$student;
     }
@@ -72,7 +281,7 @@ class Student extends Modele {
 
 //ajouter un étudiant
     public function addChildren($name, $firstname, $id_classe) {
-        $sql = "INSERT INTO `eleve`(`id_student`, `name`, `firstName`, ``, `retard`, `id_classe`) VALUES (Null,?,?,'blanc',0,?)";
+        $sql = "INSERT INTO `eleve`(`id_student`, `name`, `firstName`, `Toussaint`, `retard`, `id_classe`) VALUES (Null,?,?,'blanc',0,?)";
         $rep = $this->executerRequete($sql, array($name, $firstname, $id_classe));
     }
 

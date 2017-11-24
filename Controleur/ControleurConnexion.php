@@ -33,7 +33,7 @@ class ControleurConnexion extends Controleur {
             if ($this->utilisateur->connecter($login, $mdp)) {
 
                 //si il est admin
-                if ($login == "info@valioapp.be" && $mdp == "valio") {
+                if ($login == "tic@campus-st-jean.be" && $mdp == "campus41136") {
                     $utilisateur = $this->utilisateur->getUtilisateur($login, $mdp);
 
                     $this->requete->getSession()->setAttribut("idUtilisateur", $utilisateur['idUtilisateur']);
