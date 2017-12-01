@@ -312,6 +312,7 @@ class ControleurTeacher extends ControleurSecurise {
             $idE = $this->requete->getParametre("id");
             $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
             $adult = $this->adult->getadult($idU);
+            $student = $this->student->getStudent($idE);
             //badge en Toussaint
             $toussaint = "Toussaint";
             $ceintureToussaint = $this->student->selectCeinture($toussaint, $idE);
@@ -323,7 +324,7 @@ class ControleurTeacher extends ControleurSecurise {
             $ceinturePaques = $this->student->selectCeinture($paques, $idE);
             $juin = "juin";
             $ceintureJuin = $this->student->selectCeinture($juin, $idE);
-            $this->genererVue(array('adult' => $adult, 'id' => $idE, 'ceinture' => $ceinture, 'periodactuel' => $periodScolaire, 'badgeNoel' => $ceintureNoel, 'badgeJuin' => $ceintureJuin, 'badgeToussaint' => $ceintureToussaint, 'badgePaques' => $ceinturePaques));
+            $this->genererVue(array('adult' => $adult, 'id' => $idE, 'student' => $student, 'ceinture' => $ceinture, 'periodactuel' => $periodScolaire, 'badgeNoel' => $ceintureNoel, 'badgeJuin' => $ceintureJuin, 'badgeToussaint' => $ceintureToussaint, 'badgePaques' => $ceinturePaques));
         } else {
             throw new Exception("Erreur de chargement de page");
         }

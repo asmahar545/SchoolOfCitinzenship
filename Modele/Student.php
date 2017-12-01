@@ -28,19 +28,19 @@ class Student extends Modele {
     }
 
     // commentaire du Titulaire
-    public function getCommentaireTitulaire($idE, $IdT) {
+    public function getCommentaireTitulaire($idE, $idT) {
         $sql = "SELECT commentaire FROM `itemresponstudent` WHERE idE= ? and idU= ? group by commentaire";
         $commentaire = $this->executerRequete($sql, array($idE, $idT));
         $comm = $commentaire > fetch();
-        return $comm;
+        return $comm['commentaire'];
     }
 
     //
-    public function getIdTitulaire($idC) {
+    public function getIdTitulaire($id) {
         $sql = "SELECT `Titulaire` FROM `classe` WHERE id= ?";
-        $titulaire = $this->executerRequete($sql, array($idC));
-        $idU = $titulaire > fetch();
-        return $idU;
+        $titulaire = $this->executerRequete($sql, array($id));
+        $ligne = $titulaire->fetch();
+        return $ligne['Titulaire'];
     }
 
     // classe 1 à la toussaint

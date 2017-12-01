@@ -41,14 +41,7 @@
                     <i class="fa  fa-th-large"></i> <span>Ma classe </span>
                 </a>
             </li>
-            <li class="treeview">
-                <a href="teacher/moncommentaire">
-                    <i class="fa fa-file-text"></i>
-                    <span>Mon commentaire</span>
 
-                </a>
-
-            </li>
             <li class="treeview">
                 <a href="teacher/grille">
                     <i class="fa fa-file-text"></i>

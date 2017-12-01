@@ -199,7 +199,7 @@
                                                                 <br>
                                                                 <br>
                                                                 <br>
-                                                                Commentaire du titulaire:
+                                                                Commentaire du titulaire: <?= $commentaire['commentaire'] ?>
                                                                 <br>
                                                                 <br> <br> <br>
                                                                 <br> <br>
@@ -218,156 +218,156 @@
                                                                             <br>
                                                                             <br>
                                                                             <br>
-                                                                            Commentaire du titulaire:
-                                                                            <br>
+                                                                            <b>Commentaire du titulaire:<b> <br><?= $commentaire['commentaire'] ?>
+                                                                                    <br>
 
-                                                                            <br> <br> <br>
-                                                                            <br> <br>
-                                                                            <br> <br>
-                                                                            <br>
-                                                                            <br>
-                                                                            <br>
-                                                                            <br> <br>
-                                                                            <br>
-                                                                            <img src="images/blanc.jpg" width="120">
+                                                                                    <br> <br> <br>
+                                                                                    <br> <br>
+                                                                                    <br> <br>
+                                                                                    <br>
+                                                                                    <br>
+                                                                                    <br>
+                                                                                    <br> <br>
+                                                                                    <br>
+                                                                                    <img src="images/blanc.jpg" width="120">
 
-                                                                        <?php elseif ($ceinture['periode'] == "Jaune"): ?>
-                                                                            <h3><b>Tu obtiens le badge <?= $ceinture['periode'] ?>.<b> </h3>
-                                                                                        <br>
-                                                                                        <br>
-                                                                                        <br>
-                                                                                        Commentaire du titulaire:
+                                                                                <?php elseif ($ceinture['periode'] == "Jaune"): ?>
+                                                                                    <h3><b>Tu obtiens le badge <?= $ceinture['periode'] ?>.<b> </h3>
+                                                                                                <br>
+                                                                                                <br>
+                                                                                                <br>
+                                                                                                <b>  Commentaire du titulaire: <b><br> <?= $commentaire['commentaire'] ?>
 
-                                                                                        <br>
+                                                                                                        <br>
 
-                                                                                        <br> <br> <br>
-                                                                                        <br> <br>
-                                                                                        <br> <br>
-                                                                                        <br>
-                                                                                        <br>
-                                                                                        <br>
-                                                                                        <br> <br>
-                                                                                        <br>
-                                                                                        <img src="images/jaune.jpg" width="120">
-                                                                                    <?php elseif ($ceinture['periode'] == "Orange"): ?>
-                                                                                        <h3><b>Tu obtiens le badge <?= $ceinture['periode'] ?>.<b> </h3>
-                                                                                                    <br>
-                                                                                                    <br>
-                                                                                                    <br>
-                                                                                                    Commentaire du titulaire:
-                                                                                                    <br>
-
-
-                                                                                                    <br> <br> <br>
-                                                                                                    <br> <br>
-                                                                                                    <br> <br>
-                                                                                                    <br>
-                                                                                                    <br>
-                                                                                                    <br>
-                                                                                                    <br> <br>
-                                                                                                    <br>
-                                                                                                    <img src="images/orange.png" width="120" >
-                                                                                                <?php else: ?>
-                                                                                                    <h3><br>Tu n'as actuellement aucun badge à cette période.<br> </h3>
-                                                                                                    <br>
-                                                                                                    <br>
-                                                                                                    <br>
-                                                                                                    <br>
-                                                                                                    <br> <br> <br>
-                                                                                                    <br> <br>
-                                                                                                    <br> <br>
-                                                                                                    <br>
-                                                                                                    <br>
-                                                                                                    <br>
-                                                                                                    <br> <br>
-                                                                                                    <br>
-
-                                                                                                <?php endif; ?>
+                                                                                                        <br> <br> <br>
+                                                                                                        <br> <br>
+                                                                                                        <br> <br>
+                                                                                                        <br>
+                                                                                                        <br>
+                                                                                                        <br>
+                                                                                                        <br> <br>
+                                                                                                        <br>
+                                                                                                        <img src="images/jaune.jpg" width="120">
+                                                                                                    <?php elseif ($ceinture['periode'] == "Orange"): ?>
+                                                                                                        <h3><b>Tu obtiens le badge <?= $ceinture['periode'] ?>.<b> </h3>
+                                                                                                                    <br>
+                                                                                                                    <br>
+                                                                                                                    <br>
+                                                                                                                    <b> Commentaire du titulaire: <b><br><?= $commentaire['commentaire'] ?>
+                                                                                                                            <br>
 
 
-                                                                                                </div>
+                                                                                                                            <br> <br> <br>
+                                                                                                                            <br> <br>
+                                                                                                                            <br> <br>
+                                                                                                                            <br>
+                                                                                                                            <br>
+                                                                                                                            <br>
+                                                                                                                            <br> <br>
+                                                                                                                            <br>
+                                                                                                                            <img src="images/orange.png" width="120" >
+                                                                                                                        <?php else: ?>
+                                                                                                                            <h3><br>Tu n'as actuellement aucun badge à cette période.<br> </h3>
+                                                                                                                            <br>
+                                                                                                                            <br>
+                                                                                                                            <br>
+                                                                                                                            <br>
+                                                                                                                            <br> <br> <br>
+                                                                                                                            <br> <br>
+                                                                                                                            <br> <br>
+                                                                                                                            <br>
+                                                                                                                            <br>
+                                                                                                                            <br>
+                                                                                                                            <br> <br>
+                                                                                                                            <br>
+
+                                                                                                                        <?php endif; ?>
+
+
+                                                                                                                        </div>
 
 
 
-                                                                                                <!-- /.col -->
-                                                                                                </div>
-                                                                                                <!-- /.row -->
-                                                                                                </section>
-                                                                                                <!-- /.content -->
-                                                                                                </div>
-                                                                                                <!-- /.content-wrapper -->
+                                                                                                                        <!-- /.col -->
+                                                                                                                        </div>
+                                                                                                                        <!-- /.row -->
+                                                                                                                        </section>
+                                                                                                                        <!-- /.content -->
+                                                                                                                        </div>
+                                                                                                                        <!-- /.content-wrapper -->
 
 
-                                                                                                <?php require 'Vue/_Commun/Folder.php'; ?>
-                                                                                                <?php require 'Vue/_Commun/Aside.php'; ?>
-                                                                                                <!-- /.control-sidebar -->
-                                                                                                <!-- Add the sidebar's background. This div must be placed
-                                                                                                     immediately after the control sidebar -->
-                                                                                                <div class="control-sidebar-bg"></div>
-                                                                                                </div>
-                                                                                                <!-- ./wrapper -->
-                                                                                                <style>
-                                                                                                    th.rotate {
-                                                                                                        /* Something you can count on */
-                                                                                                        height: 20px;
-                                                                                                        white-space: nowrap;
-                                                                                                    }
+                                                                                                                        <?php require 'Vue/_Commun/Folder.php'; ?>
+                                                                                                                        <?php require 'Vue/_Commun/Aside.php'; ?>
+                                                                                                                        <!-- /.control-sidebar -->
+                                                                                                                        <!-- Add the sidebar's background. This div must be placed
+                                                                                                                             immediately after the control sidebar -->
+                                                                                                                        <div class="control-sidebar-bg"></div>
+                                                                                                                        </div>
+                                                                                                                        <!-- ./wrapper -->
+                                                                                                                        <style>
+                                                                                                                            th.rotate {
+                                                                                                                                /* Something you can count on */
+                                                                                                                                height: 20px;
+                                                                                                                                white-space: nowrap;
+                                                                                                                            }
 
-                                                                                                    th.rotate > div {
-                                                                                                        transform:
-                                                                                                            /* Magic Numbers */
-                                                                                                            translate(30px, 0px)
-                                                                                                            /* 45 is really 360 - 45 */
-                                                                                                            rotate(315deg);
-                                                                                                        width: 30px;
-                                                                                                    }
-                                                                                                    th.rotate > div > span {
-                                                                                                        border-bottom: 1px solid #ccc;
-                                                                                                        padding: 5px 10px;
-                                                                                                    }
-                                                                                                    /* These aren't needed and will be weird if transforms don't work */
-                                                                                                    .csstransforms & th.rotate {
-                                                                                                        height: 140px;
-                                                                                                        white-space: nowrap;
-                                                                                                    }
-                                                                                                </style>
-                                                                                                <!-- jQuery 2.2.3 -->
-                                                                                                <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
-                                                                                                <!-- Bootstrap 3.3.6 -->
-                                                                                                <script src="bootstrap/js/bootstrap.min.js"></script>
-                                                                                                <!-- DataTables -->
-                                                                                                <script src="plugins/datatables/jquery.dataTables.min.js"></script>
-                                                                                                <script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
-                                                                                                <!-- SlimScroll -->
-                                                                                                <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
-                                                                                                <!-- FastClick -->
-                                                                                                <script src="plugins/fastclick/fastclick.js"></script>
-                                                                                                <!-- AdminLTE App -->
-                                                                                                <script src="dist/js/app.min.js"></script>
-                                                                                                <!-- AdminLTE for demo purposes -->
-                                                                                                <script src="dist/js/demo.js"></script>
-                                                                                                <script src="plugins/pdf/jquery.dataTables.min.js"></script>
-                                                                                                <script src="plugins/pdf/dataTables.buttons.min.js"></script>
-                                                                                                <script src="plugins/pdf/pdfmake.min.js"></script>
-                                                                                                <script src="plugins/pdf/vfs_fonts.js"></script>
-                                                                                                <script src="plugins/pdf/buttons.html5.min.js"></script>
+                                                                                                                            th.rotate > div {
+                                                                                                                                transform:
+                                                                                                                                    /* Magic Numbers */
+                                                                                                                                    translate(30px, 0px)
+                                                                                                                                    /* 45 is really 360 - 45 */
+                                                                                                                                    rotate(315deg);
+                                                                                                                                width: 30px;
+                                                                                                                            }
+                                                                                                                            th.rotate > div > span {
+                                                                                                                                border-bottom: 1px solid #ccc;
+                                                                                                                                padding: 5px 10px;
+                                                                                                                            }
+                                                                                                                            /* These aren't needed and will be weird if transforms don't work */
+                                                                                                                            .csstransforms & th.rotate {
+                                                                                                                                height: 140px;
+                                                                                                                                white-space: nowrap;
+                                                                                                                            }
+                                                                                                                        </style>
+                                                                                                                        <!-- jQuery 2.2.3 -->
+                                                                                                                        <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+                                                                                                                        <!-- Bootstrap 3.3.6 -->
+                                                                                                                        <script src="bootstrap/js/bootstrap.min.js"></script>
+                                                                                                                        <!-- DataTables -->
+                                                                                                                        <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+                                                                                                                        <script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
+                                                                                                                        <!-- SlimScroll -->
+                                                                                                                        <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+                                                                                                                        <!-- FastClick -->
+                                                                                                                        <script src="plugins/fastclick/fastclick.js"></script>
+                                                                                                                        <!-- AdminLTE App -->
+                                                                                                                        <script src="dist/js/app.min.js"></script>
+                                                                                                                        <!-- AdminLTE for demo purposes -->
+                                                                                                                        <script src="dist/js/demo.js"></script>
+                                                                                                                        <script src="plugins/pdf/jquery.dataTables.min.js"></script>
+                                                                                                                        <script src="plugins/pdf/dataTables.buttons.min.js"></script>
+                                                                                                                        <script src="plugins/pdf/pdfmake.min.js"></script>
+                                                                                                                        <script src="plugins/pdf/vfs_fonts.js"></script>
+                                                                                                                        <script src="plugins/pdf/buttons.html5.min.js"></script>
 
-                                                                                                <!-- page script
-                                                                                                <script>
+                                                                                                                        <!-- page script
+                                                                                                                        <script>
 
-                                                                                                $(document).ready(function() {
-                                                                                                    $('#example1').DataTable( {
-                                                                                                        dom: 'Bfrtip',
-                                                                                                        buttons: [
-                                                                                                            {
-                                                                                                                extend: 'pdfHtml5',
-                                                                                                                orientation: 'landscape',
-                                                                                                                pageSize: 'LEGAL'
-                                                                                                            }
-                                                                                                        ]
-                                                                                                    } );
-                                                                                                } );-->
+                                                                                                                        $(document).ready(function() {
+                                                                                                                            $('#example1').DataTable( {
+                                                                                                                                dom: 'Bfrtip',
+                                                                                                                                buttons: [
+                                                                                                                                    {
+                                                                                                                                        extend: 'pdfHtml5',
+                                                                                                                                        orientation: 'landscape',
+                                                                                                                                        pageSize: 'LEGAL'
+                                                                                                                                    }
+                                                                                                                                ]
+                                                                                                                            } );
+                                                                                                                        } );-->
 
-                                                                                                </script>
+                                                                                                                        </script>
 
-                                                                                                </body
+                                                                                                                        </body

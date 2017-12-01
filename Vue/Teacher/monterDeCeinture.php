@@ -39,7 +39,7 @@
 <body class="hold-transition skin-black sidebar-mini">
     <div class="wrapper">
         <?php require 'Vue/_Commun/headerPrinc.php'; ?>
-        <?php require 'Vue/_Commun/navPrinc.php'; ?>
+        <?php require 'Vue/_Commun/navPrincTeacher.php'; ?>
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
@@ -54,6 +54,7 @@
                         <div class="box box-warning">
 
                             <div class="box-body">
+                                <h4><b><?= $student['name'] ?>   <?= $student['firstName'] ?></b></h4>
                                 <form action="teacher/exeMonterDeCeinture/<?= $id ?>"class="form-horizontal form-label-left" method="post">
                                     <div class="box-header with-border">
                                         <?php if ($periodactuel['period'] == "Noël"): ?>
@@ -105,8 +106,9 @@
                                                         <span class="form-group-addon">Monter de Ceinture</span>
                                                         <select class="form-control"  name="ceinture" type="text">
                                                             <option>Blanc</option>
-                                                            <option>Jaune</option>
                                                             <option>Bleu</option>
+                                                            <option>Jaune</option>
+
                                                             <option>Orange</option>
                                                             <option>Violet</option>
                                                             <option>Vert</option>

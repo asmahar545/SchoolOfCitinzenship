@@ -276,9 +276,16 @@ class ControleurAdmin extends ControleurSecurise {
             $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
             $adult = $this->adult->getadult($idU);
             $id = $this->requete->getParametre("id");
+
+            $idC = $this->classe->getClasseEleve($id);
+            $idClasse = $idC['nb'];
+            // COMMENTAIRE DU titulaire
+            $idTitulaire = $this->student->getIdTitulaire($idClasse);
+            $commentaire = $this->grille->selectCommentaire($id, $idTitulaire);
+
             $student = $this->student->getStudent($id);
             $year = $this->classe->selectClasseEleve($id);
-            $this->genererVue(array('adult' => $adult, 'student' => $student, 'classe' => $classe, 'year' => $year));
+            $this->genererVue(array('adult' => $adult, 'student' => $student, 'classe' => $classe, 'commentaire' => $commentaire, 'year' => $year));
         }
     }
 
@@ -641,11 +648,14 @@ class ControleurAdmin extends ControleurSecurise {
             $nbrTeachEvalue = $this->classe->nombreTeacherevalueUneClasse($idClasse);
             $nbrTeachEvalues = $this->adult->teacherNbrEvaluate($idClasse);
 
-            $commentaire = $this->grille->selectCommentaire($idE);
             $periode = $this->grille->selectPeriod();
             $student = $this->student->getStudentsName($idE);
             $retard = $this->student->selectRetard($idE);
 
+
+            //COMMENTAIRE DU titulaire
+            $idTitulaire = $this->student->getIdTitulaire($idClasse);
+            $commentaire = $this->grille->selectCommentaire($idE, $idTitulaire);
             //connaitre la période
             $periodScolaire = $this->grille->selectPeriodScolaire();
             $period = $periodScolaire['period'];
@@ -739,10 +749,13 @@ class ControleurAdmin extends ControleurSecurise {
             //connaitre la période actuelle
             $periodScolaire = $this->grille->selectPeriodScolaire();
             $period = $periodScolaire['period'];
+            //nom et préom de l'étudiant
+
 
             $idE = $this->requete->getParametre("id");
             $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
             $adult = $this->adult->getadult($idU);
+            $student = $this->student->getStudent($idE);
             //badge en Toussaint
             $toussaint = "Toussaint";
             $ceintureToussaint = $this->student->selectCeinture($toussaint, $idE);
@@ -754,7 +767,7 @@ class ControleurAdmin extends ControleurSecurise {
             $ceinturePaques = $this->student->selectCeinture($paques, $idE);
             $juin = "juin";
             $ceintureJuin = $this->student->selectCeinture($juin, $idE);
-            $this->genererVue(array('adult' => $adult, 'id' => $idE, 'ceinture' => $ceinture, 'periodactuel' => $periodScolaire, 'badgeNoel' => $ceintureNoel, 'badgeJuin' => $ceintureJuin, 'badgeToussaint' => $ceintureToussaint, 'badgePaques' => $ceinturePaques));
+            $this->genererVue(array('adult' => $adult, 'id' => $idE, 'student' => $student, 'ceinture' => $ceinture, 'periodactuel' => $periodScolaire, 'badgeNoel' => $ceintureNoel, 'badgeJuin' => $ceintureJuin, 'badgeToussaint' => $ceintureToussaint, 'badgePaques' => $ceinturePaques));
         } else {
             throw new Exception("Erreur de chargement de page");
         }

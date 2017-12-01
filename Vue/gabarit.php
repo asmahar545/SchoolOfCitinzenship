@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 
-<base href="/SchoolOfCitinzenship/"/>
+    <base href="/Schoolofcitinzenship/"/>
 
 
-    
-<?= $contenu ?>
+
+    <?= $contenu ?>
 
 
 
