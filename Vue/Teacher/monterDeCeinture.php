@@ -64,7 +64,7 @@
                                                 <?php if ($badgeNoel['periode'] == ""): ?>
                                                     Mettez-le à jour si son évaluation est positive.
                                                 <?php else: ?>
-                                                    Le badge de l'étudiant à la période de <?= $periodactuel['period'] ?> est <?= $badgeNoel['periode'] ?>.
+                                                    Le badge de l'étudiant à la période de <?= $periodactuel['period'] ?> est<b> <?= $badgeNoel['periode'] ?></b>.
                                                     <br>
                                                     <br>
 
@@ -78,7 +78,7 @@
                                                     <?php if ($badgePaques['periode'] == ""): ?>
                                                         Mettez-le à jour si son évaluation est positive.
                                                     <?php else: ?>
-                                                        Le badge de l'étudiant à la période de <?= $periodactuel['period'] ?> est <?= $badgePaques['periode'] ?>.
+                                                        Le badge de l'étudiant à la période de <?= $periodactuel['period'] ?> est <b><?= $badgePaques['periode'] ?></b>.
                                                         <br>
                                                         <br>
 
@@ -91,7 +91,7 @@
                                                         <?php if ($badgeJuin['periode'] == ""): ?>
                                                             Mettez-le à jour si son évaluation est positive.
                                                         <?php else: ?>
-                                                            Le badge de l'étudiant à la période de <?= $periodactuel['period'] ?> est <?= $badgeJuin['periode'] ?>.
+                                                            Le badge de l'étudiant à la période de <?= $periodactuel['period'] ?> est <b><?= $badgeJuin['periode'] ?></b>.
                                                             <br>
                                                             <br>
                                                             Mettez-le à jour si son évaluation est positive.
@@ -103,7 +103,7 @@
                                                 <div class="box-body">
 
                                                     <div class="form-group">
-                                                        <span class="form-group-addon">Monter de Ceinture</span>
+                                                        <span class="form-group-addon">Montée de Ceinture</span>
                                                         <select class="form-control"  name="ceinture" type="text">
                                                             <option>Blanc</option>
                                                             <option>Bleu</option>
@@ -121,6 +121,13 @@
                                                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-10">
 
                                                             <button type="submit" class="btn btn-warning">Modifier</button>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div >
+
+                                                            <a href="teacher/listStudentClass/<?= $idC['nb'] ?>" class="btn btn-success">Retour</a>
                                                         </div>
                                                     </div>
 

@@ -69,7 +69,7 @@
                                 <li class="active"><a href="#tab_1" data-toggle="tab">Listes des badges Blanc</a></li>
 
                                 <li><a href="#tab_2" data-toggle="tab">Listes des badges Jaune</a></li>
-                                <li><a href="#tab_3" data-toggle="tab">Listes des badges Bleue</a></li>
+                                <li><a href="#tab_3" data-toggle="tab">Listes des badges Bleu</a></li>
                                 <li><a href="#tab_4" data-toggle="tab">Listes des badges Orange</a></li>
                                 <li><a href="#tab_5" data-toggle="tab">Listes des badges Violet</a></li>
                                 <li><a href="#tab_6" data-toggle="tab">Listes des badges Vert</a></li>
@@ -306,7 +306,7 @@
                             <ul class="nav nav-tabs">
                                 <li class="active"><a href="#2tab_1" data-toggle="tab">Listes des badges Blanc</a></li>
                                 <li><a href="#2tab_2" data-toggle="tab">Listes des badges Jaune</a></li>
-                                <li><a href="#2tab_3" data-toggle="tab">Listes des badges Bleue</a></li>
+                                <li><a href="#2tab_3" data-toggle="tab">Listes des badges Bleu</a></li>
                                 <li><a href="#2tab_4" data-toggle="tab">Listes des badges Orange</a></li>
                                 <li><a href="#2tab_5" data-toggle="tab">Listes des badges Violet</a></li>
                                 <li><a href="#2tab_6" data-toggle="tab">Listes des badges Vert</a></li>
@@ -543,7 +543,7 @@
                             <ul class="nav nav-tabs">
                                 <li class="active"><a href="#3tab_1" data-toggle="tab">Listes des badges Blanc</a></li>
                                 <li><a href="#3tab_2" data-toggle="tab">Listes des badges Jaune</a></li>
-                                <li><a href="#3tab_3" data-toggle="tab">Listes des badges Bleue</a></li>
+                                <li><a href="#3tab_3" data-toggle="tab">Listes des badges Bleu</a></li>
                                 <li><a href="#3tab_4" data-toggle="tab">Listes des badges Orange</a></li>
                                 <li><a href="#3tab_5" data-toggle="tab">Listes des badges Violet</a></li>
                                 <li><a href="#3tab_6" data-toggle="tab">Listes des badges Vert</a></li>

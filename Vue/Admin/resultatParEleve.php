@@ -77,7 +77,7 @@
                                                     <tfoot>
                                                         <tr >
 
-                                                            <th><a class="danger" href="javascript:window.print()" ><i class="fa fa-clock-o"></i> Nombre de retard : </a></th>
+                                                            <th><a class="danger" href="javascript:window.print()" ><i class="fa fa-clock-o"></i> Nombre de retards : </a></th>
                                                             <th colspan="1" class="danger" > <?= $retard['retard'] ?>  </th>
                                                            <!--  <th colspan="1" class="danger" > Commentaire du titulaire // $commentaire['commentaire'] </th> -->
 

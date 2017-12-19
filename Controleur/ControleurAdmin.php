@@ -753,6 +753,8 @@ class ControleurAdmin extends ControleurSecurise {
 
 
             $idE = $this->requete->getParametre("id");
+            //trouver la classe de l'élève pour le botuon Retour
+            $idC = $this->classe->getClasseEleve($idE);
             $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
             $adult = $this->adult->getadult($idU);
             $student = $this->student->getStudent($idE);
@@ -767,7 +769,7 @@ class ControleurAdmin extends ControleurSecurise {
             $ceinturePaques = $this->student->selectCeinture($paques, $idE);
             $juin = "juin";
             $ceintureJuin = $this->student->selectCeinture($juin, $idE);
-            $this->genererVue(array('adult' => $adult, 'id' => $idE, 'student' => $student, 'ceinture' => $ceinture, 'periodactuel' => $periodScolaire, 'badgeNoel' => $ceintureNoel, 'badgeJuin' => $ceintureJuin, 'badgeToussaint' => $ceintureToussaint, 'badgePaques' => $ceinturePaques));
+            $this->genererVue(array('adult' => $adult, 'idC' => $idC, 'id' => $idE, 'student' => $student, 'ceinture' => $ceinture, 'periodactuel' => $periodScolaire, 'badgeNoel' => $ceintureNoel, 'badgeJuin' => $ceintureJuin, 'badgeToussaint' => $ceintureToussaint, 'badgePaques' => $ceinturePaques));
         } else {
             throw new Exception("Erreur de chargement de page");
         }

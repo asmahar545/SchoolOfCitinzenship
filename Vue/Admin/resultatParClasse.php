@@ -55,7 +55,7 @@
                         <div class="box">
                             <div class="box-header">
                                 <!-- <h3   class="box-title"  style="font-size:small">Classe: </h3><br>-->
-                                Classe: <?= $nomClass['yearSexion'] ?>&nbsp;&nbsp;&nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;   Nombre de professeurs  qui ont évalués à la période de <?= $period['period'] ?> : <?= $nbteacher ?>&nbsp;&nbsp;&nbsp;  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Nombre totale des professeurs:<?= $nbteachers ?>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<a  href="javascript:window.print()"  class="btn bg-purple btn-xs"><i class="fa fa-print"></i></a>
+                                Classe: <?= $nomClass['yearSexion'] ?>&nbsp;&nbsp;&nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;   Nombre de professeurs  qui ont évalué à la période de <?= $period['period'] ?> : <?= $nbteacher ?>&nbsp;&nbsp;&nbsp;  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Nombre total de professeurs:<?= $nbteachers ?>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<a  href="javascript:window.print()"  class="btn bg-purple btn-xs"><i class="fa fa-print"></i></a>
                             </div>
 
 
@@ -242,7 +242,7 @@
             font-size: 75%
         }
         th.font{
-            font-size: 45%;
+            font-size: 51%;
         }
         th.rotate {
             /* Something you can count on */
