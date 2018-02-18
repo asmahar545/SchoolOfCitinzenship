@@ -401,4 +401,59 @@ class ControleurTeacher extends ControleurSecurise {
         }
     }
 
+    public function resultatParClasse() {
+        if ($this->requete->existeParametre("id")) {
+            $idC = $this->requete->getParametre("id");
+            $period = $this->grille->selectPeriod();
+            $idU = $this->requete->getSession()->getAttribut("idUtilisateur");
+            $nbrTeachEvalueTOTAL = $this->classe->nombreTeacherevalueUneClasse($idC);
+            $nbrTeachEvalues = $this->adult->teacherNbrEvaluate($idC);
+            $nomClasse = $this->classe->getClass($idC);
+            $nameItem1 = "Je suis respectueux envers les personnes";
+            $nameItem2 = "J’adopte une attitude non violente";
+            $nameItem3 = "Je suis respectueux du matériel et de l’environnement";
+            $nameItem4 = "Je parle de façon adéquate";
+            $nameItem5 = "Je suis solidaire";
+            $nameItem6 = "Je respecte les règles de l’école";
+            $nameItem7 = "Je m’organise et je deviens autonome";
+            $nameItem8 = "J’écoute les professeurs et les élèves sans les interrompre";
+            $nameItem9 = "Je circule dans l’école calmement";
+            $nameItem10 = "Je donne le meilleur de moi-même";
+            $Item1 = $this->grille->selectResultatStudentParClasse($nameItem1, $idC);
+            $Item2 = $this->grille->selectResultatStudentParClasse($nameItem2, $idC);
+            $Item3 = $this->grille->selectResultatStudentParClasse($nameItem3, $idC);
+            $Item4 = $this->grille->selectResultatStudentParClasse($nameItem4, $idC);
+            $Item5 = $this->grille->selectResultatStudentParClasse($nameItem5, $idC);
+            $Item6 = $this->grille->selectResultatStudentParClasse($nameItem6, $idC);
+            $Item7 = $this->grille->selectResultatStudentParClasse($nameItem7, $idC);
+            $Item8 = $this->grille->selectResultatStudentParClasse($nameItem8, $idC);
+            $Item9 = $this->grille->selectResultatStudentParClasse($nameItem9, $idC);
+            $Item10 = $this->grille->selectResultatStudentParClasse($nameItem10, $idC);
+
+            $nomStudent = $this->grille->selectNomStudentEvalueParClasse($idC);
+            $item = $this->grille->selectItemStudentEvalueParClasse($idC);
+            $adult = $this->adult->getadult($idU);
+            $this->genererVue(array('adult' => $adult,
+                'item1' => $Item1,
+                'item2' => $Item2,
+                'item3' => $Item3,
+                'item4' => $Item4,
+                'item5' => $Item5,
+                'item6' => $Item6,
+                'item7' => $Item7,
+                'item8' => $Item8,
+                'item9' => $Item9,
+                'item10' => $Item10,
+                'period' => $period,
+                'nomClass' => $nomClasse,
+                'nbteacher' => $nbrTeachEvalues,
+                'nbteachers' => $nbrTeachEvalueTOTAL,
+                'nomStudent' => $nomStudent,
+                'item' => $item));
+        } else {
+
+            throw new Exception("Faite attention les champs ne sont pas tous définis");
+        }
+    }
+
 }

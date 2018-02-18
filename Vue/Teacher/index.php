@@ -138,7 +138,7 @@
 
                                         <th>Total</th>
                                         <th>Fait</th>
-                                        <th>À faire</th>
+                                        <th>Restantes</th>
 
 
 
@@ -209,7 +209,7 @@
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
         $.widget.bridge('uibutton', $.ui.button);
-    </script>
+ </script>
     <!-- Bootstrap 3.3.6 -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <!-- Morris.js charts -->
