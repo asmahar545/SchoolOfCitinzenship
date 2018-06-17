@@ -242,7 +242,7 @@
             font-size: 75%
         }
         th.font{
-            font-size: 51%;
+            font-size: 38%;
         }
         th.rotate {
             /* Something you can count on */
